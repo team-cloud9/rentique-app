@@ -1,1 +1,198 @@
-/* CSS code */
+/* --- Anmol: Global Styles & Variables START --- */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+:root {
+  --celadon: #a5e6ba;
+  --night: #070d0d;
+  --white-smoke: #f5f5f5;
+  --silver: #c3c1c1;
+  --white: #ffffff;
+  --font-family: "Poppins", sans-serif;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-xxl: 2.5rem;
+  --border-radius: 4px;
+  --border-radius-lg: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--white-smoke);
+  color: var(--night);
+  line-height: 1.6;
+}
+/* --- Anmol: Global Styles & Variables END --- */
+
+/* --- Anmol: Header START --- */
+.b-add-header {
+  background-color: var(--white);
+  border-bottom: 1px solid var(--silver);
+  padding: var(--spacing-md) 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.b-add-header__content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.b-add-header__logo {
+  height: 50px;
+}
+
+.b-add-header__nav {
+  display: flex;
+  gap: var(--spacing-xl);
+}
+
+.b-add-header__nav-link {
+  text-decoration: none;
+  color: var(--night);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.b-add-header__nav-link:hover {
+  color: var(--celadon);
+}
+/* --- Anmol: Header END --- */
+
+
+/* --- Anmol: Main Form Container START --- */
+.b-add-main-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--spacing-xl);
+}
+
+.b-add-form-container {
+  background-color: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xxl);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.b-add-form-container__title {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.b-add-form-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.b-add-form-group {
+  margin-bottom: var(--spacing-lg);
+}
+
+.b-add-form-group__label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+}
+
+.b-add-form-group__input,
+.b-add-form-group__textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--silver);
+  border-radius: var(--border-radius);
+  font-family: var(--font-family);
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.b-add-form-group__input:focus,
+.b-add-form-group__textarea:focus {
+  outline: none;
+  border-color: var(--celadon);
+  box-shadow: 0 0 0 2px rgba(165, 230, 186, 0.4);
+}
+
+.b-add-form-group__textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+/* --- Anmol: Main Form Container END --- */
+
+/* --- Anmol: Image Upload START --- */
+.b-add-image-uploader {
+  border: 2px dashed var(--silver);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
+  text-align: center;
+}
+
+.b-add-image-uploader__preview-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.b-add-image-uploader__preview-wrapper {
+  position: relative;
+}
+
+.b-add-image-uploader__image {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--silver);
+}
+
+.b-add-image-uploader__remove-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: var(--night);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.b-add-image-uploader__remove-btn:hover {
+  background-color: #333;
+}
+
+.b-add-image-uploader__add-btn {
+  width: 120px;
+  height: 120px;
+  border: 2px dashed var(--silver);
+  background-color: var(--white-smoke);
+  color: var(--silver);
+  font-size: 3rem;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+}
+
+.b-add-image-uploader__add-btn:hover {
+  border-color: var(--celadon);
+  color: var(--celadon);
+}
+/* --- Anmol: Image Upload END --- */

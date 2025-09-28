@@ -1,12 +1,65 @@
-<!-- template -->
  <!DOCTYPE html>
  <html lang="en">
  <head>
+    <!-- Anmol: Head Section -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
- </head>
+    <title>Add Items - Rentique</title>
+    <link rel="stylesheet" href="business-add-item.css">
+    <script src="business-add-item.js" type="module"></script>
+</head>
  <body>
+
+   <!-- Anmol: Header Section START -->
+    <header class="b-add-header">
+        <div class="b-add-header__content">
+            <a href="#" class="b-add-header__logo-container">
+                <img src="logo.jpeg" alt="Rentique Logo" class="b-add-header__logo">
+            </a>
+            <nav class="b-add-header__nav">
+                <a href="#" class="b-add-header__nav-link">SEARCH</a>
+                <a href="#" class="b-add-header__nav-link">CHAT LIST</a>
+                <a href="#" class="b-add-header__nav-link">PROFILE</a>
+            </nav>
+            <div class="b-add-header__user-greeting">
+                <span>Hi, Rentee</span>
+            </div>
+        </div>
+    </header>
+    <!-- Anmol: Header Section END -->
+
+    <main class="b-add-main-container">
+        <div class="b-add-form-container">
+            <h1 class="b-add-form-container__title">ADD ITEMS</h1>
+            <form id="bAddItemForm">
+                <!-- Anmol: Image Upload and Core Details START -->
+                <section class="b-add-form-section">
+                    <label class="b-add-form-group__label">Upload Image</label>
+                    <div class="b-add-image-uploader">
+                        <div id="imagePreviewContainer" class="b-add-image-uploader__preview-container"></div>
+                        <input type="file" id="imageUploadInput" multiple accept="image/*" style="display: none;">
+                        <button type="button" id="imageUploadButton" class="b-add-image-uploader__add-btn">+</button>
+                    </div>
+                </section>
+
+                <section class="b-add-form-section">
+                    <div class="b-add-form-group">
+                        <label for="itemNameInput" class="b-add-form-group__label">Item Name</label>
+                        <input type="text" id="itemNameInput" class="b-add-form-group__input" placeholder="Enter item name">
+                    </div>
+                </section>
+                <!-- Anmol: Image Upload and Core Details END -->
+
+
+
+
+
+
+
+
+
+      </div>
+    </main>
     
  </body>
  </html>
