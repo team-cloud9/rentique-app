@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rentique - Login Demo</title>
+  <link rel="stylesheet" href="mystyle.css" />
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1 id="formTitle">Signup</h1>
+
+    <!-- this is signup form for first time. -->
+    <form id="signupForm" class="form">
+      <input type="text" id="signupUser" placeholder="Enter username" required />
+      <input type="password" id="signupPass" placeholder="Enter password" required />
+      <button type="submit">Signup</button>
+      <p>Already have an account? <a href="#" id="showLogin">Login here</a></p>
+    </form>
+
+    <!-- This is for login for frequent users. -->
+    <form id="loginForm" class="form hidden">
+      <input type="text" id="loginUser" placeholder="Enter username" required />
+      <input type="password" id="loginPass" placeholder="Enter password" required />
+      <button type="submit">Login</button>
+      <p>Don't have an account? <a href="#" id="showSignup">Signup here</a></p>
+    </form>
+
+    <div id="message"></div>
+  </div>
+
+  
+</body>
+</html>
