@@ -201,6 +201,227 @@ body {
 
 
 
+/* --- Gurpreet: Dynamic Tags (Color/Material) START --- */
+.b-add-tag-input {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border: 1px solid var(--silver);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-sm);
+  min-height: 45px;
+  transition: all 0.2s ease-in-out;
+}
+
+.b-add-tag-input:focus-within {
+  border-color: var(--celadon);
+  box-shadow: 0 0 0 2px rgba(165, 230, 186, 0.4);
+}
+
+.b-add-tag-input__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.b-add-tag-input__input {
+  border: none;
+  flex-grow: 1;
+  padding: 0.25rem;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  min-width: 120px;
+}
+
+.b-add-tag-input__input:focus {
+  outline: none;
+}
+
+.b-add-tag {
+  background-color: var(--celadon);
+  color: var(--night);
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.b-add-tag__remove-btn {
+  background: none;
+  border: none;
+  color: var(--night);
+  cursor: pointer;
+  margin-left: var(--spacing-sm);
+  font-size: 1.2em;
+}
+/* --- Gurpreet: Dynamic Tags (Color/Material) END --- */
+
+/* --- Gurpreet: Radio & Checkbox Groups START --- */
+.b-add-radio-group,
+.b-add-checkbox-group {
+  display: flex;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.b-add-radio-option,
+.b-add-checkbox-option {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.b-add-radio-option input[type="radio"],
+.b-add-checkbox-option input[type="checkbox"] {
+  margin-right: var(--spacing-sm);
+  accent-color: var(--celadon);
+}
+/* --- Gurpreet: Radio & Checkbox Groups END --- */
+
+/* --- Gurpreet: Tag-Style Checkbox Selector START --- */
+.b-add-tag-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.b-add-tag-selector__input {
+  display: none;
+}
+
+.b-add-tag-selector__label {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--silver);
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  user-select: none;
+}
+
+.b-add-tag-selector__label:hover {
+  border-color: var(--celadon);
+  color: var(--celadon);
+}
+.b-add-tag-selector__input:checked + .b-add-tag-selector__label {
+  background-color: var(--night);
+  color: var(--white);
+  border-color: var(--night);
+}
+/* --- Gurpreet: Tag-Style Checkbox Selector END --- */
+
+/* --- Gurpreet: Price Input START --- */
+.b-add-price-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--silver);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.b-add-price-input:focus-within {
+  border-color: var(--celadon);
+  box-shadow: 0 0 0 2px rgba(165, 230, 186, 0.4);
+}
+
+.b-add-price-input__currency {
+  background-color: var(--white-smoke);
+  padding: 0.75rem;
+  font-weight: 500;
+  border-right: 1px solid var(--silver);
+}
+
+.b-add-price-input__field {
+  border: none;
+  padding: 0.75rem;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  flex-grow: 1;
+}
+
+.b-add-price-input__field:focus {
+  outline: none;
+}
+/* --- Gurpreet: Price Input END --- */
+
+/* --- Gurpreet: Measurement Upload START --- */
+.b-add-measurement-upload {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.b-add-measurement-upload__btn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 0.75rem var(--spacing-lg);
+  border: 1px solid var(--silver);
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.b-add-measurement-upload__btn:hover {
+  background-color: var(--white-smoke);
+  border-color: var(--celadon);
+}
+
+.b-add-measurement-upload__filename {
+  color: var(--silver);
+  font-style: italic;
+}
+/* --- Gurpreet: Measurement Upload END --- */
+
+/* --- Gurpreet: Action Buttons START --- */
+.b-add-action-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xxl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--silver);
+}
+
+.b-add-action-buttons__btn {
+  flex: 1;
+  padding: 0.75rem;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: var(--font-family);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.b-add-action-buttons__btn--primary {
+  background-color: var(--night);
+  color: var(--white);
+  border: 1px solid var(--night);
+}
+
+.b-add-action-buttons__btn--primary:hover {
+  background-color: #333;
+}
+
+.b-add-action-buttons__btn--secondary {
+  background-color: var(--white);
+  color: var(--night);
+  border: 1px solid var(--silver);
+}
+
+.b-add-action-buttons__btn--secondary:hover {
+  background-color: var(--white-smoke);
+  border-color: var(--celadon);
+}
+/* --- Gurpreet: Action Buttons END --- */
 
 
 
