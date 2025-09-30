@@ -50,13 +50,95 @@
                 </section>
                 <!-- Anmol: Image Upload and Core Details END -->
 
+                <!-- Gurpreet: Dynamic Tags, Radios, and Remaining Form START -->
+                <section class="b-add-form-section">
+                    <div class="b-add-form-group">
+                        <label for="colorInput" class="b-add-form-group__label">Colour</label>
+                        <div class="b-add-tag-input">
+                            <div id="colorTagsContainer" class="b-add-tag-input__container"></div>
+                            <input type="text" id="colorInput" class="b-add-tag-input__input" placeholder="Type a color and press Enter...">
+                        </div>
+                    </div>
+                </section>
 
+                <section class="b-add-form-section">
+                    <div class="b-add-form-group">
+                        <label class="b-add-form-group__label">Gender</label>
+                        <div class="b-add-radio-group">
+                            <label class="b-add-radio-option">
+                                <input type="radio" name="gender" value="womens">
+                                <span class="b-add-radio-option__text">Women's</span>
+                            </label>
+                            <label class="b-add-radio-option">
+                                <input type="radio" name="gender" value="mens">
+                                <span class="b-add-radio-option__text">Men's</span>
+                            </label>
+                            <label class="b-add-radio-option">
+                                <input type="radio" name="gender" value="unisex">
+                                <span class="b-add-radio-option__text">Unisex</span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
 
+                <section class="b-add-form-section">
+                    <div class="b-add-form-group">
+                        <label class="b-add-form-group__label">Size</label>
+                        <div class="b-add-checkbox-group">
+                            <label class="b-add-checkbox-option"><input type="checkbox" name="size" value="s"><span class="b-add-checkbox-option__text">S</span></label>
+                            <label class="b-add-checkbox-option"><input type="checkbox" name="size" value="m"><span class="b-add-checkbox-option__text">M</span></label>
+                            <label class="b-add-checkbox-option"><input type="checkbox" name="size" value="l"><span class="b-add-checkbox-option__text">L</span></label>
+                            <label class="b-add-checkbox-option"><input type="checkbox" name="size" value="xl"><span class="b-add-checkbox-option__text">XL</span></label>
+                            <label class="b-add-checkbox-option"><input type="checkbox" name="size" value="xxl"><span class="b-add-checkbox-option__text">XXL</span></label>
+                        </div>
+                    </div>
+                </section>
 
+                <section class="b-add-form-section">
+                    <div class="b-add-form-group">
+                        <label for="fullDescriptionInput" class="b-add-form-group__label">Description</label>
+                        <textarea id="fullDescriptionInput" class="b-add-form-group__textarea" placeholder="e.g. A versatile piece perfect for summer evenings..." rows="4"></textarea>
+                    </div>
+                </section>
 
+                <section class="b-add-form-section">
+                    <div class="b-add-form-group">
+                        <label for="priceInput" class="b-add-form-group__label">Price</label>
+                        <div class="b-add-price-input">
+                            <span class="b-add-price-input__currency">$</span>
+                            <input type="number" id="priceInput" class="b-add-price-input__field" placeholder="Price" step="0.01">
+                        </div>
+                    </div>
+                </section>
 
+                <section class="b-add-form-section">
+                    <div class="b-add-form-group">
+                        <label class="b-add-form-group__label">Upload measurement table</label>
+                        <div class="b-add-measurement-upload">
+                            <input type="file" id="measurementUploadInput" accept=".pdf,.jpg,.jpeg,.png" style="display: none;">
+                            <button type="button" id="measurementUploadButton" class="b-add-measurement-upload__btn"><i class='bx bx-upload'></i> Choose File</button>
+                            <span id="measurementFileName" class="b-add-measurement-upload__filename"></span>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="b-add-form-section">
+                    <div class="b-add-form-group"><label class="b-add-form-group__label">Season</label><div class="b-add-tag-selector"><label class="b-add-tag-selector__option"><input type="checkbox" name="season" value="spring" class="b-add-tag-selector__input"><span class="b-add-tag-selector__label">Spring</span></label><label class="b-add-tag-selector__option"><input type="checkbox" name="season" value="summer" class="b-add-tag-selector__input"><span class="b-add-tag-selector__label">Summer</span></label><label class="b-add-tag-selector__option"><input type="checkbox" name="season" value="autumn" class="b-add-tag-selector__input"><span class="b-add-tag-selector__label">Autumn</span></label><label class="b-add-tag-selector__option"><input type="checkbox" name="season" value="winter" class="b-add-tag-selector__input"><span class="b-add-tag-selector__label">Winter</span></label></div></div>
+                </section>
 
+                <section class="b-add-form-section">
+                    <div class="b-add-form-group"><label class="b-add-form-group__label">Size Fit</label><div class="b-add-tag-selector"><label class="b-add-tag-selector__option"><input type="checkbox" name="sizeFit" value="slim" class="b-add-tag-selector__input"><span class="b-add-tag-selector__label">Slim</span></label><label class="b-add-tag-selector__option"><input type="checkbox" name="sizeFit" value="regular" class="b-add-tag-selector__input"><span class="b-add-tag-selector__label">Regular</span></label><label class="b-add-tag-selector__option"><input type="checkbox" name="sizeFit" value="oversized" class="b-add-tag-selector__input"><span class="b-add-tag-selector__label">Oversized</span></label></div></div>
+                </section>
 
+                <section class="b-add-form-section">
+                    <div class="b-add-form-group"><label class="b-add-form-group__label">Texture</label><div class="b-add-tag-selector"><label class="b-add-tag-selector__option"><input type="checkbox" name="texture" value="soft" class="b-add-tag-selector__input"><span class="b-add-tag-selector__label">Soft</span></label><label class="b-add-tag-selector__option"><input type="checkbox" name="texture" value="rough" class="b-add-tag-selector__input"><span class="b-add-tag-selector__label">Rough</span></label><label class="b-add-tag-selector__option"><input type="checkbox" name="texture" value="smooth" class="b-add-tag-selector__input"><span class="b-add-tag-selector__label">Smooth</span></label></div></div>
+                </section>
+
+                <div class="b-add-action-buttons">
+                    <button type="submit" class="b-add-action-buttons__btn b-add-action-buttons__btn--secondary">ADD</button>
+                    <button type="button" class="b-add-action-buttons__btn b-add-action-buttons__btn--primary">CANCEL</button>
+                </div>
+                <!-- Gurpreet: Dynamic Tags, Radios, and Remaining Form END -->
 
       </div>
     </main>
