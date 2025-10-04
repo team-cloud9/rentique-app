@@ -1,61 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
     <link rel="stylesheet" href="style.css">
-    <title>log in</title>
-  </head>
-  <body>
-     <header>
-    <div class="header-right">
-      <span class="user">Sign in</span>
-    </div>
-  </header>
+</head>
+<body>
+    <header>
+        <h1>Search</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="reset.html">Password Reset</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <main>
-    <section class="login-container">
-      <h2>Log in</h2>
-      <p>Welcome back! Please enter your details to continue.</p>
+    <main class="login-container">
+        <h2>LOG IN</h2>
+        <form>
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
 
-      <form action="#" method="post" class="login-form">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
 
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="Enter your password" required>
 
-        <button type="submit">Log In</button>
+                    <p><a href="reset.html">Forgot your password?</a></p>
+            <button type="submit">LOG IN</button>
+        </form>
 
-        <div class="extra-links">
-          <a href="#">Forgot your password?</a>
-          <a href="#">Create an account</a>
-        </div>
-      </form>
-    </section>
-  </main>
 
-  <footer>
-    <div class="footer-logo">
-      <img src="#" alt="Logo">
-      <p>Rentique © 2025</p>
-    </div>
-    <div class="footer-links">
-      <div>
-        <h3>Company</h3>
-        <ul>
-          <li><a href="#">About us</a></li>
-          <li><a href="#">Careers</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Support</h3>
-        <ul>
-          <li><a href="#">Help Center</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
-  </body>
+        <p>Don't have an account? <a href="signup.html">Sign Up as a busines Partner</a></p>
+    </main>
+
+    <footer>
+        <p>&copy;. All rights reserved.</p>
+        <p>Search</p>
+        <p>Chat list</p>
+        <p>Profile</p>
+    </footer>
+</body>
 </html>
