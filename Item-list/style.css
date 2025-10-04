@@ -30,12 +30,6 @@ header {
   padding: 15px 30px;
 }
 
-header,
-main {
-  padding-left: 3rem;
-  padding-right: 3rem;
-}
-
 .header-right {
   display: flex;
   align-items: center;
@@ -191,7 +185,6 @@ main {
 }
 
 /* Footer */
-/* Footer */
 footer {
   background-color: #222;
   color: #fff;
@@ -201,7 +194,7 @@ footer {
 .footer-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 2rem; /* footer 안쪽에만 패딩 */
+  padding: 5rem 3rem;
   display: flex;
   justify-content: space-between;
   gap: 50px;
