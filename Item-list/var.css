@@ -1,0 +1,107 @@
+/*
+  Brand Color System (Updated)
+*/
+
+:root {
+    /* === Primitive Colors === */
+    --nyanza: #CCE7D1;
+    /* Brand's signature mint green. Freshness, sustainability. */
+    --deep-teal-blue: #06324F;
+    /* Deep navy blue. Professional, strong, accent. */
+    --white-smoke: #F5F5F5;
+    /* Light gray for backgrounds/surfaces. */
+    --silver: #C3C1C1;
+    /* Neutral medium gray for secondary UI elements. */
+
+    /* === Brand Color Scale (Nyanza) === */
+    --nyanza-50: #F3FBF7;
+    --nyanza-100: #E7F7EC;
+    --nyanza-200: #D6EEDD;
+    --nyanza-300: #BFE1C8;
+    --nyanza-400: #A5CEB1;
+    --nyanza-500: #8CB99A;
+    --nyanza-600: #75A684;
+    --nyanza-700: #61926F;
+    --nyanza-800: #507F5C;
+    --nyanza-900: #406C4A;
+
+    /* === Teal Blue Color Scale (Deep Teal Blue) === */
+    --teal-blue-50: #E5EBEF;
+    --teal-blue-100: #C5D2DD;
+    --teal-blue-200: #A5B9CB;
+    --teal-blue-300: #85A0B9;
+    --teal-blue-400: #6587A7;
+    --teal-blue-500: #456E95;
+    --teal-blue-600: #245583;
+    --teal-blue-700: #113F6B;
+    --teal-blue-800: #0A2A4C;
+    --teal-blue-900: #06324F;
+
+    /* === Gray Scale === */
+    --gray-50: #F9F9F9;
+    --gray-100: #F5F5F5;
+    --gray-200: #E4E4E4;
+    --gray-300: #C3C1C1;
+    --gray-400: #A9A7A7;
+    --gray-500: #8F8D8D;
+    --gray-600: #767575;
+    --gray-700: #5C5B5B;
+    --gray-800: #434242;
+    --gray-900: #292828;
+
+    /* === Palette Colors (Functional Roles, Light mode) === */
+    --primary: var(--nyanza);
+    /* Main brand color for key actions and highlights. */
+    --primary-variant: var(--nyanza-600);
+    /* Darker mint for emphasis or active states. */
+    --secondary: var(--deep-teal-blue);
+    /* Secondary/accent color for important UI, links, focus. */
+    --secondary-variant: var(--teal-blue-400);
+    /* Softer navy for backgrounds or hover states. */
+    --tertiary: var(--teal-blue-100);
+    /* Light navy, for subtle accent or tertiary actions. */
+    --background: var(--white-smoke);
+    /* Default background color. */
+    --surface: #FFFFFF;
+    /* Surface color for cards and dialogs. */
+    --border: #E0E0E0;
+    /* Neutral border color. */
+    --text-primary: var(--deep-teal-blue);
+    /* Main text color for strong contrast. */
+    --text-secondary: var(--gray-900);
+    /* Secondary text color. */
+    --text-on-primary: var(--deep-teal-blue);
+    /* Text color on primary surfaces. */
+    --text-on-secondary: #FFFFFF;
+    /* Text color on secondary surfaces. */
+
+    /* === Palette Colors (Dark mode) === */
+    --background-dark: #10181D;
+    /* Deep navy-tinted dark background. */
+    --surface-dark: #18222A;
+    /* Dark surface for cards/dialogs. */
+    --text-primary-dark: #CCE7D1;
+    /* Mint green for contrast on dark backgrounds. */
+    --text-secondary-dark: #C3C1C1;
+    /* Medium gray for secondary text in dark mode. */
+    --border-dark: #425C6B;
+    /* Border color in dark mode (navy-tinted). */
+
+    /* === Semantic Colors (State & Purpose) === */
+    --error: #E57373;
+    /* Error state color, light mode. */
+    --error-dark: #D32F2F;
+    /* Error state color, dark mode. */
+    --success: #81C784;
+    /* Success/confirmation color, light mode. */
+    --success-dark: #388E3C;
+    /* Success/confirmation color, dark mode. */
+    --warning: #FFD54F;
+    /* Warning/caution color, light mode. */
+    --warning-dark: #FFA000;
+    /* Warning/caution color, dark mode. */
+    --info: var(--teal-blue-400);
+    /* Info or link color, navy accent. */
+    --disabled: var(--gray-300);
+    /* Disabled/inactive state color. */
+}
