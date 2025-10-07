@@ -1,4 +1,6 @@
-/* ==============================
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+/* ==============================
    RESET & BASE
 ============================== */
 * {
@@ -8,7 +10,7 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "inter";
   line-height: 1.6;
   color: #333;
   background-color: #fff;
@@ -225,8 +227,23 @@ footer {
   box-sizing: border-box;
 }
 
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
 footer .footer-logo {
   max-width: 40%;
+}
+
+.brand-name {
+  font-family: "inter";
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #cce7d1;
+  letter-spacing: 1px;
 }
 
 footer .footer-logo img {
@@ -235,6 +252,8 @@ footer .footer-logo img {
   border-radius: 10px;
   display: block;
   margin-bottom: 1rem;
+  filter: invert(88%) sepia(12%) saturate(520%) hue-rotate(75deg)
+    brightness(103%) contrast(92%);
 }
 
 footer .footer-logo p {
