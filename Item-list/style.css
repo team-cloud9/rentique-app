@@ -165,6 +165,7 @@ header .user {
     opacity: 0;
     transform: translateY(-20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -389,8 +390,7 @@ footer .footer-logo img {
   border-radius: 10px;
   display: block;
   margin-bottom: 1rem;
-  filter: invert(88%) sepia(12%) saturate(520%) hue-rotate(75deg)
-    brightness(103%) contrast(92%);
+  filter: invert(88%) sepia(12%) saturate(520%) hue-rotate(75deg) brightness(103%) contrast(92%);
 }
 
 footer .footer-logo p {
@@ -680,6 +680,7 @@ input[type="range"]::-moz-range-thumb {
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -691,8 +692,86 @@ input[type="range"]::-moz-range-thumb {
     opacity: 1;
     transform: translateY(0);
   }
+
   to {
     opacity: 0;
     transform: translateY(-10px);
   }
+}
+
+
+/* ==============================
+   ITEMS-DETAIL
+============================== */
+.items-detail-title {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.image-placeholder {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.item-name {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.item-price {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.description {
+  margin-bottom: 30px;
+}
+
+.description h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.description p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.chat-button {
+  width: 100%;
+  padding: 15px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: background 0.2s;
+}
+
+.chat-button:hover {
+  background: #333;
 }
