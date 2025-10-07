@@ -4,19 +4,28 @@ document.getElementById("item1").addEventListener("click", function () {
 
 // JS for Filter Popup
 const filterBtn = document.getElementById("filterBtn");
-const filterModal = document.getElementById("filterModal");
-const closeFilter = document.getElementById("closeFilter");
+const filterPopup = document.getElementById("filterPopup");
+const closePopup = document.getElementById("closePopup");
+const applyFilter = document.getElementById("applyFilter");
 
+// 열기
 filterBtn.addEventListener("click", () => {
-  filterModal.style.display = "block";
+  filterPopup.style.display = "block";
 });
 
-closeFilter.addEventListener("click", () => {
-  filterModal.style.display = "none";
+// 닫기 (X)
+closePopup.addEventListener("click", () => {
+  filterPopup.style.display = "none";
 });
 
+// Apply 누르면 닫힘
+applyFilter.addEventListener("click", () => {
+  filterPopup.style.display = "none";
+});
+
+// 배경 클릭 시 닫기
 window.addEventListener("click", (event) => {
-  if (event.target === filterModal) {
-    filterModal.style.display = "none";
+  if (event.target === filterPopup) {
+    filterPopup.style.display = "none";
   }
 });
