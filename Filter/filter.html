@@ -34,8 +34,36 @@
     <main>
         <div class="container">
             <div class="filter-header">
-                <button class="dropdown-btn">Filter</button>
-                <button class="dropdown-btn">Sort</button>
+                <div class="filter-sort-controls">
+                    <div class="dropdown">
+                        <button class="dropdown-btn">Filter</button>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropdown-btn">Sort</button>
+                        <div class="dropdown-menu">
+                            <label>
+                                <input type="radio" name="sort" value="recommended" checked>
+                                <span>Recommended</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="sort" value="recent">
+                                <span>Recently added</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="sort" value="distance">
+                                <span>Distance</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="sort" value="price-high">
+                                <span>$ High to Low</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="sort" value="price-low">
+                                <span>$ Low to High</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Category -->
