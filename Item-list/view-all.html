@@ -33,9 +33,56 @@
     <main class="container">
         <!-- Filter/Sort Section -->
         <section class="filter-sort">
-          <button>FILTER</button>
+          <button id="filterBtn">FILTER</button>
           <button>SORT</button>
         </section>
+
+        <!-- 🔽 Filter Popup (Initially hidden) -->
+<div class="filter-modal" id="filterModal">
+  <div class="filter-content">
+    <span class="close-btn" id="closeFilter">&times;</span>
+    <h2>Filter Options</h2>
+
+    <!-- Category -->
+    <div class="filter-section">
+      <h3>Category</h3>
+      <div class="filter-tags">
+        <button>T-shirts</button>
+        <button class="active">Jackets</button>
+        <button>Shirts</button>
+        <button>Hoodies</button>
+        <button>Sweatshirts</button>
+      </div>
+    </div>
+
+    <!-- Size -->
+    <div class="filter-section">
+      <h3>Size</h3>
+      <div class="filter-tags">
+        <button>XS</button>
+        <button class="active">S</button>
+        <button>M</button>
+        <button>L</button>
+        <button>XL</button>
+      </div>
+    </div>
+
+    <!-- Range Example -->
+    <div class="filter-section">
+      <h3>Price Range</h3>
+      <div class="range">
+        <span>$60</span>
+        <input type="range" min="0" max="120" value="60" />
+        <span>$120</span>
+      </div>
+    </div>
+
+    <!-- Apply Button -->
+    <div class="apply-container">
+      <button class="apply-btn">Apply</button>
+    </div>
+  </div>
+</div>
 
         <!-- Swipe Your Style Section -->
         <section class="swipe-style">
