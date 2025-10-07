@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
 /* ==============================
    RESET & BASE
@@ -21,7 +21,6 @@ body {
   max-width: 1200px;
   padding: 0 3rem;
   margin: 0 auto;
-  background-color: #fff;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -41,7 +40,6 @@ header {
 
 header .logo img {
   width: 120px;
-  height: auto;
   display: block;
 }
 
@@ -70,13 +68,11 @@ header nav ul li a:hover {
 
 header .user {
   font-weight: bold;
-  color: #333;
 }
 
 /* ==============================
    MAIN CONTENT
 ============================== */
-
 .filter-sort button {
   background: none;
   border: none;
@@ -89,89 +85,9 @@ header .user {
   transition: color 0.2s ease;
 }
 
-/* Section titles */
-.filter-section {
-  margin-bottom: 2rem;
-}
-
-.filter-section h3 {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-}
-
-/* Buttons (tags) */
-.filter-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.filter-tags button {
-  border: 1px solid #ccc;
-  background: transparent;
-  border-radius: 6px;
-  padding: 6px 14px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.filter-tags button.active {
-  background-color: #000;
-  color: #fff;
-  border-color: #000;
-}
-
-.filter-tags button:hover {
-  border-color: #555;
-}
-
-/* Range slider */
-.range {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.range input[type="range"] {
-  width: 100%;
-}
-
-/* Apply Button */
-.apply-container {
-  text-align: center;
-  margin-top: 3rem;
-}
-
-.apply-btn {
-  border: none;
-  background: #000;
-  color: #fff;
-  padding: 0.8rem 2rem;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.3s;
-}
-
-.apply-btn:hover {
-  background: #333;
-}
-
-/* Simple fade animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Swipe Section */
+/* ==============================
+   SWIPE SECTION
+============================== */
 .swipe-style h2 {
   font-size: 22px;
   margin-bottom: 10px;
@@ -184,10 +100,9 @@ header .user {
 
 .swipe-items {
   display: flex;
-  gap: 15px;
-  margin-top: 2rem;
-  margin-bottom: 3rem;
   flex-wrap: wrap;
+  gap: 15px;
+  margin: 2rem 0 3rem;
 }
 
 .swipe-items .item {
@@ -204,7 +119,9 @@ header .user {
   transform: scale(1.05);
 }
 
-/* Recommended Items */
+/* ==============================
+   ITEM LIST
+============================== */
 .item-list h2 {
   font-size: 20px;
   margin-bottom: 1rem;
@@ -221,11 +138,9 @@ header .user {
   width: 220px;
   background: #fff;
   padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  text-align: center;
   border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
@@ -240,9 +155,6 @@ header .user {
   margin-bottom: 10px;
   overflow: hidden;
   border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: #f0f0f0;
 }
 
@@ -262,35 +174,26 @@ header .user {
   font-size: 12px;
   color: #666;
   margin-bottom: 5px;
-  text-align: center;
 }
 
 .card .price {
   font-size: 13px;
   font-weight: bold;
-  color: #333;
 }
 
-/* View All Button */
-.view-all {
-  display: flex;
-  justify-content: center;
-  margin-top: 3rem;
-  margin-bottom: 6rem;
-}
-
-/* Pagination Section */
+/* ==============================
+   PAGINATION
+============================== */
 .pagination {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
-  margin: 4rem 0 6rem 0;
+  margin: 4rem 0 6rem;
 }
 
 .page-numbers {
   display: flex;
-  align-items: center;
   gap: 10px;
   font-size: 14px;
 }
@@ -312,7 +215,6 @@ header .user {
   color: #fff;
 }
 
-/* Previous  */
 .page-buttons {
   display: flex;
   gap: 20px;
@@ -338,12 +240,6 @@ header .user {
   color: #fff;
 }
 
-/* 아이콘 크기 조정 */
-.page-buttons .btn span {
-  font-size: 16px;
-  line-height: 1;
-}
-
 /* ==============================
    FOOTER
 ============================== */
@@ -361,7 +257,10 @@ footer {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 50px;
-  box-sizing: border-box;
+}
+
+.footer-logo {
+  max-width: 40%;
 }
 
 .brand {
@@ -371,12 +270,7 @@ footer {
   margin-bottom: 1rem;
 }
 
-footer .footer-logo {
-  max-width: 40%;
-}
-
 .brand-name {
-  font-family: "inter";
   font-size: 1.6rem;
   font-weight: 600;
   color: #cce7d1;
@@ -385,53 +279,52 @@ footer .footer-logo {
 
 footer .footer-logo img {
   width: 60px;
-  height: auto;
   border-radius: 10px;
-  display: block;
   margin-bottom: 1rem;
   filter: invert(88%) sepia(12%) saturate(520%) hue-rotate(75deg)
     brightness(103%) contrast(92%);
 }
 
-footer .footer-logo p {
+.footer-logo p {
   font-size: 14px;
   color: #aaa;
   line-height: 1.4;
 }
 
-footer .footer-links {
+.footer-links {
   display: flex;
   flex-wrap: wrap;
   gap: 50px;
 }
 
-footer .footer-links h3 {
+.footer-links h3 {
   margin-bottom: 10px;
   font-size: 14px;
   font-weight: bold;
-  color: #fff;
 }
 
-footer .footer-links ul {
+.footer-links ul {
   list-style: none;
 }
 
-footer .footer-links ul li {
+.footer-links li {
   margin-bottom: 8px;
 }
 
-footer .footer-links ul li a {
+.footer-links a {
   text-decoration: none;
   color: #aaa;
   font-size: 13px;
   transition: color 0.2s;
 }
 
-footer .footer-links ul li a:hover {
+.footer-links a:hover {
   color: #fff;
 }
 
-/* Filter Section */
+/* ==============================
+   FILTER POPUP
+============================== */
 .popup-container {
   display: none;
   position: fixed;
@@ -442,18 +335,21 @@ footer .footer-links ul li a:hover {
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
   overflow-y: auto;
+  animation: fadeIn 0.3s ease;
 }
 
-/* 팝업 내용 */
+.popup-container.show {
+  display: block;
+}
+
 .popup-content {
   background: #fff;
   margin: 5% auto;
   padding: 2rem 3rem;
   border-radius: 10px;
-  width: 80%;
-  max-width: 800px;
+  width: 90%;
+  max-width: 870px;
   position: relative;
-  animation: fadeIn 0.3s ease;
 }
 
 .close-popup {
@@ -464,6 +360,7 @@ footer .footer-links ul li a:hover {
   cursor: pointer;
 }
 
+/* Filter Section */
 .filter-header {
   display: flex;
   align-items: center;
@@ -473,24 +370,6 @@ footer .footer-links ul li a:hover {
   border-bottom: 2px solid #f0f0f0;
 }
 
-.filter-sort-controls {
-  display: flex;
-  gap: 15px;
-}
-
-.dropdown-btn {
-  padding: 10px 20px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #333;
-}
-
-/* Dropdown */
 .dropdown {
   position: relative;
 }
@@ -554,7 +433,7 @@ footer .footer-links ul li a:hover {
   font-size: 14px;
 }
 
-/* Filter Section */
+/* Filter Options */
 .filter-section {
   margin-bottom: 25px;
 }
@@ -567,11 +446,10 @@ footer .footer-links ul li a:hover {
 
 .filter-options {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 10px;
 }
 
-/* Filter Buttons */
 .filter-btn {
   padding: 10px 16px;
   border: 1px solid #ddd;
@@ -580,7 +458,8 @@ footer .footer-links ul li a:hover {
   cursor: pointer;
   font-size: 13px;
   position: relative;
-  text-align: left;
+  text-align: center;
+  transition: all 0.2s ease;
 }
 
 .filter-btn:hover {
@@ -591,7 +470,6 @@ footer .footer-links ul li a:hover {
   background: #333;
   color: white;
   border-color: #333;
-  padding-left: 28px;
 }
 
 .filter-btn.active::before {
@@ -601,7 +479,7 @@ footer .footer-links ul li a:hover {
   font-size: 11px;
 }
 
-/* Range Slider */
+/* Range Sliders */
 .range-container {
   margin-top: 10px;
 }
@@ -622,22 +500,13 @@ input[type="range"] {
   border-radius: 2px;
 }
 
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 16px;
-  height: 16px;
-  background: #666;
-  cursor: pointer;
-  border-radius: 50%;
-}
-
+input[type="range"]::-webkit-slider-thumb,
 input[type="range"]::-moz-range-thumb {
   width: 16px;
   height: 16px;
   background: #666;
-  cursor: pointer;
   border-radius: 50%;
+  cursor: pointer;
   border: none;
 }
 
@@ -645,8 +514,7 @@ input[type="range"]::-moz-range-thumb {
 .apply {
   display: flex;
   justify-content: center;
-  margin-top: 3rem;
-  margin-bottom: 6rem;
+  margin: 3rem 0 6rem;
 }
 
 .apply-btn {
@@ -658,6 +526,7 @@ input[type="range"]::-moz-range-thumb {
   cursor: pointer;
   padding: 5px 10px;
   border-bottom: 1px solid #333;
+  transition: all 0.3s ease;
 }
 
 .apply-btn:hover {
@@ -665,16 +534,7 @@ input[type="range"]::-moz-range-thumb {
   border-bottom-color: #555;
 }
 
-.popup-container.show {
-  display: block;
-  animation: fadeIn 0.3s ease;
-}
-
-.popup-container.hide {
-  animation: fadeOut 0.3s ease;
-}
-
-/* Animation */
+/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -683,16 +543,5 @@ input[type="range"]::-moz-range-thumb {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(-10px);
   }
 }
