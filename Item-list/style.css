@@ -16,10 +16,10 @@ body {
   background-color: #fff;
 }
 
-/* 중앙 컨테이너 */
 .container {
   width: 100%;
   max-width: 1200px;
+  padding: 0 3rem;
   margin: 0 auto;
   background-color: #fff;
   display: flex;
@@ -34,11 +34,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
   width: 100%;
   box-sizing: border-box;
-  background-color: #fff;
-  border-bottom: 1px solid #eee;
 }
 
 header .logo img {
@@ -78,8 +77,17 @@ header .user {
 /* ==============================
    MAIN CONTENT
 ============================== */
-main {
-  padding: 40px 30px;
+
+.filter-sort button {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding-right: 1rem;
+  margin-bottom: 3rem;
+  transition: color 0.2s ease;
 }
 
 /* Swipe Section */
@@ -190,21 +198,69 @@ main {
   margin-bottom: 6rem;
 }
 
-.view-all button {
-  background: none;
-  border: none;
-  color: #000;
-  font-size: 15px;
-  font-weight: 500;
-  cursor: pointer;
-  padding: 5px 10px;
-  border-bottom: 1px solid #333;
-  transition: color 0.2s, border-color 0.2s;
+/* Pagination Section */
+.pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 4rem 0 6rem 0;
 }
 
-.view-all button:hover {
-  color: #555;
-  border-bottom-color: #555;
+.page-numbers {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.page-numbers a {
+  color: #333;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.page-numbers a:hover {
+  background: #f1f1f1;
+}
+
+.page-numbers .active {
+  background: #000;
+  color: #fff;
+}
+
+/* Previous  */
+.page-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.page-buttons .btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #333;
+  background: transparent;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.page-buttons .btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* 아이콘 크기 조정 */
+.page-buttons .btn span {
+  font-size: 16px;
+  line-height: 1;
 }
 
 /* ==============================
