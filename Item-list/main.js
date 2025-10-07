@@ -1,48 +1,50 @@
-document.getElementById("item1").addEventListener("click", function () {
+// 🔹 1. Item detail navigation
+document.getElementById("item1").addEventListener("click", () => {
   window.location.href = "itemdetail.html";
 });
 
-// JS for Filter Popup
+// 🔹 2. Filter Popup
 const filterBtn = document.getElementById("filterBtn");
 const filterPopup = document.getElementById("filterPopup");
 const closePopup = document.getElementById("closePopup");
-const applyFilter = document.getElementById("applyFilter");
+const applyFilter = document.querySelector(".apply-btn");
 
-// 열기
-filterBtn.addEventListener("click", () => {
+// open
+filterBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
   filterPopup.style.display = "block";
 });
 
-// 닫기 (X)
+// close
 closePopup.addEventListener("click", () => {
   filterPopup.style.display = "none";
 });
 
-// Apply 누르면 닫힘
+// apply (close on click)
 applyFilter.addEventListener("click", () => {
   filterPopup.style.display = "none";
 });
 
-// 배경 클릭 시 닫기
+// close when clicking outside
 window.addEventListener("click", (event) => {
   if (event.target === filterPopup) {
     filterPopup.style.display = "none";
   }
 });
 
-// Sort dropdown toggle
-const sortButton = document.querySelectorAll(".dropdown-btn")[1]; // 2番目のボタン（Sort）
+// 🔹 3. Sort Dropdown
+const sortButton = document.querySelector(".sort-btn");
 const dropdownMenu = document.querySelector(".dropdown-menu");
 
-sortButton.addEventListener("click", function () {
+// open/close dropdown
+sortButton.addEventListener("click", (e) => {
+  e.stopPropagation(); // prevent window click from firing
   dropdownMenu.classList.toggle("show");
 });
 
-// Close dropdown when clicking outside
-document.addEventListener("click", function (event) {
-  const isClickInside = event.target.closest(".dropdown");
-
-  if (!isClickInside) {
+// close when clicking outside
+document.addEventListener("click", (event) => {
+  if (!event.target.closest(".dropdown")) {
     dropdownMenu.classList.remove("show");
   }
 });

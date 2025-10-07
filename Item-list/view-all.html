@@ -34,7 +34,39 @@
       <!-- Filter/Sort Section -->
       <section class="filter-sort">
         <button id="filterBtn">FILTER</button>
-        <button>SORT</button>
+        <div class="dropdown">
+          <button class="dropdown-btn sort-btn">SORT</button>
+          <div class="dropdown-menu">
+            <label
+              ><input
+                type="radio"
+                name="sort"
+                value="recommended"
+                checked
+              /><span>Recommended</span></label
+            >
+            <label
+              ><input type="radio" name="sort" value="recent" /><span
+                >Recently added</span
+              ></label
+            >
+            <label
+              ><input type="radio" name="sort" value="distance" /><span
+                >Distance</span
+              ></label
+            >
+            <label
+              ><input type="radio" name="sort" value="price-high" /><span
+                >$ High to Low</span
+              ></label
+            >
+            <label
+              ><input type="radio" name="sort" value="price-low" /><span
+                >$ Low to High</span
+              ></label
+            >
+          </div>
+        </div>
       </section>
 
       <!-- 🔽 Filter Popup (Initially hidden) -->
@@ -44,39 +76,6 @@
             <div class="dropdown">
               <button class="dropdown-btn">Filter</button>
             </div>
-            <div class="dropdown">
-              <button class="dropdown-btn">Sort</button>
-              <div class="dropdown-menu">
-                <label
-                  ><input
-                    type="radio"
-                    name="sort"
-                    value="recommended"
-                    checked
-                  /><span>Recommended</span></label
-                >
-                <label
-                  ><input type="radio" name="sort" value="recent" /><span
-                    >Recently added</span
-                  ></label
-                >
-                <label
-                  ><input type="radio" name="sort" value="distance" /><span
-                    >Distance</span
-                  ></label
-                >
-                <label
-                  ><input type="radio" name="sort" value="price-high" /><span
-                    >$ High to Low</span
-                  ></label
-                >
-                <label
-                  ><input type="radio" name="sort" value="price-low" /><span
-                    >$ Low to High</span
-                  ></label
-                >
-              </div>
-            </div>
           </div>
 
           <span class="close-popup" id="closePopup">&times;</span>
@@ -85,16 +84,18 @@
           <div class="filter-section">
             <h3>Category</h3>
             <div class="filter-options">
+              <button class="filter-btn">Tops</button>
               <button class="filter-btn">T-shirts</button>
               <button class="filter-btn">Hoodies</button>
-              <button class="filter-btn">Jeans</button>
-              <button class="filter-btn">Hoodies</button>
+              <button class="filter-btn">Sweaters</button>
               <button class="filter-btn">Jackets</button>
-              <button class="filter-btn">Trousers</button>
               <button class="filter-btn">Jeans</button>
-              <button class="filter-btn">Dress</button>
+              <button class="filter-btn">Trousers</button>
+              <button class="filter-btn">Dresses</button>
               <button class="filter-btn">Skirts</button>
               <button class="filter-btn">Shorts</button>
+              <button class="filter-btn">Shoes</button>
+              <button class="filter-btn">Bags</button>
             </div>
           </div>
 
@@ -110,12 +111,6 @@
               <button class="filter-btn">L</button>
               <button class="filter-btn">XL</button>
               <button class="filter-btn">XXL</button>
-              <button class="filter-btn">3S</button>
-              <button class="filter-btn">4S</button>
-              <button class="filter-btn">4Z</button>
-              <button class="filter-btn">6Z</button>
-              <button class="filter-btn">A4</button>
-              <button class="filter-btn">A6</button>
             </div>
           </div>
 
@@ -171,10 +166,6 @@
               <button class="filter-btn">Formal</button>
               <button class="filter-btn">Vintage</button>
               <button class="filter-btn">Dressy</button>
-              <button class="filter-btn">Vintage</button>
-              <button class="filter-btn">Dressy</button>
-              <button class="filter-btn">Casual</button>
-              <button class="filter-btn">Formal</button>
             </div>
           </div>
 
@@ -183,19 +174,19 @@
           <!-- Colour -->
           <div class="filter-section">
             <h3>Colour</h3>
-            <div class="filter-options">
-              <button class="filter-btn">XS</button>
-              <button class="filter-btn">S</button>
-              <button class="filter-btn">M</button>
-              <button class="filter-btn">L</button>
-              <button class="filter-btn">XL</button>
-              <button class="filter-btn">XXL</button>
-              <button class="filter-btn">3S</button>
-              <button class="filter-btn">4S</button>
-              <button class="filter-btn">4Z</button>
-              <button class="filter-btn">6Z</button>
-              <button class="filter-btn">A4</button>
-              <button class="filter-btn">A6</button>
+            <div class="filter-options colour-options">
+              <button class="filter-btn colour white">White</button>
+              <button class="filter-btn colour black">Black</button>
+              <button class="filter-btn colour beige">Beige</button>
+              <button class="filter-btn colour brown">Brown</button>
+              <button class="filter-btn colour grey">Grey</button>
+              <button class="filter-btn colour navy">Navy</button>
+              <button class="filter-btn colour blue">Blue</button>
+              <button class="filter-btn colour green">Green</button>
+              <button class="filter-btn colour yellow">Yellow</button>
+              <button class="filter-btn colour red">Red</button>
+              <button class="filter-btn colour pink">Pink</button>
+              <button class="filter-btn colour purple">Purple</button>
             </div>
           </div>
 
@@ -205,18 +196,18 @@
           <div class="filter-section">
             <h3>Material</h3>
             <div class="filter-options">
-              <button class="filter-btn">XS</button>
-              <button class="filter-btn">S</button>
-              <button class="filter-btn">M</button>
-              <button class="filter-btn">L</button>
-              <button class="filter-btn">XL</button>
-              <button class="filter-btn">XXL</button>
-              <button class="filter-btn">3S</button>
-              <button class="filter-btn">4S</button>
-              <button class="filter-btn">4Z</button>
-              <button class="filter-btn">6Z</button>
-              <button class="filter-btn">A4</button>
-              <button class="filter-btn">A6</button>
+              <button class="filter-btn">Cotton</button>
+              <button class="filter-btn">Linen</button>
+              <button class="filter-btn">Wool</button>
+              <button class="filter-btn">Silk</button>
+              <button class="filter-btn">Denim</button>
+              <button class="filter-btn">Leather</button>
+              <button class="filter-btn">Suede</button>
+              <button class="filter-btn">Nylon</button>
+              <button class="filter-btn">Polyester</button>
+              <button class="filter-btn">Velvet</button>
+              <button class="filter-btn">Corduroy</button>
+              <button class="filter-btn">Cashmere</button>
             </div>
           </div>
 
@@ -239,18 +230,18 @@
           <div class="filter-section">
             <h3>Brand</h3>
             <div class="filter-options">
-              <button class="filter-btn">XS</button>
-              <button class="filter-btn">S</button>
-              <button class="filter-btn">M</button>
-              <button class="filter-btn">L</button>
-              <button class="filter-btn">XL</button>
-              <button class="filter-btn">XXL</button>
-              <button class="filter-btn">3S</button>
-              <button class="filter-btn">4S</button>
-              <button class="filter-btn">4Z</button>
-              <button class="filter-btn">6Z</button>
-              <button class="filter-btn">A4</button>
-              <button class="filter-btn">A6</button>
+              <button class="filter-btn">Aritzia</button>
+              <button class="filter-btn">Oak + Fort</button>
+              <button class="filter-btn">Lululemon</button>
+              <button class="filter-btn">Reigning Champ</button>
+              <button class="filter-btn">Arc'teryx</button>
+              <button class="filter-btn">Frank And Oak</button>
+              <button class="filter-btn">Native Shoes</button>
+              <button class="filter-btn">Smash + Tess</button>
+              <button class="filter-btn">Kotn</button>
+              <button class="filter-btn">Ten Tree</button>
+              <button class="filter-btn">Encircled</button>
+              <button class="filter-btn">Matt & Nat</button>
             </div>
           </div>
 
