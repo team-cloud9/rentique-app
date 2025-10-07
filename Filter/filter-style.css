@@ -9,13 +9,12 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #fff;
-    display: flex;
-    justify-content: center;
 }
 
 .container {
     width: 100%;
     max-width: 1200px;
+    margin: 0 auto;
     background-color: #fff;
     display: flex;
     flex-direction: column;
@@ -26,8 +25,12 @@ body {
 header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     padding: 15px 30px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
 }
 
 .header-right {
@@ -36,7 +39,42 @@ header {
     gap: 20px;
 }
 
-header .logo {
+header .logo img {
+    width: 120px;
+    height: auto;
+    display: block;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+header nav ul li a:hover {
+    color: #000;
+}
+
+header .user {
+    font-weight: bold;
+    color: #333;
+}
+
+
+/* header .logo {
     width: 140px;
     height: 140px;
     background-color: var(--nyanza);
@@ -61,7 +99,7 @@ header nav ul li a {
     text-decoration: none;
     color: #666;
     font-weight: 500;
-}
+} */
 
 /* nav a {
     text-decoration: none;
@@ -74,6 +112,8 @@ header nav ul li a {
     font-size: 14px;
     color: #333;
 } */
+
+
 
 /* Main Filter Section */
 main {
