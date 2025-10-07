@@ -11,247 +11,252 @@
 </head>
 
 <body>
-    <!-- Header -->
-    <header>
-        <div class="logo">
-            <img src="logo.png" alt="Logo" />
-        </div>
-        <div class="header-right">
-            <nav>
-                <ul>
-                    <li><a href="#">SEARCH</a></li>
-                    <li><a href="#">CHAT LIST</a></li>
-                    <li><a href="#">PROFILE</a></li>
-                </ul>
-            </nav>
-            <div class="user">
-                <span>Hi, Chloe</span>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <img src="logo.png" alt="Logo" />
             </div>
-        </div>
-    </header>
-
-    <!-- Main Filter -->
-    <main>
-        <div class="filter-header">
-            <button class="dropdown-btn">Filter</button>
-            <button class="dropdown-btn">Sort</button>
-        </div>
-
-        <!-- Category -->
-        <div class="filter-section">
-            <h3>Category</h3>
-            <div class="filter-options">
-                <button class="filter-btn">T-shirts</button>
-                <button class="filter-btn">Hoodies</button>
-                <button class="filter-btn">Jeans</button>
-                <button class="filter-btn">Hoodies</button>
-                <button class="filter-btn">Jackets</button>
-                <button class="filter-btn">Trousers</button>
-                <button class="filter-btn">Jeans</button>
-                <button class="filter-btn">Dress</button>
-                <button class="filter-btn">Skirts</button>
-                <button class="filter-btn">Shorts</button>
-            </div>
-        </div>
-
-        <hr class="divider">
-
-        <!-- Size -->
-        <div class="filter-section">
-            <h3>Size</h3>
-            <div class="filter-options">
-                <button class="filter-btn">XS</button>
-                <button class="filter-btn">S</button>
-                <button class="filter-btn">M</button>
-                <button class="filter-btn">L</button>
-                <button class="filter-btn">XL</button>
-                <button class="filter-btn">XXL</button>
-                <button class="filter-btn">3S</button>
-                <button class="filter-btn">4S</button>
-                <button class="filter-btn">4Z</button>
-                <button class="filter-btn">6Z</button>
-                <button class="filter-btn">A4</button>
-                <button class="filter-btn">A6</button>
-            </div>
-        </div>
-
-        <hr class="divider">
-
-        <!-- Price Range -->
-        <div class="filter-section">
-            <h3>Price Range</h3>
-            <div class="range-container">
-                <div class="range-labels">
-                    <span>$10</span>
-                    <span>$120</span>
+            <div class="header-right">
+                <nav>
+                    <ul>
+                        <li><a href="#">SEARCH</a></li>
+                        <li><a href="#">CHAT LIST</a></li>
+                        <li><a href="#">PROFILE</a></li>
+                    </ul>
+                </nav>
+                <div class="user">
+                    <span>Hi, Chloe</span>
                 </div>
-                <input type="range" min="10" max="120" value="65" id="priceRange">
             </div>
-        </div>
+        </header>
 
-        <hr class="divider">
+        <!-- Main Filter -->
+        <main>
+            <div class="filter-header">
+                <button class="dropdown-btn">Filter</button>
+                <button class="dropdown-btn">Sort</button>
+            </div>
 
-        <!-- Distance -->
-        <div class="filter-section">
-            <h3>Distance</h3>
-            <div class="range-container">
-                <div class="range-labels">
-                    <span>0km</span>
-                    <span>+120km</span>
+            <!-- Category -->
+            <div class="filter-section">
+                <h3>Category</h3>
+                <div class="filter-options">
+                    <button class="filter-btn">T-shirts</button>
+                    <button class="filter-btn">Hoodies</button>
+                    <button class="filter-btn">Jeans</button>
+                    <button class="filter-btn">Hoodies</button>
+                    <button class="filter-btn">Jackets</button>
+                    <button class="filter-btn">Trousers</button>
+                    <button class="filter-btn">Jeans</button>
+                    <button class="filter-btn">Dress</button>
+                    <button class="filter-btn">Skirts</button>
+                    <button class="filter-btn">Shorts</button>
                 </div>
-                <input type="range" min="0" max="120" value="60" id="distanceRange">
             </div>
-        </div>
 
-        <hr class="divider">
+            <hr class="divider">
 
-        <!-- Occasion -->
-        <div class="filter-section">
-            <h3>Occasion</h3>
-            <div class="filter-options">
-                <button class="filter-btn">Vintage</button>
-                <button class="filter-btn">Dressy</button>
-                <button class="filter-btn">Casual</button>
-                <button class="filter-btn">Formal</button>
-                <button class="filter-btn">Vintage</button>
-                <button class="filter-btn">Dressy</button>
-                <button class="filter-btn">Vintage</button>
-                <button class="filter-btn">Dressy</button>
-                <button class="filter-btn">Casual</button>
-                <button class="filter-btn">Formal</button>
+            <!-- Size -->
+            <div class="filter-section">
+                <h3>Size</h3>
+                <div class="filter-options">
+                    <button class="filter-btn">XS</button>
+                    <button class="filter-btn">S</button>
+                    <button class="filter-btn">M</button>
+                    <button class="filter-btn">L</button>
+                    <button class="filter-btn">XL</button>
+                    <button class="filter-btn">XXL</button>
+                    <button class="filter-btn">3S</button>
+                    <button class="filter-btn">4S</button>
+                    <button class="filter-btn">4Z</button>
+                    <button class="filter-btn">6Z</button>
+                    <button class="filter-btn">A4</button>
+                    <button class="filter-btn">A6</button>
+                </div>
             </div>
-        </div>
 
-        <hr class="divider">
+            <hr class="divider">
 
-        <!-- Colour -->
-        <div class="filter-section">
-            <h3>Colour</h3>
-            <div class="filter-options">
-                <button class="filter-btn">XS</button>
-                <button class="filter-btn">S</button>
-                <button class="filter-btn">M</button>
-                <button class="filter-btn">L</button>
-                <button class="filter-btn">XL</button>
-                <button class="filter-btn">XXL</button>
-                <button class="filter-btn">3S</button>
-                <button class="filter-btn">4S</button>
-                <button class="filter-btn">4Z</button>
-                <button class="filter-btn">6Z</button>
-                <button class="filter-btn">A4</button>
-                <button class="filter-btn">A6</button>
+            <!-- Price Range -->
+            <div class="filter-section">
+                <h3>Price Range</h3>
+                <div class="range-container">
+                    <div class="range-labels">
+                        <span>$10</span>
+                        <span>$120</span>
+                    </div>
+                    <input type="range" min="10" max="120" value="65" id="priceRange">
+                </div>
             </div>
-        </div>
 
-        <hr class="divider">
+            <hr class="divider">
 
-        <!-- Material -->
-        <div class="filter-section">
-            <h3>Material</h3>
-            <div class="filter-options">
-                <button class="filter-btn">XS</button>
-                <button class="filter-btn">S</button>
-                <button class="filter-btn">M</button>
-                <button class="filter-btn">L</button>
-                <button class="filter-btn">XL</button>
-                <button class="filter-btn">XXL</button>
-                <button class="filter-btn">3S</button>
-                <button class="filter-btn">4S</button>
-                <button class="filter-btn">4Z</button>
-                <button class="filter-btn">6Z</button>
-                <button class="filter-btn">A4</button>
-                <button class="filter-btn">A6</button>
+            <!-- Distance -->
+            <div class="filter-section">
+                <h3>Distance</h3>
+                <div class="range-container">
+                    <div class="range-labels">
+                        <span>0km</span>
+                        <span>+120km</span>
+                    </div>
+                    <input type="range" min="0" max="120" value="60" id="distanceRange">
+                </div>
             </div>
-        </div>
 
-        <hr class="divider">
+            <hr class="divider">
 
-        <!-- Season -->
-        <div class="filter-section">
-            <h3>Season</h3>
-            <div class="filter-options">
-                <button class="filter-btn">Spring</button>
-                <button class="filter-btn">Summer</button>
-                <button class="filter-btn">Autumn</button>
-                <button class="filter-btn">Winter</button>
+            <!-- Occasion -->
+            <div class="filter-section">
+                <h3>Occasion</h3>
+                <div class="filter-options">
+                    <button class="filter-btn">Vintage</button>
+                    <button class="filter-btn">Dressy</button>
+                    <button class="filter-btn">Casual</button>
+                    <button class="filter-btn">Formal</button>
+                    <button class="filter-btn">Vintage</button>
+                    <button class="filter-btn">Dressy</button>
+                    <button class="filter-btn">Vintage</button>
+                    <button class="filter-btn">Dressy</button>
+                    <button class="filter-btn">Casual</button>
+                    <button class="filter-btn">Formal</button>
+                </div>
             </div>
-        </div>
 
-        <hr class="divider">
+            <hr class="divider">
 
-        <!-- Brand -->
-        <div class="filter-section">
-            <h3>Brand</h3>
-            <div class="filter-options">
-                <button class="filter-btn">XS</button>
-                <button class="filter-btn">S</button>
-                <button class="filter-btn">M</button>
-                <button class="filter-btn">L</button>
-                <button class="filter-btn">XL</button>
-                <button class="filter-btn">XXL</button>
-                <button class="filter-btn">3S</button>
-                <button class="filter-btn">4S</button>
-                <button class="filter-btn">4Z</button>
-                <button class="filter-btn">6Z</button>
-                <button class="filter-btn">A4</button>
-                <button class="filter-btn">A6</button>
+            <!-- Colour -->
+            <div class="filter-section">
+                <h3>Colour</h3>
+                <div class="filter-options">
+                    <button class="filter-btn">XS</button>
+                    <button class="filter-btn">S</button>
+                    <button class="filter-btn">M</button>
+                    <button class="filter-btn">L</button>
+                    <button class="filter-btn">XL</button>
+                    <button class="filter-btn">XXL</button>
+                    <button class="filter-btn">3S</button>
+                    <button class="filter-btn">4S</button>
+                    <button class="filter-btn">4Z</button>
+                    <button class="filter-btn">6Z</button>
+                    <button class="filter-btn">A4</button>
+                    <button class="filter-btn">A6</button>
+                </div>
             </div>
-        </div>
 
-        <hr class="divider">
+            <hr class="divider">
 
-        <!-- Gender -->
-        <div class="filter-section">
-            <h3>Gender</h3>
-            <div class="filter-options">
-                <button class="filter-btn">Women's</button>
-                <button class="filter-btn">Men's</button>
-                <button class="filter-btn">Unisex</button>
+            <!-- Material -->
+            <div class="filter-section">
+                <h3>Material</h3>
+                <div class="filter-options">
+                    <button class="filter-btn">XS</button>
+                    <button class="filter-btn">S</button>
+                    <button class="filter-btn">M</button>
+                    <button class="filter-btn">L</button>
+                    <button class="filter-btn">XL</button>
+                    <button class="filter-btn">XXL</button>
+                    <button class="filter-btn">3S</button>
+                    <button class="filter-btn">4S</button>
+                    <button class="filter-btn">4Z</button>
+                    <button class="filter-btn">6Z</button>
+                    <button class="filter-btn">A4</button>
+                    <button class="filter-btn">A6</button>
+                </div>
             </div>
-        </div>
 
-        <button class="apply-btn">Apply</button>
-    </main>
+            <hr class="divider">
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-logo">
-            <img src="logo.png" alt="Logo" />
-            <p>
-                Sed facilis adipisci non quia inventore ut consequatur laudantium eos
-                voluptatem beatae et nemo nostrum et nihil ad.
-            </p>
-        </div>
-        <div class="footer-links">
-            <div>
-                <h3>SEARCH</h3>
-                <ul>
-                    <li><a href="#">Lorem ipsum dolor</a></li>
-                    <li><a href="#">Lorem ipsum dolor</a></li>
-                    <li><a href="#">Lorem ipsum dolor</a></li>
-                    <li><a href="#">Lorem ipsum dolor</a></li>
-                </ul>
+            <!-- Season -->
+            <div class="filter-section">
+                <h3>Season</h3>
+                <div class="filter-options">
+                    <button class="filter-btn">Spring</button>
+                    <button class="filter-btn">Summer</button>
+                    <button class="filter-btn">Autumn</button>
+                    <button class="filter-btn">Winter</button>
+                </div>
             </div>
-            <div>
-                <h3>CHAT LIST</h3>
-                <ul>
-                    <li><a href="#">Lorem ipsum dolor</a></li>
-                    <li><a href="#">Lorem ipsum dolor</a></li>
-                    <li><a href="#">Lorem ipsum dolor</a></li>
-                    <li><a href="#">Lorem ipsum dolor</a></li>
-                </ul>
+
+            <hr class="divider">
+
+            <!-- Brand -->
+            <div class="filter-section">
+                <h3>Brand</h3>
+                <div class="filter-options">
+                    <button class="filter-btn">XS</button>
+                    <button class="filter-btn">S</button>
+                    <button class="filter-btn">M</button>
+                    <button class="filter-btn">L</button>
+                    <button class="filter-btn">XL</button>
+                    <button class="filter-btn">XXL</button>
+                    <button class="filter-btn">3S</button>
+                    <button class="filter-btn">4S</button>
+                    <button class="filter-btn">4Z</button>
+                    <button class="filter-btn">6Z</button>
+                    <button class="filter-btn">A4</button>
+                    <button class="filter-btn">A6</button>
+                </div>
             </div>
-            <div>
-                <h3>PROFILE</h3>
-                <ul>
-                    <li><a href="#">Lorem ipsum dolor</a></li>
-                    <li><a href="#">Lorem ipsum dolor</a></li>
-                    <li><a href="#">Lorem ipsum dolor</a></li>
-                    <li><a href="#">Lorem ipsum dolor</a></li>
-                </ul>
+
+            <hr class="divider">
+
+            <!-- Gender -->
+            <div class="filter-section">
+                <h3>Gender</h3>
+                <div class="filter-options">
+                    <button class="filter-btn">Women's</button>
+                    <button class="filter-btn">Men's</button>
+                    <button class="filter-btn">Unisex</button>
+                </div>
             </div>
-        </div>
-    </footer>
+            <div class="apply">
+                <button class="apply-btn">Apply</button>
+            </div>
+        </main>
+
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-logo">
+                <img src="logo.png" alt="Logo" />
+                <p>
+                    Sed facilis adipisci non quia inventore ut consequatur laudantium eos
+                    voluptatem beatae et nemo nostrum et nihil ad.
+                </p>
+            </div>
+            <div class="footer-links">
+                <div>
+                    <h3>SEARCH</h3>
+                    <ul>
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>CHAT LIST</h3>
+                    <ul>
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>PROFILE</h3>
+                    <ul>
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
+
 
 </html>
