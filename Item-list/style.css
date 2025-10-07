@@ -89,6 +89,122 @@ header .user {
   transition: color 0.2s ease;
 }
 
+/* 🔹 Modal Overlay */
+.filter-modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* dim background */
+  overflow-y: auto;
+}
+
+/* 🔹 Modal Box */
+.filter-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 2rem 3rem;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 800px;
+  animation: fadeIn 0.3s ease;
+  position: relative;
+}
+
+/* Close (X) Button */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Section titles */
+.filter-section {
+  margin-bottom: 2rem;
+}
+
+.filter-section h3 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Buttons (tags) */
+.filter-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-tags button {
+  border: 1px solid #ccc;
+  background: transparent;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-tags button.active {
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.filter-tags button:hover {
+  border-color: #555;
+}
+
+/* Range slider */
+.range {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.range input[type="range"] {
+  width: 100%;
+}
+
+/* Apply Button */
+.apply-container {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.apply-btn {
+  border: none;
+  background: #000;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.apply-btn:hover {
+  background: #333;
+}
+
+/* Simple fade animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Swipe Section */
 .swipe-style h2 {
   font-size: 22px;
