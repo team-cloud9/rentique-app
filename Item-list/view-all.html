@@ -31,283 +31,469 @@
 
     <!-- Main -->
     <main class="container">
-        <!-- Filter/Sort Section -->
-        <section class="filter-sort">
-          <button id="filterBtn">FILTER</button>
-          <button>SORT</button>
-        </section>
+      <!-- Filter/Sort Section -->
+      <section class="filter-sort">
+        <button id="filterBtn">FILTER</button>
+        <button>SORT</button>
+      </section>
 
-        <!-- 🔽 Filter Popup (Initially hidden) -->
-<div class="filter-modal" id="filterModal">
-  <div class="filter-content">
-    <span class="close-btn" id="closeFilter">&times;</span>
-    <h2>Filter Options</h2>
-
-    <!-- Category -->
-    <div class="filter-section">
-      <h3>Category</h3>
-      <div class="filter-tags">
-        <button>T-shirts</button>
-        <button class="active">Jackets</button>
-        <button>Shirts</button>
-        <button>Hoodies</button>
-        <button>Sweatshirts</button>
-      </div>
-    </div>
-
-    <!-- Size -->
-    <div class="filter-section">
-      <h3>Size</h3>
-      <div class="filter-tags">
-        <button>XS</button>
-        <button class="active">S</button>
-        <button>M</button>
-        <button>L</button>
-        <button>XL</button>
-      </div>
-    </div>
-
-    <!-- Range Example -->
-    <div class="filter-section">
-      <h3>Price Range</h3>
-      <div class="range">
-        <span>$60</span>
-        <input type="range" min="0" max="120" value="60" />
-        <span>$120</span>
-      </div>
-    </div>
-
-    <!-- Apply Button -->
-    <div class="apply-container">
-      <button class="apply-btn">Apply</button>
-    </div>
-  </div>
-</div>
-
-        <!-- Swipe Your Style Section -->
-        <section class="swipe-style">
-          <h2>SWIPE YOUR STYLE</h2>
-          <p>Discover your style in every swipe</p>
-          <div class="swipe-items">
-            <img class="item" id="item1" src="photo.jpg" alt="click image" />
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-          </div>
-        </section>
-
-        <!-- Recommended Item List Section -->
-        <section class="item-list">
-          <h2>This may interest you:</h2>
-          <div class="list-items">
-            <div class="card">
-              <div class="img">
-                <img src="images/item1.jpg" alt="Item 1" />
-              </div>
-              <p class="name">Classic Jacket</p>
-              <p class="desc">Warm and stylish winter wear</p>
-              <p class="price">$120</p>
+      <!-- 🔽 Filter Popup (Initially hidden) -->
+      <div class="popup-container" id="filterPopup">
+        <div class="popup-content">
+          <div class="filter-header">
+            <div class="dropdown">
+              <button class="dropdown-btn">Filter</button>
             </div>
-
-            <div class="card">
-              <div class="img">
-                <img src="images/item2.jpg" alt="Item 2" />
+            <div class="dropdown">
+              <button class="dropdown-btn">Sort</button>
+              <div class="dropdown-menu">
+                <label
+                  ><input
+                    type="radio"
+                    name="sort"
+                    value="recommended"
+                    checked
+                  /><span>Recommended</span></label
+                >
+                <label
+                  ><input type="radio" name="sort" value="recent" /><span
+                    >Recently added</span
+                  ></label
+                >
+                <label
+                  ><input type="radio" name="sort" value="distance" /><span
+                    >Distance</span
+                  ></label
+                >
+                <label
+                  ><input type="radio" name="sort" value="price-high" /><span
+                    >$ High to Low</span
+                  ></label
+                >
+                <label
+                  ><input type="radio" name="sort" value="price-low" /><span
+                    >$ Low to High</span
+                  ></label
+                >
               </div>
-              <p class="name">Casual Sneakers</p>
-              <p class="desc">Comfortable everyday shoes</p>
-              <p class="price">$85</p>
-            </div>
-
-            <div class="card">
-              <div class="img">
-                <img src="images/item3.jpg" alt="Item 3" />
-              </div>
-              <p class="name">Denim Jeans</p>
-              <p class="desc">Slim fit blue denim</p>
-              <p class="price">$65</p>
-            </div>
-
-            <div class="card">
-              <div class="img">
-                <img src="images/item4.jpg" alt="Item 4" />
-              </div>
-              <p class="name">Leather Bag</p>
-              <p class="desc">Durable and trendy design</p>
-              <p class="price">$150</p>
-            </div>
-
-            <div class="card">
-              <div class="img">
-                <img src="images/item5.jpg" alt="Item 5" />
-              </div>
-              <p class="name">Leather Bag</p>
-              <p class="desc">Durable and trendy design</p>
-              <p class="price">$150</p>
-            </div>
-
-            <div class="card">
-              <div class="img">
-                <img src="images/item6.jpg" alt="Item 6" />
-              </div>
-              <p class="name">Leather Bag</p>
-              <p class="desc">Durable and trendy design</p>
-              <p class="price">$150</p>
-            </div>
-
-            <div class="card">
-              <div class="img">
-                <img src="images/item7.jpg" alt="Item 7" />
-              </div>
-              <p class="name">Leather Bag</p>
-              <p class="desc">Durable and trendy design</p>
-              <p class="price">$150</p>
-            </div>
-
-            <div class="card">
-              <div class="img">
-                <img src="images/item8.jpg" alt="Item 8" />
-              </div>
-              <p class="name">Leather Bag</p>
-              <p class="desc">Durable and trendy design</p>
-              <p class="price">$150</p>
-            </div>
-
-            <div class="card">
-              <div class="img">
-                <img src="images/item9.jpg" alt="Item 9" />
-              </div>
-              <p class="name">Leather Bag</p>
-              <p class="desc">Durable and trendy design</p>
-              <p class="price">$150</p>
-            </div>
-
-            <div class="card">
-              <div class="img">
-                <img src="images/item10.jpg" alt="Item 10" />
-              </div>
-              <p class="name">Leather Bag</p>
-              <p class="desc">Durable and trendy design</p>
-              <p class="price">$150</p>
-            </div>
-
-            <div class="card">
-              <div class="img">
-                <img src="images/item11.jpg" alt="Item 12" />
-              </div>
-              <p class="name">Leather Bag</p>
-              <p class="desc">Durable and trendy design</p>
-              <p class="price">$150</p>
-            </div>
-
-            <div class="card">
-              <div class="img">
-                <img src="images/item12.jpg" alt="Item 12" />
-              </div>
-              <p class="name">Leather Bag</p>
-              <p class="desc">Durable and trendy design</p>
-              <p class="price">$150</p>
-            </div>
-
-            <div class="card">
-              <div class="img">
-                <img src="images/item13.jpg" alt="Item 13" />
-              </div>
-              <p class="name">Leather Bag</p>
-              <p class="desc">Durable and trendy design</p>
-              <p class="price">$150</p>
-            </div>
-
-            <div class="card">
-              <div class="img">
-                <img src="images/item14.jpg" alt="Item 14" />
-              </div>
-              <p class="name">Leather Bag</p>
-              <p class="desc">Durable and trendy design</p>
-              <p class="price">$150</p>
-            </div>
-
-            <div class="card">
-              <div class="img">
-                <img src="images/item15.jpg" alt="Item 15" />
-              </div>
-              <p class="name">Leather Bag</p>
-              <p class="desc">Durable and trendy design</p>
-              <p class="price">$150</p>
-            </div>
-
-            <div class="card">
-              <div class="img">
-                <img src="images/item16.jpg" alt="Item 16" />
-              </div>
-              <p class="name">Leather Bag</p>
-              <p class="desc">Durable and trendy design</p>
-              <p class="price">$150</p>
             </div>
           </div>
-        </section>
 
-        <!-- Pagination -->
-        <div class="pagination">
-          <div class="page-numbers">
-            <a href="#" class="prev">&lt;</a>
-            <a href="#" class="page active">1</a>
-            <a href="#" class="page">2</a>
-            <a href="#" class="page">3</a>
-            <span>...</span>
-            <a href="#" class="page">7</a>
-            <a href="#" class="next">&gt;</a>
+          <span class="close-popup" id="closePopup">&times;</span>
+
+          <!-- Category -->
+          <div class="filter-section">
+            <h3>Category</h3>
+            <div class="filter-options">
+              <button class="filter-btn">T-shirts</button>
+              <button class="filter-btn">Hoodies</button>
+              <button class="filter-btn">Jeans</button>
+              <button class="filter-btn">Hoodies</button>
+              <button class="filter-btn">Jackets</button>
+              <button class="filter-btn">Trousers</button>
+              <button class="filter-btn">Jeans</button>
+              <button class="filter-btn">Dress</button>
+              <button class="filter-btn">Skirts</button>
+              <button class="filter-btn">Shorts</button>
+            </div>
           </div>
 
-          <div class="page-buttons">
-            <button class="btn prev-btn"><span>&lt;</span> Previous</button>
-            <button class="btn next-btn">Next <span>&gt;</span></button>
-          </div>
-        </div>
-      </main>
+          <hr class="divider" />
 
-      <!-- Footer -->
-      <footer>
-        <div class="footer-inner">
-          <div class="footer-logo">
-            <div class="brand">
-              <img src="../assets/logo_rentique.svg" alt="Logo" />
-              <span class="brand-name">RENTIQUE</span>
+          <!-- Size -->
+          <div class="filter-section">
+            <h3>Size</h3>
+            <div class="filter-options">
+              <button class="filter-btn">XS</button>
+              <button class="filter-btn">S</button>
+              <button class="filter-btn">M</button>
+              <button class="filter-btn">L</button>
+              <button class="filter-btn">XL</button>
+              <button class="filter-btn">XXL</button>
+              <button class="filter-btn">3S</button>
+              <button class="filter-btn">4S</button>
+              <button class="filter-btn">4Z</button>
+              <button class="filter-btn">6Z</button>
+              <button class="filter-btn">A4</button>
+              <button class="filter-btn">A6</button>
             </div>
-            <p>Sed facilis adipisci non quia inventore ut.</p>
           </div>
-          <div class="footer-links">
-            <div>
-              <h3>SEARCH</h3>
-              <ul>
-                <li><a href="#">Lorem ipsum dolor</a></li>
-                <li><a href="#">Lorem ipsum dolor</a></li>
-                <li><a href="#">Lorem ipsum dolor</a></li>
-                <li><a href="#">Lorem ipsum dolor</a></li>
-              </ul>
+
+          <hr class="divider" />
+
+          <!-- Price Range -->
+          <div class="filter-section">
+            <h3>Price Range</h3>
+            <div class="range-container">
+              <div class="range-labels">
+                <span>$10</span>
+                <span>$120</span>
+              </div>
+              <input
+                type="range"
+                min="10"
+                max="120"
+                value="65"
+                id="priceRange"
+              />
             </div>
-            <div>
-              <h3>CHAT LIST</h3>
-              <ul>
-                <li><a href="#">Lorem ipsum dolor</a></li>
-                <li><a href="#">Lorem ipsum dolor</a></li>
-                <li><a href="#">Lorem ipsum dolor</a></li>
-                <li><a href="#">Lorem ipsum dolor</a></li>
-              </ul>
+          </div>
+
+          <hr class="divider" />
+
+          <!-- Distance -->
+          <div class="filter-section">
+            <h3>Distance</h3>
+            <div class="range-container">
+              <div class="range-labels">
+                <span>0km</span>
+                <span>+120km</span>
+              </div>
+              <input
+                type="range"
+                min="0"
+                max="120"
+                value="60"
+                id="distanceRange"
+              />
             </div>
-            <div>
-              <h3>PROFILE</h3>
-              <ul>
-                <li><a href="#">Lorem ipsum dolor</a></li>
-                <li><a href="#">Lorem ipsum dolor</a></li>
-                <li><a href="#">Lorem ipsum dolor</a></li>
-                <li><a href="#">Lorem ipsum dolor</a></li>
-              </ul>
+          </div>
+
+          <hr class="divider" />
+
+          <!-- Occasion -->
+          <div class="filter-section">
+            <h3>Occasion</h3>
+            <div class="filter-options">
+              <button class="filter-btn">Vintage</button>
+              <button class="filter-btn">Dressy</button>
+              <button class="filter-btn">Casual</button>
+              <button class="filter-btn">Formal</button>
+              <button class="filter-btn">Vintage</button>
+              <button class="filter-btn">Dressy</button>
+              <button class="filter-btn">Vintage</button>
+              <button class="filter-btn">Dressy</button>
+              <button class="filter-btn">Casual</button>
+              <button class="filter-btn">Formal</button>
             </div>
+          </div>
+
+          <hr class="divider" />
+
+          <!-- Colour -->
+          <div class="filter-section">
+            <h3>Colour</h3>
+            <div class="filter-options">
+              <button class="filter-btn">XS</button>
+              <button class="filter-btn">S</button>
+              <button class="filter-btn">M</button>
+              <button class="filter-btn">L</button>
+              <button class="filter-btn">XL</button>
+              <button class="filter-btn">XXL</button>
+              <button class="filter-btn">3S</button>
+              <button class="filter-btn">4S</button>
+              <button class="filter-btn">4Z</button>
+              <button class="filter-btn">6Z</button>
+              <button class="filter-btn">A4</button>
+              <button class="filter-btn">A6</button>
+            </div>
+          </div>
+
+          <hr class="divider" />
+
+          <!-- Material -->
+          <div class="filter-section">
+            <h3>Material</h3>
+            <div class="filter-options">
+              <button class="filter-btn">XS</button>
+              <button class="filter-btn">S</button>
+              <button class="filter-btn">M</button>
+              <button class="filter-btn">L</button>
+              <button class="filter-btn">XL</button>
+              <button class="filter-btn">XXL</button>
+              <button class="filter-btn">3S</button>
+              <button class="filter-btn">4S</button>
+              <button class="filter-btn">4Z</button>
+              <button class="filter-btn">6Z</button>
+              <button class="filter-btn">A4</button>
+              <button class="filter-btn">A6</button>
+            </div>
+          </div>
+
+          <hr class="divider" />
+
+          <!-- Season -->
+          <div class="filter-section">
+            <h3>Season</h3>
+            <div class="filter-options">
+              <button class="filter-btn">Spring</button>
+              <button class="filter-btn">Summer</button>
+              <button class="filter-btn">Autumn</button>
+              <button class="filter-btn">Winter</button>
+            </div>
+          </div>
+
+          <hr class="divider" />
+
+          <!-- Brand -->
+          <div class="filter-section">
+            <h3>Brand</h3>
+            <div class="filter-options">
+              <button class="filter-btn">XS</button>
+              <button class="filter-btn">S</button>
+              <button class="filter-btn">M</button>
+              <button class="filter-btn">L</button>
+              <button class="filter-btn">XL</button>
+              <button class="filter-btn">XXL</button>
+              <button class="filter-btn">3S</button>
+              <button class="filter-btn">4S</button>
+              <button class="filter-btn">4Z</button>
+              <button class="filter-btn">6Z</button>
+              <button class="filter-btn">A4</button>
+              <button class="filter-btn">A6</button>
+            </div>
+          </div>
+
+          <hr class="divider" />
+
+          <!-- Gender -->
+          <div class="filter-section">
+            <h3>Gender</h3>
+            <div class="filter-options">
+              <button class="filter-btn">Women's</button>
+              <button class="filter-btn">Men's</button>
+              <button class="filter-btn">Unisex</button>
+            </div>
+          </div>
+          <div class="apply">
+            <button class="apply-btn">Apply</button>
           </div>
         </div>
-      </footer>
-    </div>
+      </div>
+
+      <!-- Swipe Your Style Section -->
+      <section class="swipe-style">
+        <h2>SWIPE YOUR STYLE</h2>
+        <p>Discover your style in every swipe</p>
+        <div class="swipe-items">
+          <img class="item" id="item1" src="photo.jpg" alt="click image" />
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+        </div>
+      </section>
+
+      <!-- Recommended Item List Section -->
+      <section class="item-list">
+        <h2>This may interest you:</h2>
+        <div class="list-items">
+          <div class="card">
+            <div class="img">
+              <img src="images/item1.jpg" alt="Item 1" />
+            </div>
+            <p class="name">Classic Jacket</p>
+            <p class="desc">Warm and stylish winter wear</p>
+            <p class="price">$120</p>
+          </div>
+
+          <div class="card">
+            <div class="img">
+              <img src="images/item2.jpg" alt="Item 2" />
+            </div>
+            <p class="name">Casual Sneakers</p>
+            <p class="desc">Comfortable everyday shoes</p>
+            <p class="price">$85</p>
+          </div>
+
+          <div class="card">
+            <div class="img">
+              <img src="images/item3.jpg" alt="Item 3" />
+            </div>
+            <p class="name">Denim Jeans</p>
+            <p class="desc">Slim fit blue denim</p>
+            <p class="price">$65</p>
+          </div>
+
+          <div class="card">
+            <div class="img">
+              <img src="images/item4.jpg" alt="Item 4" />
+            </div>
+            <p class="name">Leather Bag</p>
+            <p class="desc">Durable and trendy design</p>
+            <p class="price">$150</p>
+          </div>
+
+          <div class="card">
+            <div class="img">
+              <img src="images/item5.jpg" alt="Item 5" />
+            </div>
+            <p class="name">Leather Bag</p>
+            <p class="desc">Durable and trendy design</p>
+            <p class="price">$150</p>
+          </div>
+
+          <div class="card">
+            <div class="img">
+              <img src="images/item6.jpg" alt="Item 6" />
+            </div>
+            <p class="name">Leather Bag</p>
+            <p class="desc">Durable and trendy design</p>
+            <p class="price">$150</p>
+          </div>
+
+          <div class="card">
+            <div class="img">
+              <img src="images/item7.jpg" alt="Item 7" />
+            </div>
+            <p class="name">Leather Bag</p>
+            <p class="desc">Durable and trendy design</p>
+            <p class="price">$150</p>
+          </div>
+
+          <div class="card">
+            <div class="img">
+              <img src="images/item8.jpg" alt="Item 8" />
+            </div>
+            <p class="name">Leather Bag</p>
+            <p class="desc">Durable and trendy design</p>
+            <p class="price">$150</p>
+          </div>
+
+          <div class="card">
+            <div class="img">
+              <img src="images/item9.jpg" alt="Item 9" />
+            </div>
+            <p class="name">Leather Bag</p>
+            <p class="desc">Durable and trendy design</p>
+            <p class="price">$150</p>
+          </div>
+
+          <div class="card">
+            <div class="img">
+              <img src="images/item10.jpg" alt="Item 10" />
+            </div>
+            <p class="name">Leather Bag</p>
+            <p class="desc">Durable and trendy design</p>
+            <p class="price">$150</p>
+          </div>
+
+          <div class="card">
+            <div class="img">
+              <img src="images/item11.jpg" alt="Item 12" />
+            </div>
+            <p class="name">Leather Bag</p>
+            <p class="desc">Durable and trendy design</p>
+            <p class="price">$150</p>
+          </div>
+
+          <div class="card">
+            <div class="img">
+              <img src="images/item12.jpg" alt="Item 12" />
+            </div>
+            <p class="name">Leather Bag</p>
+            <p class="desc">Durable and trendy design</p>
+            <p class="price">$150</p>
+          </div>
+
+          <div class="card">
+            <div class="img">
+              <img src="images/item13.jpg" alt="Item 13" />
+            </div>
+            <p class="name">Leather Bag</p>
+            <p class="desc">Durable and trendy design</p>
+            <p class="price">$150</p>
+          </div>
+
+          <div class="card">
+            <div class="img">
+              <img src="images/item14.jpg" alt="Item 14" />
+            </div>
+            <p class="name">Leather Bag</p>
+            <p class="desc">Durable and trendy design</p>
+            <p class="price">$150</p>
+          </div>
+
+          <div class="card">
+            <div class="img">
+              <img src="images/item15.jpg" alt="Item 15" />
+            </div>
+            <p class="name">Leather Bag</p>
+            <p class="desc">Durable and trendy design</p>
+            <p class="price">$150</p>
+          </div>
+
+          <div class="card">
+            <div class="img">
+              <img src="images/item16.jpg" alt="Item 16" />
+            </div>
+            <p class="name">Leather Bag</p>
+            <p class="desc">Durable and trendy design</p>
+            <p class="price">$150</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <div class="page-numbers">
+          <a href="#" class="prev">&lt;</a>
+          <a href="#" class="page active">1</a>
+          <a href="#" class="page">2</a>
+          <a href="#" class="page">3</a>
+          <span>...</span>
+          <a href="#" class="page">7</a>
+          <a href="#" class="next">&gt;</a>
+        </div>
+
+        <div class="page-buttons">
+          <button class="btn prev-btn"><span>&lt;</span> Previous</button>
+          <button class="btn next-btn">Next <span>&gt;</span></button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <div class="brand">
+            <img src="../assets/logo_rentique.svg" alt="Logo" />
+            <span class="brand-name">RENTIQUE</span>
+          </div>
+          <p>Sed facilis adipisci non quia inventore ut.</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h3>SEARCH</h3>
+            <ul>
+              <li><a href="#">Lorem ipsum dolor</a></li>
+              <li><a href="#">Lorem ipsum dolor</a></li>
+              <li><a href="#">Lorem ipsum dolor</a></li>
+              <li><a href="#">Lorem ipsum dolor</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>CHAT LIST</h3>
+            <ul>
+              <li><a href="#">Lorem ipsum dolor</a></li>
+              <li><a href="#">Lorem ipsum dolor</a></li>
+              <li><a href="#">Lorem ipsum dolor</a></li>
+              <li><a href="#">Lorem ipsum dolor</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>PROFILE</h3>
+            <ul>
+              <li><a href="#">Lorem ipsum dolor</a></li>
+              <li><a href="#">Lorem ipsum dolor</a></li>
+              <li><a href="#">Lorem ipsum dolor</a></li>
+              <li><a href="#">Lorem ipsum dolor</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
