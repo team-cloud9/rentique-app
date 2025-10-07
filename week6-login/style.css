@@ -1,4 +1,4 @@
-/* Reset and Base */
+
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +12,7 @@ body {
   background-color: #fff;
 }
 
-/* Header */
+
 header {
   display: flex;
   justify-content: flex-end;
@@ -25,12 +25,14 @@ header .user {
   font-weight: bold;
 }
 
-/* Login Form */
+
 .login-container {
   max-width: 400px;
   margin: 60px auto;
   padding: 30px;
   border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fafafa;
 }
 
 .login-container h2 {
@@ -100,7 +102,7 @@ header .user {
   text-decoration: underline;
 }
 
-/* Footer */
+
 footer {
   background-color: #222;
   color: #fff;
