@@ -710,7 +710,7 @@ input[type="range"]::-moz-range-thumb {
 
 .chat-button {
   width: 100%;
-  padding: 15px;
+  padding: 1rem;
   background: #000;
   color: #fff;
   border: none;
@@ -720,6 +720,7 @@ input[type="range"]::-moz-range-thumb {
   letter-spacing: 0.5px;
   cursor: pointer;
   margin-top: 30px;
+  margin-bottom: 30px;
   transition: background 0.2s;
 }
 
