@@ -48,3 +48,17 @@ document.addEventListener("click", (event) => {
     dropdownMenu.classList.remove("show");
   }
 });
+
+
+// Filter button toggle
+document.querySelectorAll(".filter-btn").forEach((btn) => {
+  btn.addEventListener("click", function () {
+    this.classList.toggle("active");
+  });
+});
+
+// Apply button
+document.querySelector(".apply-btn").addEventListener("click", function () {
+  const activeFilters = document.querySelectorAll(".filter-btn.active");
+  alert("Applied " + activeFilters.length + " filters!");
+});
