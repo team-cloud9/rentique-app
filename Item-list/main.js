@@ -1,9 +1,9 @@
-// 🔹 1. Item detail navigation
+// Item detail navigation
 document.getElementById("item1").addEventListener("click", () => {
   window.location.href = "itemdetail.html";
 });
 
-// 🔹 2. Filter Popup
+// Filter Popup
 const filterBtn = document.getElementById("filterBtn");
 const filterPopup = document.getElementById("filterPopup");
 const closePopup = document.getElementById("closePopup");
@@ -48,7 +48,6 @@ document.addEventListener("click", (event) => {
     dropdownMenu.classList.remove("show");
   }
 });
-
 
 // Filter button toggle
 document.querySelectorAll(".filter-btn").forEach((btn) => {
