@@ -19,11 +19,12 @@ body {
 .container {
   width: 100%;
   max-width: 1200px;
-  padding: 0 3rem;
+  padding: 3rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  align-items: center;
 }
 
 /* ==============================
@@ -74,6 +75,9 @@ header .user {
 /* ==============================
    MAIN CONTENT
 ============================== */
+main>section {
+  width: 100%;
+}
 
 .filter-sort {
   display: flex;
@@ -227,8 +231,14 @@ header .user {
   margin-bottom: 2rem;
 }
 
+/* .list-items{
+display: grid;
+grid-template-columns: repeat();
+} */
+
+
 .card {
-  width: 220px;
+  width: 250px;
   background: var(--surface);
   padding: 10px;
   text-align: center;
@@ -274,6 +284,17 @@ header .user {
   font-size: 13px;
   font-weight: bold;
   color: var(--text-secondary);
+}
+
+.view-all {
+  text-align: center;
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+
+  a {
+    color: var(--text-primary);
+    font-size: 25px;
+  }
 }
 
 /* ==============================
@@ -395,6 +416,10 @@ footer .footer-logo img {
   margin-bottom: 10px;
   font-size: 14px;
   font-weight: bold;
+}
+
+.footer-links li {
+  list-style: none;
 }
 
 .footer-links a {
