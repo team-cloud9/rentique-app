@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rentique - Questionnaire</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="questionnaire.css">
+</head>
+<body>
+  <div class="questionnaire">
+        <!-- Progress bar -->
+    <div class="progress">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar active"></div>
+    </div>
+
+
+    <h2>Questionnaire</h2>
+
+    <h3>What’s your favourite style?</h3>
+    <div class="options-grid">
+      <input type="checkbox" id="vintage1"><label for="vintage1">Vintage</label>
+      <input type="checkbox" id="dressy1"><label for="dressy1">Dressy</label>
+      <input type="checkbox" id="casual1"><label for="casual1">Casual</label>
+      <input type="checkbox" id="formal1"><label for="formal1">Formal</label>
+    </div>
+
+    <h3>What style clothes want to try?</h3>
+    <div class="options-grid">
+      <input type="checkbox" id="vintage2"><label for="vintage2">Vintage</label>
+      <input type="checkbox" id="dressy2"><label for="dressy2">Dressy</label>
+      <input type="checkbox" id="casual2"><label for="casual2">Casual</label>
+      <input type="checkbox" id="formal2"><label for="formal2">Formal</label>
+    </div>
+
+    <form action="done.html" class="form-section">
+    <button href="done.html" type="submit" class="continue-btn">DONE</button>
+    <p class="note">You can update this anytime from your home.</p>
+    </form>
+  </div>
+</body>
+</html>
