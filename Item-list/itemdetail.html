@@ -14,12 +14,14 @@
   <!-- Header -->
   <header>
     <div class="logo">
-      <img src="../assets/logo_rentique.svg" alt="Logo" />
+      <a href="home.html">
+        <img src="../assets/logo_rentique.svg" alt="Logo" />
+      </a>
     </div>
     <div class="header-right">
       <nav>
         <ul>
-          <li><a href="#">SEARCH</a></li>
+          <li><a href="view-all.html">BROWSE</a></li>
           <li><a href="#">CHAT LIST</a></li>
           <li><a href="#">PROFILE</a></li>
         </ul>
@@ -53,9 +55,49 @@
         <p>Brand name</p>
       </div>
 
-      <div class="filter-section">
-        <h3>Colour</h3>
-        <div class="filter-options">
+      <div class="filter-section dropdown">
+        <div class="dropdown-header">
+          <h3>Colour</h3>
+          <span class="arrow">▼</span>
+        </div>
+
+        <div class="dropdown-content">
+          <div class="filter-btn color-btn">
+            <span class="color-circle" style="background-color:#a4c8f0;"></span>
+            <span>Blue</span>
+          </div>
+          <div class="filter-btn color-btn">
+            <span class="color-circle" style="background-color:#f0f0f0;"></span>
+            <span>White</span>
+          </div>
+          <div class="filter-btn color-btn">
+            <span class="color-circle" style="background-color:#000;"></span>
+            <span>Black</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="filter-section dropdown">
+        <div class="dropdown-header">
+          <h3>Colour</h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="dropdown-content">
+          <button class="filter-btn">XS</button>
+          <button class="filter-btn">S</button>
+          <button class="filter-btn">M</button>
+          <button class="filter-btn">L</button>
+          <button class="filter-btn">XL</button>
+          <button class="filter-btn">XXL</button>
+        </div>
+      </div> -->
+
+      <div class="filter-section dropdown">
+        <div class="dropdown-header">
+          <h3>Size</h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="dropdown-content">
           <button class="filter-btn">XS</button>
           <button class="filter-btn">S</button>
           <button class="filter-btn">M</button>
@@ -65,9 +107,12 @@
         </div>
       </div>
 
-      <div class="filter-section">
-        <h3>Size</h3>
-        <div class="filter-options">
+      <div class="filter-section dropdown">
+        <div class="dropdown-header">
+          <h3>Size fit</h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="dropdown-content">
           <button class="filter-btn">XS</button>
           <button class="filter-btn">S</button>
           <button class="filter-btn">M</button>
@@ -77,26 +122,22 @@
         </div>
       </div>
 
-      <div class="filter-section">
-        <h3>Size fit</h3>
-        <div class="filter-options">
-          <button class="filter-btn">XS</button>
-          <button class="filter-btn">S</button>
-          <button class="filter-btn">M</button>
-          <button class="filter-btn">L</button>
-          <button class="filter-btn">XL</button>
-          <button class="filter-btn">XXL</button>
+      <div class="filter-section dropdown">
+        <div class="dropdown-header">
+          <h3>Size chart</h3>
+          <span class="arrow">▼</span>
         </div>
-
-        <div class="size-chart">
-          <h4>Size chart</h4>
-          <div class="chart-placeholder">📊</div>
+        <div class="dropdown-content">
+          <img src="../assets/SizeChart.png" alt="Size Chart">
         </div>
       </div>
 
-      <div class="filter-section">
-        <h3>Recommend season</h3>
-        <div class="season-grid">
+      <div class="filter-section dropdown">
+        <div class="dropdown-header">
+          <h3>Recommend season</h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="dropdown-content">
           <button class="filter-btn">Spring</button>
           <button class="filter-btn selected">Summer</button>
           <button class="filter-btn">Autumn</button>
@@ -104,26 +145,25 @@
         </div>
       </div>
 
-      <div class="filter-section">
-        <h3>Material</h3>
-        <div class="options-grid">
-          <button class="filter-btn">XS</button>
-          <button class="filter-btn selected">S</button>
-          <button class="filter-btn">M</button>
-          <button class="filter-btn">L</button>
-          <button class="filter-btn">XL</button>
-          <button class="filter-btn">XXL</button>
-          <button class="filter-btn">3S</button>
-          <button class="filter-btn">4D</button>
-          <button class="filter-btn">4Z</button>
-          <button class="filter-btn">44</button>
-          <button class="filter-btn">46</button>
+      <div class="filter-section dropdown">
+        <div class="dropdown-header">
+          <h3>Material</h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="dropdown-content">
+          <button class="filter-btn">Spring</button>
+          <button class="filter-btn selected">Summer</button>
+          <button class="filter-btn">Autumn</button>
+          <button class="filter-btn">Winter</button>
         </div>
       </div>
 
-      <div class="filter-section">
-        <h3>Texture</h3>
-        <div class="options-grid">
+      <div class="filter-section dropdown">
+        <div class="dropdown-header">
+          <h3>Texture</h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="dropdown-content">
           <button class="filter-btn">Vintage</button>
           <button class="filter-btn selected">Dressy</button>
           <button class="filter-btn">Casual</button>
@@ -137,48 +177,32 @@
         </div>
       </div>
 
-      <button class="chat-button">CHAT WITH BRAND OWNER</button>
+      <button class="chat-button">CHAT</button>
+      <button class="chat-button">PURCHASE</button>
     </div>
   </main>
-
 
   <!-- Footer -->
   <footer>
     <div class="footer-inner">
       <div class="footer-logo">
         <div class="brand">
-          <img src="../assets/logo_rentique.svg" alt="Logo" />
-          <span class="brand-name">RENTIQUE</span>
+          <a href="home.html">
+            <img src="../assets/logo_rentique.svg" alt="Logo" />
+            <span class="brand-name">RENTIQUE</span>
+          </a>
         </div>
-        <p>Sed facilis adipisci non quia inventore ut.</p>
+        <p>Our boutique is for rent</p>
       </div>
       <div class="footer-links">
         <div>
           <h3>SEARCH</h3>
-          <ul>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-          </ul>
         </div>
         <div>
           <h3>CHAT LIST</h3>
-          <ul>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-          </ul>
         </div>
         <div>
           <h3>PROFILE</h3>
-          <ul>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-          </ul>
         </div>
       </div>
     </div>

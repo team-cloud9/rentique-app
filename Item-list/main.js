@@ -130,3 +130,17 @@ if (applyFilter) {
     alert("Applied " + activeFilters.length + " filters!");
   });
 }
+
+// ===== Dropdown filters in Item-detail =====
+document.querySelectorAll(".filter-section.dropdown").forEach((section) => {
+  const header = section.querySelector(".dropdown-header");
+  header.addEventListener("click", () => {
+    section.classList.toggle("open");
+  });
+});
+
+document.querySelectorAll(".color-option").forEach((opt) => {
+  opt.addEventListener("click", () => {
+    opt.classList.toggle("active");
+  });
+});

@@ -107,11 +107,6 @@ main>section {
   color: var(--text-primary);
 }
 
-.filter-section h3 {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-}
-
 /* Buttons (tags) */
 .filter-tags {
   display: flex;
@@ -382,11 +377,11 @@ footer {
   max-width: 40%;
 }
 
-.brand {
+.brand a {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 1rem;
+  text-decoration: none;
 }
 
 .brand-name {
@@ -399,11 +394,11 @@ footer {
 footer .footer-logo img {
   width: 60px;
   border-radius: 10px;
-  margin-bottom: 1rem;
   filter: invert(88%) sepia(12%) saturate(520%) hue-rotate(75deg) brightness(103%) contrast(92%);
 }
 
 .footer-logo p {
+  padding-top: 0.3rem;
   font-size: 14px;
   color: var(--gray-400);
   line-height: 1.4;
@@ -558,10 +553,11 @@ footer .footer-logo img {
 .filter-section h3 {
   font-size: 14px;
   font-weight: 600;
-  margin-bottom: 12px;
+  padding: 12px 0;
   color: var(--text-primary);
 }
 
+/* This filter-options could be marged with dropdown-content */
 .filter-options {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -754,4 +750,60 @@ input[type="range"]::-moz-range-thumb {
 
 .chat-button:hover {
   background: #333;
+}
+
+/* Dropdown */
+.dropdown-header {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.dropdown-header h3 {
+  margin: 0;
+}
+
+.arrow {
+  font-size: 0.7rem;
+  line-height: 1;
+  position: relative;
+  top: 1px;
+  transition: transform 0.25s ease;
+}
+
+.dropdown.open .arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-content {
+  display: none;
+  margin-top: 6px;
+}
+
+.dropdown.open .dropdown-content {
+  display: block;
+}
+
+/* Color-btn */
+.color-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  transition: all 0.2s ease;
+}
+
+.color-btn:hover {
+  background-color: #f3f3f3;
+}
+
+.color-circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid #aaa;
 }
