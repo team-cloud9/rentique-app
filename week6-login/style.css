@@ -4,15 +4,17 @@
   box-sizing: border-box;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-
+/*LAYOUT BASE*/
 .container {
   display: flex;
   height: 100vh;
 }
 
-/* ===== LEFT SECTION ===== */
-.left {
+.left, .right {
   width: 50%;
+}
+
+.left {
   background-color: #f7f7f7;
   display: flex;
   align-items: center;
@@ -20,6 +22,17 @@
   padding: 0 60px;
 }
 
+.right {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+}
+
+/* LOGO SECTION */
 .logo-section {
   display: flex;
   align-items: center;
@@ -38,7 +51,53 @@
   letter-spacing: 0.5px;
 }
 
-/* ===== BUTTONS SECTION (index.html) ===== */
+/*BUTTONS (Index, Forms, Done) */
+.btn,
+.login-btn,
+.continue-btn,
+.returnbtn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  padding: 12px 0;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: 0.3s;
+  cursor: pointer;
+  border: none;
+}
+
+/* --- Dark Buttons --- */
+.btn.dark,
+.login-btn,
+.continue-btn,
+.returnbtn {
+  background-color: #0b2e46;
+  color: #fff;
+}
+
+.btn.dark:hover,
+.login-btn:hover,
+.continue-btn:hover,
+.returnbtn:hover {
+  background-color: #143f5a;
+}
+
+/* --- Light Buttons --- */
+.btn.light {
+  background: transparent;
+  color: #0b2e46;
+  border: 1px solid #0b2e46;
+}
+
+.btn.light:hover {
+  background-color: #0b2e46;
+  color: #fff;
+}
+
+/* INDEX PAGE*/
 .options {
   display: flex;
   flex-direction: column;
@@ -47,37 +106,7 @@
   max-width: 380px;
 }
 
-.btn {
-  display: block;
-  text-align: center;
-  padding: 12px 0;
-  font-size: 16px;
-  text-decoration: none;
-  letter-spacing: 0.5px;
-  border: 1px solid #0b2e46;
-  transition: 0.3s;
-}
-
-.btn.dark {
-  background-color: #0b2e46;
-  color: #fff;
-}
-
-.btn.dark:hover {
-  background-color: #143f5a;
-}
-
-.btn.light {
-  background-color: transparent;
-  color: #0b2e46;
-}
-
-.btn.light:hover {
-  background-color: #0b2e46;
-  color: #fff;
-}
-
-/* ===== LOGIN FORM (login.html) ===== */
+/*LOGIN & SIGNUP PAGES */
 .login-form {
   width: 100%;
   max-width: 380px;
@@ -87,21 +116,30 @@
 }
 
 .login-form h2 {
-  margin-bottom: 10px;
   font-size: 22px;
+  margin-bottom: 10px;
 }
 
+/* --- Inputs --- */
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+input[type="text"] {
+  width: 100%;
   border: none;
   border-bottom: 1px solid #0b2e46;
   background: transparent;
   padding: 10px 0;
   font-size: 16px;
   outline: none;
+  color: #333;
 }
 
+input::placeholder {
+  color: #999;
+  letter-spacing: 1px;
+}
 
+/* --- Text Links --- */
 .forgot {
   font-size: 14px;
   color: #b0b0b0;
@@ -109,21 +147,6 @@ input[type="password"] {
 
 .forgot span {
   font-style: italic;
-}
-
-.login-btn {
-  background-color: #0b2e46;
-  color: #fff;
-  padding: 12px 0;
-  border: none;
-  font-size: 16px;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.login-btn:hover {
-  background-color: #143f5a;
 }
 
 .signup-text {
@@ -137,7 +160,6 @@ input[type="password"] {
   text-decoration: underline;
 }
 
-/* Back arrow (login.html) */
 .back-arrow {
   text-decoration: none;
   font-size: 24px;
@@ -145,116 +167,14 @@ input[type="password"] {
   margin-right: 10px;
 }
 
-/* ===== RIGHT SECTION ===== */
-.right {
-  width: 50%;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-img {
-  width: 100%;
-  height: 100%;
-
-}
-
-/*questionnaire*/
-.questionnaire {
-  max-width: 500px;
-  margin: 80px auto;
-  text-align: left;
-}
-
-h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-h3 {
-  margin-top: 30px;
-  font-size: 18px;
-}
-
-.options-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  margin-top: 10px;
-}
-
-label {
-  display: block;
-  text-align: center;
-  padding: 10px 0;
-  border: 1px solid #999;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s;
-  background: #fff;
-  font-size: 15px;
-}
-
-input[type="checkbox"] {
-  display: none;
-}
-
-input[type="checkbox"]:checked + label {
-  background-color: #333;
-  color: #fff;
-}
-
-.continue-btn {
-  display: block;
-  width: 100%;
-  background-color: #0b2e46;
-  color: #fff;
-  text-align: center;
-  padding: 15px 0;
-  margin-top: 40px;
-  text-decoration: none;
-  font-size: 18px;
-  letter-spacing: 0.5px;
-}
-
-.note {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 14px;
-  color: #333;
-}
-
-/*done*/
-
-.message {
-      text-align: center;
-      margin-top: 200px;
-    }
-
- .returnbtn {
-      display: inline-block;
-      margin-top: 20px;
-      text-decoration: none;
-      color: #fff;
-      background-color: #0b2e46;
-      padding: 12px 30px;
-      border-radius: 6px;
-      transition: 0.3s;
-    }
-
-    .returnbtn:hover {
-      background-color: #143f5a;
-    }
-
-   /* NEW STYLES FOR QUESTIONNAIRE + PROFILE PAGES
-========================================================= */
-
+/* PROFILE PAGE & QUESTIONNAIRES */
 .form-page {
   max-width: 480px;
   margin: 80px auto;
   text-align: left;
 }
 
-/* Progress bar */
+/* --- Progress Bar --- */
 .progress {
   display: flex;
   gap: 10px;
@@ -272,25 +192,25 @@ input[type="checkbox"]:checked + label {
   background: #333;
 }
 
-/* Inputs */
-.form-section input[type="text"] {
-  width: 100%;
-  border: none;
-  border-bottom: 1px solid #000;
-  background: transparent;
-  padding: 10px 0;
-  margin-bottom: 25px;
-  font-size: 18px;
-  outline: none;
-  color: #333;
+/* --- Upload Circle --- */
+.upload-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #e6e6e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px auto;
 }
 
-.form-section input::placeholder {
-  color: #999;
-  letter-spacing: 1px;
+.upload-circle img {
+  width: 30px;
+  height: 30px;
+  opacity: 0.6;
 }
 
-/* Gender section */
+/* --- Gender Section --- */
 .gender-section {
   margin-bottom: 30px;
 }
@@ -312,27 +232,54 @@ input[type="checkbox"]:checked + label {
   cursor: pointer;
 }
 
-/* Upload circle */
-.upload-circle {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: #e6e6e6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 30px auto;
+/*QUESTIONNAIRE PAGES */
+.questionnaire {
+  max-width: 500px;
+  margin: 80px auto;
 }
 
-.upload-circle img {
-  width: 30px;
-  height: 30px;
-  opacity: 0.6;
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
+h3 {
+  font-size: 18px;
+  margin: 30px 0 15px;
+}
 
+/* --- Options Grid / Color Grid --- */
+.options-grid,
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 30px;
+}
 
-/* Notes */
+/* --- Labels and Checkboxes --- */
+label {
+  display: block;
+  text-align: center;
+  padding: 10px 0;
+  border: 1px solid #999;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  background: #fff;
+  font-size: 15px;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked + label {
+  background-color: #333;
+  color: #fff;
+}
+
+/* NOTES & MESSAGES*/
 .note {
   text-align: center;
   margin-top: 20px;
@@ -340,40 +287,12 @@ input[type="checkbox"]:checked + label {
   color: #333;
 }
 
-/* ====== Colour Question Section ====== */
-h3 {
-  font-size: 18px;
-  margin-top: 30px;
-  margin-bottom: 15px;
-}
-
-.color-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  margin-bottom: 40px;
-}
-
-.color-grid input[type="checkbox"] {
-  display: none;
-}
-
-.color-grid label {
-  display: block;
+.message {
   text-align: center;
-  padding: 10px 0;
-  border: 1px solid #999;
-  border-radius: 8px;
-  background: #fff;
-  font-size: 15px;
-  cursor: pointer;
-  transition: 0.3s;
+  margin-top: 200px;
 }
 
-.color-grid input[type="checkbox"]:checked + label {
-  background-color: #333;
-  color: #fff;
-}
+
 
 
 
