@@ -10,11 +10,8 @@
   height: 100vh;
 }
 
-.left, .right {
-  width: 50%;
-}
-
 .left {
+  width: 50%;
   background-color: #f7f7f7;
   display: flex;
   align-items: center;
@@ -23,6 +20,7 @@
 }
 
 .right {
+  width: 50%;
   position: relative;
   overflow: hidden;
 }
@@ -46,7 +44,7 @@
   height: 80px;
 }
 
-.brand {
+h1 {
   font-size: 28px;
   letter-spacing: 0.5px;
 }
@@ -72,8 +70,14 @@
 /* --- Dark Buttons --- */
 .btn.dark,
 .login-btn,
-.continue-btn,
-.returnbtn {
+.continue-btn{
+  background-color: #0b2e46;
+  color: #fff;
+}
+
+.returnbtn{
+  display: inline-block;
+  width: 20%;
   background-color: #0b2e46;
   color: #fff;
 }
@@ -145,7 +149,7 @@ input::placeholder {
   color: #b0b0b0;
 }
 
-.forgot span {
+.forgot {
   font-style: italic;
 }
 
@@ -164,14 +168,12 @@ input::placeholder {
   text-decoration: none;
   font-size: 24px;
   color: #0b2e46;
-  margin-right: 10px;
 }
 
 /* PROFILE PAGE & QUESTIONNAIRES */
 .form-page {
   max-width: 480px;
   margin: 80px auto;
-  text-align: left;
 }
 
 /* --- Progress Bar --- */
@@ -216,6 +218,7 @@ input::placeholder {
 }
 
 .gender-section p {
+  margin-top: 10px;
   font-weight: 600;
   margin-bottom: 15px;
 }
@@ -226,18 +229,12 @@ input::placeholder {
   max-width: 320px;
 }
 
-.gender-options label {
-  font-size: 15px;
+.gender-options {
   color: #333;
   cursor: pointer;
 }
 
 /*QUESTIONNAIRE PAGES */
-.questionnaire {
-  max-width: 500px;
-  margin: 80px auto;
-}
-
 h2 {
   font-size: 24px;
   margin-bottom: 20px;
