@@ -82,7 +82,7 @@ header .user {
 /* ==============================
    MAIN CONTENT
 ============================== */
-main > section {
+main>section {
   width: 100%;
 }
 
@@ -248,6 +248,7 @@ main > section {
 .arrow.left {
   left: 0;
 }
+
 .arrow.right {
   right: 0;
 }
@@ -276,7 +277,8 @@ main > section {
 }
 
 .discoverBtn {
-  margin-left: 1rem; /* h2 오른쪽에 간격 */
+  margin-left: 1rem;
+  /* h2 오른쪽에 간격 */
 }
 
 .discoverBtn a {
@@ -433,8 +435,7 @@ footer {
 footer .footer-logo img {
   width: 60px;
   border-radius: 10px;
-  filter: invert(88%) sepia(12%) saturate(520%) hue-rotate(75deg)
-    brightness(103%) contrast(92%);
+  filter: invert(88%) sepia(12%) saturate(520%) hue-rotate(75deg) brightness(103%) contrast(92%);
 }
 
 .footer-logo p {
@@ -838,4 +839,151 @@ input[type="range"]::-moz-range-thumb {
   height: 18px;
   border-radius: 50%;
   border: 1px solid #aaa;
+}
+
+/* ==============================
+   SWIPE POPUP
+============================== */
+.popup-content.swipe {
+  max-width: 900px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 0;
+}
+
+.swipe-popup-body {
+  display: grid;
+  grid-template-columns: 1fr 55%;
+  gap: 2rem;
+  align-items: stretch;
+  min-height: 450px;
+  background: white;
+  border-radius: 12px;
+
+}
+
+.swipe-popup-left img {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Swipe Text Right */
+.swipe-popup-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1rem;
+}
+
+.swipe-popup-right h3 {
+  font-size: 22px;
+  letter-spacing: 1px;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.swipe-popup-right h2 {
+  font-size: 22px;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.swipe-popup-right p {
+  font-size: 14px;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.swipe-detail-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.swipe-detail-label {
+  font-size: 18px;
+  font-weight: 600;
+  min-width: 100px;
+}
+
+.swipe-detail-values {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Swipe Color Tag */
+.swipe-color-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid var(--nyanza-300);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  margin: 5px 0;
+}
+
+.swipe-color-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Swipe Text Tag */
+.swipe-text-tag {
+  display: inline-block;
+  border: 2px solid var(--nyanza-300);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  margin: 5px 0;
+
+}
+
+/* Swipe Button */
+.swipe-popup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.swipe-popup-buttons .swipe-btn-pass,
+.swipe-popup-buttons .swipe-btn-like {
+  width: 250px;
+  padding: 12px 0;
+  border: none;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.swipe-btn-pass {
+  background: #fff;
+}
+
+.swipe-btn-pass:hover {
+  background: #f3f3f3;
+  transform: scale(1.03);
+}
+
+.swipe-btn-like {
+  background: #d0ebd0;
+}
+
+.swipe-btn-like:hover {
+  background: #b8e0b8;
+  transform: scale(1.03);
 }
