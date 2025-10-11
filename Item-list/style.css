@@ -82,7 +82,7 @@ header .user {
 /* ==============================
    MAIN CONTENT
 ============================== */
-main>section {
+main > section {
   width: 100%;
 }
 
@@ -185,6 +185,16 @@ main>section {
 }
 
 /* Swipe Section */
+
+.swipe-container {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .swipe-style h2 {
   font-size: 22px;
   margin-bottom: 10px;
@@ -198,14 +208,16 @@ main>section {
 
 .swipe-items {
   display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin: 2rem 0 3rem;
+  flex-wrap: nowrap;
+  gap: 10px;
+  overflow: hidden;
+  flex: 1 1 auto;
 }
 
 .swipe-items .item {
-  width: 140px;
-  height: 140px;
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
   background-color: var(--gray-100);
   border: 1px solid var(--border);
   border-radius: 10px;
@@ -217,15 +229,32 @@ main>section {
   transform: scale(1.05);
 }
 
+.arrow {
+  flex: 0 0 auto;
+  background: var(--deep-teal-blue);
+  border-radius: 5px;
+  color: #fff;
+  border: none;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5rem 0.2rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.arrow.left {
+  left: 0;
+}
+.arrow.right {
+  right: 0;
+}
+
 /* ==============================
    ITEM LIST
 ============================== */
-.item-list h2 {
-  font-size: 20px;
-  margin-bottom: 1rem;
-  color: var(--text-primary);
-}
-
 .list-items {
   display: flex;
   flex-wrap: wrap;
@@ -233,11 +262,28 @@ main>section {
   margin-bottom: 2rem;
 }
 
-/* .list-items{
-display: grid;
-grid-template-columns: repeat();
-} */
+.item-list h2,
+.item-list .discoverBtn {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  margin-bottom: 2rem;
+}
 
+.item-list h2 {
+  font-size: 20px;
+  color: var(--text-primary);
+}
+
+.discoverBtn {
+  margin-left: 1rem; /* h2 오른쪽에 간격 */
+}
+
+.discoverBtn a {
+  text-decoration: underline;
+  padding: 0.5rem 1rem;
+  color: var(--text-primary);
+}
 
 .card {
   width: 250px;
@@ -286,17 +332,6 @@ grid-template-columns: repeat();
   font-size: 13px;
   font-weight: bold;
   color: var(--text-secondary);
-}
-
-.view-all {
-  text-align: center;
-  padding-top: 3rem;
-  padding-bottom: 4rem;
-
-  a {
-    color: var(--text-primary);
-    font-size: 25px;
-  }
 }
 
 /* ==============================
@@ -398,7 +433,8 @@ footer {
 footer .footer-logo img {
   width: 60px;
   border-radius: 10px;
-  filter: invert(88%) sepia(12%) saturate(520%) hue-rotate(75deg) brightness(103%) contrast(92%);
+  filter: invert(88%) sepia(12%) saturate(520%) hue-rotate(75deg)
+    brightness(103%) contrast(92%);
 }
 
 .footer-logo p {
@@ -415,24 +451,17 @@ footer .footer-logo img {
 }
 
 .footer-links h3 {
-  margin-bottom: 10px;
   font-size: 14px;
   font-weight: bold;
+  margin-right: 50px;
 }
 
-.footer-links li {
-  list-style: none;
-}
-
-.footer-links a {
-  text-decoration: none;
-  color: var(--gray-400);
-  font-size: 13px;
-  transition: color 0.2s;
-}
-
-.footer-links a:hover {
-  color: var(--nyanza);
+.copyright {
+  text-align: center;
+  background-color: var(--deep-teal-blue);
+  color: var(--surface);
+  padding-bottom: 1rem;
+  font-weight: 200;
 }
 
 /* ==============================
@@ -677,7 +706,6 @@ input[type="range"]::-moz-range-thumb {
     transform: translateY(-10px);
   }
 }
-
 
 /* ==============================
    ITEMS-DETAIL
