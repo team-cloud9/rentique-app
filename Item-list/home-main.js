@@ -1,66 +1,29 @@
-// // Item detail navigation --> can be navigate inside of the HTML
-// document.getElementById("item1").addEventListener("click", () => {
-//   window.location.href = "itemdetail.html";
-// });
+// ===== Swipe items =====
+const swipeItems = document.querySelector(".swipe-items");
+const leftArrow = document.querySelector(".arrow.left");
+const rightArrow = document.querySelector(".arrow.right");
 
-// // Filter Popup
-// const filterBtn = document.getElementById("filterBtn");
-// const filterPopup = document.getElementById("filterPopup");
-// const closePopup = document.getElementById("closePopup");
-// const applyFilter = document.querySelector(".apply-btn");
+const items = document.querySelectorAll(".swipe-items .item");
+const gap = 10;
+const itemWidth = items[0].offsetWidth + gap;
+const visibleCount = 5;
 
-// // open
-// filterBtn.addEventListener("click", (e) => {
-//   e.stopPropagation();
-//   filterPopup.style.display = "block";
-// });
+let currentTranslate = 0;
 
-// // close
-// closePopup.addEventListener("click", () => {
-//   filterPopup.style.display = "none";
-// });
+const totalWidth = items.length * itemWidth - gap;
+const maxTranslate = Math.max(totalWidth - itemWidth * visibleCount, 0);
 
-// // apply (close on click)
-// applyFilter.addEventListener("click", () => {
-//   filterPopup.style.display = "none";
-// });
+rightArrow.addEventListener("click", () => {
+  currentTranslate += itemWidth * visibleCount;
+  if (currentTranslate > maxTranslate) currentTranslate = maxTranslate;
+  swipeItems.style.transform = `translateX(-${currentTranslate}px)`;
+});
 
-// // close when clicking outside
-// window.addEventListener("click", (event) => {
-//   if (event.target === filterPopup) {
-//     filterPopup.style.display = "none";
-//   }
-// });
-
-// // 🔹 3. Sort Dropdown
-// const sortButton = document.querySelector(".sort-btn");
-// const dropdownMenu = document.querySelector(".dropdown-menu");
-
-// // open/close dropdown
-// sortButton.addEventListener("click", (e) => {
-//   e.stopPropagation(); // prevent window click from firing
-//   dropdownMenu.classList.toggle("show");
-// });
-
-// // close when clicking outside
-// document.addEventListener("click", (event) => {
-//   if (!event.target.closest(".dropdown")) {
-//     dropdownMenu.classList.remove("show");
-//   }
-// });
-
-// // Filter button toggle
-// document.querySelectorAll(".filter-btn").forEach((btn) => {
-//   btn.addEventListener("click", function () {
-//     this.classList.toggle("active");
-//   });
-// });
-
-// // Apply button
-// document.querySelector(".apply-btn").addEventListener("click", function () {
-//   const activeFilters = document.querySelectorAll(".filter-btn.active");
-//   alert("Applied " + activeFilters.length + " filters!");
-// });
+leftArrow.addEventListener("click", () => {
+  currentTranslate -= itemWidth * visibleCount;
+  if (currentTranslate < 0) currentTranslate = 0;
+  swipeItems.style.transform = `translateX(-${currentTranslate}px)`;
+});
 
 // ===== Filter Popup =====
 const filterBtn = document.getElementById("filterBtn");

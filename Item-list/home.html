@@ -1,152 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Style Shuffle</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="var.css" />
+    <script src="home-main.js" defer></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Style Shuffle</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="var.css" />
-  <script src="main.js" defer></script>
-</head>
-
-<body>
-  <!-- Header -->
-  <header>
-    <div class="logo">
-      <a href="home.html">
-        <img src="../assets/logo_rentique.svg" alt="Logo" />
-      </a>
-    </div>
-    <div class="header-right">
-      <nav>
-        <ul>
-          <li><a href="view-all.html">BROWSE</a></li>
-          <li><a href="#">CHAT LIST</a></li>
-          <li><a href="#">PROFILE</a></li>
-        </ul>
-      </nav>
-      <div class="user">
-        <span>Hi, Chloe</span>
-      </div>
-    </div>
-  </header>
-
-  <!-- Main -->
-  <main class="container float-center">
-    <!-- Swipe Your Style Section -->
-    <section class="swipe-style">
-      <h2>SWIPE YOUR STYLE</h2>
-      <p>Discover your style in every swipe</p>
-      <div class="swipe-items">
-        <img class="item" id="item1" src="photo.jpg" alt="click image" />
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-      </div>
-    </section>
-
-    <!-- Recommended Item List Section -->
-    <section class="item-list">
-      <h2>This may interest you:</h2>
-      <div class="list-items">
-
-        <a href="itemdetail.html" class="card">
-          <div class="img">
-            <img src="images/item1.jpg" alt="Item 1" />
-          </div>
-          <p class="name">Classic Jacket</p>
-          <p class="desc">Warm and stylish winter wear</p>
-          <p class="price">$120</p>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <a href="home.html">
+          <img src="../assets/logo_rentique.svg" alt="Logo" />
         </a>
-
-        <!-- <div class="card">
-          <div class="img">
-            <img src="images/item1.jpg" alt="Item 1" />
-          </div>
-          <p class="name">Classic Jacket</p>
-          <p class="desc">Warm and stylish winter wear</p>
-          <p class="price">$120</p>
-        </div> -->
-
-        <div class="card">
-          <div class="img">
-            <img src="images/item2.jpg" alt="Item 2" />
-          </div>
-          <p class="name">Casual Sneakers</p>
-          <p class="desc">Comfortable everyday shoes</p>
-          <p class="price">$85</p>
-        </div>
-
-        <div class="card">
-          <div class="img">
-            <img src="images/item3.jpg" alt="Item 3" />
-          </div>
-          <p class="name">Denim Jeans</p>
-          <p class="desc">Slim fit blue denim</p>
-          <p class="price">$65</p>
-        </div>
-
-        <div class="card">
-          <div class="img">
-            <img src="images/item4.jpg" alt="Item 4" />
-          </div>
-          <p class="name">Leather Bag</p>
-          <p class="desc">Durable and trendy design</p>
-          <p class="price">$150</p>
+      </div>
+      <div class="header-right">
+        <nav>
+          <ul>
+            <li><a href="discover.html">BROWSE</a></li>
+            <li><a href="#">CHAT LIST</a></li>
+            <li><a href="#">PROFILE</a></li>
+          </ul>
+        </nav>
+        <div class="user">
+          <span>Hi, Chloe</span>
         </div>
       </div>
-      <div class="view-all">
-        <a href="view-all.html">View all</a>
-      </div>
-    </section>
-  </main>
+    </header>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-logo">
-        <div class="brand">
-          <a href="home.html">
-            <img src="../assets/logo_rentique.svg" alt="Logo" />
-            <span class="brand-name">RENTIQUE</span>
+    <!-- Main -->
+    <main class="container float-center">
+      <!-- Swipe Your Style Section -->
+      <section class="swipe-style">
+        <h2>SWIPE YOUR STYLE</h2>
+        <p>Discover your style in every swipe</p>
+
+        <div class="swipe-container">
+          <button class="arrow left">&#8592;</button>
+
+          <div class="swipe-items">
+            <img class="item" src="photo1.jpg" alt="click image" />
+            <img class="item" src="photo2.jpg" alt="click image" />
+            <img class="item" src="photo3.jpg" alt="click image" />
+            <img class="item" src="photo4.jpg" alt="click image" />
+            <img class="item" src="photo5.jpg" alt="click image" />
+            <img class="item" src="photo6.jpg" alt="click image" />
+            <img class="item" src="photo7.jpg" alt="click image" />
+            <img class="item" src="photo8.jpg" alt="click image" />
+          </div>
+
+          <button class="arrow right">&#8594;</button>
+        </div>
+      </section>
+
+      <!-- Recommended Item List Section -->
+      <section class="item-list">
+        <div class="item-list-header">
+          <h2>ITEM LISTS</h2>
+          <div class="discoverBtn">
+            <a href="discover.html">Discover more</a>
+          </div>
+        </div>
+
+        <div class="list-items">
+          <a href="itemdetail.html" class="card">
+            <div class="img">
+              <img src="images/item1.jpg" alt="Item 1" />
+            </div>
+            <p class="name">Classic Jacket</p>
+            <p class="desc">Warm and stylish winter wear</p>
+            <p class="price">$120</p>
           </a>
-        </div>
-        <p>Our boutique is for rent</p>
-      </div>
-      <div class="footer-links">
-        <div>
-          <h3>SEARCH</h3>
-          <ul>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>CHAT LIST</h3>
-          <ul>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>PROFILE</h3>
-          <ul>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
-</body>
 
+          <div class="card">
+            <div class="img">
+              <img src="images/item2.jpg" alt="Item 2" />
+            </div>
+            <p class="name">Casual Sneakers</p>
+            <p class="desc">Comfortable everyday shoes</p>
+            <p class="price">$85</p>
+          </div>
+
+          <div class="card">
+            <div class="img">
+              <img src="images/item3.jpg" alt="Item 3" />
+            </div>
+            <p class="name">Denim Jeans</p>
+            <p class="desc">Slim fit blue denim</p>
+            <p class="price">$65</p>
+          </div>
+
+          <div class="card">
+            <div class="img">
+              <img src="images/item4.jpg" alt="Item 4" />
+            </div>
+            <p class="name">Leather Bag</p>
+            <p class="desc">Durable and trendy design</p>
+            <p class="price">$150</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <div class="brand">
+            <a href="home.html">
+              <img src="../assets/logo_rentique.svg" alt="Logo" />
+              <span class="brand-name">RENTIQUE</span>
+            </a>
+          </div>
+          <p>Our boutique is for rent</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h3>SEARCH</h3>
+          </div>
+          <div>
+            <h3>CHAT LIST</h3>
+          </div>
+          <div>
+            <h3>PROFILE</h3>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="copyright">&copy; 2025 Cloud9 Team | Langara College</div>
+  </body>
 </html>
