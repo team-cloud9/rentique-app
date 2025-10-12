@@ -1,11 +1,11 @@
-// ===== Recommend Popup =====
+// ===== Swipe Image Popup =====
 const swipeImages = document.querySelectorAll(".swipe-items .item");
 const swipePopup = document.getElementById("swipePopup");
 const closeSwipePopup = document.getElementById("closePopup");
 
 swipeImages.forEach((img) => {
     img.addEventListener("click", () => {
-        // showimage
+        // show image
         const popupImage = document.getElementById("popupImage");
         popupImage.src = img.src;
         swipePopup.style.display = "block";
