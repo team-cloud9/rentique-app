@@ -34,6 +34,10 @@ a {
   text-decoration: none;
 }
 
+h2 {
+  color: var(--deep-teal-blue);
+}
+
 /* ==============================
    HEADER
 ============================== */
@@ -585,9 +589,9 @@ footer .footer-logo img {
 }
 
 .filter-section h3 {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
-  padding: 12px 0;
+  padding: 1rem 0;
   color: var(--text-primary);
 }
 
@@ -599,16 +603,17 @@ footer .footer-logo img {
 }
 
 .filter-btn {
-  padding: 10px 16px;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  border-radius: 6px;
+  padding: 10px 0;
+  border: 1px solid var(--nyanza-300);
+  background: var(--nyanza-300);
+  border-radius: 25px;
   cursor: pointer;
   font-size: 13px;
   position: relative;
   text-align: center;
   transition: all 0.2s ease;
-  color: var(--text-secondary);
+  color: var(--teal-blue-800);
+  font-weight: 570;
 }
 
 .filter-btn:hover {
@@ -667,20 +672,21 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .apply-btn {
-  background: none;
+  font-size: 30px;
+  background: var(--deep-teal-blue);
+  color: var(--nyanza);
+  width: 350px;
+  padding: 12px 0;
   border: none;
-  color: var(--text-primary);
-  font-size: 15px;
-  font-weight: 500;
+  font-weight: bold;
+  font-size: 14px;
   cursor: pointer;
-  padding: 5px 10px;
-  border-bottom: 1px solid var(--text-primary);
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .apply-btn:hover {
-  color: var(--text-secondary);
-  border-bottom-color: var(--text-secondary);
+  color: var(--gray-50);
+  border-bottom-color: var(--teal-blue-100);
 }
 
 /* Animations */
