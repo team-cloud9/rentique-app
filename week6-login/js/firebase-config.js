@@ -7,14 +7,7 @@ import { getStorage } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-s
 
 // Your web app's Firebase configuration
  
-const firebaseConfig = {
-    apiKey: "AIzaSyC7BuP7MEYinthwkaYqx8Csn-BceUfqXOs",
-    authDomain: "test1-authentication.firebaseapp.com",
-    projectId: "test1-authentication",
-    storageBucket: "test1-authentication.appspot.com",
-    messagingSenderId: "715711552761",
-    appId: "1:715711552761:web:836f8a6a682a5976cf5628"
-  };
+
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
