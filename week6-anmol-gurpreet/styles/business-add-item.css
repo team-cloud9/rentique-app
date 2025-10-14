@@ -117,19 +117,278 @@ body {
 
 
 
+/* Gurpreet: Form Components START */
 
+/* General Form Group */
+.b-add-form-section {
+  margin-bottom: var(--spacing-xl);
+  border: none;
+  padding: 0;
+}
+.b-add-form-group {
+  margin-bottom: var(--spacing-lg);
+}
+.b-add-form-group__label,
+.b-add-form-group__legend {
+  display: block;
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+  color: var(--deep-teal-blue);
+  font-size: 0.95rem;
+}
+.b-add-form-group__legend {
+  padding: 0;
+  width: 100%;
+}
+.b-add-form-group__label-icon {
+  font-size: 0.75rem;
+  margin-left: 0.25rem;
+}
+.b-add-form-group__input,
+.b-add-form-group__textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--silver);
+  border-radius: var(--border-radius);
+  font-family: var(--font-family);
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+  background-color: var(--white);
+}
+.b-add-form-group__input:focus,
+.b-add-form-group__textarea:focus {
+  outline: none;
+  border-color: var(--nyanza);
+  box-shadow: 0 0 0 2px rgba(204, 231, 209, 0.4);
+}
+.b-add-form-group__textarea {
+  resize: vertical;
+  min-height: 80px;
+}
 
+/* Gurpreet Image Uploader */
+.b-add-image-uploader {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: flex-start;
+}
+.b-add-image-uploader__preview-container {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+.b-add-image-uploader__preview-wrapper {
+  position: relative;
+  width: 150px;
+  height: 200px;
+}
+.b-add-image-uploader__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--silver);
+}
+.b-add-image-uploader__remove-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: var(--nyanza);
+  color: var(--deep-teal-blue);
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+.b-add-image-uploader__remove-btn:hover {
+  background-color: #b3d9b8;
+}
+.b-add-image-uploader__add-btn {
+  width: 150px;
+  height: 200px;
+  border: 2px dashed var(--silver);
+  background-color: var(--white);
+  color: var(--silver);
+  font-size: 3rem;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+.b-add-image-uploader__add-btn:hover {
+  border-color: var(--nyanza);
+  color: var(--nyanza);
+}
 
+/* Gurpreet Tag Selector */
+.b-add-tag-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+.b-add-tag-selector__input {
+  display: none;
+}
+.b-add-tag-selector__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--silver);
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 0.9rem;
+  transition: all 0.2s ease-in-out;
+  user-select: none;
+  background-color: var(--white);
+}
+.b-add-tag-selector__label:hover {
+  border-color: var(--nyanza);
+  background-color: var(--nyanza);
+}
+.b-add-tag-selector__input:checked + .b-add-tag-selector__label {
+  background-color: var(--nyanza);
+  color: var(--deep-teal-blue);
+  border-color: var(--nyanza);
+}
 
+/* Gurpreet Color Selector */
+.b-add-color-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.b-add-color-dot--black { background-color: #000000; }
+.b-add-color-dot--white { background-color: #FFFFFF; border: 1px solid var(--silver); }
+.b-add-color-dot--grey { background-color: #808080; }
+.b-add-color-dot--beige { background-color: #F5F5DC; }
+.b-add-color-dot--brown { background-color: #8B4513; }
+.b-add-color-dot--navy { background-color: #000080; }
+.b-add-color-dot--red { background-color: #FF0000; }
+.b-add-color-dot--pink { background-color: #FFC0CB; }
+.b-add-color-dot--orange { background-color: #FFA500; }
+.b-add-color-dot--yellow { background-color: #FFFF00; }
+.b-add-color-dot--green { background-color: #008000; }
+.b-add-color-dot--blue { background-color: #0000FF; }
+.b-add-color-dot--purple { background-color: #800080; }
 
+/* Gurpreet Price Input */
+.b-add-price-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--silver);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+  background-color: var(--white);
+}
+.b-add-price-input:focus-within {
+  border-color: var(--nyanza);
+  box-shadow: 0 0 0 2px rgba(204, 231, 209, 0.4);
+}
+.b-add-price-input__currency {
+  background-color: var(--white-smoke);
+  padding: 0.75rem;
+  font-weight: 500;
+  border-right: 1px solid var(--silver);
+  color: var(--deep-teal-blue);
+}
+.b-add-price-input__field {
+  border: none;
+  padding: 0.75rem;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  flex-grow: 1;
+  background-color: var(--white);
+}
+.b-add-price-input__field:focus {
+  outline: none;
+}
 
+/* Gurpreet Size Chart Upload */
+.b-add-size-chart-upload {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--silver);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+.b-add-size-chart-upload__btn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 0.75rem 1.5rem;
+  background-color: var(--nyanza);
+  color: var(--deep-teal-blue);
+  border: 1px solid var(--nyanza);
+  border-radius: var(--border-radius);
+  font-family: var(--font-family);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.b-add-size-chart-upload__btn:hover {
+  background-color: #b3d9b8;
+}
+.b-add-size-chart-upload__btn i {
+  font-size: 1.2rem;
+}
+.b-add-size-chart-upload__filename {
+  font-size: 0.9rem;
+  color: var(--deep-teal-blue);
+  font-weight: 500;
+  text-align: center;
+}
 
-
-
-
-
-
-
+/* Gurpreet Action Buttons */
+.b-add-action-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xxl);
+  padding-top: var(--spacing-lg);
+}
+.b-add-action-buttons__btn {
+  flex: 1;
+  padding: 0.75rem;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: var(--font-family);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+.b-add-action-buttons__btn--primary {
+  background-color: var(--deep-teal-blue);
+  color: var(--white);
+  border: 1px solid var(--deep-teal-blue);
+}
+.b-add-action-buttons__btn--primary:hover {
+  background-color: #04253a;
+}
+.b-add-action-buttons__btn--secondary {
+  background-color: var(--white);
+  color: var(--deep-teal-blue);
+  border: 1px solid var(--silver);
+}
+.b-add-action-buttons__btn--secondary:hover {
+  background-color: var(--white-smoke);
+  border-color: var(--nyanza);
+}
+/* Gurpreet: Form Components END */
 
 
 

@@ -38,10 +38,338 @@
             <h1 class="b-add-form-container__title">ADD ITEM</h1>
             <form id="bAddItemForm">
 
+
+                <!-- Gurpreet: Image Upload and Core Details START -->
+                <section class="b-add-form-section">
+                    <label class="b-add-form-group__label">Upload Images</label>
+                    <div class="b-add-image-uploader">
+                        <div id="imagePreviewContainer" class="b-add-image-uploader__preview-container"></div>
+                        <input type="file" id="imageUploadInput" multiple accept="image/*" style="display: none;">
+                        <button type="button" id="imageUploadButton" class="b-add-image-uploader__add-btn">+</button>
+                    </div>
+                </section>
+
+                <section class="b-add-form-section">
+                    <div class="b-add-form-group">
+                        <label for="itemNameInput" class="b-add-form-group__label">Item name</label>
+                        <input type="text" id="itemNameInput" class="b-add-form-group__input"
+                            placeholder="Knitted Cardigan">
+                    </div>
+                    <div class="b-add-form-group">
+                        <label for="fullDescriptionInput" class="b-add-form-group__label">Description</label>
+                        <textarea id="fullDescriptionInput" class="b-add-form-group__textarea"
+                            placeholder="Women's V-Neck Cardigan" rows="3"></textarea>
+                    </div>
+                    <div class="b-add-form-group">
+                        <label for="priceInput" class="b-add-form-group__label">Price</label>
+                        <div class="b-add-price-input">
+                            <span class="b-add-price-input__currency">$</span>
+                            <input type="number" id="priceInput" class="b-add-price-input__field" placeholder="10"
+                                step="0.01">
+                        </div>
+                    </div>
+                </section>
+                <!-- Gurpreet: Image Upload and Core Details END -->
+
+                <!-- Gurpreet: Form Selection Groups START -->
+                <fieldset class="b-add-form-section">
+                    <legend class="b-add-form-group__legend">Category <span
+                            class="b-add-form-group__label-icon">▲</span></legend>
+                    <div class="b-add-tag-selector">
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="category"
+                                value="T-shirts" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">T-shirts</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="category"
+                                value="Blouses & Shirts" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Blouses & Shirts</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="category"
+                                value="Sweaters & Knits" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Sweaters & Knits</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="category"
+                                value="Hoodies & Sweatshirts" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Hoodies & Sweatshirts</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="category"
+                                value="Pants & Trousers" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Pants & Trousers</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="category" value="Jeans"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Jeans</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="category" value="Shorts"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Shorts</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="category" value="Skirts"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Skirts</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="category" value="Dresses"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Dresses</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="category"
+                                value="Jumpsuits & Rompers" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Jumpsuits & Rompers</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="category"
+                                value="Outerwear (Coats & Jackets)" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Outerwear (Coats & Jackets)</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="category"
+                                value="Blazers & Vests" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Blazers & Vests</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="category" value="Suits"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Suits</span></label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="b-add-form-section">
+                    <legend class="b-add-form-group__legend">Colour <span class="b-add-form-group__label-icon">▲</span>
+                    </legend>
+                    <div class="b-add-tag-selector">
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="color-preset"
+                                value="Black" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label"><span
+                                    class="b-add-color-dot b-add-color-dot--black"></span> Black</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="color-preset"
+                                value="White" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label"><span
+                                    class="b-add-color-dot b-add-color-dot--white"></span> White</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="color-preset"
+                                value="Grey" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label"><span
+                                    class="b-add-color-dot b-add-color-dot--grey"></span> Grey</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="color-preset"
+                                value="Beige & Cream" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label"><span
+                                    class="b-add-color-dot b-add-color-dot--beige"></span> Beige & Cream</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="color-preset"
+                                value="Brown" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label"><span
+                                    class="b-add-color-dot b-add-color-dot--brown"></span> Brown</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="color-preset"
+                                value="Navy" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label"><span
+                                    class="b-add-color-dot b-add-color-dot--navy"></span> Navy</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="color-preset" value="Red"
+                                class="b-add-tag-selector__input"><span class="b-add-tag-selector__label"><span
+                                    class="b-add-color-dot b-add-color-dot--red"></span> Red</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="color-preset"
+                                value="Pink" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label"><span
+                                    class="b-add-color-dot b-add-color-dot--pink"></span> Pink</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="color-preset"
+                                value="Orange" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label"><span
+                                    class="b-add-color-dot b-add-color-dot--orange"></span> Orange</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="color-preset"
+                                value="Yellow" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label"><span
+                                    class="b-add-color-dot b-add-color-dot--yellow"></span> Yellow</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="color-preset"
+                                value="Green" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label"><span
+                                    class="b-add-color-dot b-add-color-dot--green"></span> Green</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="color-preset"
+                                value="Blue" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label"><span
+                                    class="b-add-color-dot b-add-color-dot--blue"></span> Blue</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="color-preset"
+                                value="Purple" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label"><span
+                                    class="b-add-color-dot b-add-color-dot--purple"></span> Purple</span></label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="b-add-form-section">
+                    <legend class="b-add-form-group__legend">Gender <span class="b-add-form-group__label-icon">▲</span>
+                    </legend>
+                    <div class="b-add-tag-selector">
+                        <label class="b-add-tag-selector__option"><input type="radio" name="gender" value="Women"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Women</span></label>
+                        <label class="b-add-tag-selector__option"><input type="radio" name="gender" value="Men"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Men</span></label>
+                        <label class="b-add-tag-selector__option"><input type="radio" name="gender" value="Unisex"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Unisex</span></label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="b-add-form-section">
+                    <legend class="b-add-form-group__legend">Size <span class="b-add-form-group__label-icon">▲</span>
+                    </legend>
+                    <div class="b-add-tag-selector">
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="size" value="XXS"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">XXS</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="size" value="XS"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">XS</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="size" value="S"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">S</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="size" value="M"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">M</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="size" value="L"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">L</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="size" value="XL"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">XL</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="size" value="XXL"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">XXL</span></label>
+                    </div>
+                </fieldset>
+
+                <section class="b-add-form-section">
+                    <label class="b-add-form-group__label" for="measurementUploadButton">Size Chart (Optional)</label>
+                    <div class="b-add-size-chart-upload" id="sizeChartContent">
+                        <input type="file" id="measurementUploadInput" accept="image/*" style="display: none;">
+                        <button type="button" id="measurementUploadButton" class="b-add-size-chart-upload__btn">
+                            <i class='bx bx-upload'></i> Upload Size Chart Image
+                        </button>
+                        <span id="measurementFileName" class="b-add-size-chart-upload__filename"></span>
+                    </div>
+                </section>
+
+                <fieldset class="b-add-form-section">
+                    <legend class="b-add-form-group__legend">Texture <span class="b-add-form-group__label-icon">▲</span>
+                    </legend>
+                    <div class="b-add-tag-selector">
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="texture" value="Smooth"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Smooth</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="texture" value="Soft"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Soft</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="texture" value="Textured"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Textured</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="texture" value="Rough"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Rough</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="texture"
+                                value="Sheer & Lightweight" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Sheer & Lightweight</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="texture" value="Matte"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Matte</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="texture"
+                                value="Shiny & Satin" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Shiny & Satin</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="texture" value="Knitted"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Knitted</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="texture" value="Stretchy"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Stretchy</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="texture" value="Suede"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Suede</span></label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="b-add-form-section">
+                    <legend class="b-add-form-group__legend">Style <span class="b-add-form-group__label-icon">▲</span>
+                    </legend>
+                    <div class="b-add-tag-selector">
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="style" value="Casual"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Casual</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="style" value="Formal"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Formal</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="style"
+                                value="Business & Professional" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Business & Professional</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="style"
+                                value="Party & Evening" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Party & Evening</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="style" value="Dressy"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Dressy</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="style"
+                                value="Vintage & Retro" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Vintage & Retro</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="style"
+                                value="Street Style" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Street Style</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="style" value="Minimalist"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Minimalist</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="style"
+                                value="Sporty & Athletic" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Sporty & Athletic</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="style" value="Elegant"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Elegant</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="style" value="Preppy"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Preppy</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="style" value="Y2K"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Y2K</span></label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="b-add-form-section">
+                    <legend class="b-add-form-group__legend">Material <span
+                            class="b-add-form-group__label-icon">▲</span></legend>
+                    <div class="b-add-tag-selector">
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="material" value="Cotton"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Cotton</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="material" value="Denim"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Denim</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="material" value="Linen"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Linen</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="material"
+                                value="Silk & Satin" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Silk & Satin</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="material" value="Wool"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Wool</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="material"
+                                value="Cashmere" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Cashmere</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="material"
+                                value="Leather & Suede" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Leather & Suede</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="material"
+                                value="Polyester" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Polyester</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="material" value="Nylon"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Nylon</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="material"
+                                value="Rayon & Viscose" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Rayon & Viscose</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="material" value="Velvet"
+                                class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Velvet</span></label>
+                        <label class="b-add-tag-selector__option"><input type="checkbox" name="material"
+                                value="Corduroy" class="b-add-tag-selector__input"><span
+                                class="b-add-tag-selector__label">Corduroy</span></label>
+                    </div>
+                </fieldset>
+
+                <div class="b-add-action-buttons">
+                    <button type="button"
+                        class="b-add-action-buttons__btn b-add-action-buttons__btn--secondary">CANCEL</button>
+                    <button type="submit" class="b-add-action-buttons__btn b-add-action-buttons__btn--primary">ADD
+                        ITEM</button>
+                </div>
+                <!-- Gurpreet: Form Selection Groups END -->
+
+
             </form>
         </div>
     </main>
     <!-- Anmol: Main Layout END -->
+
+
+
 
     <!-- Anmol: Footer Section START -->
     <footer class="b-add-footer">
