@@ -44,7 +44,77 @@ function setupAllEventListeners(elements) {
 
 
 
+/* Gurpreet: Image & Measurement Uploader UI START */
+function setupImageUploader(button, input, previewContainer) {
+  button.addEventListener("click", () => input.click());
+  input.addEventListener("change", (event) => handleImageFiles(event.target.files, previewContainer));
+}
 
+function handleImageFiles(files, previewContainer) {
+  console.log(`[AddItemPage-UI] User selected ${files.length} image files.`);
+  for (const file of files) {
+    if (file.type.startsWith("image/")) {
+      createImagePreview(file, previewContainer);
+    }
+  }
+}
+
+function createImagePreview(file, previewContainer) {
+  const reader = new FileReader();
+  reader.onload = (event) => {
+    buildAndAppendPreview(file, event.target.result, previewContainer);
+  };
+  reader.readAsDataURL(file);
+}
+
+function buildAndAppendPreview(file, imageDataUrl, previewContainer) {
+  const wrapper = createPreviewWrapper(file);
+  const image = createPreviewImage(imageDataUrl);
+  const button = createPreviewRemoveButton(wrapper);
+  wrapper.appendChild(image);
+  wrapper.appendChild(button);
+  previewContainer.appendChild(wrapper);
+}
+
+function createPreviewWrapper(file) {
+  const wrapper = document.createElement("div");
+  wrapper.className = "b-add-image-uploader__preview-wrapper";
+  wrapper.file = file;
+  return wrapper;
+}
+
+function createPreviewImage(imageDataUrl) {
+  const imageElement = document.createElement("img");
+  imageElement.className = "b-add-image-uploader__image";
+  imageElement.src = imageDataUrl;
+  return imageElement;
+}
+
+function createPreviewRemoveButton(wrapperToRemove) {
+  const removeButton = document.createElement("button");
+  removeButton.type = "button";
+  removeButton.className = "b-add-image-uploader__remove-btn";
+  removeButton.innerHTML = "&times;";
+  removeButton.addEventListener("click", () => wrapperToRemove.remove());
+  return removeButton;
+}
+
+function setupMeasurementUploader(button, input, fileNameDisplay) {
+  button.addEventListener("click", () => input.click());
+  input.addEventListener("change", (event) => {
+    displayMeasurementFileName(event.target.files, fileNameDisplay);
+  });
+}
+
+function displayMeasurementFileName(files, fileNameDisplay) {
+  if (files.length > 0) {
+    fileNameDisplay.textContent = files[0].name;
+    console.log(`[AddItemPage-UI] User selected measurement file: ${files[0].name}`);
+  } else {
+    fileNameDisplay.textContent = "";
+  }
+}
+/* Gurpreet: Image & Measurement Uploader UI END */
 
 
 
