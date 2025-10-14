@@ -32,10 +32,8 @@ function getFormElements() {
 
 function setupAllEventListeners(elements) {
   console.log("[AddItemPage] Setting up all event listeners.");
-  // Gurpreet's UI components
   setupImageUploader(elements.imageUploadButton, elements.imageUploadInput, elements.imagePreviewContainer);
   setupMeasurementUploader(elements.measurementUploadButton, elements.measurementUploadInput, elements.measurementFileName);
-  // Gurpreet's UI event handling
   setupFormSubmission(elements.form, elements.submitButton);
   setupCancelButton(elements.form);
 }
