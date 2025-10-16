@@ -5,36 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rentique - Questionnaire</title>
   <link rel="stylesheet" href="style.css">
+  <script src="./js/info1.js" defer></script>
 
-  <script defer>
-    document.addEventListener("DOMContentLoaded", () => {
-      const formContainer = document.querySelector(".form-container");
-      const panels = document.querySelectorAll(".style-panel");
-      const openButtons = document.querySelectorAll(".option-btn");
-      const cancelBtns = document.querySelectorAll(".cancel-style");
-
-      // Mostrar el panel correspondiente
-      openButtons.forEach((btn, index) => {
-        btn.addEventListener("click", (e) => {
-          e.preventDefault();
-          formContainer.classList.add("show-panel");
-
-          // Ocultar todos los paneles
-          panels.forEach(panel => panel.classList.remove("active"));
-          // Mostrar solo el correspondiente
-          panels[index].classList.add("active");
-        });
-      });
-
-      // Botones de "Cancel" para cerrar paneles
-      cancelBtns.forEach(btn => {
-        btn.addEventListener("click", () => {
-          formContainer.classList.remove("show-panel");
-          panels.forEach(panel => panel.classList.remove("active"));
-        });
-      });
-    });
-  </script>
 </head>
 
 <body>
@@ -54,7 +26,8 @@
       <div class="form-content">
         <p class="unique">Hi Chloe, can you let us know your:</p>
 
-        <form>
+        <form action="done.html">
+
           <label>Height (cm)</label>
           <input type="text">
 

@@ -1,31 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rentique - User Profile</title>
-  <link rel="stylesheet" href="style.css">
-  <script type="module" src="./js/ui.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up | Rentique</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="./js/info1.js" defer></script>
 </head>
 <body>
-  <div class="form-page">
+  <div class="container">
+    <!-- LEFT SIDE -->
+    <div class="left">
+      <div class="login-form">
+        <div class="logo-section">
+          <img src="./images/logo.png" alt="Rentique Logo" class="logo" />
+          <h1>RENTIQUE</h1>
+        </div>
+  
+        <form class="login-form" action="Info1.html">
+        <h2>SIGN UP</h2>
+        <input type="text" placeholder="Username" />
+        <input type="text" placeholder="Address" />
+        <button type="submit" class="continue-btn" disabled>CONTINUE</button>
+        </form>
 
-
-    <h2>User Profile</h2>
-
-    <form action="Questionnaire1.html">
-      <div class="upload-circle">
-        <img src="./images/logo.png" alt="Upload Icon">
       </div>
 
-      <input type="text" placeholder="USERNAME" required>
-      <input type="text" placeholder="ADDRESS" required>
+    </div>
 
-      <button src="Questionnaire1.html" type="submit" class="continue-btn">CONTINUE</button>
-    </form>
+    <!-- RIGHT SIDE -->
+   <!-- RIGHT SIDE -->
+<div class="right">
+  <div class="upload-box" id="uploadBox">
+    <span id="uploadPlus">+</span>
+    <input type="file" id="fileInput" accept="image/*" hidden />
+    <img id="previewImage" alt="Preview" style="display:none;" />
+  </div>
+</div>
 
-    <p class="note">You can change this anytime from your profile settings.</p>
   </div>
 </body>
 </html>
+
+
 
