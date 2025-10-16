@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rentique - Questionnaire</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      const formContainer = document.querySelector(".form-container");
+      const panels = document.querySelectorAll(".style-panel");
+      const openButtons = document.querySelectorAll(".option-btn");
+      const cancelBtns = document.querySelectorAll(".cancel-style");
+
+      // Mostrar el panel correspondiente
+      openButtons.forEach((btn, index) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          formContainer.classList.add("show-panel");
+
+          // Ocultar todos los paneles
+          panels.forEach(panel => panel.classList.remove("active"));
+          // Mostrar solo el correspondiente
+          panels[index].classList.add("active");
+        });
+      });
+
+      // Botones de "Cancel" para cerrar paneles
+      cancelBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          formContainer.classList.remove("show-panel");
+          panels.forEach(panel => panel.classList.remove("active"));
+        });
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="form-page questionnaire">
+
+    <!-- Logo Section -->
+    <div class="logo-section">
+      <a href="index.html" class="back-arrow">←</a>
+      <img src="./images/logo.png" alt="Rentique Logo" class="logo">
+      <h1>RENTIQUE</h1>
+    </div>
+
+    <!-- Form Container -->
+    <div class="form-container">
+      
+      <!-- Left Side (form) -->
+      <div class="form-content">
+        <p class="unique">Hi Chloe, can you let us know your:</p>
+
+        <form>
+          <label>Height (cm)</label>
+          <input type="text">
+
+          <label>Weight (kg)</label>
+          <input type="text">
+
+          <label>Gender (Male/Female/Other)</label>
+          <input type="text">
+
+          <button class="option-btn">Your favorite style</button>
+          <button class="option-btn">Your favorite color</button>
+          <button class="option-btn">What style do you want to try?</button>
+
+          <button type="submit" class="continue-btn">SAVE</button>
+        </form>
+      </div>
+
+      <!-- PANEL 1: Favorite Style -->
+      <div class="style-panel">
+        <div class="style-grid">
+          <input type="checkbox" id="Classic"><label for="Classic">Classic</label>
+          <input type="checkbox" id="Minimalism"><label for="Minimalism">Minimalism</label>
+          <input type="checkbox" id="Sporty"><label for="Sporty">Sporty</label>
+          <input type="checkbox" id="Preppy"><label for="Preppy">Preppy</label>
+          <input type="checkbox" id="Vintage"><label for="Vintage">Vintage</label>
+          <input type="checkbox" id="Retro"><label for="Retro">Retro</label>
+          <input type="checkbox" id="StreetStyle"><label for="StreetStyle">Street Style</label>
+          <input type="checkbox" id="Y2K"><label for="Y2K">Y2K</label>
+          <input type="checkbox" id="Tomboy"><label for="Tomboy">Tomboy</label>
+          <input type="checkbox" id="Hiphop"><label for="Hiphop">Hiphop</label>
+          <input type="checkbox" id="Elegant"><label for="Elegant">Elegant</label>
+          <input type="checkbox" id="Gothic"><label for="Gothic">Gothic</label>
+          <input type="checkbox" id="Sexy"><label for="Sexy">Sexy</label>
+          <input type="checkbox" id="Normcore"><label for="Normcore">Normcore</label>
+          <input type="checkbox" id="Daily"><label for="Daily">Daily</label>
+        </div>
+        <div class="style-actions">
+          <button class="btn light cancel-style">Cancel</button>
+          <button class="btn light">Save</button>
+        </div>
+      </div>
+
+<!-- PANEL 2: Favorite Color -->
+<div class="style-panel color-panel">
+  <div class="style-grid color-grid">
+    
+  <input type="checkbox" id="Red">
+    <label for="Red" class="red"><span class="color-circle"></span> Red</label>
+
+    <input type="checkbox" id="Blue">
+    <label for="Blue" class="blue"><span class="color-circle"></span> Blue</label>
+
+    <input type="checkbox" id="Green">
+    <label for="Green" class="green"><span class="color-circle"></span> Green</label>
+
+    <input type="checkbox" id="Yellow">
+    <label for="Yellow" class="yellow"><span class="color-circle"></span> Yellow</label>
+
+    <input type="checkbox" id="Pink">
+    <label for="Pink" class="pink"><span class="color-circle"></span> Pink</label>
+
+    <input type="checkbox" id="Black">
+    <label for="Black" class="black"><span class="color-circle"></span> Black</label>
+
+    <input type="checkbox" id="White">
+    <label for="White" class="white"><span class="color-circle"></span> White</label>
+
+    <input type="checkbox" id="Grey">
+    <label for="Grey" class="grey"><span class="color-circle"></span> Grey</label>
+
+    <input type="checkbox" id="Purple">
+    <label for="Purple" class="purple"><span class="color-circle"></span> Purple</label>
+
+    <input type="checkbox" id="Beige">
+    <label for="Beige" class="beige"><span class="color-circle"></span> Beige</label>
+
+    <input type="checkbox" id="Brown">
+    <label for="Brown" class="brown"><span class="color-circle"></span> Brown</label>
+
+    <input type="checkbox" id="Orange">
+    <label for="Orange" class="orange"><span class="color-circle"></span> Orange</label>
+
+    <input type="checkbox" id="Babyblue">
+    <label for="Babyblue" class="babyblue"><span class="color-circle"></span> Baby Blue</label>
+
+    <input type="checkbox" id="Pinkpastel">
+    <label for="Pinkpastel" class="pinkpastel"><span class="color-circle"></span> Pink Pastel</label>
+
+    <input type="checkbox" id="Peach">
+    <label for="Peach" class="peach"><span class="color-circle"></span> Peach</label>
+  </div>
+
+  <div class="style-actions">
+    <button class="btn light cancel-style">Cancel</button>
+    <button class="btn light">Save</button>
+  </div>
+</div>
+
+
+      <!-- PANEL 3: Style to Try -->
+      <div class="style-panel">
+        <div class="style-grid">
+          <input type="checkbox" id="Boho"><label for="Boho">Boho</label>
+          <input type="checkbox" id="Chic"><label for="Chic">Chic</label>
+          <input type="checkbox" id="Punk"><label for="Punk">Punk</label>
+          <input type="checkbox" id="AvantGarde"><label for="AvantGarde">Avant-Garde</label>
+          <input type="checkbox" id="Business"><label for="Business">Business</label>
+          <input type="checkbox" id="Casual"><label for="Casual">Casual</label>
+          <input type="checkbox" id="Romantic"><label for="Romantic">Romantic</label>
+          <input type="checkbox" id="Grunge"><label for="Grunge">Grunge</label>
+          <input type="checkbox" id="Egirl"><label for="Egirl">E-girl</label>
+          <input type="checkbox" id="Cottagecore"><label for="Cottagecore">Cottagecore</label>
+        </div>
+        <div class="style-actions">
+          <button class="btn light cancel-style">Cancel</button>
+          <button class="btn light">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
