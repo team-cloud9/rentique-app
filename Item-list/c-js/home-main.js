@@ -32,6 +32,19 @@ leftBtn.addEventListener("click", () => {
   swipeItems.scrollTo({ left: currentScroll, behavior: "smooth" });
 });
 
+//Scroll top
+const scrollTopBtn = document.querySelector(".scroll-top");
+
+// for tablet & spn
+if (scrollTopBtn && window.innerWidth <= 1024) {
+  scrollTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+}
+
 // ===== Filter Popup =====
 const filterBtn = document.getElementById("filterBtn");
 const filterPopup = document.getElementById("filterPopup");
