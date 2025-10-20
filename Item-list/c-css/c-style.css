@@ -89,7 +89,7 @@ header .user {
 }
 
 /* MAIN CONTENT */
-main > section {
+main>section {
   width: 100%;
 }
 
@@ -216,6 +216,7 @@ main > section {
   overflow: hidden;
   position: relative;
 }
+
 .arrow {
   background: none;
   border: none;
@@ -302,7 +303,7 @@ main > section {
     transform: translateY(-5px);
   }
 
-  > .img {
+  >.img {
     width: 100%;
     height: 300px;
     margin-bottom: 10px;
@@ -310,26 +311,27 @@ main > section {
     border-radius: 8px;
     background-color: var(--gray-100);
 
-    > img {
+    >img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
   }
-  > .name {
+
+  >.name {
     font-weight: bold;
     font-size: 14px;
     margin-bottom: 5px;
     color: var(--text-primary);
   }
 
-  > .desc {
+  >.desc {
     font-size: 12px;
     color: var(--gray-600);
     margin-bottom: 5px;
   }
 
-  > .price {
+  >.price {
     font-size: 13px;
     font-weight: bold;
     color: var(--text-secondary);
@@ -462,6 +464,7 @@ footer {
   color: var(--text-on-secondary);
   margin: 0;
 }
+
 /* Copyright */
 
 .copyright {
@@ -740,6 +743,7 @@ input[type="range"]::-moz-range-thumb {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  position: relative;
 }
 
 .image-placeholder {
@@ -747,12 +751,49 @@ input[type="range"]::-moz-range-thumb {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  position: relative;
 }
 
 .image-placeholder img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.image-placeholder.hidden {
+  display: none;
+}
+
+/* Image navigation arrow */
+.image-nav {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 8px;
+}
+
+.image-nav img {
+  width: 100%;
+  height: 100%;
+}
+
+.image-nav:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-50%) scale(1.1);
 }
 
 /* Right Side - Details */
@@ -794,6 +835,34 @@ input[type="range"]::-moz-range-thumb {
 .detail-section h3 {
   font-weight: 600;
   font-size: 28px;
+  /* display: flex;
+  align-items: center; */
+}
+
+.dropdown-arrow {
+  transition: transform 0.3s ease;
+  margin-left: 8px;
+  display: none;
+  width: 12px;
+  height: 12px;
+}
+
+.dropdown-arrow img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.detail-section.collapsed .dropdown-arrow {
+  transform: rotate(0deg);
+}
+
+.detail-section:not(.collapsed) .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.detail-section.collapsed .tag-group {
+  display: none;
 }
 
 /* Tag Buttons */
@@ -900,7 +969,216 @@ input[type="range"]::-moz-range-thumb {
   transform: translateY(-1px);
 }
 
-/* SWIPE POPUP */
+/* ==============================
+       MOBILE RESPONSIVE
+    ============================== */
+@media (max-width: 768px) {
+  /* .container {
+        padding: 1rem;
+        padding-bottom: 100px;
+      } */
+
+  .items-detail-title {
+    font-size: 14px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+
+  .detail-layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  /* Images at top, full width */
+  .detail-images {
+    gap: 0;
+    order: 1;
+  }
+
+  /* Hide second image on mobile */
+  .detail-images .image-placeholder:nth-child(2) {
+    display: none;
+  }
+
+  .image-placeholder {
+    aspect-ratio: 4/5;
+    border-radius: 0;
+    margin-bottom: 20px;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+
+  /* Show navigation arrow on mobile */
+  .image-nav {
+    display: flex;
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+    right: 10px;
+  }
+
+  /* Details below images */
+  .detail-info {
+    order: 2;
+    gap: 15px;
+    padding: 0 1rem;
+  }
+
+  .item-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    padding-bottom: 5px;
+  }
+
+  .item-name {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .item-price {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .item-description {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .detail-section h3 {
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  /* Show dropdown arrows on mobile for specific sections */
+  .detail-section[data-dropdown] .dropdown-arrow {
+    display: inline-block;
+  }
+
+  /* Reorder sections on mobile */
+  .detail-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* A product from Lynn's Fabric */
+  .detail-section:nth-child(2) {
+    order: 1;
+  }
+
+  /* Color */
+  .detail-section:nth-child(3) {
+    order: 2;
+  }
+
+  /* Size */
+  .detail-section:nth-child(4) {
+    order: 3;
+  }
+
+  /* Size Chart */
+  .detail-section:nth-child(5) {
+    order: 4;
+  }
+
+  /* Size fit */
+  .detail-section:nth-child(6) {
+    order: 5;
+  }
+
+  /* Recommend season */
+  .detail-section:nth-child(7) {
+    order: 6;
+  }
+
+  /* Material */
+  .detail-section:nth-child(8) {
+    order: 7;
+  }
+
+  /* Texture */
+  .detail-section:nth-child(9) {
+    order: 8;
+  }
+
+  /* Style */
+  .detail-section:nth-child(10) {
+    order: 9;
+  }
+
+  .tag-btn {
+    padding: 6px 16px;
+    font-size: 13px;
+    gap: 6px;
+  }
+
+  .color-circle {
+    width: 16px;
+    height: 16px;
+  }
+
+  .size-chart {
+    padding: 10px;
+  }
+
+  /* Mobile: Sticky bottom buttons */
+  main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .detail-layout {
+    flex: 1;
+  }
+
+  .action-buttons {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    margin-top: auto;
+    max-width: 100%;
+    padding: 15px;
+    background: #fff;
+    border-top: 1px solid #e0e0e0;
+    z-index: 100;
+  }
+
+  .chat-button {
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .cart-button {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+  }
+
+  .cart-button img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* ===================
+    SWIPE POPUP 
+======================*/
 .popup-content.swipe {
   max-width: 900px;
   border-radius: 12px;
