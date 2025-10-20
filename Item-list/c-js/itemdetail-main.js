@@ -81,54 +81,58 @@
 //   });
 // });
 
-// Image carousel
-let currentImageIndex = 0;
-const images = document.querySelectorAll('.detail-images .image-placeholder');
+///////////////////////// Image carousel///////////////////
+// let currentImageIndex = 0;
+// const images = document.querySelectorAll('.detail-images .image-placeholder');
 
-function nextImage() {
-  images[currentImageIndex].classList.add('hidden');
-  currentImageIndex = (currentImageIndex + 1) % images.length;
-  images[currentImageIndex].classList.remove('hidden');
-}
+// function nextImage() {
+//   images[currentImageIndex].classList.add('hidden');
+//   currentImageIndex = (currentImageIndex + 1) % images.length;
+//   images[currentImageIndex].classList.remove('hidden');
+// }
 
 // Dropdown toggle
-function toggleDropdown(element) {
-  const section = element.closest('.detail-section');
-  section.classList.toggle('collapsed');
-}
 
-// Color / Size だけ反応（.detail-section.selectable 配下）
-// クリックされたボタンだけ toggle、同じグループの他は外す
+// function toggleDropdown(element) {
+//   const section = element.closest('.detail-section');
+//   section.classList.toggle('collapsed');
+// }
+
+// toggle only clicked
 document.addEventListener('click', (e) => {
   const btn = e.target.closest('.detail-section.selectable .tag-btn');
   if (!btn) return;
 
   const group = btn.closest('.tag-group');
-  // 自分以外の active を外す
+  // remove others 
   group.querySelectorAll('.tag-btn').forEach(b => {
     if (b !== btn) b.classList.remove('active');
   });
-  // 自分は toggle（同じボタン再クリックで解除も可）
+  // click and active/remove
   btn.classList.toggle('active');
 });
 
+// Toggle dropdown open/close
 function toggleDropdown(el) {
   if (window.innerWidth <= 768) {
-    el.closest('.detail-section').classList.toggle('collapsed');
+    el.closest('.detail-section').classList.toggle('show');
   }
 }
 
-// ページが開いた時 & サイズが変わった時に状態を整える
+// Set initial dropdown state on page load and window resize
 function setDropdownState() {
   const dropdowns = document.querySelectorAll('.detail-section[data-dropdown]');
   if (window.innerWidth > 768) {
-    // デスクトップ：全部開く
-    dropdowns.forEach(s => s.classList.remove('collapsed'));
+    // Desktop: all sections are expanded (show)
+    dropdowns.forEach(s => s.classList.add('show'));
   } else {
-    // モバイル：全部閉じる
-    dropdowns.forEach(s => s.classList.add('collapsed'));
+    // Mobile: all sections are collapsed (hidden)
+    dropdowns.forEach(s => s.classList.remove('show'));
   }
 }
 
+// Initialize dropdown state
 setDropdownState();
+
+// Recheck state when resizing the window
 window.addEventListener('resize', setDropdownState);
