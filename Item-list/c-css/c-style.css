@@ -1330,6 +1330,7 @@ input[type="range"]::-moz-range-thumb {
   }
 
   /* Mobile: Sticky bottom buttons
+  
   main {
     min-height: 100vh;
     display: flex;
