@@ -1329,7 +1329,7 @@ input[type="range"]::-moz-range-thumb {
     padding: 10px;
   }
 
-  /* Mobile: Sticky bottom buttons */
+  /* Mobile: Sticky bottom buttons
   main {
     min-height: 100vh;
     display: flex;
@@ -1376,22 +1376,22 @@ input[type="range"]::-moz-range-thumb {
     width: 20px;
     height: 20px;
   }
+/* 
+  /*DISCOVER-PAGE*/
 
-/*DISCOVER-PAGE*/
-
-.list-items {
+  /* .list-items {
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    gap: 20px; 
+    align-items: center;
+    gap: 20px;
     padding: 0 10px;
   }
 
   .card {
-    width: 85%; 
-    max-width: 400px; 
+    width: 85%;
+    max-width: 400px;
     text-align: center;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
   }
@@ -1405,16 +1405,15 @@ input[type="range"]::-moz-range-thumb {
   .card p {
     text-align: center;
     margin: 5px 0;
-  }
-  
+  } */ 
 
-/*footer discover-page*/
-.footer-inner {
+  /* footer discover-page
+  .footer-inner {
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
     text-align: center;
-    gap: 20px; 
+    gap: 20px;
   }
 
   .footer-links {
@@ -1430,14 +1429,10 @@ input[type="range"]::-moz-range-thumb {
   }
 
   .footer-logo p {
-    display: none; 
+    display: none;
   }
-
-  
-  
-}
-
-
+} */ 
+/* I merged it with mine! - BELLA */
 
 /* ===================
     SWIPE POPUP 
