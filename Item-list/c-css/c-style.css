@@ -723,18 +723,16 @@ input[type="range"]::-moz-range-thumb {
     ============================== */
 .items-detail-title {
   text-align: center;
-  font-size: 17px;
-  font-weight: 600;
+  font-size: 28px;
+  font-weight: 700;
   letter-spacing: 1.5px;
   margin-bottom: 40px;
-  color: #1a1a1a;
 }
 
 .detail-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  align-items: start;
+  gap: 60px;
 }
 
 /* Left Side - Images */
@@ -746,26 +744,9 @@ input[type="range"]::-moz-range-thumb {
 
 .image-placeholder {
   width: 100%;
-  aspect-ratio: 3/4;
-  background: linear-gradient(
-    135deg,
-    #f5f5f5 25%,
-    #e0e0e0 25%,
-    #e0e0e0 50%,
-    #f5f5f5 50%,
-    #f5f5f5 75%,
-    #e0e0e0 75%,
-    #e0e0e0
-  );
-  background-size: 40px 40px;
-  border-radius: 8px;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #ddd;
-  color: #999;
-  font-size: 14px;
 }
 
 .image-placeholder img {
@@ -789,22 +770,18 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .item-name {
-  font-weight: 600;
-  font-size: 18px;
-  color: #1a1a1a;
+  font-weight: 300;
+  font-size: 28px;
 }
 
 .item-price {
-  font-weight: 700;
-  font-size: 18px;
-  color: #1a1a1a;
+  font-weight: 600;
+  font-size: 28px;
 }
 
 .item-description {
-  font-size: 14px;
-  color: #4a4a4a;
-  line-height: 1.6;
-  margin: 0;
+  font-weight: 300;
+  font-size: 28px;
 }
 
 /* Detail Sections */
@@ -815,10 +792,8 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .detail-section h3 {
-  font-size: 14px;
   font-weight: 600;
-  margin: 0;
-  color: #1a1a1a;
+  font-size: 28px;
 }
 
 /* Tag Buttons */
@@ -831,14 +806,13 @@ input[type="range"]::-moz-range-thumb {
 .tag-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 18px;
+  gap: 10px;
+  padding: 8px 50px;
   border-radius: 20px;
   border: none;
-  background: #d4e8d4;
-  font-size: 13px;
+  background: var(--tertiary);
+  font-size: 16px;
   font-weight: 500;
-  color: #1a1a1a;
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -848,15 +822,16 @@ input[type="range"]::-moz-range-thumb {
   transform: translateY(-1px);
 }
 
-.tag-btn.selected {
-  background: #a8d5a8;
+.tag-btn.active {
+  background: var(--secondary);
   font-weight: 600;
+  color: var(--gray-50);
 }
 
 /* Color circle in color buttons */
 .color-circle {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
@@ -869,72 +844,63 @@ input[type="range"]::-moz-range-thumb {
   border-radius: 8px;
 }
 
-.size-chart-placeholder {
+.size-chart img {
   width: 100%;
-  height: 200px;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #999;
-  font-size: 14px;
+  height: auto;
+  display: block;
 }
 
 /* Action Buttons */
 .action-buttons {
   display: flex;
   gap: 15px;
-  margin-top: 20px;
+  margin-top: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
 }
 
 .chat-button {
-  flex: 1;
-  padding: 14px 24px;
+  padding: 12px 80px;
   border: none;
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 28px;
+  font-weight: 500;
   letter-spacing: 0.5px;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .chat-button.primary {
-  background: #0d4f5c;
-  color: #fff;
+  background: var(--secondary);
+  color: var(--primary);
 }
 
 .chat-button.primary:hover {
-  background: #0a3d47;
+  background: var(--secondary-variant);
   transform: translateY(-1px);
 }
 
 .cart-button {
   width: 55px;
   height: 55px;
-  padding: 0;
-  background: #fff;
-  border: 2px solid #ddd;
-  border-radius: 4px;
-  font-size: 22px;
+  padding: 8px;
+  background: var(--secondary);
+  color: var(--primary);
+  border: none;
+  font-size: 20px;
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center;
   transition: all 0.2s;
 }
 
 .cart-button:hover {
-  border-color: #0d4f5c;
-  background: #f5f5f5;
+  background: var(--secondary-variant);
   transform: translateY(-1px);
 }
 
-/* ==============================
-   SWIPE POPUP
-============================== */
+/* SWIPE POPUP */
 .popup-content.swipe {
   max-width: 900px;
   border-radius: 12px;
