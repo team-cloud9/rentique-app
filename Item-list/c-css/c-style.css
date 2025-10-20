@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
-/* ==============================
-   RESET & BASE
-============================== */
+/* RESET & BASE */
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +11,7 @@ body {
   font-family: "Inter", sans-serif;
   line-height: 1.6;
   color: var(--text-secondary);
-  background-color: var(--white-smoke);
+  background-color: var(--surface);
 }
 
 .container {
@@ -38,9 +36,7 @@ h2 {
   color: var(--deep-teal-blue);
 }
 
-/* ==============================
-   HEADER
-============================== */
+/* HEADER */
 header {
   display: flex;
   justify-content: space-between;
@@ -51,8 +47,16 @@ header {
 }
 
 header .logo img {
-  width: 120px;
-  display: block;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+header .logo .logo-main {
+  background-color: var(--nyanza);
+  padding: 5px;
+  border-radius: 5px;
 }
 
 .header-right {
@@ -76,6 +80,7 @@ header nav ul li a {
 
 header nav ul li a:hover {
   color: var(--text-primary);
+  text-decoration: underline;
 }
 
 header .user {
@@ -83,10 +88,8 @@ header .user {
   color: var(--text-primary);
 }
 
-/* ==============================
-   MAIN CONTENT
-============================== */
-main>section {
+/* MAIN CONTENT */
+main > section {
   width: 100%;
 }
 
@@ -190,76 +193,76 @@ main>section {
 
 /* Swipe Section */
 
-.swipe-container {
-  display: flex;
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+.swipe-style {
+  text-align: left;
+  padding: 2rem 0;
 }
 
 .swipe-style h2 {
-  font-size: 22px;
-  margin-bottom: 10px;
   color: var(--text-primary);
+  font-size: 1.4rem;
+  margin-bottom: 0.2rem;
 }
 
 .swipe-style p {
-  margin-top: 0.5rem;
-  color: var(--gray-600);
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.swipe-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  position: relative;
+}
+.arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.arrow img {
+  width: 36px;
+  height: 36px;
+  transition: transform 0.3s ease;
+}
+
+/* (▼ → ◀) */
+.arrow.left img {
+  transform: rotate(90deg);
+}
+
+/* (▼ → ▶) */
+.arrow.right img {
+  transform: rotate(-90deg);
 }
 
 .swipe-items {
   display: flex;
-  flex-wrap: nowrap;
-  gap: 10px;
+  gap: 1rem;
   overflow: hidden;
-  flex: 1 1 auto;
+  scroll-behavior: smooth;
+  width: calc(6 * 150px + 5 * 1rem);
 }
 
-.swipe-items .item {
-  width: 200px;
+.swipe-items img {
+  width: 150px;
   height: 200px;
-  flex-shrink: 0;
-  background-color: var(--gray-100);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-
-.swipe-items .item:hover {
-  transform: scale(1.05);
-}
-
-.arrow {
-  flex: 0 0 auto;
-  background: var(--deep-teal-blue);
+  object-fit: cover;
   border-radius: 5px;
-  color: #fff;
-  border: none;
-  width: 25px;
-  height: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 5rem 0.2rem;
+  flex-shrink: 0;
+}
+
+.swipe-items img:hover {
   cursor: pointer;
-  z-index: 1;
+  transform: scale(1.01);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.arrow.left {
-  left: 0;
-}
-
-.arrow.right {
-  right: 0;
-}
-
-/* ==============================
-   ITEM LIST
-============================== */
+/* ITEM LIST */
 .list-items {
   display: flex;
   flex-wrap: wrap;
@@ -270,7 +273,6 @@ main>section {
 .item-list h2,
 .item-list .discoverBtn {
   display: inline-block;
-  vertical-align: middle;
   margin: 0;
   margin-bottom: 2rem;
 }
@@ -278,11 +280,6 @@ main>section {
 .item-list h2 {
   font-size: 20px;
   color: var(--text-primary);
-}
-
-.discoverBtn {
-  margin-left: 1rem;
-  /* h2 오른쪽에 간격 */
 }
 
 .discoverBtn a {
@@ -299,50 +296,47 @@ main>section {
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    transform: translateY(-5px);
+  }
+
+  > .img {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: var(--gray-100);
+
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  > .name {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: var(--text-primary);
+  }
+
+  > .desc {
+    font-size: 12px;
+    color: var(--gray-600);
+    margin-bottom: 5px;
+  }
+
+  > .price {
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--text-secondary);
+  }
 }
 
-.card:hover {
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-  transform: translateY(-5px);
-}
-
-.card .img {
-  width: 100%;
-  height: 250px;
-  margin-bottom: 10px;
-  overflow: hidden;
-  border-radius: 8px;
-  background-color: var(--gray-100);
-}
-
-.card .img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.card .name {
-  font-weight: bold;
-  font-size: 14px;
-  margin-bottom: 5px;
-  color: var(--text-primary);
-}
-
-.card .desc {
-  font-size: 12px;
-  color: var(--gray-600);
-  margin-bottom: 5px;
-}
-
-.card .price {
-  font-size: 13px;
-  font-weight: bold;
-  color: var(--text-secondary);
-}
-
-/* ==============================
-   PAGINATION
-============================== */
+/* PAGINATION */
 .pagination {
   display: flex;
   flex-direction: column;
@@ -399,79 +393,87 @@ main>section {
   color: var(--text-on-secondary);
 }
 
-/* ==============================
-   FOOTER
-============================== */
+/* FOOTER */
+
 footer {
   background-color: var(--deep-teal-blue);
-  color: var(--text-on-secondary);
+  color: var(--nyanza);
   width: 100%;
+  padding: 5rem 0 3rem;
+  font-family: sans-serif;
 }
 
 .footer-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 5rem 3rem;
+  padding: 0 3rem;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 50px;
+  gap: 2rem;
 }
 
 .footer-logo {
-  max-width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-.brand a {
+.footer-logo a {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.5rem;
   text-decoration: none;
 }
 
-.brand-name {
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: var(--nyanza);
-  letter-spacing: 1px;
+.footerlogo-main {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  background-color: var(--nyanza);
+  padding: 3px;
 }
 
-footer .footer-logo img {
-  width: 60px;
-  border-radius: 10px;
-  filter: invert(88%) sepia(12%) saturate(520%) hue-rotate(75deg) brightness(103%) contrast(92%);
+.footerlogo-sub {
+  height: 40px;
+  width: auto;
 }
 
 .footer-logo p {
-  padding-top: 0.3rem;
-  font-size: 14px;
-  color: var(--gray-400);
+  margin: 0;
+  margin-top: 0.5rem;
+  font-size: 20px;
+  color: var(--text-on-secondary);
+  font-weight: 100;
   line-height: 1.4;
 }
 
 .footer-links {
   display: flex;
-  flex-wrap: wrap;
-  gap: 50px;
+  gap: 3rem;
+  margin-left: 20rem;
 }
 
 .footer-links h3 {
-  font-size: 14px;
-  font-weight: bold;
-  margin-right: 50px;
+  font-size: 25px;
+  font-weight: 400;
+  color: var(--text-on-secondary);
+  margin: 0;
 }
+/* Copyright */
 
 .copyright {
   text-align: center;
+  font-style: italic;
   background-color: var(--deep-teal-blue);
   color: var(--surface);
   padding-bottom: 1rem;
   font-weight: 200;
 }
 
-/* ==============================
-   FILTER POPUP
-============================== */
+/* FILTER POPUP */
 .popup-container {
   display: none;
   position: fixed;
@@ -721,16 +723,18 @@ input[type="range"]::-moz-range-thumb {
     ============================== */
 .items-detail-title {
   text-align: center;
-  font-size: 28px;
-  font-weight: 700;
+  font-size: 17px;
+  font-weight: 600;
   letter-spacing: 1.5px;
   margin-bottom: 40px;
+  color: #1a1a1a;
 }
 
 .detail-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 50px;
+  align-items: start;
 }
 
 /* Left Side - Images */
@@ -742,9 +746,26 @@ input[type="range"]::-moz-range-thumb {
 
 .image-placeholder {
   width: 100%;
+  aspect-ratio: 3/4;
+  background: linear-gradient(
+    135deg,
+    #f5f5f5 25%,
+    #e0e0e0 25%,
+    #e0e0e0 50%,
+    #f5f5f5 50%,
+    #f5f5f5 75%,
+    #e0e0e0 75%,
+    #e0e0e0
+  );
+  background-size: 40px 40px;
+  border-radius: 8px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid #ddd;
+  color: #999;
+  font-size: 14px;
 }
 
 .image-placeholder img {
@@ -768,18 +789,22 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .item-name {
-  font-weight: 300;
-  font-size: 28px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #1a1a1a;
 }
 
 .item-price {
-  font-weight: 600;
-  font-size: 28px;
+  font-weight: 700;
+  font-size: 18px;
+  color: #1a1a1a;
 }
 
 .item-description {
-  font-weight: 300;
-  font-size: 28px;
+  font-size: 14px;
+  color: #4a4a4a;
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* Detail Sections */
@@ -790,8 +815,10 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .detail-section h3 {
+  font-size: 14px;
   font-weight: 600;
-  font-size: 28px;
+  margin: 0;
+  color: #1a1a1a;
 }
 
 /* Tag Buttons */
@@ -804,32 +831,32 @@ input[type="range"]::-moz-range-thumb {
 .tag-btn {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px 50px;
+  gap: 8px;
+  padding: 8px 18px;
   border-radius: 20px;
   border: none;
-  background: var(--tertiary);
-  font-size: 16px;
+  background: #d4e8d4;
+  font-size: 13px;
   font-weight: 500;
+  color: #1a1a1a;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .tag-btn:hover {
-  background: #C0DCC0;
+  background: #c0dcc0;
   transform: translateY(-1px);
 }
 
-.tag-btn.active {
-  background: var(--secondary);
+.tag-btn.selected {
+  background: #a8d5a8;
   font-weight: 600;
-  color: var(--gray-50);
 }
 
 /* Color circle in color buttons */
 .color-circle {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
@@ -842,59 +869,66 @@ input[type="range"]::-moz-range-thumb {
   border-radius: 8px;
 }
 
-.size-chart img {
+.size-chart-placeholder {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 200px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 14px;
 }
 
 /* Action Buttons */
 .action-buttons {
   display: flex;
   gap: 15px;
-  margin-top: 40px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: center;
+  margin-top: 20px;
 }
 
 .chat-button {
-  padding: 12px 80px;
+  flex: 1;
+  padding: 14px 24px;
   border: none;
-  font-size: 28px;
-  font-weight: 500;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
   letter-spacing: 0.5px;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .chat-button.primary {
-  background: var(--secondary);
-  color: var(--primary);
+  background: #0d4f5c;
+  color: #fff;
 }
 
 .chat-button.primary:hover {
-  background: var(--secondary-variant);
+  background: #0a3d47;
   transform: translateY(-1px);
 }
 
 .cart-button {
   width: 55px;
   height: 55px;
-  padding: 8px;
-  background: var(--secondary);
-  color: var(--primary);
-  border: none;
-  font-size: 20px;
+  padding: 0;
+  background: #fff;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-size: 22px;
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
   transition: all 0.2s;
 }
 
 .cart-button:hover {
-  background: var(--secondary-variant);
+  border-color: #0d4f5c;
+  background: #f5f5f5;
   transform: translateY(-1px);
 }
 
@@ -918,7 +952,6 @@ input[type="range"]::-moz-range-thumb {
   min-height: 450px;
   background: white;
   border-radius: 12px;
-
 }
 
 .swipe-popup-left img {
@@ -1006,7 +1039,6 @@ input[type="range"]::-moz-range-thumb {
   font-size: 13px;
   font-weight: 500;
   margin: 5px 0;
-
 }
 
 /* Swipe Button */
