@@ -96,3 +96,39 @@ function toggleDropdown(element) {
   const section = element.closest('.detail-section');
   section.classList.toggle('collapsed');
 }
+
+// Color / Size だけ反応（.detail-section.selectable 配下）
+// クリックされたボタンだけ toggle、同じグループの他は外す
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.detail-section.selectable .tag-btn');
+  if (!btn) return;
+
+  const group = btn.closest('.tag-group');
+  // 自分以外の active を外す
+  group.querySelectorAll('.tag-btn').forEach(b => {
+    if (b !== btn) b.classList.remove('active');
+  });
+  // 自分は toggle（同じボタン再クリックで解除も可）
+  btn.classList.toggle('active');
+});
+
+function toggleDropdown(el) {
+  if (window.innerWidth <= 768) {
+    el.closest('.detail-section').classList.toggle('collapsed');
+  }
+}
+
+// ページが開いた時 & サイズが変わった時に状態を整える
+function setDropdownState() {
+  const dropdowns = document.querySelectorAll('.detail-section[data-dropdown]');
+  if (window.innerWidth > 768) {
+    // デスクトップ：全部開く
+    dropdowns.forEach(s => s.classList.remove('collapsed'));
+  } else {
+    // モバイル：全部閉じる
+    dropdowns.forEach(s => s.classList.add('collapsed'));
+  }
+}
+
+setDropdownState();
+window.addEventListener('resize', setDropdownState);
