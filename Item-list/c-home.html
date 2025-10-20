@@ -1,218 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Style Shuffle</title>
+    <link rel="stylesheet" href="./c-css/c-style.css" />
+    <link rel="stylesheet" href="./c-css/var.css" />
+    <script src="./c-js/home-main.js" defer></script>
+    <script src="./c-js/home-main-popup.js" defer></script>
+    <script type="module" src="./c-js/addData.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Style Shuffle</title>
-  <link rel="stylesheet" href="./c-css/c-style.css" />
-  <link rel="stylesheet" href="./c-css/var.css" />
-  <script src="./c-js/home-main.js" defer></script>
-  <script src="./c-js/home-main-popup.js" defer></script>
-  <script type="module" src="./c-js/addData.js"></script>
-</head>
-
-<body>
-  <!-- Header -->
-  <header>
-    <div class="logo">
-      <div class="brand">
-        <a href="./c-home.html">
-          <img src="../assets/logo/rentique_blue_L.svg" alt="Logo" />
-          <span class="brand-name"><img src="../assets/logo/rentique_green_S.svg" alt="RENTIQUE"></span>
-        </a>
-      </div>
-    </div>
-    <div class="header-right">
-      <nav>
-        <ul>
-          <li><a href="c-discover-page.html">BROWSE</a></li>
-          <li><a href="#">CHAT LIST</a></li>
-          <li><a href="#">PROFILE</a></li>
-        </ul>
-      </nav>
-      <div class="user">
-        <span>Hi, Chloe</span>
-      </div>
-    </div>
-  </header>
-
-  <!-- Main -->
-  <main class="container float-center">
-    <!-- Swipe Your Style Section -->
-    <section class="swipe-style">
-      <h2>SWIPE YOUR STYLE</h2>
-      <p>Discover your style in every swipe</p>
-
-      <div class="swipe-container">
-        <button class="arrow left">&#8592;</button>
-
-        <div class="swipe-items">
-          <img class="item" src="photo1.jpg" alt="click image" />
-          <img class="item" src="photo2.jpg" alt="click image" />
-          <img class="item" src="photo3.jpg" alt="click image" />
-          <img class="item" src="photo4.jpg" alt="click image" />
-          <img class="item" src="photo5.jpg" alt="click image" />
-          <img class="item" src="photo6.jpg" alt="click image" />
-          <img class="item" src="photo7.jpg" alt="click image" />
-          <img class="item" src="photo8.jpg" alt="click image" />
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <div class="brand">
+          <a href="./c-home.html">
+            <img
+              class="logo-main"
+              src="../assets/logo/rentique_blue_L.svg"
+              alt="Logo"
+            />
+            <span class="brand-name"
+              ><img src="../assets/logo/rentique_blue_S.svg" alt="RENTIQUE"
+            /></span>
+          </a>
         </div>
-
-        <button class="arrow right">&#8594;</button>
       </div>
-    </section>
+      <div class="header-right">
+        <nav>
+          <ul>
+            <li><a href="./c-discover-page.html">BROWSE</a></li>
+            <li><a href="#">CHAT LIST</a></li>
+            <li><a href="#">PROFILE</a></li>
+          </ul>
+        </nav>
+        <div class="user">
+          <span>Hi, Chloe</span>
+        </div>
+      </div>
+    </header>
 
-    <!-- Popup for Swipe Item -->
-    <div class="popup-container" id="swipePopup">
-      <div class="popup-content swipe">
-        <span class="close-popup" id="closePopup">&times;</span>
-        <div class="swipe-popup-body">
-          <div class="swipe-popup-left">
-            <img src="../assets/BrownCode.jpg" alt="Recommended Item" id="popupImage">
+    <!-- Main -->
+    <main class="container float-center">
+      <!-- Swipe Your Style Section -->
+      <section class="swipe-style">
+        <h2>SWIPE YOUR STYLE</h2>
+        <p>Discover your style in every swipe</p>
+
+        <div class="swipe-container">
+          <button class="arrow left">
+            <img src="../assets/icon/Icon_dropdown.svg" alt="previous" />
+          </button>
+
+          <div class="swipe-items">
+            <img class="item" src="../assets/photo1.jpg" alt="click image" />
+            <img class="item" src="../assets/photo1.jpg" alt="click image" />
+            <img class="item" src="../assets/photo1.jpg" alt="click image" />
+            <img class="item" src="../assets/photo1.jpg" alt="click image" />
+            <img class="item" src="../assets/photo1.jpg" alt="click image" />
+            <img class="item" src="../assets/photo1.jpg" alt="click image" />
+            <img class="item" src="../assets/photo1.jpg" alt="click image" />
+            <img class="item" src="../assets/photo1.jpg" alt="click image" />
           </div>
-          <div class="swipe-popup-right">
-            <h3>RECOMMEND FOR YOU!</h3>
-            <h2 class="swipe-popup-title">Autumn cozy outfit</h2>
-            <p class="swipe-label">Brand: <span id="swipePopupBrand">Alissa
-                Clothing</span></p>
-            <p class="swipe-label">Description: <span id="swipePopupDesc">A cozy camel sweater paired
-                with
-                beige
-                khaki pants.</span></p>
 
-            <div class="swipe-popup-details">
-              <div class="swipe-detail-row">
-                <span class="swipe-detail-label">Colour:</span>
-                <div class="swipe-detail-values">
-                  <span class="swipe-color-tag">
-                    <span class="swipe-color-dot" style="background:brown;"></span> Brown
-                  </span>
-                  <span class="swipe-color-tag">
-                    <span class="swipe-color-dot" style="background:beige; border:1px solid #ccc;"></span> Beige
-                  </span>
+          <button class="arrow right">
+            <img src="../assets/icon/Icon_dropdown.svg" alt="next" />
+          </button>
+        </div>
+      </section>
+
+      <!-- Popup for Swipe Item -->
+      <div class="popup-container" id="swipePopup">
+        <div class="popup-content swipe">
+          <span class="close-popup" id="closePopup">&times;</span>
+          <div class="swipe-popup-body">
+            <div class="swipe-popup-left">
+              <img
+                src="../assets/BrownCode.jpg"
+                alt="Recommended Item"
+                id="popupImage"
+              />
+            </div>
+            <div class="swipe-popup-right">
+              <h3>RECOMMEND FOR YOU!</h3>
+              <h2 class="swipe-popup-title">Autumn cozy outfit</h2>
+              <p class="swipe-label">
+                Brand: <span id="swipePopupBrand">Alissa Clothing</span>
+              </p>
+              <p class="swipe-label">
+                Description:
+                <span id="swipePopupDesc"
+                  >A cozy camel sweater paired with beige khaki pants.</span
+                >
+              </p>
+
+              <div class="swipe-popup-details">
+                <div class="swipe-detail-row">
+                  <span class="swipe-detail-label">Colour:</span>
+                  <div class="swipe-detail-values">
+                    <span class="swipe-color-tag">
+                      <span
+                        class="swipe-color-dot"
+                        style="background: brown"
+                      ></span>
+                      Brown
+                    </span>
+                    <span class="swipe-color-tag">
+                      <span
+                        class="swipe-color-dot"
+                        style="background: beige; border: 1px solid #ccc"
+                      ></span>
+                      Beige
+                    </span>
+                  </div>
                 </div>
-              </div>
 
-              <div class="swipe-detail-row">
-                <span class="swipe-detail-label">Size:</span>
-                <div class="swipe-detail-values">
-                  <span class="swipe-text-tag">Medium</span>
+                <div class="swipe-detail-row">
+                  <span class="swipe-detail-label">Size:</span>
+                  <div class="swipe-detail-values">
+                    <span class="swipe-text-tag">Medium</span>
+                  </div>
                 </div>
-              </div>
 
-              <div class="swipe-detail-row">
-                <span class="swipe-detail-label">Recommend season:</span>
-                <div class="swipe-detail-values">
-                  <span class="swipe-text-tag">Autumn</span>
+                <div class="swipe-detail-row">
+                  <span class="swipe-detail-label">Recommend season:</span>
+                  <div class="swipe-detail-values">
+                    <span class="swipe-text-tag">Autumn</span>
+                  </div>
                 </div>
-              </div>
 
-              <div class="swipe-detail-row">
-                <span class="swipe-detail-label">Texture:</span>
-                <div class="swipe-detail-values">
-                  <span class="swipe-text-tag">Plain</span>
+                <div class="swipe-detail-row">
+                  <span class="swipe-detail-label">Texture:</span>
+                  <div class="swipe-detail-values">
+                    <span class="swipe-text-tag">Plain</span>
+                  </div>
                 </div>
-              </div>
 
-              <div class="swipe-detail-row">
-                <span class="swipe-detail-label">Material:</span>
-                <div class="swipe-detail-values">
-                  <span class="swipe-text-tag">Knitted fabric</span>
-                  <span class="swipe-text-tag">Khaki</span>
+                <div class="swipe-detail-row">
+                  <span class="swipe-detail-label">Material:</span>
+                  <div class="swipe-detail-values">
+                    <span class="swipe-text-tag">Knitted fabric</span>
+                    <span class="swipe-text-tag">Khaki</span>
+                  </div>
                 </div>
-              </div>
 
-              <div class="swipe-detail-row">
-                <span class="swipe-detail-label">Style:</span>
-                <div class="swipe-detail-values">
-                  <span class="swipe-text-tag">Casual</span>
+                <div class="swipe-detail-row">
+                  <span class="swipe-detail-label">Style:</span>
+                  <div class="swipe-detail-values">
+                    <span class="swipe-text-tag">Casual</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="swipe-popup-buttons">
-        <button class="swipe-btn-pass">PASS</button>
-        <button class="swipe-btn-like">LIKE</button>
-      </div>
-    </div>
-
-    <!-- Recommended Item List Section -->
-    <section class="item-list">
-      <div class="item-list-header">
-        <h2>ITEM LISTS</h2>
-        <div class="discoverBtn">
-          <a href="discover.html">Discover more</a>
+        <div class="swipe-popup-buttons">
+          <button class="swipe-btn-pass">PASS</button>
+          <button class="swipe-btn-like">LIKE</button>
         </div>
       </div>
 
-      <div class="list-items">
-        <a href="itemdetail.html" class="card">
-          <div class="img">
-            <img src="images/item1.jpg" alt="Item 1" />
+      <!-- Recommended Item List Section -->
+      <section class="item-list">
+        <div class="item-list-header">
+          <h2>ITEM LISTS</h2>
+          <div class="discoverBtn">
+            <a href="./c-discover-page.html">Discover more</a>
           </div>
-          <p class="name">Classic Jacket</p>
-          <p class="desc">Warm and stylish winter wear</p>
-          <p class="price">$120</p>
-        </a>
-
-        <div class="card">
-          <div class="img">
-            <img src="images/item2.jpg" alt="Item 2" />
-          </div>
-          <p class="name">Casual Sneakers</p>
-          <p class="desc">Comfortable everyday shoes</p>
-          <p class="price">$85</p>
         </div>
 
-        <div class="card">
-          <div class="img">
-            <img src="images/item3.jpg" alt="Item 3" />
-          </div>
-          <p class="name">Denim Jeans</p>
-          <p class="desc">Slim fit blue denim</p>
-          <p class="price">$65</p>
-        </div>
-
-        <div class="card">
-          <div class="img">
-            <img src="images/item4.jpg" alt="Item 4" />
-          </div>
-          <p class="name">Leather Bag</p>
-          <p class="desc">Durable and trendy design</p>
-          <p class="price">$150</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-logo">
-        <div class="brand">
-          <a href="c-home.html">
-            <img src="../assets/logo_rentique.svg" alt="Logo" />
-            <span class="brand-name">RENTIQUE</span>
+        <div class="list-items">
+          <a href="./c-itemdetail.html" class="card">
+            <div class="img">
+              <img src="../assets/BrownCode.jpg" alt="Item 1" />
+            </div>
+            <p class="name">Classic Jacket</p>
+            <p class="desc">Warm and stylish winter wear</p>
+            <p class="price">$120</p>
           </a>
-        </div>
-        <p>Our boutique is for rent</p>
-      </div>
-      <div class="footer-links">
-        <div>
-          <h3>BROWSE</h3>
-        </div>
-        <div>
-          <h3>CHAT LIST</h3>
-        </div>
-        <div>
-          <h3>PROFILE</h3>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <div class="copyright">&copy; 2025 Cloud9 Team | Langara College</div>
-</body>
 
+          <div class="card">
+            <div class="img">
+              <img src="../assets/BrownCode.jpg" alt="Item 2" />
+            </div>
+            <p class="name">Casual Sneakers</p>
+            <p class="desc">Comfortable everyday shoes</p>
+            <p class="price">$85</p>
+          </div>
+
+          <div class="card">
+            <div class="img">
+              <img src="../assets/BrownCode.jpg" alt="Item 3" />
+            </div>
+            <p class="name">Denim Jeans</p>
+            <p class="desc">Slim fit blue denim</p>
+            <p class="price">$65</p>
+          </div>
+
+          <div class="card">
+            <div class="img">
+              <img src="../assets/BrownCode.jpg" alt="Item 4" />
+            </div>
+            <p class="name">Leather Bag</p>
+            <p class="desc">Durable and trendy design</p>
+            <p class="price">$150</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <div>
+            <a href="c-home.html">
+              <img
+                class="footerlogo-main"
+                src="../assets/logo/rentique_blue_L.svg"
+                alt="Logo"
+              />
+              <img
+                class="footerlogo-sub"
+                src="../assets/logo/rentique_green_s.svg"
+                alt="Logo"
+              />
+            </a>
+          </div>
+          <p>Our boutique is for rent</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h3>BROWSE</h3>
+          </div>
+          <div>
+            <h3>CHAT LIST</h3>
+          </div>
+          <div>
+            <h3>PROFILE</h3>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="copyright">&copy; 2025 Cloud9 Team | Langara College</div>
+  </body>
 </html>
