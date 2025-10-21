@@ -1,0 +1,110 @@
+<!-- @Made By: Gurpreet Singh -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rentique - Business Sign Up</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <script src="../js/pages/signup-business.js" type="module" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <div class="logo-section">
+        <a href="signup-choice.html" class="back-arrow">←</a>
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-4eh45c3WUpYmwPpP2HPt2jStjtt4Gt.png" alt="Rentique logo" class="logo">
+        <h1>RENTIQUE</h1>
+      </div>
+
+      <form class="login-form" id="signupBusinessForm">
+        <h2>SIGN UP</h2>
+        
+        <div class="form-group">
+          <input type="email" id="email" placeholder="Email" required>
+          <span class="error-message" id="emailError"></span>
+        </div>
+
+        <div class="form-group">
+          <input type="password" id="password" placeholder="Password" required>
+          <span class="error-message" id="passwordError"></span>
+        </div>
+
+         <!-- Added policy acceptance checkbox -->
+        <div class="policy-checkbox">
+          <input type="checkbox" id="policyAccept" required>
+          <label for="policyAccept">
+            I accept the <a href="#" class="policy-link">Policy Statement</a>
+          </label>
+        </div>
+
+        <button type="submit" class="login-btn">CREATE ACCOUNT</button>
+
+        <p class="signup-text">
+          Already have an account? <a href="login-business.html">Log In</a>
+        </p>
+
+        <p class="customer-link">
+          Sign in as <a href="login-business.html">Business</a>
+        </p>
+      </form>
+    </div>
+
+    <div class="right">
+      <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/4%207-rJBy0McPzMNB6dEuOxmkpBxrCWJrOB.png" alt="Fashion Model" class="hero-img">
+    </div>
+  </div>
+
+  <!-- Added brand information modal for business onboarding -->
+  <div id="brandInfoModal" class="onboarding-modal" style="display: none;">
+    <div class="onboarding-header">
+      <a href="signup-choice.html" class="back-arrow">←</a>
+      <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-4eh45c3WUpYmwPpP2HPt2jStjtt4Gt.png" alt="Rentique logo" class="logo">
+      <h1>RENTIQUE</h1>
+    </div>
+
+    <div class="onboarding-content">
+      <h2>BRAND INFORMATION</h2>
+      
+      <div class="profile-photo-upload">
+        <input type="file" id="brandLogo" accept="image/*" style="display: none;">
+        <label for="brandLogo" class="photo-upload-label">
+          <div class="photo-placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </div>
+          <img id="brandLogoPreview" style="display: none;">
+          <button type="button" class="remove-image-btn" id="removeBrandLogo" style="display: none;">×</button>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <input type="text" id="brandName" placeholder="Brand name" required>
+      </div>
+
+      <div class="form-group">
+        <input type="text" id="brandAddress" placeholder="Address" required>
+      </div>
+
+      <button id="completeBrandInfo" class="login-btn" disabled>DONE</button>
+
+      <p class="settings-note">You can change this anytime from your profile settings.</p>
+    </div>
+  </div>
+
+  <div id="modalContainer" class="modal-container">
+    <div class="modal-box">
+        <h3 id="modalTitle" class="modal-title"></h3>
+        <p id="modalMessage" class="modal-message"></p>
+        <div id="modalInputContainer" class="modal-input-container">
+            <input type="password" id="modalInput" class="modal-input">
+        </div>
+        <div id="modalButtonContainer" class="modal-button-container">
+        </div>
+    </div>
+  </div>
+
+</body>
+</html>
