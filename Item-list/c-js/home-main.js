@@ -35,7 +35,7 @@ leftBtn.addEventListener("click", () => {
 //Scroll top
 const scrollTopBtn = document.querySelector(".scroll-top");
 
-// for tablet & spn
+// for tablet
 if (scrollTopBtn && window.innerWidth <= 1024) {
   scrollTopBtn.addEventListener("click", () => {
     window.scrollTo({
