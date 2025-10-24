@@ -5,35 +5,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ItemsDetail</title>
-  <link rel="stylesheet" href="./c-css/c-style.css" />
-  <link rel="stylesheet" href="./c-css/var.css" />
-  <script src="./c-js/itemdetail-main.js" defer></script>
+
+  <!-- /Component -->
+  <link rel="stylesheet" href="../components/view/css/var.css" />
+  <link rel="stylesheet" href="../components/view/css/header-footer.css" />
+  <script src="../components/controller/components.js" defer></script>
+  <script src="../components/controller/component-loader.js" defer></script>
+  <!-- Component/ -->
+
+  <link rel="stylesheet" href="../c-css/c-style.css" />
+  <link rel="stylesheet" href="../components/view/css/var.css" />
+  <script src="../c-js/c-pages/itemdetail-main.js" defer></script>
 </head>
 
 <body>
-  <!-- Header -->
-  <header>
-    <div class="logo">
-      <div class="brand">
-        <a href="./c-home.html">
-          <img class="logo-main" src="../assets/logo/rentique_blue_L.svg" alt="Logo" />
-          <span class="brand-name"><img src="../assets/logo/rentique_blue_S.svg" alt="RENTIQUE" /></span>
-        </a>
-      </div>
-    </div>
-    <div class="header-right">
-      <nav>
-        <ul>
-          <li><a href="./c-discover-page.html">BROWSE</a></li>
-          <li><a href="#">CHAT LIST</a></li>
-          <li><a href="#">PROFILE</a></li>
-        </ul>
-      </nav>
-      <div class="user">
-        <span>Hi, Chloe</span>
-      </div>
-    </div>
-  </header>
+
+  <div id="header-placeholder" data-user-type="customer"></div>
 
   <!-- Main Content -->
   <main>
@@ -176,31 +163,8 @@
   </main>
 
   <!-- Footer -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-logo">
-        <div>
-          <a href="c-home.html">
-            <img class="footerlogo-main" src="../assets/logo/rentique_blue_L.svg" alt="Logo" />
-            <img class="footerlogo-sub" src="../assets/logo/rentique_green_s.svg" alt="Logo" />
-          </a>
-        </div>
-        <p>Our boutique is for rent</p>
-      </div>
-      <div class="footer-links">
-        <div>
-          <h3>BROWSE</h3>
-        </div>
-        <div>
-          <h3>CHAT LIST</h3>
-        </div>
-        <div>
-          <h3>PROFILE</h3>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <div class="copyright">&copy; 2025 Cloud9 Team | Langara College</div>
+  <div id="footer-placeholder" data-user-type="customer"></div>
+
 </body>
 
 </html>
