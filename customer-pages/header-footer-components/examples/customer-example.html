@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Side Example - Rentique</title>
+   <!-- START: COPY THIS -->
+    <link rel="stylesheet" href="../components/view/css/var.css" />
+    <link rel="stylesheet" href="../components/view/css/header-footer.css" />
+    <script src="../components/controller/components.js" defer></script>
+    <script src="../components/controller/component-loader.js" defer></script>
+    <!-- END: COPY THIS -->
+
+    <link rel="stylesheet" href="./examples.css" />
+  </head>
+
+  <body>
+    <!-- START: COPY THIS -->
+    <div id="header-placeholder" data-user-type="customer"></div>
+    <!-- END: COPY THIS -->
+
+    <!-- Main Content -->
+    <main class="container">
+      <section class="item-list">
+        <h2>CUSTOMER SIDE EXAMPLE</h2>
+        <p style="margin-bottom: 2rem;">
+          This page demonstrates the customer-side navigation with blue branding,
+          customer-specific links (BROWSE, CHAT LIST, PROFILE), and customer icons.
+          All navigation links, icons, and logos are loaded dynamically from the JavaScript configuration.
+          <strong>Notice how the header and footer are loaded with just one line of HTML!</strong>
+        </p>
+
+        <div class="list-items">
+          <div class="card">
+            <div class="img">
+              <img src="../assets/BrownCode.jpg" alt="Item 1" />
+            </div>
+            <p class="name">Classic Jacket</p>
+            <p class="desc">Warm and stylish winter wear</p>
+            <p class="price">$120</p>
+          </div>
+
+          <div class="card">
+            <div class="img">
+              <img src="../assets/BrownCode.jpg" alt="Item 2" />
+            </div>
+            <p class="name">Casual Sneakers</p>
+            <p class="desc">Comfortable everyday shoes</p>
+            <p class="price">$85</p>
+          </div>
+
+          <div class="card">
+            <div class="img">
+              <img src="../assets/BrownCode.jpg" alt="Item 3" />
+            </div>
+            <p class="name">Denim Jeans</p>
+            <p class="desc">Slim fit blue denim</p>
+            <p class="price">$65</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- START: COPY THIS -->
+    <div id="footer-placeholder" data-user-type="customer"></div>
+    <!-- END: COPY THIS -->
+  </body>
+</html>
