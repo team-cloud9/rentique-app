@@ -312,22 +312,39 @@ footer {
    ============================================ */
 
 [data-nav-links] a {
+  position: relative;
   text-decoration: none;
-  color: #555;
+  color: var(--gray-700);
   font-size: 0.95rem;
   font-weight: 500;
-  position: relative;
   padding-bottom: 4px;
   transition: color 0.2s ease-in-out;
 }
 
+/* hover 시 글자 색상 변경 */
 [data-nav-links] a:hover {
-  color: #1b2b2f;
+  color: var(--deep-teal-blue);
 }
 
-/* 현재 페이지 활성화 상태 */
+/* hover 시 밑줄 (active 제외) */
+[data-nav-links] a:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1.5px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* ✅ 이미 active인 항목은 hover 시 밑줄을 새로 안 만듦 */
+[data-nav-links] a.active:hover::after {
+  content: none;
+}
+
+/* active 상태 (현재 페이지) */
 [data-nav-links] a.active {
-  color: #1b2b2f;
+  color: var(--deep-teal-blue);
   font-weight: 600;
 }
 
@@ -335,8 +352,8 @@ footer {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: 4px;
   width: 100%;
-  height: 1.5px;
-  background-color: #1b2b2f;
+  height: 2px;
+  background-color: var(--deep-teal-blue);
 }
