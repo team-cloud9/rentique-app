@@ -321,12 +321,10 @@ footer {
   transition: color 0.2s ease-in-out;
 }
 
-/* hover 시 글자 색상 변경 */
 [data-nav-links] a:hover {
   color: var(--deep-teal-blue);
 }
 
-/* hover 시 밑줄 (active 제외) */
 [data-nav-links] a:hover::after {
   content: "";
   position: absolute;
@@ -337,12 +335,10 @@ footer {
   transition: background-color 0.2s ease-in-out;
 }
 
-/* ✅ 이미 active인 항목은 hover 시 밑줄을 새로 안 만듦 */
 [data-nav-links] a.active:hover::after {
   content: none;
 }
 
-/* active 상태 (현재 페이지) */
 [data-nav-links] a.active {
   color: var(--deep-teal-blue);
   font-weight: 600;
@@ -356,4 +352,31 @@ footer {
   width: 100%;
   height: 2px;
   background-color: var(--deep-teal-blue);
+}
+
+/* ==============================
+   Back Button (Profile Section)
+============================== */
+.back-btn {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  background: none;
+  border: none;
+  color: var(--deep-teal-blue);
+  font-size: 1.8rem;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: all 0.25s ease-in-out;
+  z-index: 1;
+}
+
+.back-btn:hover {
+  color: var(--nyanza);
+  transform: translateX(-3px);
+}
+
+.back-btn:focus {
+  outline: none;
 }
