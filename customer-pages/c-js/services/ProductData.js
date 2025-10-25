@@ -6,6 +6,7 @@ const swipeProducts = [
         title: "Autumn cozy outfit",
         brand: "Alissa Clothing",
         description: "A cozy camel sweater paired with beige khaki pants.",
+        price: 120,
         colors: [
             { name: "Brown", code: "brown" },
             { name: "Beige", code: "beige" }
@@ -22,6 +23,7 @@ const swipeProducts = [
         title: "Summer casual set",
         brand: "Beach Vibes",
         description: "Light cotton shirt with comfortable shorts.",
+        price: 85,
         colors: [
             { name: "White", code: "white" },
             { name: "Blue", code: "#4A90E2" }
@@ -38,6 +40,7 @@ const swipeProducts = [
         title: "Winter elegant coat",
         brand: "Urban Style",
         description: "Classic wool coat perfect for cold weather.",
+        price: 250,
         colors: [
             { name: "Black", code: "black" },
             { name: "Gray", code: "gray" }
@@ -54,6 +57,7 @@ const swipeProducts = [
         title: "Spring floral dress",
         brand: "Garden Collection",
         description: "Light and breezy floral pattern dress.",
+        price: 95,
         colors: [
             { name: "Pink", code: "#FFC0CB" },
             { name: "Green", code: "#90EE90" }
@@ -70,6 +74,7 @@ const swipeProducts = [
         title: "Urban streetwear",
         brand: "Street Kings",
         description: "Modern streetwear with bold graphics.",
+        price: 75,
         colors: [
             { name: "Black", code: "black" },
             { name: "Red", code: "red" }
@@ -82,81 +87,87 @@ const swipeProducts = [
     },
     {
         id: 6,
-        image: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=500&h=700&fit=crop",
-        title: "Urban streetwear",
-        brand: "Street Kings",
-        description: "Modern streetwear with bold graphics.",
+        image: "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=500&h=700&fit=crop",
+        title: "Business formal suit",
+        brand: "Executive Line",
+        description: "Professional tailored suit for office wear.",
+        price: 320,
         colors: [
-            { name: "Black", code: "black" },
-            { name: "Red", code: "red" }
+            { name: "Navy", code: "#000080" },
+            { name: "Charcoal", code: "#36454F" }
         ],
         size: ["Medium", "Large"],
         season: ["All Season"],
-        texture: ["Graphic"],
-        material: ["Cotton", "Polyester"],
-        style: ["Street", "Urban"]
+        texture: ["Plain"],
+        material: ["Wool", "Cotton"],
+        style: ["Formal", "Business"]
     },
     {
         id: 7,
-        image: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=500&h=700&fit=crop",
-        title: "Urban streetwear",
-        brand: "Street Kings",
-        description: "Modern streetwear with bold graphics.",
+        image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&h=700&fit=crop",
+        title: "Athletic sportswear",
+        brand: "Active Motion",
+        description: "Breathable sports outfit for workout sessions.",
+        price: 65,
         colors: [
-            { name: "Black", code: "black" },
-            { name: "Red", code: "red" }
+            { name: "Neon Green", code: "#39FF14" },
+            { name: "Black", code: "black" }
         ],
-        size: ["Medium", "Large"],
+        size: ["Small", "Medium", "Large"],
         season: ["All Season"],
-        texture: ["Graphic"],
-        material: ["Cotton", "Polyester"],
-        style: ["Street", "Urban"]
+        texture: ["Plain"],
+        material: ["Polyester", "Spandex"],
+        style: ["Athletic", "Casual"]
     },
     {
         id: 8,
-        image: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=500&h=700&fit=crop",
-        title: "Urban streetwear",
-        brand: "Street Kings",
-        description: "Modern streetwear with bold graphics.",
+        image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=500&h=700&fit=crop",
+        title: "Bohemian maxi dress",
+        brand: "Free Spirit",
+        description: "Flowing maxi dress with ethnic patterns.",
+        price: 110,
         colors: [
-            { name: "Black", code: "black" },
-            { name: "Red", code: "red" }
+            { name: "Turquoise", code: "#40E0D0" },
+            { name: "Orange", code: "#FFA500" }
         ],
-        size: ["Medium", "Large"],
-        season: ["All Season"],
-        texture: ["Graphic"],
-        material: ["Cotton", "Polyester"],
-        style: ["Street", "Urban"]
-    }, {
+        size: ["Small", "Medium"],
+        season: ["Spring", "Summer"],
+        texture: ["Patterned"],
+        material: ["Rayon", "Cotton"],
+        style: ["Bohemian", "Casual"]
+    },
+    {
         id: 9,
-        image: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=500&h=700&fit=crop",
-        title: "Urban streetwear",
-        brand: "Street Kings",
-        description: "Modern streetwear with bold graphics.",
+        image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500&h=700&fit=crop",
+        title: "Classic denim jacket",
+        brand: "Vintage Threads",
+        description: "Timeless denim jacket with distressed finish.",
+        price: 89,
         colors: [
-            { name: "Black", code: "black" },
-            { name: "Red", code: "red" }
+            { name: "Light Blue", code: "#ADD8E6" },
+            { name: "Dark Blue", code: "#00008B" }
         ],
-        size: ["Medium", "Large"],
-        season: ["All Season"],
-        texture: ["Graphic"],
-        material: ["Cotton", "Polyester"],
-        style: ["Street", "Urban"]
+        size: ["Small", "Medium", "Large"],
+        season: ["Spring", "Autumn"],
+        texture: ["Denim"],
+        material: ["Cotton", "Denim"],
+        style: ["Casual", "Vintage"]
     },
     {
         id: 10,
-        image: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=500&h=700&fit=crop",
-        title: "Urban streetwear",
-        brand: "Street Kings",
-        description: "Modern streetwear with bold graphics.",
+        image: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=500&h=700&fit=crop",
+        title: "Evening cocktail dress",
+        brand: "Glamour Night",
+        description: "Elegant sequined dress for special occasions.",
+        price: 180,
         colors: [
-            { name: "Black", code: "black" },
-            { name: "Red", code: "red" }
+            { name: "Gold", code: "#FFD700" },
+            { name: "Silver", code: "#C0C0C0" }
         ],
-        size: ["Medium", "Large"],
+        size: ["Small", "Medium"],
         season: ["All Season"],
-        texture: ["Graphic"],
-        material: ["Cotton", "Polyester"],
-        style: ["Street", "Urban"]
+        texture: ["Sequined"],
+        material: ["Silk", "Polyester"],
+        style: ["Elegant", "Party"]
     }
 ];

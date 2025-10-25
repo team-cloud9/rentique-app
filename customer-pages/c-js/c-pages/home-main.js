@@ -10,6 +10,23 @@ function renderSwipeItems() {
   ).join('');
 }
 
+// Render item list dynamically (swipeProducts)
+function renderItemList() {
+  const listItemsContainer = document.querySelector('.list-items');
+  if (!listItemsContainer) return;
+
+  listItemsContainer.innerHTML = swipeProducts.map(product => `
+    <a href="./c-itemdetail.html" class="card">
+      <div class="img">
+        <img src="${product.image}" alt="${product.title}" />
+      </div>
+      <p class="name">${product.title}</p>
+      <p class="desc">${product.description}</p>
+      <p class="price">${product.brand}</p>
+    </a>
+  `).join('');
+}
+
 // Function to render product popup
 function renderSwipePopup(product) {
   const popupImage = document.getElementById('popupImage');
@@ -88,6 +105,9 @@ function loadNextProduct() {
 document.addEventListener('DOMContentLoaded', () => {
   // Render swipe items
   renderSwipeItems();
+
+  // Render item list
+  renderItemList();
 
   // Render initial product data
   renderSwipePopup(swipeProducts[currentProductIndex]);
