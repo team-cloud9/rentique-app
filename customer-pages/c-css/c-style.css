@@ -732,6 +732,26 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
   font-size: 10px;
   margin-left: 8px;
 }
+.filter-section h3{
+  cursor: pointer;
+}
+
+.filter-section h3::after {
+  content: "▼";
+  font-size: 10px;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.filter-section:nth-of-type(4) h3::after,
+.filter-section:nth-of-type(5) h3::after {
+  content: "";
+}
+
+.filter-section:nth-of-type(4) h3,
+.filter-section:nth-of-type(5) h3 {
+  cursor: default;
+}
 
 /* Dropdown Menu */
 
@@ -1181,25 +1201,31 @@ input[type="range"]::-moz-range-thumb {
 .filter-btn.colour {
   display: flex;
   align-items: center;
+  justify-content: center; 
   gap: 8px;
-  font-size: 13px;
-  background-color: #BFE1C8; /* color neutro de fondo */
+  font-size: 0.95rem;
+  font-weight: 500;
+  background-color: #BFE1C8;
   color: var(--teal-blue-800);
   border-radius: 20px;
   padding: 6px 14px;
-  font-weight: 500;
-  font-size: 0.95rem;
+  border: 1px solid var(--nyanza-300); 
+  cursor: pointer;
+  position: relative; 
+  transition: all 0.2s ease;
+  flex-shrink: 0; 
 }
 
-/* circle before the text */
+/* El círculo antes del texto */
 .filter-btn.colour::before {
   content: "";
-  display: inline-block;
+  flex-shrink: 0; 
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  border: 1px solid #666; /* borde sutil */
+  border: 1px solid #666;
 }
+
 
 /* Individual colors */
 .filter-btn.colour.black::before { background-color: black; }
@@ -1216,14 +1242,25 @@ input[type="range"]::-moz-range-thumb {
 .filter-btn.colour.green::before { background-color: green; }
 .filter-btn.colour.purple::before { background-color: purple; }
 
+.filter-btn.colour:hover {
+  background: var(--gray-50);
+}
+
+/* Estado activo: cambia colores del botón */
+.filter-btn.colour.active {
+  background: var(--secondary);
+  color: var(--text-on-secondary);
+  border-color: var(--secondary);
+}
+
 .filter-section .filter-options {
-  display: none;
   transition: max-height 0.3s ease;
 }
 
 .filter-section.active .filter-options {
-  display: block;
+  display: none;
 }
+
 
 
 /* ==============================
