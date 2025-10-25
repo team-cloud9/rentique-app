@@ -25,7 +25,6 @@ const NavigationConfig = {
 
     //codigo nuevo
 
-
     // Icons for mobile header
     icons: {
       search: "../assets/icon/Icon_search.svg",
@@ -181,92 +180,93 @@ function initializeHeader(header, config) {
       navLinksContainer.appendChild(li);
     });
 
-  // Set user greeting
-  const userGreeting = header.querySelector("[data-user-greeting]");
-  if (userGreeting) {
-    userGreeting.textContent = config.userGreeting;
+    // Set user greeting
+    const userGreeting = header.querySelector("[data-user-greeting]");
+    if (userGreeting) {
+      userGreeting.textContent = config.userGreeting;
+    }
+
+    // Set mobile icons
+    const searchIcon = header.querySelector('[data-icon="search"]');
+    const rightIcon1 = header.querySelector('[data-icon="right-1"]');
+    const rightIcon2 = header.querySelector('[data-icon="right-2"]');
+
+    if (searchIcon) {
+      searchIcon.src = config.icons.search;
+      searchIcon.alt = "Search";
+    }
+    if (rightIcon1) {
+      rightIcon1.src = config.icons.right1;
+      rightIcon1.alt = config.navLinks[1]?.text || "Icon";
+    }
+    if (rightIcon2) {
+      rightIcon2.src = config.icons.right2;
+      rightIcon2.alt = config.navLinks[2]?.text || "Icon";
+    }
   }
 
-  // Set mobile icons
-  const searchIcon = header.querySelector('[data-icon="search"]');
-  const rightIcon1 = header.querySelector('[data-icon="right-1"]');
-  const rightIcon2 = header.querySelector('[data-icon="right-2"]');
+  /**
+   * Initialize footer with configuration
+   */
+  function initializeFooter(footer, config) {
+    // Set logos
+    const footerLogoMain = footer.querySelector('[data-logo="footer-main"]');
+    const footerLogoSub = footer.querySelector('[data-logo="footer-sub"]');
 
-  if (searchIcon) {
-    searchIcon.src = config.icons.search;
-    searchIcon.alt = "Search";
-  }
-  if (rightIcon1) {
-    rightIcon1.src = config.icons.right1;
-    rightIcon1.alt = config.navLinks[1]?.text || "Icon";
-  }
-  if (rightIcon2) {
-    rightIcon2.src = config.icons.right2;
-    rightIcon2.alt = config.navLinks[2]?.text || "Icon";
-  }
-}
+    if (footerLogoMain) {
+      footerLogoMain.src = config.logos.footerMain;
+      footerLogoMain.alt = "Footer Logo";
+    }
+    if (footerLogoSub) {
+      footerLogoSub.src = config.logos.footerSub;
+      footerLogoSub.alt = "RENTIQUE";
+    }
 
-/**
- * Initialize footer with configuration
- */
-function initializeFooter(footer, config) {
-  // Set logos
-  const footerLogoMain = footer.querySelector('[data-logo="footer-main"]');
-  const footerLogoSub = footer.querySelector('[data-logo="footer-sub"]');
-
-  if (footerLogoMain) {
-    footerLogoMain.src = config.logos.footerMain;
-    footerLogoMain.alt = "Footer Logo";
-  }
-  if (footerLogoSub) {
-    footerLogoSub.src = config.logos.footerSub;
-    footerLogoSub.alt = "RENTIQUE";
-  }
-
-  // Set home link
-  const homeLinks = footer.querySelectorAll('[data-nav="home"]');
-  homeLinks.forEach((link) => {
-    link.href = config.homeLink;
-  });
-
-  // Set tagline
-  const tagline = footer.querySelector("[data-footer-tagline]");
-  if (tagline) {
-    tagline.textContent = config.footer.tagline;
-  }
-
-  // Set footer links
-  const footerLinksContainer = footer.querySelector("[data-footer-links]");
-  if (footerLinksContainer) {
-    footerLinksContainer.innerHTML = "";
-    config.footer.links.forEach((link) => {
-      const div = document.createElement("div");
-      const h3 = document.createElement("h3");
-      const a = document.createElement("a");
-      a.href = link.href;
-      a.textContent = link.text;
-      h3.appendChild(a);
-      div.appendChild(h3);
-      footerLinksContainer.appendChild(div);
+    // Set home link
+    const homeLinks = footer.querySelectorAll('[data-nav="home"]');
+    homeLinks.forEach((link) => {
+      link.href = config.homeLink;
     });
+
+    // Set tagline
+    const tagline = footer.querySelector("[data-footer-tagline]");
+    if (tagline) {
+      tagline.textContent = config.footer.tagline;
+    }
+
+    // Set footer links
+    const footerLinksContainer = footer.querySelector("[data-footer-links]");
+    if (footerLinksContainer) {
+      footerLinksContainer.innerHTML = "";
+      config.footer.links.forEach((link) => {
+        const div = document.createElement("div");
+        const h3 = document.createElement("h3");
+        const a = document.createElement("a");
+        a.href = link.href;
+        a.textContent = link.text;
+        h3.appendChild(a);
+        div.appendChild(h3);
+        footerLinksContainer.appendChild(div);
+      });
+    }
+
+    // Set scroll to top icon
+    const scrollTopIcon = footer.querySelector('[data-icon="scroll-top"]');
+    if (scrollTopIcon) {
+      scrollTopIcon.src = config.icons.scrollTop;
+      scrollTopIcon.alt = "Go to top";
+    }
   }
 
-  // Set scroll to top icon
-  const scrollTopIcon = footer.querySelector('[data-icon="scroll-top"]');
-  if (scrollTopIcon) {
-    scrollTopIcon.src = config.icons.scrollTop;
-    scrollTopIcon.alt = "Go to top";
+  // Auto-initialize when DOM is ready
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initializeNavigation);
+  } else {
+    initializeNavigation();
   }
-}
 
-// Auto-initialize when DOM is ready
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initializeNavigation);
-} else {
-  initializeNavigation();
-}
-
-// Export for use in other scripts if needed
-if (typeof module !== "undefined" && module.exports) {
-  module.exports = { NavigationConfig, initializeNavigation };
+  // Export for use in other scripts if needed
+  if (typeof module !== "undefined" && module.exports) {
+    module.exports = { NavigationConfig, initializeNavigation };
+  }
 }
