@@ -353,30 +353,3 @@ footer {
   height: 2px;
   background-color: var(--deep-teal-blue);
 }
-
-/* ==============================
-   Back Button (Profile Section)
-============================== */
-.back-btn {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
-  background: none;
-  border: none;
-  color: var(--deep-teal-blue);
-  font-size: 1.8rem;
-  font-weight: 400;
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-  transition: all 0.25s ease-in-out;
-  z-index: 1;
-}
-
-.back-btn:hover {
-  color: var(--nyanza);
-  transform: translateX(-3px);
-}
-
-.back-btn:focus {
-  outline: none;
-}

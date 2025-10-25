@@ -37,3 +37,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("delete-cancel")) {
+    document.querySelector(".back-btn")?.click();
+  }
+
+  if (e.target.classList.contains("delete-confirm")) {
+    alert(
+      "Account deletion process started... (to be connected with Firebase)"
+    );
+  }
+});
