@@ -1,116 +1,174 @@
-const swipeItems = document.querySelector(".swipe-items");
-const leftBtn = document.querySelector(".arrow.left");
-const rightBtn = document.querySelector(".arrow.right");
+let currentProductIndex = 0;
 
-let currentScroll = 0;
+// Render swipe items dynamically
+function renderSwipeItems() {
+  const swipeItems = document.querySelector('.swipe-items');
+  if (!swipeItems) return;
 
-// Dynamically calculate item width and gap
-function getMoveDistance() {
-  const item = swipeItems.querySelector("img");
-  const itemStyle = window.getComputedStyle(item);
-  const itemWidth = item.offsetWidth;
-  const gap = parseInt(itemStyle.marginRight) || 16; // fallback if gap not set
-  return itemWidth + gap;
+  swipeItems.innerHTML = swipeProducts.map((product, index) =>
+    `<img class="item" src="${product.image}" alt="${product.title}" data-index="${index}" />`
+  ).join('');
 }
 
-function getMaxScroll() {
-  return swipeItems.scrollWidth - swipeItems.clientWidth;
+// Function to render product popup
+function renderSwipePopup(product) {
+  const popupImage = document.getElementById('popupImage');
+  const popupTitle = document.querySelector('.swipe-popup-title');
+  const popupBrand = document.getElementById('swipePopupBrand');
+  const popupDesc = document.getElementById('swipePopupDesc');
+
+  if (popupImage) popupImage.src = product.image;
+  if (popupTitle) popupTitle.textContent = product.title;
+  if (popupBrand) popupBrand.textContent = product.brand;
+  if (popupDesc) popupDesc.textContent = product.description;
+
+  const detailsContainer = document.querySelector('.swipe-popup-details');
+  if (!detailsContainer) return;
+
+  detailsContainer.innerHTML = `
+        <div class="swipe-detail-row">
+          <span class="swipe-detail-label">Colour:</span>
+          <div class="swipe-detail-values">
+            ${product.colors.map(color => `
+              <span class="swipe-color-tag">
+                <span class="swipe-color-dot" style="background: ${color.code}${color.code === 'beige' || color.code === 'white' ? '; border: 1px solid #ccc' : ''}"></span>
+                ${color.name}
+              </span>
+            `).join('')}
+          </div>
+        </div>
+        <div class="swipe-detail-row">
+          <span class="swipe-detail-label">Size:</span>
+          <div class="swipe-detail-values">
+            ${product.size.map(s => `<span class="swipe-text-tag">${s}</span>`).join('')}
+          </div>
+        </div>
+        <div class="swipe-detail-row">
+          <span class="swipe-detail-label">Recommend season:</span>
+          <div class="swipe-detail-values">
+            ${product.season.map(s => `<span class="swipe-text-tag">${s}</span>`).join('')}
+          </div>
+        </div>
+        <div class="swipe-detail-row">
+          <span class="swipe-detail-label">Texture:</span>
+          <div class="swipe-detail-values">
+            ${product.texture.map(t => `<span class="swipe-text-tag">${t}</span>`).join('')}
+          </div>
+        </div>
+        <div class="swipe-detail-row">
+          <span class="swipe-detail-label">Material:</span>
+          <div class="swipe-detail-values">
+            ${product.material.map(m => `<span class="swipe-text-tag">${m}</span>`).join('')}
+          </div>
+        </div>
+        <div class="swipe-detail-row">
+          <span class="swipe-detail-label">Style:</span>
+          <div class="swipe-detail-values">
+            ${product.style.map(s => `<span class="swipe-text-tag">${s}</span>`).join('')}
+          </div>
+        </div>
+      `;
 }
 
-// Scroll right
-rightBtn.addEventListener("click", () => {
-  const moveDistance = getMoveDistance();
-  const maxScroll = getMaxScroll();
-  currentScroll = Math.min(currentScroll + moveDistance, maxScroll);
-  swipeItems.scrollTo({ left: currentScroll, behavior: "smooth" });
-});
+function showSwipePopup() {
+  const popup = document.getElementById('swipePopup');
+  if (popup) popup.style.display = 'flex';
+}
 
-// Scroll left
-leftBtn.addEventListener("click", () => {
-  const moveDistance = getMoveDistance();
-  currentScroll = Math.max(currentScroll - moveDistance, 0);
-  swipeItems.scrollTo({ left: currentScroll, behavior: "smooth" });
-});
+function hideSwipePopup() {
+  const popup = document.getElementById('swipePopup');
+  if (popup) popup.style.display = 'none';
+}
 
-//Scroll top
-const scrollTopBtn = document.querySelector(".scroll-top");
+function loadNextProduct() {
+  currentProductIndex = (currentProductIndex + 1) % swipeProducts.length;
+  renderSwipePopup(swipeProducts[currentProductIndex]);
+}
 
-// for tablet
-if (scrollTopBtn && window.innerWidth <= 1024) {
-  scrollTopBtn.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
+document.addEventListener('DOMContentLoaded', () => {
+  // Render swipe items
+  renderSwipeItems();
+
+  // Render initial product data
+  renderSwipePopup(swipeProducts[currentProductIndex]);
+
+  // Add click event to swipe items
+  const swipeItemsContainer = document.querySelector('.swipe-items');
+  if (swipeItemsContainer) {
+    swipeItemsContainer.addEventListener('click', (e) => {
+      if (e.target.classList.contains('item')) {
+        const index = parseInt(e.target.dataset.index);
+        currentProductIndex = index;
+        renderSwipePopup(swipeProducts[currentProductIndex]);
+        showSwipePopup();
+      }
     });
-  });
-}
+  }
 
-// ===== Filter Popup =====
-const filterBtn = document.getElementById("filterBtn");
-const filterPopup = document.getElementById("filterPopup");
-const closePopup = document.getElementById("closePopup");
-const applyFilter = document.querySelector(".apply-btn");
+  // Close popup
+  const closeBtn = document.getElementById('closePopup');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', hideSwipePopup);
+  }
 
-// open
-if (filterBtn && filterPopup) {
-  filterBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    filterPopup.style.display = "block";
-  });
-}
+  const popup = document.getElementById('swipePopup');
+  if (popup) {
+    popup.addEventListener('click', (e) => {
+      if (e.target === popup) hideSwipePopup();
+    });
+  }
 
-// close
-if (closePopup && filterPopup) {
-  closePopup.addEventListener("click", () => {
-    filterPopup.style.display = "none";
-  });
-}
+  // Pass/Like buttons
+  const passBtn = document.querySelector('.swipe-btn-pass');
+  if (passBtn) {
+    passBtn.addEventListener('click', () => {
+      console.log('Passed:', swipeProducts[currentProductIndex].title);
+      loadNextProduct();
+    });
+  }
 
-// apply (close on click)
-if (applyFilter && filterPopup) {
-  applyFilter.addEventListener("click", () => {
-    filterPopup.style.display = "none";
-  });
-}
+  const likeBtn = document.querySelector('.swipe-btn-like');
+  if (likeBtn) {
+    likeBtn.addEventListener('click', () => {
+      console.log('Liked:', swipeProducts[currentProductIndex].title);
+      loadNextProduct();
+    });
+  }
 
-// close when clicking outside
-if (filterPopup) {
-  window.addEventListener("click", (event) => {
-    if (event.target === filterPopup) {
-      filterPopup.style.display = "none";
-    }
-  });
-}
+  // Scroll functionality
+  const swipeItems = document.querySelector(".swipe-items");
+  const leftBtn = document.querySelector(".arrow.left");
+  const rightBtn = document.querySelector(".arrow.right");
 
-// ===== Sort Dropdown =====
-const sortButton = document.querySelector(".sort-btn");
-const dropdownMenu = document.querySelector(".dropdown-menu");
+  let currentScroll = 0;
 
-if (sortButton && dropdownMenu) {
-  sortButton.addEventListener("click", (e) => {
-    e.stopPropagation();
-    dropdownMenu.classList.toggle("show");
-  });
+  function getMoveDistance() {
+    const item = swipeItems.querySelector("img");
+    if (!item) return 0;
+    const itemStyle = window.getComputedStyle(item);
+    const itemWidth = item.offsetWidth;
+    const gap = parseInt(itemStyle.marginRight) || 16;
+    return itemWidth + gap;
+  }
 
-  document.addEventListener("click", (event) => {
-    if (!event.target.closest(".dropdown")) {
-      dropdownMenu.classList.remove("show");
-    }
-  });
-}
+  function getMaxScroll() {
+    return swipeItems.scrollWidth - swipeItems.clientWidth;
+  }
 
-// ===== Filter Button Toggle =====
-document.querySelectorAll(".filter-btn").forEach((btn) => {
-  btn.addEventListener("click", function () {
-    this.classList.toggle("active");
-  });
+  if (rightBtn) {
+    rightBtn.addEventListener("click", () => {
+      const moveDistance = getMoveDistance();
+      const maxScroll = getMaxScroll();
+      currentScroll = Math.min(currentScroll + moveDistance, maxScroll);
+      swipeItems.scrollTo({ left: currentScroll, behavior: "smooth" });
+    });
+  }
+
+  if (leftBtn) {
+    leftBtn.addEventListener("click", () => {
+      const moveDistance = getMoveDistance();
+      currentScroll = Math.max(currentScroll - moveDistance, 0);
+      swipeItems.scrollTo({ left: currentScroll, behavior: "smooth" });
+    });
+  }
 });
-
-// ===== Apply Button (optional alert) =====
-if (applyFilter) {
-  applyFilter.addEventListener("click", function () {
-    const activeFilters = document.querySelectorAll(".filter-btn.active");
-    alert("Applied " + activeFilters.length + " filters!");
-  });
-}
-
