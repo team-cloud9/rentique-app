@@ -23,6 +23,9 @@ const NavigationConfig = {
       { text: "PROFILE", href: "./c-profile.html" },
     ],
 
+    //codigo nuevo
+
+
     // Icons for mobile header
     icons: {
       search: "../assets/icon/Icon_search.svg",
@@ -177,7 +180,6 @@ function initializeHeader(header, config) {
       li.appendChild(a);
       navLinksContainer.appendChild(li);
     });
-  }
 
   // Set user greeting
   const userGreeting = header.querySelector("[data-user-greeting]");
