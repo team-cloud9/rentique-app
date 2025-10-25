@@ -306,3 +306,37 @@ footer {
     display: flex;
   }
 }
+
+/* ============================================
+   NAV-ACTIVE
+   ============================================ */
+
+[data-nav-links] a {
+  text-decoration: none;
+  color: #555;
+  font-size: 0.95rem;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.2s ease-in-out;
+}
+
+[data-nav-links] a:hover {
+  color: #1b2b2f;
+}
+
+/* 현재 페이지 활성화 상태 */
+[data-nav-links] a.active {
+  color: #1b2b2f;
+  font-weight: 600;
+}
+
+[data-nav-links] a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: #1b2b2f;
+}

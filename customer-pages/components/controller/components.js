@@ -20,7 +20,7 @@ const NavigationConfig = {
     navLinks: [
       { text: "BROWSE", href: "./c-discover-page.html" },
       { text: "CHAT LIST", href: "#" },
-      { text: "PROFILE", href: "#" },
+      { text: "PROFILE", href: "./c-profile.html" },
     ],
 
     // Icons for mobile header
@@ -40,7 +40,7 @@ const NavigationConfig = {
       links: [
         { text: "BROWSE", href: "./c-discover-page.html" },
         { text: "CHAT LIST", href: "#" },
-        { text: "PROFILE", href: "#" },
+        { text: "PROFILE", href: "./c-profile.html" },
       ],
     },
 
@@ -62,7 +62,7 @@ const NavigationConfig = {
     navLinks: [
       { text: "BROWSE", href: "./c-discover-page.html" },
       { text: "CHAT LIST", href: "#" },
-      { text: "PROFILE", href: "#" },
+      { text: "PROFILE", href: "./c-profile.html" },
     ],
 
     // Icons for mobile header
@@ -82,14 +82,14 @@ const NavigationConfig = {
       links: [
         { text: "BROWSE", href: "./c-discover-page.html" },
         { text: "CHAT LIST", href: "#" },
-        { text: "PROFILE", href: "#" },
+        { text: "PROFILE", href: "./c-profile.html" },
       ],
     },
 
     // Home page link
     homeLink: "./c-home.html",
   },
-}
+};
 
 /**
  * Initialize navigation based on user type
@@ -97,31 +97,34 @@ const NavigationConfig = {
  */
 function initializeNavigation() {
   // Find header and footer elements
-  const header = document.querySelector("header[data-user-type]")
-  const footer = document.querySelector("footer[data-user-type]")
+  const header = document.querySelector("header[data-user-type]");
+  const footer = document.querySelector("footer[data-user-type]");
 
   if (!header && !footer) {
-    console.warn("No header or footer with data-user-type attribute found")
-    return
+    console.warn("No header or footer with data-user-type attribute found");
+    return;
   }
 
   // Get user type from header or footer
-  const userType = header?.getAttribute("data-user-type") || footer?.getAttribute("data-user-type") || "customer"
-  const config = NavigationConfig[userType]
+  const userType =
+    header?.getAttribute("data-user-type") ||
+    footer?.getAttribute("data-user-type") ||
+    "customer";
+  const config = NavigationConfig[userType];
 
   if (!config) {
-    console.error(`Invalid user type: ${userType}`)
-    return
+    console.error(`Invalid user type: ${userType}`);
+    return;
   }
 
   // Initialize header
   if (header) {
-    initializeHeader(header, config)
+    initializeHeader(header, config);
   }
 
   // Initialize footer
   if (footer) {
-    initializeFooter(footer, config)
+    initializeFooter(footer, config);
   }
 }
 
@@ -130,65 +133,74 @@ function initializeNavigation() {
  */
 function initializeHeader(header, config) {
   // Set logos
-  const logoMain = header.querySelector('[data-logo="main"]')
-  const logoSub = header.querySelector('[data-logo="sub"]')
-  const logoCenter = header.querySelector('[data-logo="center"]')
+  const logoMain = header.querySelector('[data-logo="main"]');
+  const logoSub = header.querySelector('[data-logo="sub"]');
+  const logoCenter = header.querySelector('[data-logo="center"]');
 
   if (logoMain) {
-    logoMain.src = config.logos.main
-    logoMain.alt = "Main Logo"
+    logoMain.src = config.logos.main;
+    logoMain.alt = "Main Logo";
   }
   if (logoSub) {
-    logoSub.src = config.logos.sub
-    logoSub.alt = "RENTIQUE"
+    logoSub.src = config.logos.sub;
+    logoSub.alt = "RENTIQUE";
   }
   if (logoCenter) {
-    logoCenter.src = config.logos.center
-    logoCenter.alt = "Rentique Logo"
+    logoCenter.src = config.logos.center;
+    logoCenter.alt = "Rentique Logo";
   }
 
   // Set home link
-  const homeLinks = header.querySelectorAll('[data-nav="home"]')
+  const homeLinks = header.querySelectorAll('[data-nav="home"]');
   homeLinks.forEach((link) => {
-    link.href = config.homeLink
-  })
+    link.href = config.homeLink;
+  });
 
   // Set navigation links
-  const navLinksContainer = header.querySelector("[data-nav-links]")
+  const navLinksContainer = header.querySelector("[data-nav-links]");
   if (navLinksContainer) {
-    navLinksContainer.innerHTML = ""
+    navLinksContainer.innerHTML = "";
+
+    const currentPage = window.location.pathname.split("/").pop();
+
     config.navLinks.forEach((link) => {
-      const li = document.createElement("li")
-      const a = document.createElement("a")
-      a.href = link.href
-      a.textContent = link.text
-      li.appendChild(a)
-      navLinksContainer.appendChild(li)
-    })
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = link.href;
+      a.textContent = link.text;
+
+      const linkFile = link.href.split("/").pop();
+      if (currentPage === linkFile) {
+        a.classList.add("active");
+      }
+
+      li.appendChild(a);
+      navLinksContainer.appendChild(li);
+    });
   }
 
   // Set user greeting
-  const userGreeting = header.querySelector("[data-user-greeting]")
+  const userGreeting = header.querySelector("[data-user-greeting]");
   if (userGreeting) {
-    userGreeting.textContent = config.userGreeting
+    userGreeting.textContent = config.userGreeting;
   }
 
   // Set mobile icons
-  const searchIcon = header.querySelector('[data-icon="search"]')
-  const rightIcon1 = header.querySelector('[data-icon="right-1"]')
-  const rightIcon2 = header.querySelector('[data-icon="right-2"]')
+  const searchIcon = header.querySelector('[data-icon="search"]');
+  const rightIcon1 = header.querySelector('[data-icon="right-1"]');
+  const rightIcon2 = header.querySelector('[data-icon="right-2"]');
 
   if (searchIcon) {
-    searchIcon.src = config.icons.search
-    searchIcon.alt = "Search"
+    searchIcon.src = config.icons.search;
+    searchIcon.alt = "Search";
   }
   if (rightIcon1) {
-    rightIcon1.src = config.icons.right1
-    rightIcon1.alt = config.navLinks[1]?.text || "Icon"
+    rightIcon1.src = config.icons.right1;
+    rightIcon1.alt = config.navLinks[1]?.text || "Icon";
   }
   if (rightIcon2) {
-    rightIcon2.src = config.icons.right2
-    rightIcon2.alt = config.navLinks[2]?.text || "Icon"
+    rightIcon2.src = config.icons.right2;
+    rightIcon2.alt = config.navLinks[2]?.text || "Icon";
   }
 }
 
@@ -197,62 +209,62 @@ function initializeHeader(header, config) {
  */
 function initializeFooter(footer, config) {
   // Set logos
-  const footerLogoMain = footer.querySelector('[data-logo="footer-main"]')
-  const footerLogoSub = footer.querySelector('[data-logo="footer-sub"]')
+  const footerLogoMain = footer.querySelector('[data-logo="footer-main"]');
+  const footerLogoSub = footer.querySelector('[data-logo="footer-sub"]');
 
   if (footerLogoMain) {
-    footerLogoMain.src = config.logos.footerMain
-    footerLogoMain.alt = "Footer Logo"
+    footerLogoMain.src = config.logos.footerMain;
+    footerLogoMain.alt = "Footer Logo";
   }
   if (footerLogoSub) {
-    footerLogoSub.src = config.logos.footerSub
-    footerLogoSub.alt = "RENTIQUE"
+    footerLogoSub.src = config.logos.footerSub;
+    footerLogoSub.alt = "RENTIQUE";
   }
 
   // Set home link
-  const homeLinks = footer.querySelectorAll('[data-nav="home"]')
+  const homeLinks = footer.querySelectorAll('[data-nav="home"]');
   homeLinks.forEach((link) => {
-    link.href = config.homeLink
-  })
+    link.href = config.homeLink;
+  });
 
   // Set tagline
-  const tagline = footer.querySelector("[data-footer-tagline]")
+  const tagline = footer.querySelector("[data-footer-tagline]");
   if (tagline) {
-    tagline.textContent = config.footer.tagline
+    tagline.textContent = config.footer.tagline;
   }
 
   // Set footer links
-  const footerLinksContainer = footer.querySelector("[data-footer-links]")
+  const footerLinksContainer = footer.querySelector("[data-footer-links]");
   if (footerLinksContainer) {
-    footerLinksContainer.innerHTML = ""
+    footerLinksContainer.innerHTML = "";
     config.footer.links.forEach((link) => {
-      const div = document.createElement("div")
-      const h3 = document.createElement("h3")
-      const a = document.createElement("a")
-      a.href = link.href
-      a.textContent = link.text
-      h3.appendChild(a)
-      div.appendChild(h3)
-      footerLinksContainer.appendChild(div)
-    })
+      const div = document.createElement("div");
+      const h3 = document.createElement("h3");
+      const a = document.createElement("a");
+      a.href = link.href;
+      a.textContent = link.text;
+      h3.appendChild(a);
+      div.appendChild(h3);
+      footerLinksContainer.appendChild(div);
+    });
   }
 
   // Set scroll to top icon
-  const scrollTopIcon = footer.querySelector('[data-icon="scroll-top"]')
+  const scrollTopIcon = footer.querySelector('[data-icon="scroll-top"]');
   if (scrollTopIcon) {
-    scrollTopIcon.src = config.icons.scrollTop
-    scrollTopIcon.alt = "Go to top"
+    scrollTopIcon.src = config.icons.scrollTop;
+    scrollTopIcon.alt = "Go to top";
   }
 }
 
 // Auto-initialize when DOM is ready
 if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initializeNavigation)
+  document.addEventListener("DOMContentLoaded", initializeNavigation);
 } else {
-  initializeNavigation()
+  initializeNavigation();
 }
 
 // Export for use in other scripts if needed
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { NavigationConfig, initializeNavigation }
+  module.exports = { NavigationConfig, initializeNavigation };
 }

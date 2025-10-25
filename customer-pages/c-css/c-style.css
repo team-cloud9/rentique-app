@@ -1295,254 +1295,188 @@ input[type="range"]::-moz-range-thumb {
     padding: 10px;
   }
 
-  /* Mobile: Sticky bottom buttons
-  
-  main {
-    min-height: 100vh;
+  /* ===================
+    SWIPE POPUP 
+======================*/
+  .popup-content.swipe {
+    max-width: 900px;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
+    position: relative;
+    padding: 0;
   }
 
-  .container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+  .swipe-popup-body {
+    display: grid;
+    grid-template-columns: 1fr 55%;
+    gap: 2rem;
+    align-items: stretch;
+    min-height: 450px;
+    background: white;
+    border-radius: 12px;
   }
 
-  .detail-layout {
-    flex: 1;
-  }
-
-  .action-buttons {
-    position: sticky;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: 0;
-    margin-top: auto;
-    max-width: 100%;
-    padding: 20px;
-    background: #fff;
-    border-top: 1px solid #e0e0e0;
-    z-index: 100;
-  }
-
-  .chat-button {
-    padding: 12px 24px;
-    font-size: 14px;
-    font-weight: 600;
-  }
-
-  .cart-button {
-    width: 50px;
-    height: 50px;
-    padding: 10px;
-  }
-
-  .cart-button img {
-    width: 20px;
-    height: 20px;
-  }
-/* 
-  /*DISCOVER-PAGE*/
-
-  /* .list-items {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 0 10px;
-  }
-
-  .card {
-    width: 85%;
-    max-width: 400px;
-    text-align: center;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-  }
-
-  .card img {
+  .swipe-popup-left img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    border-radius: 12px;
     object-fit: cover;
   }
 
-  .card p {
+  /* Swipe Text Right */
+  .swipe-popup-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem;
+  }
+
+  .swipe-popup-right h3 {
+    font-size: 22px;
+    letter-spacing: 1px;
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
     text-align: center;
+  }
+
+  .swipe-popup-right h2 {
+    font-size: 22px;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .swipe-popup-right p {
+    font-size: 14px;
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+
+  .swipe-detail-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .swipe-detail-label {
+    font-size: 18px;
+    font-weight: 600;
+    min-width: 100px;
+  }
+
+  .swipe-detail-values {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  /* Swipe Color Tag */
+  .swipe-color-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 2px solid var(--nyanza-300);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 500;
     margin: 5px 0;
-  } */ 
+  }
 
-  /* footer discover-page
-  .footer-inner {
+  .swipe-color-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* Swipe Text Tag */
+  .swipe-text-tag {
+    display: inline-block;
+    border: 2px solid var(--nyanza-300);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    margin: 5px 0;
+  }
+
+  /* Swipe Button */
+  .swipe-popup-buttons {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 20px;
+    justify-content: center;
+    gap: 40px;
   }
 
-  .footer-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-right: 240px;
+  .swipe-popup-buttons .swipe-btn-pass,
+  .swipe-popup-buttons .swipe-btn-like {
+    width: 250px;
+    padding: 12px 0;
+    border: none;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
   }
 
-  .footer-links div {
-    text-align: center;
+  .swipe-btn-pass {
+    background: #fff;
   }
 
-  .footer-logo p {
-    display: none;
+  .swipe-btn-pass:hover {
+    background: #f3f3f3;
+    transform: scale(1.03);
   }
-} */ 
-/* I merged it with mine! - BELLA */
+
+  .swipe-btn-like {
+    background: #d0ebd0;
+  }
+
+  .swipe-btn-like:hover {
+    background: #b8e0b8;
+    transform: scale(1.03);
+  }
+}
 
 /* ===================
-    SWIPE POPUP 
+    PROFILE PAGE
 ======================*/
-.popup-content.swipe {
-  max-width: 900px;
-  border-radius: 12px;
+
+/* Profile Buttons */
+.profile-container {
   display: flex;
   flex-direction: column;
-  position: relative;
-  padding: 0;
-}
-
-.swipe-popup-body {
-  display: grid;
-  grid-template-columns: 1fr 55%;
-  gap: 2rem;
-  align-items: stretch;
-  min-height: 450px;
-  background: white;
-  border-radius: 12px;
-}
-
-.swipe-popup-left img {
-  width: 100%;
-  height: 100%;
-  border-radius: 12px;
-  object-fit: cover;
-}
-
-/* Swipe Text Right */
-.swipe-popup-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 1rem;
-}
-
-.swipe-popup-right h3 {
-  font-size: 22px;
-  letter-spacing: 1px;
-  margin-bottom: 0.4rem;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.swipe-popup-right h2 {
-  font-size: 22px;
-  margin-bottom: 1rem;
-  font-weight: 700;
-  text-align: center;
-}
-
-.swipe-popup-right p {
-  font-size: 14px;
-  margin-bottom: 6px;
-  line-height: 1.4;
-}
-
-.swipe-detail-row {
-  display: flex;
   align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
+  margin: 4rem auto;
+  gap: 0.8rem;
 }
 
-.swipe-detail-label {
-  font-size: 18px;
-  font-weight: 600;
-  min-width: 100px;
-}
-
-.swipe-detail-values {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-/* Swipe Color Tag */
-.swipe-color-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  border: 2px solid var(--nyanza-300);
-  border-radius: 20px;
-  padding: 6px 14px;
-  font-size: 13px;
-  font-weight: 500;
-  margin: 5px 0;
-}
-
-.swipe-color-dot {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-/* Swipe Text Tag */
-.swipe-text-tag {
-  display: inline-block;
-  border: 2px solid var(--nyanza-300);
-  border-radius: 20px;
-  padding: 6px 14px;
-  font-size: 13px;
-  font-weight: 500;
-  margin: 5px 0;
-}
-
-/* Swipe Button */
-.swipe-popup-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-}
-
-.swipe-popup-buttons .swipe-btn-pass,
-.swipe-popup-buttons .swipe-btn-like {
-  width: 250px;
-  padding: 12px 0;
-  border: none;
-  font-weight: bold;
-  font-size: 14px;
+.profile-btn {
+  width: 280px;
+  padding: 0.8rem;
+  font-size: 0.9rem;
+  border: 1px solid #b7b7b7;
+  background-color: transparent;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition: all 0.2s ease-in-out;
+  color: var(--teal-blue-400);
+  text-align: left;
 }
 
-.swipe-btn-pass {
-  background: #fff;
+.profile-btn:hover {
+  background-color: var(--gray-100);
+  border-color: var(--deep-teal-blue-700);
 }
 
-.swipe-btn-pass:hover {
-  background: #f3f3f3;
-  transform: scale(1.03);
+.profile-btn.delete {
+  border-color: #d8a5a5;
+  color: #b14a4a;
 }
 
-.swipe-btn-like {
-  background: #d0ebd0;
-}
-
-.swipe-btn-like:hover {
-  background: #b8e0b8;
-  transform: scale(1.03);
-}
+.profile-btn.delete:hover {
+  background-color: #fbeaea;
 }
