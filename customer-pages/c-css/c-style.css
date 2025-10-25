@@ -114,7 +114,7 @@ main > section {
 }
 
 .swipe-style p {
-  color: var(--text-secondary);
+  color: var(--text-primary);
   margin-bottom: 1.5rem;
 }
 
@@ -1176,6 +1176,55 @@ input[type="range"]::-moz-range-thumb {
   background: var(--secondary-variant);
   transform: translateY(-1px);
 }
+
+/* Little color circles next to the text */
+.filter-btn.colour {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  background-color: #BFE1C8; /* color neutro de fondo */
+  color: var(--teal-blue-800);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* circle before the text */
+.filter-btn.colour::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid #666; /* borde sutil */
+}
+
+/* Individual colors */
+.filter-btn.colour.black::before { background-color: black; }
+.filter-btn.colour.white::before { background-color: white; border: 1px solid #ccc; }
+.filter-btn.colour.grey::before { background-color: grey; }
+.filter-btn.colour.beige::before { background-color: beige; }
+.filter-btn.colour.brown::before { background-color: brown; }
+.filter-btn.colour.navy::before { background-color: navy; }
+.filter-btn.colour.red::before { background-color: red; }
+.filter-btn.colour.pink::before { background-color: deeppink; }
+.filter-btn.colour.blue::before { background-color: #4A90E2; } /* azul medio */
+.filter-btn.colour.orange::before { background-color: orange; }
+.filter-btn.colour.yellow::before { background-color: yellow; }
+.filter-btn.colour.green::before { background-color: green; }
+.filter-btn.colour.purple::before { background-color: purple; }
+
+.filter-section .filter-options {
+  display: none;
+  transition: max-height 0.3s ease;
+}
+
+.filter-section.active .filter-options {
+  display: block;
+}
+
 
 /* ==============================
        Item Detail-MOBILE RESPONSIVE
