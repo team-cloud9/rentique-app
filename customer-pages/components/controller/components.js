@@ -23,6 +23,9 @@ const NavigationConfig = {
       { text: "PROFILE", href: "#" },
     ],
 
+    //codigo nuevo
+
+
     // Icons for mobile header
     icons: {
       search: "../assets/icon/Icon_search.svg",
@@ -164,6 +167,7 @@ function initializeHeader(header, config) {
       a.textContent = link.text
       li.appendChild(a)
       navLinksContainer.appendChild(li)
+
     })
   }
 
