@@ -1,50 +1,66 @@
-import { firestore } from './firebase-config.js';
-import { addDoc, collection, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
+//made by Anmol
+import { collection, getDocs } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 
-// storage data
-// const clothesData = [
-//   {
-//     itemName: "Classic White Shirt",
-//     category: "Tops",
-//     color: "White",
-//     size: ["S", "M", "L"],
-//     material: "Cotton",
-//     season: "Spring",
-//     style: ["Casual", "Formal"]
-//   },
-//   {
-//     itemName: "Vintage Denim Jacket",
-//     category: "Jackets",
-//     color: "Blue",
-//     size: ["M", "L"],
-//     material: "Denim",
-//     season: "Autumn",
-//     style: ["Street", "Casual"]
-//   },
-//   {
-//     itemName: "Black Suit Set",
-//     category: "Suits",
-//     color: "Black",
-//     size: ["M", "L"],
-//     material: "Wool",
-//     season: "Winter",
-//     style: ["Formal", "Business"]
-//   },
-// ];
 
-async function addAllClothes() {
+async function fetchItems() {
   try {
-    for (const item of clothesData) {
-      await addDoc(collection(firestore, "products"), {
-        ...item,
-        createdAt: serverTimestamp()
-      });
-      console.log(`${item.itemName} added successfully!`);
-    }
-    alert("All 10 items added to Firestore!");
+    const productsCol = collection(firestore, 'Products');
+    const productSnapshot = await getDocs(productsCol);
+    console.log("Fetched items:", productSnapshot.docs.length); // 取得できた件数をログに出力
+    return productSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
   } catch (error) {
-    console.error("Error adding items: ", error);
+    console.error("Error fetching items from Firestore:", error);
+    return [];
   }
 }
+//
 
-addAllClothes();
+// init firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+/**
+ * @param {Array} items - array of product data
+ */
+function displayItems(items) {
+  const listContainer = document.getElementById('product-list-container');
+  if (!listContainer) return; // if there is no container, not fill
+
+  listContainer.innerHTML = ''; // empty containers
+
+  if (items.length === 0) {
+    listContainer.innerHTML = '<p>there is no products</p>';
+    return;
+  }
+
+  items.forEach(item => {
+    // create new <a>, class "card"
+    const cardLink = document.createElement('a');
+    cardLink.className = 'card';
+    cardLink.href = `./c-itemdetail.html?id=${item.id}`;
+
+    console.log("Displaying item:", item);
+
+    /* 
+      create in the HTML
+      class: "img", "name", "desc", "price" 
+    */
+    cardLink.innerHTML = `
+      <div class="img">
+        <img src="${item.images && item.images.length > 0 ? item.images[0] : 'path/to/placeholder.jpg'}" alt="${item.name}" />
+      </div>
+      <p class="name">${item.name}</p>
+      <p class="desc">${item.description}</p>
+      <p class="price">$${item.price}</p>
+    `;
+
+    // add in the container
+    listContainer.appendChild(cardLink);
+  });
+}
+
+// run when complete loading
+document.addEventListener('DOMContentLoaded', async () => {
+  const items = await fetchItems();
+  displayItems(items);
+});
