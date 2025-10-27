@@ -1216,7 +1216,7 @@ input[type="range"]::-moz-range-thumb {
   flex-shrink: 0; 
 }
 
-/* El círculo antes del texto */
+/* circle text */
 .filter-btn.colour::before {
   content: "";
   flex-shrink: 0; 
@@ -1236,7 +1236,7 @@ input[type="range"]::-moz-range-thumb {
 .filter-btn.colour.navy::before { background-color: navy; }
 .filter-btn.colour.red::before { background-color: red; }
 .filter-btn.colour.pink::before { background-color: deeppink; }
-.filter-btn.colour.blue::before { background-color: #4A90E2; } /* azul medio */
+.filter-btn.colour.blue::before { background-color: #4A90E2; } 
 .filter-btn.colour.orange::before { background-color: orange; }
 .filter-btn.colour.yellow::before { background-color: yellow; }
 .filter-btn.colour.green::before { background-color: green; }
@@ -1246,7 +1246,7 @@ input[type="range"]::-moz-range-thumb {
   background: var(--gray-50);
 }
 
-/* Estado activo: cambia colores del botón */
+/* change color when is active */
 .filter-btn.colour.active {
   background: var(--secondary);
   color: var(--text-on-secondary);
@@ -1254,12 +1254,17 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .filter-section .filter-options {
-  transition: max-height 0.3s ease;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 16px; 
 }
 
 .filter-section.active .filter-options {
-  display: none;
+  max-height: 400px; 
+  padding: 10px 16px; 
 }
+
 
 
 
