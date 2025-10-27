@@ -14,7 +14,9 @@ const itemProducts = [
         season: ["Winter"],
         texture: ["Plain"],
         material: ["Knitted fabric", "Khaki"],
-        style: ["Casual"]
+        style: ["Casual"],
+        category: ["Dress", "T-shirt"],
+        gender: ["Women"]
     },
     {
         id: 2,
@@ -30,7 +32,9 @@ const itemProducts = [
         season: ["Summer"],
         texture: ["Plain"],
         material: ["Cotton", "Linen"],
-        style: ["Casual", "Beach"]
+        style: ["Casual", "Beach"],
+        category: ["Dress", "T-shirt"],
+        gender: ["Women"]
     },
     {
         id: 3,
@@ -47,7 +51,9 @@ const itemProducts = [
         season: ["Summer"],
         texture: ["Solid"],
         material: ["Cotton", "Polyester"],
-        style: ["Casual", "Street"]
+        style: ["Casual", "Street"],
+        category: ["Dress", "T-shirt"],
+        gender: ["Women"]
     },
     {
         id: 4,
@@ -64,7 +70,9 @@ const itemProducts = [
         season: ["Summer"],
         texture: ["Plain"],
         material: ["Cotton", "Silk"],
-        style: ["Formal", "Business"]
+        style: ["Formal", "Business"],
+        category: ["Dress", "T-shirt"],
+        gender: ["Women"]
     },
     {
         id: 5,
@@ -81,7 +89,9 @@ const itemProducts = [
         season: ["Automn"],
         texture: ["Knitted"],
         material: ["Cotton", "Polyester"],
-        style: ["Casual", "Urban"]
+        style: ["Casual", "Urban"],
+        category: ["Dress", "T-shirt"],
+        gender: ["Women"]
     },
     {
         id: 6,
@@ -98,7 +108,9 @@ const itemProducts = [
         season: ["All Season"],
         texture: ["Plain"],
         material: ["Wool", "Cotton"],
-        style: ["Formal", "Casual"]
+        style: ["Formal", "Casual"],
+        category: ["Dress", "T-shirt"],
+        gender: ["Women"]
     },
     {
         id: 7,
@@ -114,7 +126,9 @@ const itemProducts = [
         season: ["Summer"],
         texture: ["Plain"],
         material: ["Polyester", "Spandex"],
-        style: ["Athletic", "Casual"]
+        style: ["Athletic", "Casual"],
+        category: ["Dress", "T-shirt"],
+        gender: ["Women"]
     },
     {
         id: 8,
@@ -131,7 +145,9 @@ const itemProducts = [
         season: ["Spring", "Summer"],
         texture: ["Patterned"],
         material: ["Rayon", "Cotton"],
-        style: ["Bohemian", "Casual"]
+        style: ["Bohemian", "Casual"],
+        category: ["Dress", "T-shirt"],
+        gender: ["Women"]
     },
     {
         id: 9,
@@ -148,7 +164,9 @@ const itemProducts = [
         season: ["Spring", "Autumn"],
         texture: ["Denim"],
         material: ["Cotton", "Denim"],
-        style: ["Casual", "Vintage"]
+        style: ["Casual", "Vintage"],
+        category: ["Dress", "T-shirt"],
+        gender: ["Women"]
     },
     {
         id: 10,
@@ -164,7 +182,9 @@ const itemProducts = [
         season: ["Automn"],
         texture: ["Sequined"],
         material: ["Silk", "Polyester"],
-        style: ["Casual", "Street"]
+        style: ["Casual", "Street"],
+        category: ["Dress", "T-shirt"],
+        gender: ["Women"]
     }
 ];
 

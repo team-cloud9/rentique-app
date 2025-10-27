@@ -49,7 +49,7 @@ window.addEventListener('resize', setDropdownState);
 document.addEventListener("DOMContentLoaded", () => {
   const productData = localStorage.getItem("selectedProduct");
   if (!productData) {
-    console.warn("No product data found in localStorage");
+    console.log("No product data found in localStorage");
     return;
   }
 
