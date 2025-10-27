@@ -1,32 +1,30 @@
 // ProductData.js - All product data
-const swipeProducts = [
+const itemProducts = [
     {
         id: 1,
-        image: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=500&h=700&fit=crop",
-        title: "Autumn cozy outfit",
+        image: "https://images.unsplash.com/photo-1667586680656-6b8e381cddb5?w=500&h=700&fit=crop",
+        title: "Cozy Sweater",
         brand: "Alissa Clothing",
-        description: "A cozy camel sweater paired with beige khaki pants.",
-        price: 120,
+        description: "A cozy sweater keeps you warm.",
+        price: 20,
         colors: [
-            { name: "Brown", code: "brown" },
-            { name: "Beige", code: "beige" }
+            { name: "Gray", code: "gray" },
         ],
         size: ["Medium"],
-        season: ["Autumn"],
+        season: ["Winter"],
         texture: ["Plain"],
         material: ["Knitted fabric", "Khaki"],
         style: ["Casual"]
     },
     {
         id: 2,
-        image: "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=500&h=700&fit=crop",
-        title: "Summer casual set",
+        image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500&h=700&fit=crop",
+        title: "Summer Dress",
         brand: "Beach Vibes",
-        description: "Light cotton shirt with comfortable shorts.",
-        price: 85,
+        description: "Light semi-casual dress for summer.",
+        price: 35,
         colors: [
-            { name: "White", code: "white" },
-            { name: "Blue", code: "#4A90E2" }
+            { name: "red", code: "red" },
         ],
         size: ["Small", "Medium"],
         season: ["Summer"],
@@ -36,85 +34,84 @@ const swipeProducts = [
     },
     {
         id: 3,
-        image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=500&h=700&fit=crop",
-        title: "Winter elegant coat",
+        image: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=500&h=700&fit=crop",
+        title: "Casual T-Shirts",
         brand: "Urban Style",
-        description: "Classic wool coat perfect for cold weather.",
-        price: 250,
+        description: "Classic simple cotton t-shirts.",
+        price: 20,
         colors: [
             { name: "Black", code: "black" },
             { name: "Gray", code: "gray" }
         ],
         size: ["Large"],
-        season: ["Winter"],
+        season: ["Summer"],
         texture: ["Solid"],
-        material: ["Wool", "Polyester"],
-        style: ["Elegant", "Formal"]
+        material: ["Cotton", "Polyester"],
+        style: ["Casual", "Street"]
     },
     {
         id: 4,
-        image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=500&h=700&fit=crop",
-        title: "Spring floral dress",
-        brand: "Garden Collection",
-        description: "Light and breezy floral pattern dress.",
-        price: 95,
+        image: "https://images.unsplash.com/photo-1598032895455-526c9e347a87?w=500&h=700&fit=crop",
+        title: "Business/Office light shirts",
+        brand: "Office Collection",
+        description: "Professional tailored suit for office wear.",
+        price: 50,
         colors: [
-            { name: "Pink", code: "#FFC0CB" },
+            { name: "Blue", code: "blue" },
             { name: "Green", code: "#90EE90" }
         ],
         size: ["Small", "Medium"],
-        season: ["Spring"],
-        texture: ["Floral"],
+        season: ["Summer"],
+        texture: ["Plain"],
         material: ["Cotton", "Silk"],
-        style: ["Romantic", "Casual"]
+        style: ["Formal", "Business"]
     },
     {
         id: 5,
-        image: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=500&h=700&fit=crop",
-        title: "Urban streetwear",
+        image: "https://plus.unsplash.com/premium_photo-1673757121126-cbf64f316bab?w=500&h=700&fit=crop",
+        title: "Urban Sweater",
         brand: "Street Kings",
-        description: "Modern streetwear with bold graphics.",
-        price: 75,
+        description: "Modern sweater with cute patterns.",
+        price: 25,
         colors: [
-            { name: "Black", code: "black" },
-            { name: "Red", code: "red" }
+            { name: "White", code: "white" },
+            { name: "Beige", code: "beige" }
         ],
         size: ["Medium", "Large"],
-        season: ["All Season"],
-        texture: ["Graphic"],
+        season: ["Automn"],
+        texture: ["Knitted"],
         material: ["Cotton", "Polyester"],
-        style: ["Street", "Urban"]
+        style: ["Casual", "Urban"]
     },
     {
         id: 6,
         image: "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=500&h=700&fit=crop",
-        title: "Business formal suit",
+        title: "Camel Long Jacket",
         brand: "Executive Line",
-        description: "Professional tailored suit for office wear.",
-        price: 320,
+        description: "Camel long outer in any scene.",
+        price: 60,
         colors: [
-            { name: "Navy", code: "#000080" },
-            { name: "Charcoal", code: "#36454F" }
+            { name: "Camel", code: "#9a742eff" },
+            { name: "Brown", code: "brown" }
         ],
         size: ["Medium", "Large"],
         season: ["All Season"],
         texture: ["Plain"],
         material: ["Wool", "Cotton"],
-        style: ["Formal", "Business"]
+        style: ["Formal", "Casual"]
     },
     {
         id: 7,
-        image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&h=700&fit=crop",
-        title: "Athletic sportswear",
-        brand: "Active Motion",
-        description: "Breathable sports outfit for workout sessions.",
-        price: 65,
+        image: "https://images.unsplash.com/photo-1714143136372-ddaf8b606da7?w=500&h=700&fit=crop",
+        title: "Blue Jeans",
+        brand: "Active Jeans",
+        description: "Classic blue jeans.",
+        price: 30,
         colors: [
-            { name: "Neon Green", code: "#39FF14" },
-            { name: "Black", code: "black" }
+            { name: "Blue", code: "blue" },
         ],
         size: ["Small", "Medium", "Large"],
-        season: ["All Season"],
+        season: ["Summer"],
         texture: ["Plain"],
         material: ["Polyester", "Spandex"],
         style: ["Athletic", "Casual"]
@@ -127,7 +124,7 @@ const swipeProducts = [
         description: "Flowing maxi dress with ethnic patterns.",
         price: 110,
         colors: [
-            { name: "Turquoise", code: "#40E0D0" },
+            { name: "White", code: "white" },
             { name: "Orange", code: "#FFA500" }
         ],
         size: ["Small", "Medium"],
@@ -139,13 +136,13 @@ const swipeProducts = [
     {
         id: 9,
         image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500&h=700&fit=crop",
-        title: "Classic denim jacket",
+        title: "Classic Leather Jacket",
         brand: "Vintage Threads",
-        description: "Timeless denim jacket with distressed finish.",
-        price: 89,
+        description: "Timeless leather jacket with distressed finish.",
+        price: 50,
         colors: [
-            { name: "Light Blue", code: "#ADD8E6" },
-            { name: "Dark Blue", code: "#00008B" }
+            { name: "Black", code: "black" },
+            { name: "Dark Gray", code: "#25252bff" }
         ],
         size: ["Small", "Medium", "Large"],
         season: ["Spring", "Autumn"],
@@ -155,19 +152,179 @@ const swipeProducts = [
     },
     {
         id: 10,
-        image: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=500&h=700&fit=crop",
-        title: "Evening cocktail dress",
-        brand: "Glamour Night",
-        description: "Elegant sequined dress for special occasions.",
-        price: 180,
+        image: "https://images.unsplash.com/photo-1542406775-ade58c52d2e4?w=500&h=700&fit=crop",
+        title: "Hoodie",
+        brand: "Urban Fit",
+        description: "Simple black hoodie with graphics.",
+        price: 30,
         colors: [
-            { name: "Gold", code: "#FFD700" },
-            { name: "Silver", code: "#C0C0C0" }
+            { name: "Black", code: "black" },
         ],
         size: ["Small", "Medium"],
-        season: ["All Season"],
+        season: ["Automn"],
         texture: ["Sequined"],
         material: ["Silk", "Polyester"],
-        style: ["Elegant", "Party"]
+        style: ["Casual", "Street"]
     }
+];
+
+// ============================
+// SWIPE PRODUCTS
+// ============================
+const swipeProducts = [
+    {
+        id: 20,
+        image: "https://plus.unsplash.com/premium_photo-1698952163284-8ab2e22a5dd4?w=500&h=700&fit=crop",
+        title: "Cozy Sweater",
+        brand: "Alissa Clothing",
+        description: "A cozy sweater keeps you warm.",
+        price: 20,
+        colors: [{ name: "Gray", code: "gray" }],
+        size: ["Medium"],
+        season: ["Winter"],
+        texture: ["Plain"],
+        material: ["Knitted fabric", "Khaki"],
+        style: ["Casual"]
+    },
+    {
+        id: 21,
+        image: "https://images.unsplash.com/photo-1582274528667-1e8a10ded835?w=500&h=700&fit=crop",
+        title: "Cozy Sweater",
+        brand: "Alissa Clothing",
+        description: "A cozy sweater keeps you warm.",
+        price: 20,
+        colors: [{ name: "Gray", code: "gray" }],
+        size: ["Medium"],
+        season: ["Winter"],
+        texture: ["Plain"],
+        material: ["Knitted fabric", "Khaki"],
+        style: ["Casual"]
+    },
+    {
+        id: 22,
+        image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=500&h=700&fit=crop",
+        title: "Cozy Sweater",
+        brand: "Alissa Clothing",
+        description: "A cozy sweater keeps you warm.",
+        price: 20,
+        colors: [{ name: "Gray", code: "gray" }],
+        size: ["Medium"],
+        season: ["Winter"],
+        texture: ["Plain"],
+        material: ["Knitted fabric", "Khaki"],
+        style: ["Casual"]
+    },
+    {
+        id: 23,
+        image: "https://images.unsplash.com/photo-1729808783993-fda4a4f407ce?w=500&h=700&fit=crop",
+        title: "Cozy Sweater",
+        brand: "Alissa Clothing",
+        description: "A cozy sweater keeps you warm.",
+        price: 20,
+        colors: [{ name: "Gray", code: "gray" }],
+        size: ["Medium"],
+        season: ["Winter"],
+        texture: ["Plain"],
+        material: ["Knitted fabric", "Khaki"],
+        style: ["Casual"]
+    },
+    {
+        id: 24,
+        image: "https://images.unsplash.com/photo-1632262049811-86d23941618b?w=500&h=700&fit=crop",
+        title: "Cozy Sweater",
+        brand: "Alissa Clothing",
+        description: "A cozy sweater keeps you warm.",
+        price: 20,
+        colors: [{ name: "Gray", code: "gray" }],
+        size: ["Medium"],
+        season: ["Winter"],
+        texture: ["Plain"],
+        material: ["Knitted fabric", "Khaki"],
+        style: ["Casual"]
+    },
+    {
+        id: 25,
+        image: "https://images.unsplash.com/photo-1554925051-f668ed70d520?w=500&h=700&fit=crop",
+        title: "Cozy Sweater",
+        brand: "Alissa Clothing",
+        description: "A cozy sweater keeps you warm.",
+        price: 20,
+        colors: [{ name: "Gray", code: "gray" }],
+        size: ["Medium"],
+        season: ["Winter"],
+        texture: ["Plain"],
+        material: ["Knitted fabric", "Khaki"],
+        style: ["Casual"]
+    },
+    {
+        id: 26,
+        image: "https://images.unsplash.com/photo-1582164256364-b0eccb922bff?w=500&h=700&fit=crop",
+        title: "Cozy Sweater",
+        brand: "Alissa Clothing",
+        description: "A cozy sweater keeps you warm.",
+        price: 20,
+        colors: [{ name: "Gray", code: "gray" }],
+        size: ["Medium"],
+        season: ["Winter"],
+        texture: ["Plain"],
+        material: ["Knitted fabric", "Khaki"],
+        style: ["Casual"]
+    },
+    {
+        id: 27,
+        image: "https://images.unsplash.com/photo-1613432539593-bb769c287e08?w=500&h=700&fit=crop",
+        title: "Cozy Sweater",
+        brand: "Alissa Clothing",
+        description: "A cozy sweater keeps you warm.",
+        price: 20,
+        colors: [{ name: "Gray", code: "gray" }],
+        size: ["Medium"],
+        season: ["Winter"],
+        texture: ["Plain"],
+        material: ["Knitted fabric", "Khaki"],
+        style: ["Casual"]
+    },
+    {
+        id: 28,
+        image: "https://images.unsplash.com/photo-1634748210255-af588c16652a?w=500&h=700&fit=crop",
+        title: "Cozy Sweater",
+        brand: "Alissa Clothing",
+        description: "A cozy sweater keeps you warm.",
+        price: 20,
+        colors: [{ name: "Gray", code: "gray" }],
+        size: ["Medium"],
+        season: ["Winter"],
+        texture: ["Plain"],
+        material: ["Knitted fabric", "Khaki"],
+        style: ["Casual"]
+    },
+    {
+        id: 29,
+        image: "https://plus.unsplash.com/premium_photo-1664297992890-07809e72c79e?w=500&h=700&fit=crop",
+        title: "Cozy Sweater",
+        brand: "Alissa Clothing",
+        description: "A cozy sweater keeps you warm.",
+        price: 20,
+        colors: [{ name: "Gray", code: "gray" }],
+        size: ["Medium"],
+        season: ["Winter"],
+        texture: ["Plain"],
+        material: ["Knitted fabric", "Khaki"],
+        style: ["Casual"]
+    },
+    {
+        id: 30,
+        image: "https://plus.unsplash.com/premium_photo-1675253119026-b1c8b2802ce1?w=500&h=700&fit=crop",
+        title: "Cozy Sweater",
+        brand: "Alissa Clothing",
+        description: "A cozy sweater keeps you warm.",
+        price: 20,
+        colors: [{ name: "Gray", code: "gray" }],
+        size: ["Medium"],
+        season: ["Winter"],
+        texture: ["Plain"],
+        material: ["Knitted fabric", "Khaki"],
+        style: ["Casual"]
+    },
+
 ];

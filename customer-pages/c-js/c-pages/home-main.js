@@ -1,22 +1,37 @@
+// ============================
+// HOME PAGE MAIN SCRIPT
+// ============================
+
 let currentProductIndex = 0;
 
-// Render swipe items dynamically
+// ============================
+// Render Swipe Items
+// ============================
 function renderSwipeItems() {
-  const swipeItems = document.querySelector('.swipe-items');
+  const swipeItems = document.querySelector(".swipe-items");
   if (!swipeItems) return;
 
-  swipeItems.innerHTML = swipeProducts.map((product, index) =>
-    `<img class="item" src="${product.image}" alt="${product.title}" data-index="${index}" />`
-  ).join('');
+  swipeItems.innerHTML = swipeProducts
+    .map(
+      (product, index) => `
+      <img class="item" src="${product.image}" alt="${product.title}" data-index="${index}" />
+    `
+    )
+    .join("");
 }
 
-// Render item list dynamically (swipeProducts)
+// ============================
+// Render Item List
+// ============================
 function renderItemList() {
-  const listItemsContainer = document.querySelector('.list-items');
+  const listItemsContainer = document.querySelector(".list-items");
   if (!listItemsContainer) return;
 
-  listItemsContainer.innerHTML = swipeProducts.map(product => `
-    <a href="./c-itemdetail.html" class="card">
+  listItemsContainer.innerHTML = itemProducts
+    .slice(0, 4)
+    .map(
+      (product, index) => `
+    <a href="./c-itemdetail.html" class="card" data-index="${index}">
       <div class="img">
         <img src="${product.image}" alt="${product.title}" />
       </div>
@@ -24,77 +39,95 @@ function renderItemList() {
       <p class="desc">${product.description}</p>
       <p class="price">${product.brand}</p>
     </a>
-  `).join('');
+  `
+    )
+    .join("");
+
+  // LocalStorage
+  const cards = listItemsContainer.querySelectorAll(".card");
+  cards.forEach((card) => {
+    card.addEventListener("click", () => {
+      const index = card.dataset.index;
+      const selectedProduct = itemProducts[index];
+      if (!selectedProduct) return;
+      localStorage.setItem("selectedProduct", JSON.stringify(selectedProduct));
+      console.log("Saved product:", selectedProduct);
+    });
+  });
 }
 
-// Function to render product popup
+// ============================
+// Render Swipe Popup
+// ============================
 function renderSwipePopup(product) {
-  const popupImage = document.getElementById('popupImage');
-  const popupTitle = document.querySelector('.swipe-popup-title');
-  const popupBrand = document.getElementById('swipePopupBrand');
-  const popupDesc = document.getElementById('swipePopupDesc');
+  const popupImage = document.getElementById("popupImage");
+  const popupTitle = document.querySelector(".swipe-popup-title");
+  const popupBrand = document.getElementById("swipePopupBrand");
+  const popupDesc = document.getElementById("swipePopupDesc");
 
   if (popupImage) popupImage.src = product.image;
   if (popupTitle) popupTitle.textContent = product.title;
   if (popupBrand) popupBrand.textContent = product.brand;
   if (popupDesc) popupDesc.textContent = product.description;
 
-  const detailsContainer = document.querySelector('.swipe-popup-details');
+  const detailsContainer = document.querySelector(".swipe-popup-details");
   if (!detailsContainer) return;
 
   detailsContainer.innerHTML = `
-        <div class="swipe-detail-row">
-          <span class="swipe-detail-label">Colour:</span>
-          <div class="swipe-detail-values">
-            ${product.colors.map(color => `
-              <span class="swipe-color-tag">
-                <span class="swipe-color-dot" style="background: ${color.code}${color.code === 'beige' || color.code === 'white' ? '; border: 1px solid #ccc' : ''}"></span>
-                ${color.name}
-              </span>
-            `).join('')}
-          </div>
-        </div>
-        <div class="swipe-detail-row">
-          <span class="swipe-detail-label">Size:</span>
-          <div class="swipe-detail-values">
-            ${product.size.map(s => `<span class="swipe-text-tag">${s}</span>`).join('')}
-          </div>
-        </div>
-        <div class="swipe-detail-row">
-          <span class="swipe-detail-label">Recommend season:</span>
-          <div class="swipe-detail-values">
-            ${product.season.map(s => `<span class="swipe-text-tag">${s}</span>`).join('')}
-          </div>
-        </div>
-        <div class="swipe-detail-row">
-          <span class="swipe-detail-label">Texture:</span>
-          <div class="swipe-detail-values">
-            ${product.texture.map(t => `<span class="swipe-text-tag">${t}</span>`).join('')}
-          </div>
-        </div>
-        <div class="swipe-detail-row">
-          <span class="swipe-detail-label">Material:</span>
-          <div class="swipe-detail-values">
-            ${product.material.map(m => `<span class="swipe-text-tag">${m}</span>`).join('')}
-          </div>
-        </div>
-        <div class="swipe-detail-row">
-          <span class="swipe-detail-label">Style:</span>
-          <div class="swipe-detail-values">
-            ${product.style.map(s => `<span class="swipe-text-tag">${s}</span>`).join('')}
-          </div>
-        </div>
-      `;
+    <div class="swipe-detail-row">
+      <span class="swipe-detail-label">Colour:</span>
+      <div class="swipe-detail-values">
+        ${product.colors
+      .map(
+        (color) => `
+          <span class="swipe-color-tag">
+            <span class="swipe-color-dot" style="background: ${color.code}${color.code === "white" || color.code === "beige" ? "; border: 1px solid #ccc" : ""
+          }"></span>
+            ${color.name}
+          </span>
+        `
+      )
+      .join("")}
+      </div>
+    </div>
+    <div class="swipe-detail-row">
+      <span class="swipe-detail-label">Size:</span>
+      <div class="swipe-detail-values">
+        ${product.size.map((s) => `<span class="swipe-text-tag">${s}</span>`).join("")}
+      </div>
+    </div>
+    <div class="swipe-detail-row">
+      <span class="swipe-detail-label">Season:</span>
+      <div class="swipe-detail-values">
+        ${product.season.map((s) => `<span class="swipe-text-tag">${s}</span>`).join("")}
+      </div>
+    </div>
+    <div class="swipe-detail-row">
+      <span class="swipe-detail-label">Material:</span>
+      <div class="swipe-detail-values">
+        ${product.material.map((m) => `<span class="swipe-text-tag">${m}</span>`).join("")}
+      </div>
+    </div>
+    <div class="swipe-detail-row">
+      <span class="swipe-detail-label">Style:</span>
+      <div class="swipe-detail-values">
+        ${product.style.map((st) => `<span class="swipe-text-tag">${st}</span>`).join("")}
+      </div>
+    </div>
+  `;
 }
 
+// ============================
+// Popup Control
+// ============================
 function showSwipePopup() {
-  const popup = document.getElementById('swipePopup');
-  if (popup) popup.style.display = 'flex';
+  const popup = document.getElementById("swipePopup");
+  if (popup) popup.style.display = "flex";
 }
 
 function hideSwipePopup() {
-  const popup = document.getElementById('swipePopup');
-  if (popup) popup.style.display = 'none';
+  const popup = document.getElementById("swipePopup");
+  if (popup) popup.style.display = "none";
 }
 
 function loadNextProduct() {
@@ -102,21 +135,32 @@ function loadNextProduct() {
   renderSwipePopup(swipeProducts[currentProductIndex]);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Render swipe items
+// ============================
+// Save Like/Pass History
+// ============================
+function saveSwipeHistory(key, product) {
+  const existing = JSON.parse(localStorage.getItem(key)) || [];
+  const isAlreadySaved = existing.some((item) => item.id === product.id);
+  if (isAlreadySaved) return;
+
+  existing.push(product);
+  localStorage.setItem(key, JSON.stringify(existing));
+  console.log(`Saved to ${key}:`, product.title);
+}
+
+// ============================
+// Initialize
+// ============================
+document.addEventListener("DOMContentLoaded", () => {
   renderSwipeItems();
-
-  // Render item list
   renderItemList();
-
-  // Render initial product data
   renderSwipePopup(swipeProducts[currentProductIndex]);
 
-  // Add click event to swipe items
-  const swipeItemsContainer = document.querySelector('.swipe-items');
+  // Swipe items click
+  const swipeItemsContainer = document.querySelector(".swipe-items");
   if (swipeItemsContainer) {
-    swipeItemsContainer.addEventListener('click', (e) => {
-      if (e.target.classList.contains('item')) {
+    swipeItemsContainer.addEventListener("click", (e) => {
+      if (e.target.classList.contains("item")) {
         const index = parseInt(e.target.dataset.index);
         currentProductIndex = index;
         renderSwipePopup(swipeProducts[currentProductIndex]);
@@ -126,36 +170,37 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Close popup
-  const closeBtn = document.getElementById('closePopup');
-  if (closeBtn) {
-    closeBtn.addEventListener('click', hideSwipePopup);
-  }
+  const closeBtn = document.getElementById("closePopup");
+  if (closeBtn) closeBtn.addEventListener("click", hideSwipePopup);
 
-  const popup = document.getElementById('swipePopup');
+  const popup = document.getElementById("swipePopup");
   if (popup) {
-    popup.addEventListener('click', (e) => {
+    popup.addEventListener("click", (e) => {
       if (e.target === popup) hideSwipePopup();
     });
   }
 
-  // Pass/Like buttons
-  const passBtn = document.querySelector('.swipe-btn-pass');
+  // Like / Pass Buttons
+  const passBtn = document.querySelector(".swipe-btn-pass");
+  const likeBtn = document.querySelector(".swipe-btn-like");
+
   if (passBtn) {
-    passBtn.addEventListener('click', () => {
-      console.log('Passed:', swipeProducts[currentProductIndex].title);
+    passBtn.addEventListener("click", () => {
+      const currentProduct = swipeProducts[currentProductIndex];
+      saveSwipeHistory("passedItems", currentProduct);
       loadNextProduct();
     });
   }
 
-  const likeBtn = document.querySelector('.swipe-btn-like');
   if (likeBtn) {
-    likeBtn.addEventListener('click', () => {
-      console.log('Liked:', swipeProducts[currentProductIndex].title);
+    likeBtn.addEventListener("click", () => {
+      const currentProduct = swipeProducts[currentProductIndex];
+      saveSwipeHistory("likedItems", currentProduct);
       loadNextProduct();
     });
   }
 
-  // Scroll functionality
+  // Arrows scroll
   const swipeItems = document.querySelector(".swipe-items");
   const leftBtn = document.querySelector(".arrow.left");
   const rightBtn = document.querySelector(".arrow.right");
