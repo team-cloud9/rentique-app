@@ -13,26 +13,26 @@
  * The script will automatically load header.html and footer.html and inject them.
  */
 
-;(() => {
+(() => {
   // Configuration for component paths
   const COMPONENT_PATHS = {
     header: "../components/view/pages/header.html",
     footer: "../components/view/pages/footer.html",
-  }
+  };
 
   /**
    * Fetch HTML content from a file
    */
   async function fetchHTML(url) {
     try {
-      const response = await fetch(url)
+      const response = await fetch(url);
       if (!response.ok) {
-        throw new Error(`Failed to fetch ${url}: ${response.statusText}`)
+        throw new Error(`Failed to fetch ${url}: ${response.statusText}`);
       }
-      return await response.text()
+      return await response.text();
     } catch (error) {
-      console.error(`Error loading component from ${url}:`, error)
-      return null
+      console.error(`Error loading component from ${url}:`, error);
+      return null;
     }
   }
 
@@ -40,18 +40,18 @@
    * Load header component
    */
   async function loadHeader() {
-    const placeholder = document.getElementById("header-placeholder")
-    if (!placeholder) return
+    const placeholder = document.getElementById("header-placeholder");
+    if (!placeholder) return;
 
-    const userType = placeholder.getAttribute("data-user-type") || "customer"
-    const html = await fetchHTML(COMPONENT_PATHS.header)
+    const userType = placeholder.getAttribute("data-user-type") || "customer";
+    const html = await fetchHTML(COMPONENT_PATHS.header);
 
     if (html) {
-      placeholder.innerHTML = html
+      placeholder.innerHTML = html;
       // Set the user type on the loaded header
-      const header = placeholder.querySelector("header")
+      const header = placeholder.querySelector("header");
       if (header) {
-        header.setAttribute("data-user-type", userType)
+        header.setAttribute("data-user-type", userType);
       }
     }
   }
@@ -60,18 +60,18 @@
    * Load footer component
    */
   async function loadFooter() {
-    const placeholder = document.getElementById("footer-placeholder")
-    if (!placeholder) return
+    const placeholder = document.getElementById("footer-placeholder");
+    if (!placeholder) return;
 
-    const userType = placeholder.getAttribute("data-user-type") || "customer"
-    const html = await fetchHTML(COMPONENT_PATHS.footer)
+    const userType = placeholder.getAttribute("data-user-type") || "customer";
+    const html = await fetchHTML(COMPONENT_PATHS.footer);
 
     if (html) {
-      placeholder.innerHTML = html
+      placeholder.innerHTML = html;
       // Set the user type on the loaded footer
-      const footer = placeholder.querySelector("footer")
+      const footer = placeholder.querySelector("footer");
       if (footer) {
-        footer.setAttribute("data-user-type", userType)
+        footer.setAttribute("data-user-type", userType);
       }
     }
   }
@@ -81,30 +81,30 @@
    */
   async function initializeComponents() {
     // Load header and footer in parallel
-    await Promise.all([loadHeader(), loadFooter()])
+    await Promise.all([loadHeader(), loadFooter()]);
 
     // After loading, initialize navigation if the function exists
     if (window.initializeNavigation) {
-      window.initializeNavigation()
+      window.initializeNavigation();
     } else {
       // If navigation-config.js hasn't loaded yet, wait for it
       const checkNavigation = setInterval(() => {
         if (window.initializeNavigation) {
-          clearInterval(checkNavigation)
-          window.initializeNavigation()
+          clearInterval(checkNavigation);
+          window.initializeNavigation();
         }
-      }, 100)
+      }, 100);
 
       // Stop checking after 5 seconds
-      setTimeout(() => clearInterval(checkNavigation), 5000)
+      setTimeout(() => clearInterval(checkNavigation), 5000);
     }
   }
 
   // Auto-initialize when DOM is ready
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initializeComponents)
+    document.addEventListener("DOMContentLoaded", initializeComponents);
   } else {
-    initializeComponents()
+    initializeComponents();
   }
 
   // Export for manual initialization if needed
@@ -112,5 +112,5 @@
     loadHeader,
     loadFooter,
     initializeComponents,
-  }
-})()
+  };
+})();
