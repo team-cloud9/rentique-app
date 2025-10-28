@@ -1,0 +1,86 @@
+<!-- @Made By: Gurpreet Singh -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Detail - Rentique</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/b-detail-item.css">
+    <link rel="stylesheet" href="../css/b-add-item.css">
+    <link rel="stylesheet" href="/view/components/css/var.css" />
+    <link rel="stylesheet" href="/view/components/css/header-footer.css" />
+    <script src="../../../controller/components/components.js" defer></script>
+    <script src="../../../controller/components/component-loader.js" defer></script>
+    <script src="../../../controller/business-side/b-detail-item.js" type="module" defer></script>
+</head>
+<body>
+
+    <div id="header-placeholder" data-user-type="business"></div>
+
+    <section class="summ-gallery" id="galleryContainer">
+    </section>
+ 
+    <section class="summ-details">
+        
+        <div class="summ-details__header">
+            <h2 id="dispItemName" class="summ-details__title"></h2>
+            <span id="dispItemPrice" class="summ-details__price"></span>
+        </div>
+
+        <p id="dispItemDesc" class="summ-details__description"></p>
+        <p class="summ-details__source">A product from <strong>Rentique Boutique</strong></p>
+
+      
+
+        <div class="summ-attr-group">
+            <h3 class="summ-attr-group__title">Color:</h3>
+            <div id="dispColors" class="summ-tags-container"></div>
+        </div>
+        <div class="summ-attr-group">
+            <h3 class="summ-attr-group__title">Size:</h3>
+            <div id="dispSizes" class="summ-tags-container"></div>
+        </div>
+        <div class="summ-attr-group">
+            <h3 class="summ-attr-group__title">Size Fit:</h3>
+            <div id="dispSizeFit" class="summ-tags-container"></div>
+        </div>
+        <div class="summ-attr-group">
+            <h3 class="summ-attr-group__title">Category & Gender:</h3>
+            <div id="dispCatGender" class="summ-tags-container"></div>
+        </div>
+        <div class="summ-attr-group">
+            <h3 class="summ-attr-group__title">Material:</h3>
+            <div id="dispMaterial" class="summ-tags-container"></div>
+        </div>
+        <div class="summ-attr-group">
+            <h3 class="summ-attr-group__title">Texture:</h3>
+            <div id="dispTexture" class="summ-tags-container"></div>
+        </div>
+        <div class="summ-attr-group">
+            <h3 class="summ-attr-group__title">Style:</h3>
+            <div id="dispStyle" class="summ-tags-container"></div>
+        </div>
+        <div class="summ-attr-group" id="sizeChartContainer" style="display:none;">
+            <h3 class="summ-attr-group__title">Size Chart</h3>
+            <img id="dispSizeChart" src="/placeholder.svg" alt="Size Chart" class="summ-details__chart-img">
+        </div>
+
+        <div class="summ-action-buttons">
+            <button id="editItemBtn" class="summ-action-btn summ-action-btn--edit">
+                <i class='bx bx-edit-alt'></i>
+                Edit
+            </button>
+            <button id="deleteItemBtn" class="summ-action-btn summ-action-btn--delete">
+                <i class='bx bx-trash'></i>
+                Delete
+            </button>
+        </div>
+
+    </section>
+   
+  
+    <div id="footer-placeholder" data-user-type="business"></div>
+
+</body>
+</html>

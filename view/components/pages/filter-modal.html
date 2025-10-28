@@ -1,0 +1,173 @@
+<!-- Filter Modal Component -->
+<div id="filterModal" class="filter-modal">
+  <div class="filter-modal-content">
+    <div class="filter-header">
+      <h2>Filter</h2>
+      <button class="close-btn" onclick="closeFilterModal()">&times;</button>
+    </div>
+    
+    <div class="filter-body">
+      <!-- Category Section -->
+      <div class="filter-section">
+        <h3 class="filter-section-title">Category <span class="arrow">▲</span></h3>
+        <div class="filter-options">
+          <button class="filter-chip">T-shirts</button>
+          <button class="filter-chip">Blouses & Shirts</button>
+          <button class="filter-chip">Sweaters</button>
+          <button class="filter-chip">Hoodies</button>
+          <button class="filter-chip">Pants & Trousers</button>
+          <button class="filter-chip">Jeans</button>
+          <button class="filter-chip">Shorts</button>
+          <button class="filter-chip">Skirts</button>
+          <button class="filter-chip">Dresses</button>
+          <button class="filter-chip">Jumpsuits</button>
+          <button class="filter-chip">Rompers</button>
+          <button class="filter-chip">Outerwear</button>
+          <button class="filter-chip">Blazers</button>
+          <button class="filter-chip">Suits</button>
+        </div>
+      </div>
+
+      <!-- Size Section -->
+      <div class="filter-section">
+        <h3 class="filter-section-title">Size <span class="arrow">▲</span></h3>
+        <div class="filter-options">
+          <button class="filter-chip">XXS</button>
+          <button class="filter-chip">XS</button>
+          <button class="filter-chip">S</button>
+          <button class="filter-chip">M</button>
+          <button class="filter-chip">L</button>
+          <button class="filter-chip">XL</button>
+          <button class="filter-chip">XXL</button>
+        </div>
+      </div>
+
+      <!-- Price Range Section -->
+      <div class="filter-section">
+        <h3 class="filter-section-title">Price range</h3>
+        <div class="price-range-labels">
+          <span>$1</span>
+          <span>$120</span>
+        </div>
+        <input type="range" class="price-slider" min="1" max="120" value="10" id="priceSlider">
+        <div class="price-values">
+          <span>$1</span>
+          <span id="priceValue">$10</span>
+        </div>
+      </div>
+
+      <!-- Distance Section -->
+      <div class="filter-section">
+        <h3 class="filter-section-title">Distance</h3>
+        <div class="distance-labels">
+          <span>0 km</span>
+          <span>120 km</span>
+        </div>
+        <input type="range" class="distance-slider" min="0" max="120" value="0" id="distanceSlider">
+        <div class="distance-value">
+          <span id="distanceValue">0 km</span>
+        </div>
+      </div>
+
+      <!-- Style Section -->
+      <div class="filter-section">
+        <h3 class="filter-section-title">Style <span class="arrow">▲</span></h3>
+        <div class="filter-options">
+          <button class="filter-chip">Casual</button>
+          <button class="filter-chip">Formal</button>
+          <button class="filter-chip">Business</button>
+          <button class="filter-chip">Party</button>
+          <button class="filter-chip">Dressy</button>
+          <button class="filter-chip">Vintage</button>
+          <button class="filter-chip">Street Style</button>
+          <button class="filter-chip">Minimalist</button>
+          <button class="filter-chip">Sporty</button>
+          <button class="filter-chip">Elegant</button>
+          <button class="filter-chip">Preppy</button>
+          <button class="filter-chip">Y2K</button>
+        </div>
+      </div>
+
+      <!-- Material Section -->
+      <div class="filter-section">
+        <h3 class="filter-section-title">Material <span class="arrow">▲</span></h3>
+        <div class="filter-options">
+          <button class="filter-chip">Cotton</button>
+          <button class="filter-chip">Denim</button>
+          <button class="filter-chip">Linen</button>
+          <button class="filter-chip">Silk & Satin</button>
+          <button class="filter-chip">Wool</button>
+          <button class="filter-chip">Cashmere</button>
+          <button class="filter-chip">Leather</button>
+          <button class="filter-chip">Polyester</button>
+          <button class="filter-chip">Nylon</button>
+          <button class="filter-chip">Rayon</button>
+          <button class="filter-chip">Velvet</button>
+          <button class="filter-chip">Corduroy</button>
+        </div>
+      </div>
+
+      <!-- Texture Section -->
+      <div class="filter-section">
+        <h3 class="filter-section-title">Texture <span class="arrow">▲</span></h3>
+        <div class="filter-options">
+          <button class="filter-chip">Smooth</button>
+          <button class="filter-chip">Soft</button>
+          <button class="filter-chip">Textured</button>
+          <button class="filter-chip">Rough</button>
+          <button class="filter-chip">Sheer</button>
+          <button class="filter-chip">Matte</button>
+          <button class="filter-chip">Shiny</button>
+          <button class="filter-chip">Knitted</button>
+          <button class="filter-chip">Stretchy</button>
+          <button class="filter-chip">Suede-like</button>
+        </div>
+      </div>
+
+      <!-- Season Section -->
+      <div class="filter-section">
+        <h3 class="filter-section-title">Season <span class="arrow">▲</span></h3>
+        <div class="filter-options">
+          <button class="filter-chip">Spring</button>
+          <button class="filter-chip">Summer</button>
+          <button class="filter-chip">Autumn</button>
+          <button class="filter-chip">Winter</button>
+        </div>
+      </div>
+
+      <!-- Colour Section -->
+      <div class="filter-section">
+        <h3 class="filter-section-title">Colour <span class="arrow">▲</span></h3>
+        <div class="filter-options color-options">
+          <button class="color-chip" data-color="black" style="background-color: #000000;"><span>Black</span></button>
+          <button class="color-chip" data-color="white" style="background-color: #FFFFFF; border: 1px solid #e0e0e0;"><span>White</span></button>
+          <button class="color-chip" data-color="grey" style="background-color: #808080;"><span>Grey</span></button>
+          <button class="color-chip" data-color="beige" style="background-color: #D4C5B9;"><span>Beige</span></button>
+          <button class="color-chip" data-color="brown" style="background-color: #8B4513;"><span>Brown</span></button>
+          <button class="color-chip" data-color="navy" style="background-color: #000080;"><span>Navy</span></button>
+          <button class="color-chip" data-color="red" style="background-color: #FF0000;"><span>Red</span></button>
+          <button class="color-chip" data-color="pink" style="background-color: #FF69B4;"><span>Pink</span></button>
+          <button class="color-chip" data-color="orange" style="background-color: #FFA500;"><span>Orange</span></button>
+          <button class="color-chip" data-color="yellow" style="background-color: #FFFF00;"><span>Yellow</span></button>
+          <button class="color-chip" data-color="green" style="background-color: #008000;"><span>Green</span></button>
+          <button class="color-chip" data-color="blue" style="background-color: #0000FF;"><span>Blue</span></button>
+          <button class="color-chip" data-color="purple" style="background-color: #800080;"><span>Purple</span></button>
+        </div>
+      </div>
+
+      <!-- Gender Section -->
+      <div class="filter-section">
+        <h3 class="filter-section-title">Gender <span class="arrow">▲</span></h3>
+        <div class="filter-options">
+          <button class="filter-chip">Woman</button>
+          <button class="filter-chip">Man</button>
+          <button class="filter-chip">Unisex</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="filter-footer">
+      <button class="apply-btn" onclick="applyFilters()">APPLY</button>
+    </div>
+  </div>
+</div>
