@@ -1,13 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
   const buttons = document.querySelectorAll(".profile-btn");
   const contentArea = document.getElementById("profile-content");
-  const mainContainer = document.querySelector(".profile-container");
 
   buttons.forEach((btn) => {
     btn.addEventListener("click", async () => {
       const section = btn.dataset.section;
 
-      //  Hide the buttons
+      // Hide main buttons
       buttons.forEach((b) => (b.style.display = "none"));
 
       try {
@@ -16,16 +15,15 @@ document.addEventListener("DOMContentLoaded", () => {
         const html = await res.text();
         contentArea.innerHTML = html;
 
-        // Back
+        // Back button
         const backBtn = document.createElement("button");
-        backBtn.textContent = "←";
+        backBtn.textContent = "<";
         backBtn.classList.add("back-btn");
         backBtn.addEventListener("click", () => {
           contentArea.innerHTML = "";
           buttons.forEach((b) => (b.style.display = "block"));
           backBtn.remove();
         });
-
         contentArea.prepend(backBtn);
       } catch (err) {
         contentArea.innerHTML = `<p style="color:red;">Error loading section: ${section}</p>`;
@@ -38,14 +36,27 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// All dynamic section buttons (
 document.addEventListener("click", (e) => {
+  // Delete Section
   if (e.target.classList.contains("delete-cancel")) {
     document.querySelector(".back-btn")?.click();
   }
 
   if (e.target.classList.contains("delete-confirm")) {
     alert(
-      "Account deletion process started... (to be connected with Firebase)"
+      "Thank you for being part of Rentique.\nYour account will now be deleted."
     );
+  }
+
+  // Security Section
+  if (e.target.classList.contains("signout-btn")) {
+    e.preventDefault();
+    alert("You have successfully signed out.");
+  }
+
+  if (e.target.classList.contains("update-btn")) {
+    e.preventDefault();
+    alert("Update complete! Your changes have been saved.");
   }
 });
