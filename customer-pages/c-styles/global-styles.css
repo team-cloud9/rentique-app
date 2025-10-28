@@ -571,41 +571,50 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
         flex-direction: column;
         gap: 0;
         min-height: auto;
-        border-radius: 12px;
+        border-radius: 0;
+        align-items: center;
     }
 
     .swipe-popup-left {
-        order: 1;
+        width: 300px;
         border-radius: 0;
-        max-height: 400px;
+
     }
 
     .swipe-popup-left img {
-        object-fit: contain;
+        /* order: 1; */
+        object-fit: cover;
     }
 
     .swipe-popup-right {
-        order: 1;
+        /* order: 1; */
         padding: 1.5rem 1rem 1rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .swipe-popup-right-mobile {
+        order: ;
+
     }
 
     .swipe-popup-right h3 {
         font-size: 18px;
-        order: 1;
+        /* order: -1; */
     }
 
     .swipe-popup-title {
         font-size: 22px;
-        order: 3;
+        /* order: 3; */
     }
 
     .swipe-label {
         font-size: 16px;
-        order: 4;
+        /* order: 4; */
     }
 
     .swipe-popup-details {
-        order: 5;
+        /* order: 5; */
         margin-top: 15px;
         display: flex;
         flex-direction: column;
@@ -613,27 +622,27 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
 
     /* order */
     .swipe-detail-row:nth-child(1) {
-        order: 5;
+        /* order: 5; */
     }
 
     /* Color */
     .swipe-detail-row:nth-child(2) {
-        order: 4;
+        /* order: 4; */
     }
 
     /* Size */
     .swipe-detail-row:nth-child(3) {
-        order: 1;
+        /* order: 1; */
     }
 
     /* Season */
     .swipe-detail-row:nth-child(4) {
-        order: 2;
+        /* order: 2; */
     }
 
     /* Material */
     .swipe-detail-row:nth-child(5) {
-        order: 3;
+        /* order: 3; */
     }
 
     /* Style */
