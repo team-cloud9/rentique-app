@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Style Shuffle</title>
+
+    <!-- /Component -->
+    <link rel="stylesheet" href="../components/view/css/var.css" />
+    <link rel="stylesheet" href="../components/view/css/header-footer.css" />
+    <script src="../components/controller/components.js" defer></script>
+    <script src="../components/controller/component-loader.js" defer></script>
+
+    <!-- Component/ -->
+
+    <link rel="stylesheet" href="../c-css/c-style.css" />
+    <link rel="stylesheet" href="../components/view/css/var.css" />
+
+    <!-- Page Specific Style -->
+    <style>
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            padding-top: 2rem;
+        }
+
+        h2 {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            color: var(--deep-teal-blue);
+        }
+
+        .form-section {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            position: relative;
+        }
+
+        .pref-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 350px;
+        }
+
+        input {
+            border: none;
+            border-bottom: 1px solid var(--gray-400);
+            padding: 0.6rem 0;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--deep-teal-blue);
+        }
+
+        .pref-btn {
+            background-color: white;
+            border: 1px solid var(--deep-teal-blue);
+            color: var(--deep-teal-blue);
+            padding: 0.6rem;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .pref-btn:hover {
+            background-color: var(--nyanza-100);
+        }
+
+        .save-btn {
+            background-color: var(--deep-teal-blue);
+            color: white;
+            border: none;
+            padding: 0.8rem;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h2>
+            Hi <strong>Chloe</strong>, would you like to update your preferences?
+        </h2>
+
+        <div class="form-section">
+            <!-- LEFT FORM -->
+            <form class="pref-form">
+                <input type="text" placeholder="Height (cm)" />
+                <input type="text" placeholder="Weight (kg)" />
+                <input type="text" placeholder="Gender (Male/Female/Other)" />
+
+                <button type="button" class="pref-btn" data-popup="style">
+                    Your favorite style
+                </button>
+                <button type="button" class="pref-btn" data-popup="color">
+                    Your favorite color
+                </button>
+                <button type="button" class="pref-btn" data-popup="try">
+                    What style do you want to try?
+                </button>
+
+                <button type="submit" class="save-btn">SAVE</button>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>
+
+<!-- When we get the info from DB, edit and update to DB-->
+<!-- <script type="module">
+  import { db } from "../../controller/firebase-config.js";
+  import {
+    doc,
+    getDoc,
+    setDoc,
+  } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js";
+
+  const userId = "chloe123"; // 실제 프로젝트에서는 auth.currentUser.uid 사용 예정
+
+  // Load existing user data from Firestore
+  async function loadPreferences() {
+    try {
+      const userRef = doc(db, "users", userId);
+      const snap = await getDoc(userRef);
+
+      if (snap.exists() && snap.data().preferences) {
+        const prefs = snap.data().preferences;
+        document.getElementById("height").value = prefs.height || "";
+        document.getElementById("weight").value = prefs.weight || "";
+        document.getElementById("gender").value = prefs.gender || "";
+        document.getElementById("fav-style").value = prefs.favoriteStyle || "";
+        document.getElementById("fav-color").value = prefs.favoriteColor || "";
+        document.getElementById("want-try").value = prefs.wantToTry || "";
+      }
+    } catch (err) {
+      console.error("❌ Error loading preferences:", err);
+    }
+  }
+
+  // Save updated preferences
+  async function savePreferences() {
+    const height = document.getElementById("height").value;
+    const weight = document.getElementById("weight").value;
+    const gender = document.getElementById("gender").value;
+    const favoriteStyle = document.getElementById("fav-style").value;
+    const favoriteColor = document.getElementById("fav-color").value;
+    const wantToTry = document.getElementById("want-try").value;
+
+    try {
+      const userRef = doc(db, "users", userId);
+
+      await setDoc(
+        userRef,
+        {
+          preferences: {
+            height,
+            weight,
+            gender,
+            favoriteStyle,
+            favoriteColor,
+            wantToTry,
+          },
+        },
+        { merge: true } // Save updated preferences (merge with existing data)
+      );
+
+      alert("Your preferences have been updated successfully!");
+    } catch (err) {
+      console.error("❌ Error saving preferences:", err);
+      alert("Failed to update your preferences.");
+    }
+  }
+
+  // Attach event listeners
+  document.addEventListener("DOMContentLoaded", () => {
+    loadPreferences();
+    const saveBtn = document.querySelector(".save-btn");
+    saveBtn.addEventListener("click", savePreferences);
+  });
+</script> -->
