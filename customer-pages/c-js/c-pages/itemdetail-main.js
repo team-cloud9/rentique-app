@@ -55,17 +55,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const product = JSON.parse(productData);
 
-  // ✅ Brand・Price・DescriptionをHTMLに反映
+  // Brand・Price・Description
   document.querySelector(".item-name").textContent = product.title;
   document.querySelector(".item-brand").textContent = product.brand;
   document.querySelector(".item-price").textContent = `$${product.price}`;
   document.querySelector(".item-description").textContent = product.description;
 
-  // ↓この下に画像処理のコードが来る
   const imageContainer = document.querySelector(".detail-images");
   const images = Array.isArray(product.image) ? product.image : [product.image];
 
-  // 以下そのままOK
+  //image
   imageContainer.innerHTML = images
     .map((img, index) => `
       <div class="image-placeholder ${index === 0 ? "" : "hidden"}">

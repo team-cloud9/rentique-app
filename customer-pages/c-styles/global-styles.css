@@ -542,3 +542,183 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
     background: var(--secondary-variant);
     transform: scale(1.03);
 }
+
+/* ===================
+    MOBILE RESPONSIVE
+======================*/
+@media (max-width: 768px) {
+    .popup-container {
+        padding: 10px;
+        align-items: flex-start;
+        overflow-y: auto;
+    }
+
+    .popup-content.swipe {
+        max-width: 100%;
+        margin-top: 40px;
+    }
+
+    .close-popup {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background-color: white;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .swipe-popup-body {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        min-height: auto;
+        border-radius: 12px;
+    }
+
+    .swipe-popup-left {
+        order: 1;
+        border-radius: 0;
+        max-height: 400px;
+    }
+
+    .swipe-popup-left img {
+        object-fit: contain;
+    }
+
+    .swipe-popup-right {
+        order: 1;
+        padding: 1.5rem 1rem 1rem;
+    }
+
+    .swipe-popup-right h3 {
+        font-size: 18px;
+        order: 1;
+    }
+
+    .swipe-popup-title {
+        font-size: 22px;
+        order: 3;
+    }
+
+    .swipe-label {
+        font-size: 16px;
+        order: 4;
+    }
+
+    .swipe-popup-details {
+        order: 5;
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* order */
+    .swipe-detail-row:nth-child(1) {
+        order: 5;
+    }
+
+    /* Color */
+    .swipe-detail-row:nth-child(2) {
+        order: 4;
+    }
+
+    /* Size */
+    .swipe-detail-row:nth-child(3) {
+        order: 1;
+    }
+
+    /* Season */
+    .swipe-detail-row:nth-child(4) {
+        order: 2;
+    }
+
+    /* Material */
+    .swipe-detail-row:nth-child(5) {
+        order: 3;
+    }
+
+    /* Style */
+
+    .swipe-detail-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .swipe-detail-label {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .swipe-detail-values {
+        justify-content: flex-start;
+    }
+
+    .swipe-color-tag,
+    .swipe-text-tag {
+        font-size: 12px;
+        padding: 5px 12px;
+    }
+
+    .swipe-color-dot {
+        width: 14px;
+        height: 14px;
+    }
+
+    .swipe-popup-buttons {
+        gap: 15px;
+        padding: 15px;
+        margin-top: 10px;
+        flex-direction: row;
+    }
+
+    .swipe-popup-buttons .swipe-btn-pass,
+    .swipe-popup-buttons .swipe-btn-like {
+        width: 50%;
+        max-width: 180px;
+        padding: 10px 0;
+        font-size: 16px;
+        border-radius: 4px;
+    }
+
+    .swipe-btn-pass {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .swipe-btn-like {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+}
+
+
+/* @media (max-width: 480px) {
+    .swipe-popup-right h3 {
+        font-size: 16px;
+    }
+
+    .swipe-popup-title {
+        font-size: 20px;
+    }
+
+    .swipe-label,
+    .swipe-detail-label {
+        font-size: 14px;
+    }
+
+    .swipe-color-tag,
+    .swipe-text-tag {
+        font-size: 11px;
+        padding: 4px 10px;
+    }
+
+    .swipe-popup-buttons .swipe-btn-pass,
+    .swipe-popup-buttons .swipe-btn-like {
+        font-size: 14px;
+        padding: 8px 0;
+    }
+} */
