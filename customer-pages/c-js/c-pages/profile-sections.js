@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
       buttons.forEach((b) => (b.style.display = "none"));
 
       try {
-        const res = await fetch(`../components/view/sections/${section}.html`);
+        const res = await fetch(`./sections/${section}.html`);
         if (!res.ok) throw new Error("Failed to load section");
         const html = await res.text();
         contentArea.innerHTML = html;
@@ -25,6 +25,17 @@ document.addEventListener("DOMContentLoaded", () => {
           backBtn.remove();
         });
         contentArea.prepend(backBtn);
+
+        // ✅ liked section script load (with slight delay)
+        if (section === "liked") {
+          setTimeout(() => {
+            const script = document.createElement("script");
+            script.src = "../../c-js/c-pages/liked.js";
+            script.defer = true;
+            document.body.appendChild(script);
+            console.log("✅ liked.js dynamically loaded after section render");
+          }, 100); // 100ms delay ensures DOM is ready
+        }
       } catch (err) {
         contentArea.innerHTML = `<p style="color:red;">Error loading section: ${section}</p>`;
         buttons.forEach((b) => (b.style.display = "block"));
@@ -36,9 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// All dynamic section buttons (
+// All dynamic section buttons
 document.addEventListener("click", (e) => {
-  // Delete Section
   if (e.target.classList.contains("delete-cancel")) {
     document.querySelector(".back-btn")?.click();
   }
@@ -49,7 +59,6 @@ document.addEventListener("click", (e) => {
     );
   }
 
-  // Security Section
   if (e.target.classList.contains("signout-btn")) {
     e.preventDefault();
     alert("You have successfully signed out.");

@@ -78,12 +78,13 @@
       border-bottom: 1px solid var(--gray-300);
       padding: 0.4rem 0;
       font-size: 1rem;
-      color: var(--teal-blue-400);
+      color: var(--deep-teal-blue);
+      background: transparent;
     }
 
     .edit-form input:focus {
       outline: none;
-      border-color: var(--gray-500);
+      border-color: var(--deep-teal-blue);
     }
 
     /* ========== Update Button ========== */
@@ -162,17 +163,17 @@
         <form class="edit-form">
           <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" id="username" readonly />
+            <input type="text" id="username" placeholder="Chloe" required />
           </div>
 
           <div class="form-group">
             <label for="address">Address</label>
-            <input type="text" id="address" readonly />
+            <input type="text" id="address" placeholder="Bella's heart" required />
           </div>
         </form>
 
         <div class="profile-image">
-          <img id="profile-photo" alt="Profile Photo" />
+          <img src="../assets/chloe.jpeg"id="profile-photo" alt="Profile Photo" />
           <button class="remove-btn">×</button>
         </div>
       </div>

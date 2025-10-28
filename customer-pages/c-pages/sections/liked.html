@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Style Shuffle</title>
+
+    <!-- /Component -->
+    <link rel="stylesheet" href="../components/view/css/var.css" />
+    <link rel="stylesheet" href="../components/view/css/header-footer.css" />
+    <script src="../components/controller/components.js" defer></script>
+    <script src="../components/controller/component-loader.js" defer></script>
+
+    <!-- Component/ -->
+
+    <link rel="stylesheet" href="../c-css/c-style.css" />
+    <link rel="stylesheet" href="../components/view/css/var.css" />
+
+    <script src="../../c-js/services/ProductData.js" defer></script>
+    <script src="../../c-js/c-pages/liked.js" defer></script>
+
+    <!-- Page Specific Style -->
+    <style>
+      .liked-section {
+        padding: 2rem 4rem;
+        color: var(--deep-teal-blue);
+      }
+
+      .liked-section h2 {
+        font-size: 1rem;
+        letter-spacing: 1px;
+        color: var(--deep-teal-blue);
+        margin-bottom: 1rem;
+      }
+
+      .liked-container {
+        justify-content: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .list-items > p {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <div id="header-placeholder" data-user-type="customer"></div>
+
+    <!-- Main Content -->
+    <main class="liked-container">
+      <section class="liked-section">
+        <h2>ITEM YOU LIKED</h2>
+        <!-- Filter/Sort Section -->
+        <section class="filter-sort">
+          <button id="filterBtn">Filter</button>
+          <div class="dropdown">
+            <button class="dropdown-btn sort-btn">Sort</button>
+            <div class="dropdown-menu">
+              <label
+                ><input
+                  type="radio"
+                  name="sort"
+                  value="recommended"
+                  checked
+                /><span>Recently Added</span></label
+              >
+              <label
+                ><input type="radio" name="sort" value="price-high" /><span
+                  >$High to Low</span
+                ></label
+              >
+              <label
+                ><input type="radio" name="sort" value="price-low" /><span
+                  >$Low to High</span
+                ></label
+              >
+            </div>
+          </div>
+        </section>
+          <div class="list-items">
+            <!-- render here -->
+          </div>
+          <p>No items found</p>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>

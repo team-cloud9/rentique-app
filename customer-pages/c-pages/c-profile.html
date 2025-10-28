@@ -1,45 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Style Shuffle</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Style Shuffle</title>
+    <!-- /Component -->
+    <link rel="stylesheet" href="../components/view/css/var.css" />
+    <link rel="stylesheet" href="../components/view/css/header-footer.css" />
+    <script src="../components/controller/components.js" defer></script>
+    <script src="../components/controller/component-loader.js" defer></script>
+    <script src="../c-js/c-pages/profile-sections.js" defer></script>
 
-  <!-- /Component -->
-  <link rel="stylesheet" href="../components/view/css/var.css" />
-  <link rel="stylesheet" href="../components/view/css/header-footer.css" />
-  <script src="../components/controller/components.js" defer></script>
-  <script src="../components/controller/component-loader.js" defer></script>
-  <script src="../components/controller/profile-sections.js" defer></script>
-  <!-- Component/ -->
+    <!-- Component/ -->
 
-  <link rel="stylesheet" href="../c-styles/c-style.css" />
-  <link rel="stylesheet" href="../c-styles/global-styles.css" />
-  <link rel="stylesheet" href="../c-styles/customer-profile.css" />
-  <link rel="stylesheet" href="../components/view/css/var.css" />
-</head>
+    <link rel="stylesheet" href="../c-styles/c-style.css" />
+    <link rel="stylesheet" href="../c-styles/global-styles.css" />
+    <link rel="stylesheet" href="../c-styles/customer-profile.css" />
+    <link rel="stylesheet" href="../components/view/css/var.css" />
+  </head>
 
-<body>
-  <!-- Header -->
-  <div id="header-placeholder" data-user-type="customer"></div>
+  <body>
+    <!-- Header -->
+    <div id="header-placeholder" data-user-type="customer"></div>
 
-  <!-- Main -->
-  <main class="profile-container">
-    <button class="profile-btn" data-section="edit">Edit profile</button>
-    <button class="profile-btn" data-section="preference">
-      Update preference
-    </button>
-    <button class="profile-btn" data-section="security">
-      Password and security
-    </button>
-    <button class="profile-btn" data-section="liked">Liked items</button>
-    <button class="profile-btn delete" data-section="delete">
-      Delete account
-    </button>
+    <!-- Main -->
+    <main class="profile-container">
+      <button class="profile-btn" data-section="edit">Edit profile</button>
+      <button class="profile-btn" data-section="preference">
+        Update preference
+      </button>
+      <button class="profile-btn" data-section="security">
+        Password and security
+      </button>
+      <button class="profile-btn" data-section="liked">Liked items</button>
+      <button class="profile-btn delete" data-section="delete">
+        Delete account
+      </button>
 
-    <section id="profile-content"></section>
-  </main>
-</body>
-
+      <section id="profile-content"></section>
+    </main>
+  </body>
 </html>
