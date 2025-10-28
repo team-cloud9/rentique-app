@@ -55,18 +55,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const product = JSON.parse(productData);
 
-  //
+  // ✅ Brand・Price・DescriptionをHTMLに反映
   document.querySelector(".item-name").textContent = product.title;
+  document.querySelector(".item-brand").textContent = product.brand;
   document.querySelector(".item-price").textContent = `$${product.price}`;
   document.querySelector(".item-description").textContent = product.description;
 
-  // Image
+  // ↓この下に画像処理のコードが来る
   const imageContainer = document.querySelector(".detail-images");
-  imageContainer.innerHTML = `
-    <div class="image-placeholder">
-      <img src="${product.image}" alt="${product.title}" />
-    </div>
-  `;
+  const images = Array.isArray(product.image) ? product.image : [product.image];
+
+  // 以下そのままOK
+  imageContainer.innerHTML = images
+    .map((img, index) => `
+      <div class="image-placeholder ${index === 0 ? "" : "hidden"}">
+        <img src="${img}" alt="${product.title}" />
+      </div>
+    `)
+    .join("");
+
+  const navButton = document.createElement("button");
+  navButton.classList.add("image-nav");
+  navButton.innerHTML = `<img src="../assets/icon/Icon_back.svg" alt="Next image" />`;
+  imageContainer.appendChild(navButton);
+
+  let currentIndex = 0;
+  navButton.addEventListener("click", () => {
+    const placeholders = imageContainer.querySelectorAll(".image-placeholder");
+    placeholders[currentIndex].classList.add("hidden");
+    currentIndex = (currentIndex + 1) % placeholders.length;
+    placeholders[currentIndex].classList.remove("hidden");
+  });
 
   // Color
   const colorGroup = document.querySelector(".color-group");
@@ -82,6 +101,13 @@ document.addEventListener("DOMContentLoaded", () => {
   sizeGroup.innerHTML = product.size.map(s => `
     <button class="tag-btn">${s}</button>
   `).join("");
+
+  // Size fit
+  const fitGroup = document.querySelector(".fit-group");
+  fitGroup.innerHTML = (product.sizefit || []).map(s => `
+  <button class="tag-btn selected">${s}</button>
+`).join("");
+
 
   // Season
   const seasonGroup = document.querySelector(".season-group");
@@ -106,4 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
   styleGroup.innerHTML = product.style.map(st => `
     <button class="tag-btn selected">${st}</button>
   `).join("");
+
+  console.log("image data:", product.image);
+  console.log("images:", images);
 });

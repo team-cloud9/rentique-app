@@ -26,10 +26,6 @@
     display: flex;
 }
 
-.image-nav {
-    display: none !important;
-}
-
 .image-placeholder {
     width: 100%;
     display: flex;
@@ -103,6 +99,7 @@
 .item-description {
     font-weight: 300;
     font-size: 28px;
+    text-align: left;
 }
 
 /* Detail Sections */
@@ -110,6 +107,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    align-items: flex-start;
 }
 
 .detail-section h3 {
@@ -291,8 +289,10 @@
 }
 
 /* ==============================
-       Item Detail-MOBILE RESPONSIVE
+       Item Detail-RESPONSIVE
     ============================== */
+@media (max-width: 1024px) {}
+
 @media (max-width: 768px) {
     /* .container {
         padding: 1rem;
@@ -314,6 +314,26 @@
     .detail-images {
         gap: 0;
         order: 1;
+        position: relative;
+    }
+
+    .detail-images .image-placeholder:nth-child(n + 2) {
+        display: none;
+    }
+
+    .image-placeholder.hidden {
+        display: none !important;
+    }
+
+    .image-placeholder {
+        aspect-ratio: 4/5;
+        width: 100vw;
+        left: 50%;
+        margin-left: -50vw;
+    }
+
+    .image-nav {
+        display: flex;
     }
 
     /* Hide second image on mobile */
@@ -357,8 +377,8 @@
     }
 
     .item-name {
-        font-size: 18px;
-        font-weight: 600;
+        font-size: 24px;
+        font-weight: 400;
     }
 
     .item-price {
@@ -367,13 +387,13 @@
     }
 
     .item-description {
-        font-size: 13px;
+        font-size: 16px;
         line-height: 1.5;
     }
 
     .detail-section h3 {
-        font-size: 14px;
-        font-weight: 600;
+        font-size: 16px;
+        font-weight: 400;
         cursor: pointer;
     }
 
@@ -386,6 +406,10 @@
     .detail-info {
         display: flex;
         flex-direction: column;
+    }
+
+    .tag-group {
+        justify-content: center
     }
 
     .tag-btn {
@@ -402,4 +426,12 @@
     .size-chart {
         padding: 10px;
     }
+
+    .chat-button {
+        width: 400px;
+        padding: 0 2rem;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
 }

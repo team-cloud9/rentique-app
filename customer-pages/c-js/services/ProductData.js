@@ -2,15 +2,20 @@
 const itemProducts = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1667586680656-6b8e381cddb5?w=500&h=700&fit=crop",
+    image: [
+      "https://images.unsplash.com/photo-1667586680656-6b8e381cddb5?w=500&h=700&fit=crop",
+      "https://images.unsplash.com/photo-1601743023287-5b0ed4675759?w=500&h=700&fit=crop"
+    ],
     title: "Cozy Sweater",
     brand: "Alissa Clothing",
     description: "A cozy sweater keeps you warm.",
     price: 20,
     colors: [
       { name: "Gray", code: "gray" },
+      { name: "Pink", code: "#f1b6b6ff" }
     ],
-    size: ["Medium"],
+    size: ["Small", "Medium"],
+    sizeFit: ["Small", "Medium"],
     season: ["Winter"],
     texture: ["Plain"],
     material: ["Knitted fabric", "Khaki"],

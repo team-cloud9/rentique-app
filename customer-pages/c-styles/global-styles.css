@@ -353,6 +353,7 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
     align-items: center;
     justify-content: center;
     padding: 20px;
+    color: var(--teal-blue-800);
 }
 
 .popup-content.swipe {
@@ -368,12 +369,20 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
 
 .close-popup {
     position: absolute;
-    top: 15px;
-    right: 20px;
+    padding-bottom: 0.2rem;
+    top: 8px;
+    right: 10px;
     font-size: 30px;
     cursor: pointer;
     color: #666;
     z-index: 10;
+    background-color: var(--nyanza-300);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .close-popup:hover {
@@ -388,14 +397,18 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
     min-height: 450px;
     background: white;
     border-radius: 12px;
-    padding: 2rem;
+    padding: 0;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.swipe-popup-left {
+    overflow: hidden;
+    border-radius: 12px 0 0 12px;
 }
 
 .swipe-popup-left img {
     width: 100%;
     height: 100%;
-    border-radius: 12px;
     object-fit: cover;
 }
 
@@ -405,10 +418,11 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
     flex-direction: column;
     justify-content: flex-start;
     padding: 1rem;
+    text-align: left;
 }
 
 .swipe-popup-right h3 {
-    font-size: 22px;
+    font-size: 25px;
     letter-spacing: 1px;
     margin-bottom: 0.4rem;
     text-transform: uppercase;
@@ -416,14 +430,20 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
 }
 
 .swipe-popup-title {
-    font-size: 22px;
+    font-size: 25px;
     margin-bottom: 1rem;
     font-weight: 700;
     text-align: center;
 }
 
 .swipe-label {
-    font-size: 14px;
+    font-size: 22px;
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+.swipe-label {
+    font-size: 22px;
     margin-bottom: 6px;
     line-height: 1.4;
 }
@@ -443,7 +463,7 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
 }
 
 .swipe-detail-label {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 600;
     min-width: 100px;
 }
@@ -496,32 +516,29 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
 
 .swipe-popup-buttons .swipe-btn-pass,
 .swipe-popup-buttons .swipe-btn-like {
-    width: 250px;
+    width: 300px;
     padding: 12px 0;
     border: none;
-    font-weight: bold;
-    font-size: 14px;
+    font-weight: 400;
+    font-size: 22px;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .swipe-btn-pass {
-    background: #fff;
-    border: 2px solid var(--nyanza-300);
-    border-radius: 8px;
+    background: var(--white-smoke);
 }
 
 .swipe-btn-pass:hover {
-    background: #f3f3f3;
+    background: var(--gray-600);
     transform: scale(1.03);
 }
 
 .swipe-btn-like {
-    background: #d0ebd0;
-    border-radius: 8px;
+    background: var(--nyanza-300);
 }
 
 .swipe-btn-like:hover {
-    background: #b8e0b8;
+    background: var(--secondary-variant);
     transform: scale(1.03);
 }
