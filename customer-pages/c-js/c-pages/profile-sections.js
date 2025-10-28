@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (section === "liked") {
           setTimeout(() => {
             const script = document.createElement("script");
-            script.src = "../../c-js/c-pages/liked.js";
+            script.src = "../c-js/c-pages/liked.js";
             script.defer = true;
             document.body.appendChild(script);
             console.log("✅ liked.js dynamically loaded after section render");

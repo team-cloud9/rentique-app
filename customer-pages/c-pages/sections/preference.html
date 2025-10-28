@@ -1,121 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Style Shuffle</title>
 
-    <!-- /Component -->
-    <link rel="stylesheet" href="../components/view/css/var.css" />
-    <link rel="stylesheet" href="../components/view/css/header-footer.css" />
-    <script src="../components/controller/components.js" defer></script>
-    <script src="../components/controller/component-loader.js" defer></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Style Shuffle</title>
 
-    <!-- Component/ -->
+  <!-- /Component -->
+  <link rel="stylesheet" href="../components/view/css/var.css" />
+  <link rel="stylesheet" href="../components/view/css/header-footer.css" />
+  <script src="../components/controller/components.js" defer></script>
+  <script src="../components/controller/component-loader.js" defer></script>
 
-    <link rel="stylesheet" href="../c-css/c-style.css" />
-    <link rel="stylesheet" href="../components/view/css/var.css" />
+  <!-- Component/ -->
 
-    <!-- Page Specific Style -->
-    <style>
-      main {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        min-height: 100vh;
-        padding-top: 2rem;
-      }
+  <link rel="stylesheet" href="../../c-styles/global-styles.css" />
+  <link rel="stylesheet" href="../../components/view/css/var.css" />
 
-      h2 {
-        font-size: 1rem;
-        margin-bottom: 2rem;
-        color: var(--deep-teal-blue);
-      }
+  <!-- Page Specific Style -->
+  <style>
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding-top: 2rem;
+    }
 
-      .form-section {
-        display: flex;
-        align-items: flex-start;
-        gap: 2rem;
-        position: relative;
-      }
+    h2 {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      color: var(--deep-teal-blue);
+    }
 
-      .pref-form {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        width: 350px;
-      }
+    .form-section {
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+      position: relative;
+    }
 
-      input {
-        border: none;
-        border-bottom: 1px solid var(--gray-400);
-        padding: 0.6rem 0;
-        font-size: 1rem;
-        width: 100%;
-        background: transparent;
-      }
+    .pref-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 350px;
+    }
 
-      input:focus {
-        outline: none;
-        border-color: var(--deep-teal-blue);
-      }
+    input {
+      border: none;
+      border-bottom: 1px solid var(--gray-400);
+      padding: 0.6rem 0;
+      font-size: 1rem;
+      width: 100%;
+      background: transparent;
+    }
 
-      .pref-btn {
-        background-color: white;
-        border: 1px solid var(--deep-teal-blue);
-        color: var(--deep-teal-blue);
-        padding: 0.6rem;
-        text-align: left;
-        cursor: pointer;
-        transition: all 0.2s ease;
-      }
+    input:focus {
+      outline: none;
+      border-color: var(--deep-teal-blue);
+    }
 
-      .pref-btn:hover {
-        background-color: var(--nyanza-100);
-      }
+    .pref-btn {
+      background-color: white;
+      border: 1px solid var(--deep-teal-blue);
+      color: var(--deep-teal-blue);
+      padding: 0.6rem;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
 
-      .save-btn {
-        background-color: var(--deep-teal-blue);
-        color: white;
-        border: none;
-        padding: 0.8rem;
-        font-size: 1rem;
-        cursor: pointer;
-        margin-top: 1rem;
-        transition: all 0.3s ease;
-      }
-    </style>
-  </head>
+    .pref-btn:hover {
+      background-color: var(--nyanza-100);
+    }
 
-  <body>
-    <main>
-      <h2>
-        Hi <strong>Chloe</strong>, would you like to update your preferences?
-      </h2>
+    .save-btn {
+      background-color: var(--deep-teal-blue);
+      color: white;
+      border: none;
+      padding: 0.8rem;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
 
-      <div class="form-section">
-        <!-- LEFT FORM -->
-        <form class="pref-form">
-          <input type="text" placeholder="Height (cm)" />
-          <input type="text" placeholder="Weight (kg)" />
-          <input type="text" placeholder="Gender (Male/Female/Other)" />
+<body>
+  <main>
+    <h2>
+      Hi <strong>Chloe</strong>, would you like to update your preferences?
+    </h2>
 
-          <button type="button" class="pref-btn" data-popup="style">
-            Your favorite style
-          </button>
-          <button type="button" class="pref-btn" data-popup="color">
-            Your favorite color
-          </button>
-          <button type="button" class="pref-btn" data-popup="try">
-            What style do you want to try?
-          </button>
+    <div class="form-section">
+      <!-- LEFT FORM -->
+      <form class="pref-form">
+        <input type="text" placeholder="Height (cm)" />
+        <input type="text" placeholder="Weight (kg)" />
+        <input type="text" placeholder="Gender (Male/Female/Other)" />
 
-          <button type="submit" class="save-btn">SAVE</button>
-        </form>
-      </div>
-    </main>
-  </body>
+        <button type="button" class="pref-btn" data-popup="style">
+          Your favorite style
+        </button>
+        <button type="button" class="pref-btn" data-popup="color">
+          Your favorite color
+        </button>
+        <button type="button" class="pref-btn" data-popup="try">
+          What style do you want to try?
+        </button>
+
+        <button type="submit" class="save-btn">SAVE</button>
+      </form>
+    </div>
+  </main>
+</body>
+
 </html>
 
 <!-- When we get the info from DB, edit and update to DB-->
