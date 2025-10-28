@@ -16,14 +16,15 @@
 
   <link rel="stylesheet" href="../c-css/c-style.css" />
   <link rel="stylesheet" href="../components/view/css/var.css" />
+  <script src="../c-js/services/ProductData.js" defer></script>
+  <script src="../c-js/c-pages/discover-popup.js" defer></script>
   <script src="../c-js/c-pages/home-main.js" defer></script>
+
 </head>
 
 <body>
   <!-- Header -->
   <div id="header-placeholder" data-user-type="customer"></div>
-
-  </header>
 
   <!-- Main -->
   <main class="container">
@@ -34,25 +35,22 @@
       <p>Discover your style in every swipe</p>
 
       <div class="swipe-container">
-        <button class="arrow left">&#8592;</button>
+        <button class="arrow left">
+          <img src="../assets/icon/Icon_dropdown.svg" alt="previous" />
+        </button>
 
         <div class="swipe-items">
-          <img class="item" src="photo1.jpg" alt="click image" />
-          <img class="item" src="photo2.jpg" alt="click image" />
-          <img class="item" src="photo3.jpg" alt="click image" />
-          <img class="item" src="photo4.jpg" alt="click image" />
-          <img class="item" src="photo5.jpg" alt="click image" />
-          <img class="item" src="photo6.jpg" alt="click image" />
-          <img class="item" src="photo7.jpg" alt="click image" />
-          <img class="item" src="photo8.jpg" alt="click image" />
+          <!-- render here -->
         </div>
 
-        <button class="arrow right">&#8594;</button>
+        <button class="arrow right">
+          <img src="../assets/icon/Icon_dropdown.svg" alt="next" />
+        </button>
       </div>
     </section>
 
 
-    <!-- Recommended Item List Section -->
+    <!-- Item List Section -->
     <section class="item-list">
       <h2>ITEM LISTS</h2>
       <!-- Filter/Sort Section -->
@@ -68,7 +66,7 @@
         </div>
       </section>
 
-      <!-- 🔽 Filter Popup (Initially hidden) -->
+      <!-- Filter Popup (Initially hidden) -->
       <div class="popup-container" id="filterPopup">
         <div class="popup-content">
           <div class="filter-header">
@@ -154,7 +152,6 @@
               <button class="filter-btn">Elegant</button>
               <button class="filter-btn">Preppy</button>
               <button class="filter-btn">Y2K</button>
-
             </div>
           </div>
 
@@ -241,113 +238,7 @@
         </div>
       </div>
       <div class="list-items">
-        <a href="/customer-pages/c-pages/c-itemdetail.html" class="card">
-          <div class="img">
-            <img src="images/item1.jpg" alt="Item 1" />
-          </div>
-          <p class="name">Classic Jacket</p>
-          <p class="desc">Warm and stylish winter wear</p>
-          <p class="price">$120</p>
-        </a>
-
-        <div class="card">
-          <div class="img">
-            <img src="images/item2.jpg" alt="Item 2" />
-          </div>
-          <p class="name">Casual Sneakers</p>
-          <p class="desc">Comfortable everyday shoes</p>
-          <p class="price">$85</p>
-        </div>
-
-        <div class="card">
-          <div class="img">
-            <img src="images/item3.jpg" alt="Item 3" />
-          </div>
-          <p class="name">Denim Jeans</p>
-          <p class="desc">Slim fit blue denim</p>
-          <p class="price">$65</p>
-        </div>
-
-        <div class="card">
-          <div class="img">
-            <img src="images/item4.jpg" alt="Item 4" />
-          </div>
-          <p class="name">Leather Bag</p>
-          <p class="desc">Durable and trendy design</p>
-          <p class="price">$150</p>
-        </div>
-
-        <div class="card">
-          <div class="img">
-            <img src="images/item5.jpg" alt="Item 5" />
-          </div>
-          <p class="name">Leather Bag</p>
-          <p class="desc">Durable and trendy design</p>
-          <p class="price">$150</p>
-        </div>
-
-        <div class="card">
-          <div class="img">
-            <img src="images/item6.jpg" alt="Item 6" />
-          </div>
-          <p class="name">Leather Bag</p>
-          <p class="desc">Durable and trendy design</p>
-          <p class="price">$150</p>
-        </div>
-
-        <div class="card">
-          <div class="img">
-            <img src="images/item7.jpg" alt="Item 7" />
-          </div>
-          <p class="name">Leather Bag</p>
-          <p class="desc">Durable and trendy design</p>
-          <p class="price">$150</p>
-        </div>
-
-        <div class="card">
-          <div class="img">
-            <img src="images/item8.jpg" alt="Item 8" />
-          </div>
-          <p class="name">Leather Bag</p>
-          <p class="desc">Durable and trendy design</p>
-          <p class="price">$150</p>
-        </div>
-
-        <div class="card">
-          <div class="img">
-            <img src="images/item9.jpg" alt="Item 9" />
-          </div>
-          <p class="name">Leather Bag</p>
-          <p class="desc">Durable and trendy design</p>
-          <p class="price">$150</p>
-        </div>
-
-        <div class="card">
-          <div class="img">
-            <img src="images/item10.jpg" alt="Item 10" />
-          </div>
-          <p class="name">Leather Bag</p>
-          <p class="desc">Durable and trendy design</p>
-          <p class="price">$150</p>
-        </div>
-
-        <div class="card">
-          <div class="img">
-            <img src="images/item11.jpg" alt="Item 11" />
-          </div>
-          <p class="name">Leather Bag</p>
-          <p class="desc">Durable and trendy design</p>
-          <p class="price">$150</p>
-        </div>
-
-        <div class="card">
-          <div class="img">
-            <img src="images/item12.jpg" alt="Item 12" />
-          </div>
-          <p class="name">Leather Bag</p>
-          <p class="desc">Durable and trendy design</p>
-          <p class="price">$150</p>
-        </div>
+        <!-- Cards  -->
       </div>
     </section>
 

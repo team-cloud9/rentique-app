@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ItemsDetail</title>
+  <title>Item Detail</title>
 
   <!-- /Component -->
   <link rel="stylesheet" href="../components/view/css/var.css" />
@@ -15,11 +15,11 @@
 
   <link rel="stylesheet" href="../c-css/c-style.css" />
   <link rel="stylesheet" href="../components/view/css/var.css" />
+  <script src="../c-js/services/ProductData.js" defer></script>
   <script src="../c-js/c-pages/itemdetail-main.js" defer></script>
 </head>
 
 <body>
-
   <div id="header-placeholder" data-user-type="customer"></div>
 
   <!-- Main Content -->
@@ -30,69 +30,29 @@
       <div class="detail-layout">
         <!-- Left: Images -->
         <div class="detail-images">
-          <div class="image-placeholder">
-            <img src="../assets/BrownCode.jpg" alt="Browncode" />
-            <button class="image-nav" onclick="nextImage()">
-              <img src="../assets/icon/Icon_back.svg" alt="next">
-            </button>
-          </div>
-          <div class="image-placeholder hidden">
-            <img src="../assets/BrownCode.jpg" alt="Browncode" />
-            <button class="image-nav" onclick="nextImage()">
-              <img src="../assets/icon/Icon_back.svg" alt="next">
-            </button>
-          </div>
+          <!--  -->
         </div>
 
         <!-- Right: Details -->
         <div class="detail-info">
           <div class="item-header">
-            <div class="item-name">Knitted Cardigan</div>
-            <div class="item-price">$10.00</div>
+            <div class="item-name"></div>
+            <div class="item-price"></div>
           </div>
 
-          <p class="item-description">
-            Women's Sexy Elegant Deep V-Neck Solid Brown
-          </p>
-
-          <!-- <div class="detail-section">
-            <h3>A product from Lynn's Fabric</h3>
-          </div> -->
+          <p class="item-description"></p>
 
           <div class="detail-section selectable">
             <h3>Color</h3>
-            <div class="tag-group">
-              <button class="tag-btn">
-                <span class="color-circle" style="background-color: #8b7355"></span>
-                Brown
-              </button>
-              <button class="tag-btn">
-                <span class="color-circle" style="background-color: #d4c4b0"></span>
-                Beige
-              </button>
+            <div class="tag-group color-group">
+              <!--  -->
             </div>
           </div>
 
           <div class="detail-section selectable">
             <h3>Size</h3>
-            <div class="tag-group">
-              <button class="tag-btn">S</button>
-              <button class="tag-btn">M</button>
-              <button class="tag-btn">L</button>
-            </div>
-          </div>
-
-          <div class="detail-section show" data-dropdown>
-            <h3 onclick="toggleDropdown(this)">
-              Size fit
-              <span class="dropdown-arrow">
-                <img src="../assets/icon/Icon_dropdown.svg" alt="dropdown">
-              </span>
-            </h3>
-            <div class="tag-group">
-              <button class="tag-btn">S</button>
-              <button class="tag-btn">M</button>
-              <button class="tag-btn">L</button>
+            <div class="tag-group size-group">
+              <!--  -->
             </div>
           </div>
 
@@ -103,9 +63,8 @@
                 <img src="../assets/icon/Icon_dropdown.svg" alt="dropdown">
               </span>
             </h3>
-            <div class="tag-group">
-              <button class="tag-btn selected">Autumn</button>
-              <button class="tag-btn selected">Winter</button>
+            <div class="tag-group season-group">
+              <!--  -->
             </div>
           </div>
 
@@ -116,8 +75,8 @@
                 <img src="../assets/icon/Icon_dropdown.svg" alt="dropdown">
               </span>
             </h3>
-            <div class="tag-group">
-              <button class="tag-btn selected">Cotton</button>
+            <div class="tag-group material-group">
+              <!--  -->
             </div>
           </div>
 
@@ -128,8 +87,8 @@
                 <img src="../assets/icon/Icon_dropdown.svg" alt="dropdown">
               </span>
             </h3>
-            <div class="tag-group">
-              <button class="tag-btn selected">Soft</button>
+            <div class="tag-group texture-group">
+              <!--  -->
             </div>
           </div>
 
@@ -140,8 +99,8 @@
                 <img src="../assets/icon/Icon_dropdown.svg" alt="dropdown">
               </span>
             </h3>
-            <div class="tag-group">
-              <button class="tag-btn selected">Casual</button>
+            <div class="tag-group style-group">
+              <!--  -->
             </div>
           </div>
 
@@ -153,6 +112,7 @@
           </div>
         </div>
       </div>
+
       <div class="action-buttons">
         <button class="chat-button primary">CHAT WITH OWNER</button>
         <button class="cart-button">
@@ -162,9 +122,7 @@
     </div>
   </main>
 
-  <!-- Footer -->
   <div id="footer-placeholder" data-user-type="customer"></div>
-
 </body>
 
 </html>
