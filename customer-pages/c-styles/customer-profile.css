@@ -1,0 +1,66 @@
+/* ===================
+    PROFILE PAGE
+======================*/
+
+/* Profile Buttons */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4rem auto;
+    gap: 0.8rem;
+}
+
+.profile-btn {
+    width: 280px;
+    padding: 0.8rem;
+    font-size: 0.9rem;
+    border: 1px solid #b7b7b7;
+    background-color: transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    color: var(--teal-blue-400);
+    text-align: left;
+}
+
+.profile-btn:hover {
+    background-color: var(--gray-100);
+    border-color: var(--deep-teal-blue-700);
+}
+
+.profile-btn.delete {
+    border-color: #d8a5a5;
+    color: #b14a4a;
+}
+
+.profile-btn.delete:hover {
+    background-color: #fbeaea;
+}
+
+/* ==============================
+   Back Button (Profile Section)
+============================== */
+.back-btn {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    background: none;
+    border: none;
+    color: var(--deep-teal-blue);
+    font-size: 1.8rem;
+    font-weight: 400;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    transition: all 0.25s ease-in-out;
+    z-index: 1;
+}
+
+.back-btn:hover {
+    color: var(--nyanza);
+    transform: translateX(-3px);
+}
+
+.back-btn:focus {
+    outline: none;
+}

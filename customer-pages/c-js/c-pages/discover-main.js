@@ -44,15 +44,22 @@ function renderDiscoverList(products) {
 // ===============================
 function setupSorting() {
     const sortRadios = document.querySelectorAll('input[name="sort"]');
+    console.log("Sort radios found:", sortRadios.length);
+
     sortRadios.forEach(radio => {
         radio.addEventListener("change", (e) => {
+            // console.log("Sort clicked:", e.target.value);
             const value = e.target.value;
+            console.log("Sort clicked:", value);
             let sorted = [...itemProducts];
 
             if (value === "price-high") sorted.sort((a, b) => b.price - a.price);
             else if (value === "price-low") sorted.sort((a, b) => a.price - b.price);
-            else sorted.sort((a, b) => a.id - b.id); // default: recently added
+            else sorted.sort((a, b) => a.id - b.id);
 
+            console.log("Sorted result:", sorted.map(p => p.price));
+            // console.log("Before sort:", itemProducts.map(p => p.price));
+            // console.log("After sort:", sorted.map(p => p.price));
             renderDiscoverList(sorted);
         });
     });

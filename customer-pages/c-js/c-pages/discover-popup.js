@@ -48,23 +48,6 @@ document.querySelectorAll(".filter-section h3").forEach((h3) => {
   });
 });
 
-// ===== Sort Dropdown =====
-const sortButton = document.querySelector(".sort-btn");
-const dropdownMenu = document.querySelector(".dropdown-menu");
-
-if (sortButton && dropdownMenu) {
-  sortButton.addEventListener("click", (e) => {
-    e.stopPropagation();
-    dropdownMenu.classList.toggle("show");
-  });
-
-  document.addEventListener("click", (event) => {
-    if (!event.target.closest(".dropdown")) {
-      dropdownMenu.classList.remove("show");
-    }
-  });
-}
-
 // ===== Apply Button (optional alert) =====
 // if (applyFilter) {
 //   applyFilter.addEventListener("click", function () {

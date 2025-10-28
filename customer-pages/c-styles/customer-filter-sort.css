@@ -1,0 +1,432 @@
+/* ------------------------
+FILTER - SORT - Discover Page
+---------------------------*/
+
+.filter-sort {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: visible;
+}
+
+.filter-sort button {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 0;
+    transition: color 0.2s ease;
+}
+
+.filter-sort button:hover {
+    color: var(--text-primary);
+}
+
+/* Buttons (tags) */
+.filter-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-tags button {
+    border: 1px solid #ccc;
+    background: transparent;
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-tags button.active {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+.filter-tags button:hover {
+    border-color: #555;
+}
+
+/* Range slider */
+.range {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.range input[type="range"] {
+    width: 100%;
+}
+
+/* Apply Button */
+.apply-container {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.apply-btn {
+    border: none;
+    background: #000;
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.apply-btn:hover {
+    background: #333;
+}
+
+/* Simple fade animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* PAGINATION */
+.pagination {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 4rem 0 6rem;
+}
+
+.page-numbers {
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.page-numbers a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.page-numbers a:hover {
+    background: var(--gray-100);
+}
+
+.page-numbers .active {
+    background: var(--secondary);
+    color: var(--text-on-secondary);
+}
+
+.page-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.page-buttons .btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid var(--secondary);
+    background: transparent;
+    color: var(--secondary);
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.page-buttons .btn:hover {
+    background: var(--secondary);
+    color: var(--text-on-secondary);
+}
+
+/* FILTER POPUP */
+
+.popup-container {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    overflow-y: auto;
+    animation: fadeIn 0.3s ease;
+}
+
+.popup-container.show {
+    display: block;
+}
+
+.popup-content {
+    background: var(--surface);
+    margin: 5% auto;
+    padding: 2rem 3rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 870px;
+    position: relative;
+}
+
+.close-popup {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--gray-700);
+}
+
+/* Filter Section */
+
+.filter-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--gray-100);
+}
+
+.dropdown {
+    position: relative;
+    z-index: 10;
+}
+
+.dropdown-btn {
+    padding: 10px 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.dropdown-btn:hover {
+    color: var(--text-primary);
+}
+
+.dropdown-btn::after {
+    content: "▼";
+    font-size: 10px;
+    margin-left: 8px;
+}
+
+.filter-section h3 {
+    cursor: pointer;
+}
+
+.filter-section h3::after {
+    content: "▼";
+    font-size: 10px;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.filter-section:nth-of-type(4) h3::after,
+.filter-section:nth-of-type(5) h3::after {
+    content: "";
+}
+
+.filter-section:nth-of-type(4) h3,
+.filter-section:nth-of-type(5) h3 {
+    cursor: default;
+}
+
+/* Dropdown Menu */
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 120%;
+    left: 0;
+    background: var(--primary);
+    border: 1px solid var(--primary);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    min-width: 250px;
+    margin-top: 5px;
+    z-index: 1000;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-menu label {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    cursor: pointer;
+    color: var(--text-primary);
+}
+
+.dropdown-menu label:hover {
+    background: var(--gray-50);
+}
+
+.dropdown-menu input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+    cursor: pointer;
+    accent-color: var(--text-primary);
+    border: 1px solid var(--text-primary);
+}
+
+.dropdown-menu span {
+    font-size: 14px;
+}
+
+/* Filter Options */
+
+.filter-section {
+    margin-bottom: 25px;
+}
+
+.filter-section h3 {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 1rem 0;
+    color: var(--text-primary);
+}
+
+/* This filter-options could be marged with dropdown-content */
+
+.filter-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+}
+
+.filter-btn {
+    padding: 10px 0;
+    border: 1px solid var(--nyanza-300);
+    background: var(--nyanza-300);
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 13px;
+    position: relative;
+    text-align: center;
+    transition: all 0.2s ease;
+    color: var(--teal-blue-800);
+    font-weight: 570;
+}
+
+.filter-btn:hover {
+    background: var(--gray-50);
+}
+
+.filter-btn.active {
+    background: var(--secondary);
+    color: var(--text-on-secondary);
+    border-color: var(--secondary);
+}
+
+.filter-btn.active::before {
+    content: "✕";
+    position: absolute;
+    left: 8px;
+    font-size: 11px;
+}
+
+/* Range Sliders */
+
+.range-container {
+    margin-top: 10px;
+}
+
+.range-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--gray-500);
+    margin-bottom: 8px;
+}
+
+input[type="range"] {
+    width: 100%;
+    height: 4px;
+    background: var(--gray-200);
+    outline: none;
+    border-radius: 2px;
+}
+
+input[type="range"]::-webkit-slider-thumb,
+input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: var(--secondary);
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+/* Apply Button */
+
+.apply {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0 6rem;
+}
+
+.apply-btn {
+    font-size: 30px;
+    background: var(--deep-teal-blue);
+    color: var(--nyanza);
+    width: 350px;
+    padding: 12px 0;
+    border: none;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.apply-btn:hover {
+    color: var(--gray-50);
+    border-bottom-color: var(--teal-blue-100);
+}
+
+/* Animations */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
