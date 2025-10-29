@@ -1,143 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Style Shuffle</title>
 
-    <!-- /Component -->
-    <link rel="stylesheet" href="../components/view/css/var.css" />
-    <link rel="stylesheet" href="../components/view/css/header-footer.css" />
-    <script src="../components/controller/components.js" defer></script>
-    <script src="../components/controller/component-loader.js" defer></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Style Shuffle</title>
 
-    <!-- Component/ -->
+  <!-- /Component -->
+  <link rel="stylesheet" href="../components/view/css/var.css" />
+  <link rel="stylesheet" href="../components/view/css/header-footer.css" />
+  <script src="../components/controller/components.js" defer></script>
+  <script src="../components/controller/component-loader.js" defer></script>
 
-    <link rel="stylesheet" href="../c-css/c-style.css" />
-    <link rel="stylesheet" href="../components/view/css/var.css" />
+  <!-- Component/ -->
 
-    <!-- Page Specific Style -->
-    <style>
-      .security-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem;
-        color: var(--deep-teal-blue);
-        text-align: center;
-      }
+  <link rel="stylesheet" href="../../c-styles/global-styles.css" />
+  <link rel="stylesheet" href="../../components/view/css/var.css" />
 
-      .security-section h2 {
-        font-size: 1rem;
-        letter-spacing: 1px;
-        color: var(--gray-400);
-        margin-bottom: 2rem;
-      }
+  <!-- Page Specific Style -->
+  <style>
+    .security-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      color: var(--deep-teal-blue);
+      text-align: center;
+    }
 
-      .security-form {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        max-width: 400px;
-        text-align: left;
-      }
+    .security-section h2 {
+      font-size: 1rem;
+      letter-spacing: 1px;
+      color: var(--gray-400);
+      margin-bottom: 2rem;
+    }
 
-      .security-form label {
-        font-size: 0.9rem;
-        color: var(--deep-teal-blue);
-        margin: 1rem 0 0.3rem;
-      }
+    .security-form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 400px;
+      text-align: left;
+    }
 
-      .security-form input {
-        border: none;
-        border-bottom: 1px solid var(--nyanza);
-        padding: 0.5rem 0;
-        font-size: 1rem;
-        color: var(--deep-teal-blue);
-        background: transparent;
-      }
+    .security-form label {
+      font-size: 0.9rem;
+      color: var(--deep-teal-blue);
+      margin: 1rem 0 0.3rem;
+    }
 
-      .security-form input:focus {
-        outline: none;
-        border-bottom: 1px solid var(--deep-teal-blue);
-      }
+    .security-form input {
+      border: none;
+      border-bottom: 1px solid var(--nyanza);
+      padding: 0.5rem 0;
+      font-size: 1rem;
+      color: var(--deep-teal-blue);
+      background: transparent;
+    }
 
-      .security-form input::placeholder {
-        color: var(--gray-300);
-      }
+    .security-form input:focus {
+      outline: none;
+      border-bottom: 1px solid var(--deep-teal-blue);
+    }
 
-      /* ========== Update Button ========== */
-      .update-btn-container {
-        display: flex;
-        justify-content: center;
-      }
+    .security-form input::placeholder {
+      color: var(--gray-300);
+    }
 
-      .update-btn {
-        background-color: var(--gray-300);
-        color: var(--nyanza-200);
-        border: none;
-        border-radius: 1px;
-        padding: 1rem 10rem;
-        margin-top: 1rem;
-        font-size: 1rem;
-        cursor: pointer;
-      }
+    /* ========== Update Button ========== */
+    .update-btn-container {
+      display: flex;
+      justify-content: center;
+    }
 
-      .update-btn:hover {
-        background-color: var(--deep-teal-blue);
-        color: var(--nyanza-200);
-      }
+    .update-btn {
+      background-color: var(--gray-300);
+      color: var(--nyanza-200);
+      border: none;
+      border-radius: 1px;
+      padding: 1rem 10rem;
+      margin-top: 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
 
-      .signout-btn {
-        background-color: white;
-        color: var(--deep-teal-blue);
-        border: 1px solid var(--deep-teal-blue);
-        border-radius: 1px;
-        padding: 1rem 10rem;
-        margin-top: 10rem;
-        font-size: 1rem;
-        cursor: pointer;
-      }
+    .update-btn:hover {
+      background-color: var(--deep-teal-blue);
+      color: var(--nyanza-200);
+    }
 
-      .signout-btn:hover {
-        background-color: var(--deep-teal-blue);
-        color: white;
-      }
-    </style>
-  </head>
+    .signout-btn {
+      background-color: white;
+      color: var(--deep-teal-blue);
+      border: 1px solid var(--deep-teal-blue);
+      border-radius: 1px;
+      padding: 1rem 10rem;
+      margin-top: 10rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
 
-  <body>
-    <!-- Header -->
-    <div id="header-placeholder" data-user-type="customer"></div>
+    .signout-btn:hover {
+      background-color: var(--deep-teal-blue);
+      color: white;
+    }
+  </style>
+</head>
 
-    <!-- Main Content -->
-    <main>
-      <div class="security-section">
-        <h2>PASSWORD AND SECURITY</h2>
+<body>
+  <!-- Header -->
+  <div id="header-placeholder" data-user-type="customer"></div>
 
-        <form class="security-form">
-          <label for="current-password">Current password</label>
-          <input
-            type="password"
-            id="current-password"
-            placeholder="********"
-            required
-          />
+  <!-- Main Content -->
+  <main>
+    <div class="security-section">
+      <h2>PASSWORD AND SECURITY</h2>
 
-          <label for="new-password">New password</label>
-          <input
-            type="password"
-            id="new-password"
-            placeholder="Enter new password"
-            required
-          />
+      <form class="security-form">
+        <label for="current-password">Current password</label>
+        <input type="password" id="current-password" placeholder="********" required />
 
-          <button type="submit" class="update-btn">UPDATE</button>
-        </form>
+        <label for="new-password">New password</label>
+        <input type="password" id="new-password" placeholder="Enter new password" required />
 
-        <button class="signout-btn">SIGN OUT</button>
-      </div>
-    </main>
-  </body>
+        <button type="submit" class="update-btn">UPDATE</button>
+      </form>
+
+      <button class="signout-btn">SIGN OUT</button>
+    </div>
+  </main>
+</body>
+
 </html>
