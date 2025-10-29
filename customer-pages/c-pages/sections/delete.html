@@ -1,35 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Style Shuffle</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Style Shuffle</title>
+    <!-- /Component -->
+    <link rel="stylesheet" href="../components/view/css/var.css" />
+    <link rel="stylesheet" href="../components/view/css/header-footer.css" />
+    <script src="../components/controller/components.js" defer></script>
+    <script src="../components/controller/component-loader.js" defer></script>
 
-  <!-- /Component -->
-  <link rel="stylesheet" href="../components/view/css/var.css" />
-  <link rel="stylesheet" href="../components/view/css/header-footer.css" />
-  <script src="../components/controller/components.js" defer></script>
-  <script src="../components/controller/component-loader.js" defer></script>
+    <!-- Component/ -->
+    <link rel="stylesheet" href="../../c-styles/global-styles.css" />
+    <link rel="stylesheet" href="../../components/view/css/var.css" />
 
-  <!-- Component/ -->
+    <!-- Page Specific Style -->
+    <style>
+      .delete-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 5rem 2rem;
+        color: var(--deep-teal-blue);
+        text-align: center;
+      }
 
-  <link rel="stylesheet" href="../../c-styles/global-styles.css" />
-  <link rel="stylesheet" href="../../components/view/css/var.css" />
-
-  <!-- Page Specific Style -->
-  <style>
-    .delete-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 5rem 2rem;
-      color: var(--deep-teal-blue);
-      text-align: center;
-    }
-
-<<<<<<< HEAD
       .delete-icon {
         width: 100px;
         height: 100px;
@@ -46,102 +43,85 @@
         flex-direction: column;
         align-items: center;
       }
-=======
-    .delete-section h2 {
-      font-size: 1rem;
-      color: var(--gray-400);
-      margin-bottom: 2rem;
-    }
->>>>>>> f63bb8a113306a27b2e43c9506ef4527919e8aae
 
-    .delete-content {
-      max-width: 600px;
-      background: var(--gray-100);
-      border-radius: 4px;
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+      .delete-section h2 {
+        font-size: 1rem;
+        color: var(--gray-400);
+        margin-bottom: 2rem;
+      }
 
-    .delete-content p {
-      font-size: 1rem;
-      line-height: 1.6;
-      margin-bottom: 3rem;
-    }
+      .delete-content p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 3rem;
+      }
 
-    .delete-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      width: 100%;
-      max-width: 320px;
-    }
+      .delete-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        max-width: 320px;
+      }
 
-    .delete-confirm {
-      background-color: var(--deep-teal-blue);
-      color: white;
-      font-size: 1rem;
-      letter-spacing: 0.5px;
-      border: none;
-      padding: 0.9rem 0;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
+      .delete-confirm {
+        background-color: var(--deep-teal-blue);
+        color: white;
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+        border: none;
+        padding: 0.9rem 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
 
-    .delete-confirm:hover {
-      background-color: var(--error-dark);
-    }
+      .delete-confirm:hover {
+        background-color: var(--error-dark);
+      }
 
-    .delete-cancel {
-      background-color: transparent;
-      border: 1px solid var(--deep-teal-blue);
-      color: var(--deep-teal-blue);
-      font-size: 1rem;
-      letter-spacing: 0.5px;
-      padding: 1rem 0;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
+      .delete-cancel {
+        background-color: transparent;
+        border: 1px solid var(--deep-teal-blue);
+        color: var(--deep-teal-blue);
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+        padding: 1rem 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
 
-    .delete-cancel:hover {
-      background-color: var(--gray-300);
-    }
-  </style>
-</head>
+      .delete-cancel:hover {
+        background-color: var(--gray-300);
+      }
+    </style>
+  </head>
 
-<<<<<<< HEAD
+  <body>
+    <main>
+      <div class="delete-section">
+        <h2>DELETE ACCOUNT</h2>
+
         <div class="delete-content">
           <img
             src="https://cdn-icons-png.flaticon.com/512/1345/1345823.png"
             alt="Delete Icon"
             class="delete-icon"
           />
-=======
-<body>
-  <main>
-    <div class="delete-section">
-      <h2>DELETE ACCOUNT</h2>
->>>>>>> f63bb8a113306a27b2e43c9506ef4527919e8aae
 
-      <div class="delete-content">
-        <img src="../../assets/icon/Icon_trashCan.svg" alt="Delete Icon" class="delete-icon" />
+          <p>
+            Deleting your account is <strong>permanent</strong> and cannot be
+            undone.<br />
+            All your data, including your profile and saved information, will be
+            deleted.<br />
+            Are you sure you want to proceed?
+          </p>
 
-        <p>
-          Deleting your account is <strong>permanent</strong> and cannot be
-          undone.<br />
-          All your data, including your profile and saved information, will be
-          deleted.<br />
-          Are you sure you want to proceed?
-        </p>
-
-        <div class="delete-buttons">
-          <button class="delete-confirm">DELETE</button>
-          <button class="delete-cancel">CANCEL</button>
+          <div class="delete-buttons">
+            <button class="delete-confirm">DELETE</button>
+            <button class="delete-cancel">CANCEL</button>
+          </div>
         </div>
       </div>
-    </div>
-  </main>
-</body>
-
+    </main>
+  </body>
 </html>
