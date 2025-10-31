@@ -262,7 +262,7 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
 
 /* BTN */
 /* Individual colors */
-.filter-btn.colour.black::before {
+/*.filter-btn.colour.black::before {
     background-color: black;
 }
 
@@ -317,7 +317,7 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
 
 .filter-btn.colour:hover {
     background: var(--gray-50);
-}
+}*/
 
 /* change color when is active */
 .filter-btn.colour.active {
@@ -593,10 +593,10 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
         text-align: center;
     }
 
-    .swipe-popup-right-mobile {
+    /*.swipe-popup-right-mobile {
         order: ;
 
-    }
+    }*/
 
     .swipe-popup-right h3 {
         font-size: 18px;

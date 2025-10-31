@@ -234,6 +234,10 @@ FILTER - SORT - Discover Page
 content: "▲";
 }
 
+.filter-header .dropdown-btn::after {
+  content: none;
+}
+
 .filter-section h3 {
     cursor: pointer;
 }
@@ -348,12 +352,12 @@ content: "▲";
     border-color: var(--secondary);
 }
 
-.filter-btn.active::before {
+/*.filter-btn.active::before {
     content: "✕";
     position: absolute;
     left: 8px;
     font-size: 11px;
-}
+} I dont like this X , double check with rikabella*/
 
 /* Range Sliders */
 
