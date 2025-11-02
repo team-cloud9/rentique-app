@@ -38,6 +38,13 @@ document.querySelectorAll(".filter-btn").forEach((btn) => {
   });
 });
 
+document.querySelectorAll(".dropdown-btn").forEach((btn) => {
+  btn.addEventListener("click", function () {
+    this.classList.toggle("active");
+  });
+});
+
+
 // ===============================
 // ACCORDION TOGGLE FOR FILTER SECTIONS
 // ===============================

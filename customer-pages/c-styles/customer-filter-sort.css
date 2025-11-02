@@ -230,6 +230,14 @@ FILTER - SORT - Discover Page
     margin-left: 8px;
 }
 
+.dropdown-btn.active::after {
+content: "▲";
+}
+
+.filter-header .dropdown-btn::after {
+  content: none;
+}
+
 .filter-section h3 {
     cursor: pointer;
 }
@@ -239,6 +247,10 @@ FILTER - SORT - Discover Page
     font-size: 10px;
     margin-left: 8px;
     cursor: pointer;
+}
+
+.filter-section.active h3::after {
+  content: "▲";
 }
 
 .filter-section:nth-of-type(4) h3::after,
@@ -340,12 +352,7 @@ FILTER - SORT - Discover Page
     border-color: var(--secondary);
 }
 
-.filter-btn.active::before {
-    content: "✕";
-    position: absolute;
-    left: 8px;
-    font-size: 11px;
-}
+
 
 /* Range Sliders */
 

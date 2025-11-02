@@ -973,6 +973,7 @@ input[type="range"]::-moz-range-thumb {
 /* circle text */
 .filter-btn.colour::before {
   content: "";
+   display: inline-block;
   flex-shrink: 0;
   width: 14px;
   height: 14px;
