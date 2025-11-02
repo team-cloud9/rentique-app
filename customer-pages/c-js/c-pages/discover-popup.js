@@ -21,6 +21,8 @@ if (closePopup && filterPopup) {
   });
 }
 
+
+
 if (filterPopup) {
   window.addEventListener("click", (event) => {
     if (event.target === filterPopup) {
@@ -28,6 +30,8 @@ if (filterPopup) {
     }
   });
 }
+
+
 
 // ===============================
 // FILTER BUTTON TOGGLE (UI only)
@@ -44,6 +48,16 @@ document.querySelectorAll(".dropdown-btn").forEach((btn) => {
   });
 });
 
+//Close popup style
+const swipePopup = document.getElementById("swipePopup");
+const closeFilterPopup = document.getElementById("closeFilterPopup");
+
+if (closeFilterPopup && swipePopup) {
+  closeFilterPopup.addEventListener("click", () => {
+    swipePopup.style.display = "none";
+  });
+}
+
 
 // ===============================
 // ACCORDION TOGGLE FOR FILTER SECTIONS
@@ -54,6 +68,8 @@ document.querySelectorAll(".filter-section h3").forEach((h3) => {
     section.classList.toggle("active");
   });
 });
+
+
 
 // ===== Apply Button (optional alert) =====
 // if (applyFilter) {

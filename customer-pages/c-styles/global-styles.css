@@ -269,6 +269,8 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
   height: 14px;
   border-radius: 50%;
   border: 1px solid #666;
+  margin-right: 6px; 
+  vertical-align: middle;
 }
 
 
@@ -306,9 +308,7 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
   background-color: deeppink;
 }
 
-.filter-btn.colour.blue::before {
-  background-color: #FF9809;
-}
+
 
 .filter-btn.colour.orange::before {
   background-color: #FF9809;
@@ -323,7 +323,7 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
 }
 
 .filter-btn.colour.green::before {
-  background-color: blue;
+  background-color: #388E3C;
 }
 
 .filter-btn.colour.purple::before {
