@@ -260,64 +260,76 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
 }
 
 
-/* BTN */
+/* circle text */
+.filter-btn.colour::before {
+  content: "";
+   display: inline-block;
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid #666;
+}
+
+
 /* Individual colors */
-/*.filter-btn.colour.black::before {
-    background-color: black;
+.filter-btn.colour.black::before {
+  background-color: black;
 }
 
 .filter-btn.colour.white::before {
-    background-color: white;
-    border: 1px solid #ccc;
+  background-color: white;
+  border: 1px solid #ccc;
 }
 
 .filter-btn.colour.grey::before {
-    background-color: grey;
+  background-color: #C3C1C1;
 }
 
 .filter-btn.colour.beige::before {
-    background-color: beige;
+  background-color: #DECDB3;
 }
 
 .filter-btn.colour.brown::before {
-    background-color: brown;
+  background-color: #764F2E;
 }
 
 .filter-btn.colour.navy::before {
-    background-color: navy;
+  background-color: #096CDC;
 }
 
 .filter-btn.colour.red::before {
-    background-color: red;
+  background-color: red;
 }
 
 .filter-btn.colour.pink::before {
-    background-color: deeppink;
+  background-color: deeppink;
 }
 
 .filter-btn.colour.blue::before {
-    background-color: #4A90E2;
+  background-color: #FF9809;
 }
 
 .filter-btn.colour.orange::before {
-    background-color: orange;
+  background-color: #FF9809;
 }
 
 .filter-btn.colour.yellow::before {
-    background-color: yellow;
+  background-color: yellow;
+}
+
+.filter-btn.colour.blue::before {
+  background-color: blue;
 }
 
 .filter-btn.colour.green::before {
-    background-color: green;
+  background-color: blue;
 }
 
 .filter-btn.colour.purple::before {
-    background-color: purple;
+  background-color: purple;
 }
 
-.filter-btn.colour:hover {
-    background: var(--gray-50);
-}*/
 
 /* change color when is active */
 .filter-btn.colour.active {

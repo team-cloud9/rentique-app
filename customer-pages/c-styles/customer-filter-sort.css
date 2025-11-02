@@ -352,12 +352,7 @@ content: "▲";
     border-color: var(--secondary);
 }
 
-/*.filter-btn.active::before {
-    content: "✕";
-    position: absolute;
-    left: 8px;
-    font-size: 11px;
-} I dont like this X , double check with rikabella*/
+
 
 /* Range Sliders */
 
