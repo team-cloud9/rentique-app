@@ -224,15 +224,31 @@ FILTER - SORT - Discover Page
     color: var(--text-primary);
 }
 
-.dropdown-btn::after {
-    content: "▼";
-    font-size: 10px;
-    margin-left: 8px;
+.dropdown-btn {
+  position: relative;
+  padding-right: 28px; 
 }
 
-.dropdown-btn.active::after {
-content: "▲";
+/* Icon */
+.dropdown-btn::after {
+  content: "";
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  transform: translateY(-50%) rotate(0deg);
+  background-image: url("../assets/icon/Icon_dropdown.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease;
 }
+
+
+.dropdown-btn.active::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
 
 .filter-header .dropdown-btn::after {
   content: none;
@@ -242,21 +258,33 @@ content: "▲";
     cursor: pointer;
 }
 
+/* Icon filter */
 .filter-section h3::after {
-    content: "▼";
-    font-size: 10px;
-    margin-left: 8px;
+    content: "";
+    display: inline-block;
+    width: 10px;  
+    height: 10px;
+    margin-left: 8px; 
+    vertical-align: middle;
+    background-image: url("../assets/icon/Icon_dropdown.svg"); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease;
+    transform: rotate(0deg); 
     cursor: pointer;
 }
 
+
 .filter-section.active h3::after {
-  content: "▲";
+    transform: rotate(180deg);
 }
+
 
 .filter-section:nth-of-type(4) h3::after,
 .filter-section:nth-of-type(5) h3::after {
-    content: "";
+    background-image: none; 
 }
+
 
 .filter-section:nth-of-type(4) h3,
 .filter-section:nth-of-type(5) h3 {
