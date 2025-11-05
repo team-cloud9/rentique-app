@@ -65,26 +65,64 @@ document.addEventListener("DOMContentLoaded", () => {
   const images = Array.isArray(product.image) ? product.image : [product.image];
 
   //image
+  // imageContainer.innerHTML = images
+  //   .map((img, index) => `
+  //     <div class="image-placeholder ${index === 0 ? "" : "hidden"}">
+  //       <img src="${img}" alt="${product.title}" />
+  //     </div>
+  //   `)
+  //   .join("");
+
   imageContainer.innerHTML = images
-    .map((img, index) => `
-      <div class="image-placeholder ${index === 0 ? "" : "hidden"}">
-        <img src="${img}" alt="${product.title}" />
-      </div>
-    `)
-    .join("");
+  .map((img, index) => `
+    <div class="image-placeholder ${index === 0 ? "active" : ""}">
+      <img src="${img}" alt="${product.title}" />
+    </div>
+  `)
+  .join("");
 
   const navButton = document.createElement("button");
   navButton.classList.add("image-nav");
   navButton.innerHTML = `<img src="../assets/icon/Icon_back.svg" alt="Next image" />`;
-  imageContainer.appendChild(navButton);
+  imageContainer.parentElement.appendChild(navButton);
 
-  let currentIndex = 0;
-  navButton.addEventListener("click", () => {
-    const placeholders = imageContainer.querySelectorAll(".image-placeholder");
-    placeholders[currentIndex].classList.add("hidden");
-    currentIndex = (currentIndex + 1) % placeholders.length;
-    placeholders[currentIndex].classList.remove("hidden");
-  });
+  // let currentIndex = 0;
+  // navButton.addEventListener("click", () => {
+  //   const placeholders = imageContainer.querySelectorAll(".image-placeholder");
+  //   placeholders[currentIndex].classList.add("hidden");
+  //   currentIndex = (currentIndex + 1) % placeholders.length;
+  //   placeholders[currentIndex].classList.remove("hidden");
+  // });
+
+  // ============================
+// Image Slide Animation (Mobile Only)
+// ============================
+let currentIndex = 0;
+navButton.addEventListener("click", () => {
+  // Mobileだけスライド動作
+  if (window.innerWidth > 768) return;
+
+  const placeholders = imageContainer.querySelectorAll(".image-placeholder");
+  const total = placeholders.length;
+  const current = placeholders[currentIndex];
+  const nextIndex = (currentIndex + 1) % total;
+  const next = placeholders[nextIndex];
+
+  // 現在の画像を左へスライドアウト
+  current.classList.remove("active");
+  current.classList.add("slide-out-left");
+
+  // 次の画像を右からスライドイン
+  next.classList.add("slide-in-right", "active");
+
+  // 0.5秒後にクラス整理
+  setTimeout(() => {
+    current.classList.remove("slide-out-left");
+    next.classList.remove("slide-in-right");
+  }, 500);
+
+  currentIndex = nextIndex;
+});
 
   // Color
   const colorGroup = document.querySelector(".color-group");
@@ -103,9 +141,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Size fit
   const fitGroup = document.querySelector(".fit-group");
-  fitGroup.innerHTML = (product.sizefit || []).map(s => `
-  <button class="tag-btn selected">${s}</button>
-`).join("");
+  fitGroup.innerHTML = product.sizeFit.map(s => `
+    <button class="tag-btn selected">${s}</button>
+  `).join("");
 
 
   // Season

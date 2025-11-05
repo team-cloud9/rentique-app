@@ -15,7 +15,7 @@ const itemProducts = [
       { name: "Pink", code: "#f1b6b6ff" }
     ],
     size: ["Small", "Medium"],
-    sizeFit: ["Small", "Medium"],
+    sizeFit: ["Fit", "Loose"],
     season: ["Winter"],
     texture: ["Plain"],
     material: ["Knitted fabric", "Khaki"],
@@ -34,6 +34,7 @@ const itemProducts = [
       { name: "red", code: "red" },
     ],
     size: ["Small", "Medium"],
+    sizeFit: ["Strechy", "Loose"],
     season: ["Summer"],
     texture: ["Plain"],
     material: ["Cotton", "Linen"],

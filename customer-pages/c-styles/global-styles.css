@@ -262,72 +262,72 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
 
 /* circle text */
 .filter-btn.colour::before {
-  content: "";
-   display: inline-block;
-  flex-shrink: 0;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  border: 1px solid #666;
-  margin-right: 6px; 
-  vertical-align: middle;
+    content: "";
+    display: inline-block;
+    flex-shrink: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1px solid #666;
+    margin-right: 6px;
+    vertical-align: middle;
 }
 
 
 /* Individual colors */
 .filter-btn.colour.black::before {
-  background-color: black;
+    background-color: black;
 }
 
 .filter-btn.colour.white::before {
-  background-color: white;
-  border: 1px solid #ccc;
+    background-color: white;
+    border: 1px solid #ccc;
 }
 
 .filter-btn.colour.grey::before {
-  background-color: #C3C1C1;
+    background-color: #C3C1C1;
 }
 
 .filter-btn.colour.beige::before {
-  background-color: #DECDB3;
+    background-color: #DECDB3;
 }
 
 .filter-btn.colour.brown::before {
-  background-color: #764F2E;
+    background-color: #764F2E;
 }
 
 .filter-btn.colour.navy::before {
-  background-color: #096CDC;
+    background-color: #096CDC;
 }
 
 .filter-btn.colour.red::before {
-  background-color: red;
+    background-color: red;
 }
 
 .filter-btn.colour.pink::before {
-  background-color: deeppink;
+    background-color: deeppink;
 }
 
 
 
 .filter-btn.colour.orange::before {
-  background-color: #FF9809;
+    background-color: #FF9809;
 }
 
 .filter-btn.colour.yellow::before {
-  background-color: yellow;
+    background-color: yellow;
 }
 
 .filter-btn.colour.blue::before {
-  background-color: blue;
+    background-color: blue;
 }
 
 .filter-btn.colour.green::before {
-  background-color: #388E3C;
+    background-color: #388E3C;
 }
 
 .filter-btn.colour.purple::before {
-  background-color: purple;
+    background-color: purple;
 }
 
 
@@ -433,6 +433,7 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
     text-align: left;
 }
 
+
 .swipe-popup-right h3 {
     font-size: 25px;
     letter-spacing: 1px;
@@ -515,7 +516,7 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
     padding: 6px 14px;
     font-size: 13px;
     font-weight: 500;
-    margin: 5px 0;
+    margin: 3px 0;
 }
 
 .swipe-popup-buttons {
@@ -556,11 +557,13 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
 }
 
 /* ===================
-    MOBILE RESPONSIVE
+   MOBILE RESPONSIVE
 ======================*/
 @media (max-width: 768px) {
+
+    /* === Popup === */
     .popup-container {
-        padding: 10px;
+        padding: 1rem;
         align-items: flex-start;
         overflow-y: auto;
     }
@@ -578,91 +581,114 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
 
+    /* === Body === */
     .swipe-popup-body {
         display: flex;
         flex-direction: column;
+        align-items: stretch;
         gap: 0;
-        min-height: auto;
-        border-radius: 0;
-        align-items: center;
-    }
-
-    .swipe-popup-left {
-        width: 300px;
-        border-radius: 0;
-
-    }
-
-    .swipe-popup-left img {
-        /* order: 1; */
-        object-fit: cover;
+        padding: 1rem;
     }
 
     .swipe-popup-right {
-        /* order: 1; */
-        padding: 1.5rem 1rem 1rem;
-        align-items: center;
+        display: contents;
+    }
+
+    /* === order === */
+    /* h3 */
+    .swipe-title-wrapper {
+        order: 1;
+    }
+
+    /* image */
+    .swipe-popup-left {
+        order: 2;
+    }
+
+    /* Text */
+    .swipe-popup-right-mobile {
+        order: 3;
+    }
+
+    /* BTN */
+    .swipe-popup-buttons {
+        order: 6;
+    }
+
+    /* Season / Material / Style */
+    .swipe-tags-wrapper {
+        order: 1;
+    }
+
+    /* Brand */
+    .swipe-info-wrapper {
+        order: 2;
+    }
+
+    /* Description */
+    .swipe-description-wrapper {
+        order: 3;
+    }
+
+    /* === Image === */
+    .swipe-popup-left {
+        width: 100%;
+        max-height: 600px;
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    .swipe-popup-left img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    /* === title === */
+    .swipe-title-wrapper {
         text-align: center;
+        margin-bottom: 0.5rem;
     }
 
-    /*.swipe-popup-right-mobile {
-        order: ;
-
-    }*/
-
-    .swipe-popup-right h3 {
+    .swipe-title-wrapper h3 {
         font-size: 18px;
-        /* order: -1; */
+        margin-bottom: 0.5rem;
     }
 
-    .swipe-popup-title {
-        font-size: 22px;
-        /* order: 3; */
+    /* === Brand / Description === */
+    .swipe-info-wrapper,
+    .swipe-description-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .swipe-description-wrapper {
+        margin-top: 12px;
+        text-align: center;
     }
 
     .swipe-label {
         font-size: 16px;
-        /* order: 4; */
+        margin-bottom: 8px;
+        text-align: center;
     }
 
+    /* === Tag === */
     .swipe-popup-details {
-        /* order: 5; */
-        margin-top: 15px;
         display: flex;
         flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
-
-    /* order */
-    .swipe-detail-row:nth-child(1) {
-        /* order: 5; */
-    }
-
-    /* Color */
-    .swipe-detail-row:nth-child(2) {
-        /* order: 4; */
-    }
-
-    /* Size */
-    .swipe-detail-row:nth-child(3) {
-        /* order: 1; */
-    }
-
-    /* Season */
-    .swipe-detail-row:nth-child(4) {
-        /* order: 2; */
-    }
-
-    /* Material */
-    .swipe-detail-row:nth-child(5) {
-        /* order: 3; */
-    }
-
-    /* Style */
 
     .swipe-detail-row {
+        display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
+
     }
 
     .swipe-detail-label {
@@ -671,25 +697,68 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
     }
 
     .swipe-detail-values {
-        justify-content: flex-start;
+        display: flex;
+        justify-content: center;
+        /* flex-wrap: wrap; */
+        gap: 6px;
     }
 
-    .swipe-color-tag,
-    .swipe-text-tag {
+    .swipe-color-tag {
         font-size: 12px;
         padding: 5px 12px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
     }
 
     .swipe-color-dot {
-        width: 14px;
-        height: 14px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 1px solid #ccc;
     }
 
+    .swipe-text-tag {
+        font-size: 14px;
+        padding: 6px 10px;
+        border-radius: 50px;
+    }
+
+    /* Season   */
+    .swipe-popup-details .swipe-detail-row:nth-child(3) {
+        order: 1;
+    }
+
+    /* Material */
+    .swipe-popup-details .swipe-detail-row:nth-child(4) {
+        order: 2;
+    }
+
+    /* Style    */
+    .swipe-popup-details .swipe-detail-row:nth-child(5) {
+        order: 3;
+    }
+
+    /* Color    */
+    .swipe-popup-details .swipe-detail-row:nth-child(1) {
+        order: 4;
+    }
+
+    /* Size     */
+    .swipe-popup-details .swipe-detail-row:nth-child(2) {
+        order: 5;
+    }
+
+
+    /* === BTN === */
     .swipe-popup-buttons {
+        width: 100%;
+        display: flex;
+        justify-content: center;
         gap: 15px;
         padding: 15px;
         margin-top: 10px;
-        flex-direction: row;
     }
 
     .swipe-popup-buttons .swipe-btn-pass,
@@ -701,45 +770,38 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
         border-radius: 4px;
     }
 
-    .swipe-btn-pass {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 5px;
-    }
-
+    .swipe-btn-pass,
     .swipe-btn-like {
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 5px;
     }
+
+    /* === Season / Material / Style  === */
+    .swipe-detail-group.top-group .swipe-detail-label {
+        display: none !important;
+    }
+
+    /* === Colour / Size  === */
+    .swipe-detail-group.bottom-group .swipe-detail-label {
+        display: inline-block;
+    }
+
+    .swipe-detail-group.bottom-group .swipe-detail-label {
+        display: block;
+        text-align: center;
+        width: 100%;
+        font-weight: 600;
+    }
+
+    .swipe-detail-group.bottom-group .swipe-detail-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .swipe-detail-group.bottom-group .swipe-detail-values {
+        justify-content: center;
+    }
 }
-
-
-/* @media (max-width: 480px) {
-    .swipe-popup-right h3 {
-        font-size: 16px;
-    }
-
-    .swipe-popup-title {
-        font-size: 20px;
-    }
-
-    .swipe-label,
-    .swipe-detail-label {
-        font-size: 14px;
-    }
-
-    .swipe-color-tag,
-    .swipe-text-tag {
-        font-size: 11px;
-        padding: 4px 10px;
-    }
-
-    .swipe-popup-buttons .swipe-btn-pass,
-    .swipe-popup-buttons .swipe-btn-like {
-        font-size: 14px;
-        padding: 8px 0;
-    }
-} */

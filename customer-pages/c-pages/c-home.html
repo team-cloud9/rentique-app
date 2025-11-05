@@ -49,31 +49,51 @@
     <div class="popup-container" id="swipePopup">
       <div class="popup-content swipe">
         <span class="close-popup" id="closePopup">&times;</span>
+
+        <!-- === BODY=== -->
         <div class="swipe-popup-body">
+          <!-- Image -->
           <div class="swipe-popup-left">
             <img src="" alt="Recommended Item" id="popupImage" />
           </div>
+
+          <!-- Right -->
           <div class="swipe-popup-right">
-            <h3>RECOMMEND FOR YOU!</h3>
+            <div class="swipe-title-wrapper">
+              <h3>RECOMMEND FOR YOU!</h3>
+            </div>
+
             <div class="swipe-popup-right-mobile">
               <h2 class="swipe-popup-title"></h2>
-              <p class="swipe-label">
-                Brand: <span id="swipePopupBrand"></span>
-              </p>
-              <p class="swipe-label">
-                Description:
-                <span id="swipePopupDesc"></span>
-              </p>
-              <div class="swipe-popup-details"></div>
+
+              <div class="swipe-info-wrapper">
+                <p class="swipe-label">
+                  Brand: <span id="swipePopupBrand"></span>
+                </p>
+              </div>
+
+              <div class="swipe-description-wrapper">
+                <p class="swipe-label">
+                  Description:
+                  <span id="swipePopupDesc"></span>
+                </p>
+              </div>
+
+              <!-- tags -->
+              <div class="swipe-tags-wrapper">
+                <div class="swipe-popup-details"></div>
+              </div>
             </div>
           </div>
         </div>
+
         <div class="swipe-popup-buttons">
           <button class="swipe-btn-pass">PASS</button>
           <button class="swipe-btn-like">LIKE</button>
         </div>
       </div>
     </div>
+
 
     <!-- Item List Section -->
     <section class="item-list">

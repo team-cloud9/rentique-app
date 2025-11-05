@@ -57,7 +57,7 @@ function renderItemList() {
 }
 
 // ============================
-// Render Swipe Popup
+// Render Swipe Popup (Fixed Version)
 // ============================
 function renderSwipePopup(product) {
   const popupImage = document.getElementById("popupImage");
@@ -74,48 +74,55 @@ function renderSwipePopup(product) {
   if (!detailsContainer) return;
 
   detailsContainer.innerHTML = `
-    <div class="swipe-detail-row">
-      <span class="swipe-detail-label">Colour:</span>
-      <div class="swipe-detail-values">
-        ${product.colors
+    <div class="swipe-detail-group top-group">
+      <div class="swipe-detail-row">
+        <span class="swipe-detail-label">Season:</span>
+        <div class="swipe-detail-values">
+          ${product.season.map(s => `<span class="swipe-text-tag">${s}</span>`).join("")}
+        </div>
+      </div>
+      <div class="swipe-detail-row">
+        <span class="swipe-detail-label">Material:</span>
+        <div class="swipe-detail-values">
+          ${product.material.map(m => `<span class="swipe-text-tag">${m}</span>`).join("")}
+        </div>
+      </div>
+      <div class="swipe-detail-row">
+        <span class="swipe-detail-label">Style:</span>
+        <div class="swipe-detail-values">
+          ${product.style.map(st => `<span class="swipe-text-tag">${st}</span>`).join("")}
+        </div>
+      </div>
+    </div>
+
+    <div class="swipe-detail-group bottom-group">
+      <div class="swipe-detail-row">
+        <span class="swipe-detail-label">Colour:</span>
+        <div class="swipe-detail-values">
+          ${product.colors
       .map(
         (color) => `
-          <span class="swipe-color-tag">
-            <span class="swipe-color-dot" style="background: ${color.code}${color.code === "white" || color.code === "beige" ? "; border: 1px solid #ccc" : ""
+              <span class="swipe-color-tag">
+                <span class="swipe-color-dot" style="background: ${color.code}${color.code === "white" || color.code === "beige"
+            ? "; border: 1px solid #ccc"
+            : ""
           }"></span>
-            ${color.name}
-          </span>
-        `
+                ${color.name}
+              </span>`
       )
       .join("")}
+        </div>
       </div>
-    </div>
-    <div class="swipe-detail-row">
-      <span class="swipe-detail-label">Size:</span>
-      <div class="swipe-detail-values">
-        ${product.size.map((s) => `<span class="swipe-text-tag">${s}</span>`).join("")}
-      </div>
-    </div>
-    <div class="swipe-detail-row">
-      <span class="swipe-detail-label">Season:</span>
-      <div class="swipe-detail-values">
-        ${product.season.map((s) => `<span class="swipe-text-tag">${s}</span>`).join("")}
-      </div>
-    </div>
-    <div class="swipe-detail-row">
-      <span class="swipe-detail-label">Material:</span>
-      <div class="swipe-detail-values">
-        ${product.material.map((m) => `<span class="swipe-text-tag">${m}</span>`).join("")}
-      </div>
-    </div>
-    <div class="swipe-detail-row">
-      <span class="swipe-detail-label">Style:</span>
-      <div class="swipe-detail-values">
-        ${product.style.map((st) => `<span class="swipe-text-tag">${st}</span>`).join("")}
+      <div class="swipe-detail-row">
+        <span class="swipe-detail-label">Size:</span>
+        <div class="swipe-detail-values">
+          ${product.size.map((s) => `<span class="swipe-text-tag">${s}</span>`).join("")}
+        </div>
       </div>
     </div>
   `;
 }
+
 
 // ============================
 // Popup Control
