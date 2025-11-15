@@ -13,14 +13,11 @@
   <script src="../components/controller/component-loader.js" defer></script>
   <!-- Component/ -->
 
-  <!-- <link rel="stylesheet" href="../c-styles/c-style.css" /> -->
   <link rel="stylesheet" href="../c-styles/global-styles.css" />
   <link rel="stylesheet" href="../c-styles/customer-filter-sort.css" />
-  <script src="../c-js/services/ProductData.js" defer></script>
+
   <script src="../c-js/c-pages/discover-popup.js" defer></script>
-  <script src="../c-js/c-pages/discover-main.js" defer></script>
-
-
+  <script type="module" src="../c-js/c-pages/discover-main.js"></script>
 </head>
 
 <body>
@@ -29,7 +26,6 @@
 
   <!-- Main -->
   <main class="container">
-
     <!-- Swipe Your Style Section -->
     <section class="swipe-style">
       <h2>SWIPE YOUR STYLE</h2>
@@ -59,17 +55,33 @@
             <img src="" alt="Recommended Item" id="popupImage" />
           </div>
           <div class="swipe-popup-right">
-            <h3>RECOMMEND FOR YOU!</h3>
-            <h2 class="swipe-popup-title"></h2>
-            <p class="swipe-label">
-              Brand: <span id="swipePopupBrand"></span>
-            </p>
-            <p class="swipe-label">
-              Description:
-              <span id="swipePopupDesc"></span>
-            </p>
-            <div class="swipe-popup-details"></div>
+            <div class="swipe-title-wrapper">
+              <h3>RECOMMEND FOR YOU!</h3>
+            </div>
+
+            <div class="swipe-popup-right-mobile">
+              <h2 class="swipe-popup-title"></h2>
+
+              <div class="swipe-info-wrapper">
+                <p class="swipe-label">
+                  Brand: <span id="swipePopupBrand"></span>
+                </p>
+              </div>
+
+              <div class="swipe-description-wrapper">
+                <p class="swipe-label">
+                  Description:
+                  <span id="swipePopupDesc"></span>
+                </p>
+              </div>
+
+              <!-- tags -->
+              <div class="swipe-tags-wrapper">
+                <div class="swipe-popup-details"></div>
+              </div>
+            </div>
           </div>
+
         </div>
         <div class="swipe-popup-buttons">
           <button class="swipe-btn-pass">PASS</button>
@@ -148,7 +160,7 @@
                 <span>$1</span>
                 <span>$120</span>
               </div>
-              <input type="range" min="10" max="120" value="65" id="priceRange" />
+              <input type="range" min="0" max="120" value="0" id="priceRange" />
             </div>
           </div>
 
@@ -160,7 +172,7 @@
                 <span>0km</span>
                 <span>+120km</span>
               </div>
-              <input type="range" min="0" max="120" value="60" id="distanceRange" />
+              <input type="range" min="0" max="120" value="0" id="distanceRange" />
             </div>
           </div>
 
