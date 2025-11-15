@@ -1,0 +1,9 @@
+{
+  "name": "Rentique Customer App",
+  "short_name": "Rentique",
+  "start_url": "/CUSTOMER-PAGES/c-pages/auth-login-customer.html",
+  "display": "standalone",
+  "background_color": "#06324f",
+  "theme_color": "#06324f",
+  "icons": []
+}

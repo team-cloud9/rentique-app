@@ -87,9 +87,15 @@
 }
 
 .item-name {
+    font-weight: 700;
+    font-size: 35px;
+    color: var(--teal-blue-800);
+}
+
+/* .item-name {
     font-weight: 300;
     font-size: 28px;
-}
+} */
 
 .item-price {
     font-weight: 600;
@@ -113,8 +119,6 @@
 .detail-section h3 {
     font-weight: 600;
     font-size: 28px;
-    /* display: flex;
-  align-items: center; */
 }
 
 .dropdown-arrow {
@@ -254,6 +258,12 @@
     transition: all 0.2s;
 }
 
+/* Cart */
+.cart-button img {
+    filter: brightness(0) invert(1);
+    margin: 3px;
+}
+
 .cart-button:hover {
     background: var(--secondary-variant);
     transform: translateY(-1px);
@@ -267,7 +277,7 @@
     gap: 8px;
     font-size: 0.95rem;
     font-weight: 500;
-    background-color: #BFE1C8;
+    background-color: #bfe1c8;
     color: var(--teal-blue-800);
     border-radius: 20px;
     padding: 6px 14px;
@@ -337,12 +347,6 @@
         position: relative !important;
     }
 
-    /* .image-placeholder.active {
-        opacity: 1;
-        transform: translateX(0);
-        z-index: 1;
-    } */
-
     .slide-out-left {
         transform: translateX(-100%);
         opacity: 0;
@@ -353,13 +357,29 @@
         opacity: 0;
     }
 
+    /* Update */
     .image-placeholder img {
-        width: 100%;
-        height: 100%;
+        width: 95%;
+        height: 95%;
         object-fit: cover;
     }
 
     .image-nav {
+        position: absolute;
+        top: 70%;
+        right: 10px;
+        transform: translateY(-50%);
+        display: flex;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        background: none;
+        margin-right: 1rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* .image-nav {
         display: flex;
         width: 35px;
         height: 35px;
@@ -367,7 +387,7 @@
         right: 10px;
         top: 50%;
         transform: translateY(-50%);
-    }
+    } */
 
     .image-nav img {
         transform: rotate(180deg);
@@ -391,8 +411,9 @@
     }
 
     .item-name {
-        font-size: 24px;
-        font-weight: 400;
+        font-size: 30px;
+        font-weight: 600;
+        margin-top: 40px;
     }
 
     .item-price {

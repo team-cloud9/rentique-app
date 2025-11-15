@@ -68,25 +68,37 @@ main>section {
 }
 
 .swipe-container {
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     overflow: hidden;
-    position: relative;
+    width: 100%;
 }
 
+/* === Arrow Buttons === */
 .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     background: none;
     border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
     cursor: pointer;
-    padding: 0.5rem;
-    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    transition: all 0.3s ease;
 }
 
 .arrow img {
-    width: 36px;
-    height: 36px;
-    transition: transform 0.3s ease;
+    width: 22px;
+    height: 22px;
+    opacity: 0.8;
+    filter: invert(1);
 }
 
 /* (▼ → ◀) */
@@ -99,12 +111,20 @@ main>section {
     transform: rotate(-90deg);
 }
 
+.arrow.left {
+    left: 1rem;
+}
+
+.arrow.right {
+    right: 1rem;
+}
+
 .swipe-items {
     display: flex;
     gap: 1rem;
     overflow: hidden;
     scroll-behavior: smooth;
-    width: calc(6 * 150px + 5 * 1rem);
+    width: 100%;
 }
 
 .swipe-items img {
@@ -259,7 +279,6 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
     }
 }
 
-
 /* circle text */
 .filter-btn.colour::before {
     content: "";
@@ -273,7 +292,6 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
     vertical-align: middle;
 }
 
-
 /* Individual colors */
 .filter-btn.colour.black::before {
     background-color: black;
@@ -285,19 +303,19 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
 }
 
 .filter-btn.colour.grey::before {
-    background-color: #C3C1C1;
+    background-color: #c3c1c1;
 }
 
 .filter-btn.colour.beige::before {
-    background-color: #DECDB3;
+    background-color: #decdb3;
 }
 
 .filter-btn.colour.brown::before {
-    background-color: #764F2E;
+    background-color: #764f2e;
 }
 
 .filter-btn.colour.navy::before {
-    background-color: #096CDC;
+    background-color: #096cdc;
 }
 
 .filter-btn.colour.red::before {
@@ -308,10 +326,8 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
     background-color: deeppink;
 }
 
-
-
 .filter-btn.colour.orange::before {
-    background-color: #FF9809;
+    background-color: #ff9809;
 }
 
 .filter-btn.colour.yellow::before {
@@ -323,13 +339,12 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
 }
 
 .filter-btn.colour.green::before {
-    background-color: #388E3C;
+    background-color: #388e3c;
 }
 
 .filter-btn.colour.purple::before {
     background-color: purple;
 }
-
 
 /* change color when is active */
 .filter-btn.colour.active {
@@ -432,7 +447,6 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
     padding: 1rem;
     text-align: left;
 }
-
 
 .swipe-popup-right h3 {
     font-size: 25px;
@@ -688,7 +702,6 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
     .swipe-detail-row {
         display: flex;
         flex-direction: column;
-
     }
 
     .swipe-detail-label {
@@ -750,7 +763,6 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
         order: 5;
     }
 
-
     /* === BTN === */
     .swipe-popup-buttons {
         width: 100%;
@@ -804,4 +816,78 @@ MEDIA QUERIES: TABLET/MOBILE -- HOME PAGE
     .swipe-detail-group.bottom-group .swipe-detail-values {
         justify-content: center;
     }
+}
+
+/* Popup overlay for style/color selection */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--deep-teal-blue);
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.option-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--nyanza-100);
+    border-radius: 8px;
+    padding: 0.6rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.option-item:hover {
+    background: var(--nyanza-200);
+}
+
+.popup-actions {
+    display: flex;
+    justify-content: space-around;
+}
+
+.popup-actions button {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.popup-save {
+    background-color: var(--deep-teal-blue);
+    color: #fff;
+}
+
+.popup-cancel {
+    background-color: var(--gray-300);
+    color: var(--deep-teal-blue);
 }

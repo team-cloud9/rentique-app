@@ -15,9 +15,9 @@
 
   <link rel="stylesheet" href="../c-styles/global-styles.css" />
   <link rel="stylesheet" href="../c-styles/customer-itemdetail.css" />
-  <link rel="stylesheet" href="../components/view/css/var.css" />
-  <script src="../c-js/services/ProductData.js" defer></script>
-  <script src="../c-js/c-pages/itemdetail-main.js" defer></script>
+
+  <!-- <script type="module" src="../c-js/services/firebaseConfig.js"></script> -->
+  <script type="module" src="../c-js/c-pages/itemdetail-main.js"></script>
 </head>
 
 <body>
@@ -62,7 +62,7 @@
             <h3 onclick="toggleDropdown(this)">
               Size Fit
               <span class="dropdown-arrow">
-                <img src="../assets/icon/Icon_dropdown.svg" alt="dropdown">
+                <img src="../assets/icon/Icon_dropdown.svg" alt="dropdown" />
               </span>
             </h3>
             <div class="tag-group fit-group">
@@ -74,7 +74,7 @@
             <h3 onclick="toggleDropdown(this)">
               Recommend season
               <span class="dropdown-arrow">
-                <img src="../assets/icon/Icon_dropdown.svg" alt="dropdown">
+                <img src="../assets/icon/Icon_dropdown.svg" alt="dropdown" />
               </span>
             </h3>
             <div class="tag-group season-group">
@@ -86,7 +86,7 @@
             <h3 onclick="toggleDropdown(this)">
               Material
               <span class="dropdown-arrow">
-                <img src="../assets/icon/Icon_dropdown.svg" alt="dropdown">
+                <img src="../assets/icon/Icon_dropdown.svg" alt="dropdown" />
               </span>
             </h3>
             <div class="tag-group material-group">
@@ -98,7 +98,7 @@
             <h3 onclick="toggleDropdown(this)">
               Texture
               <span class="dropdown-arrow">
-                <img src="../assets/icon/Icon_dropdown.svg" alt="dropdown">
+                <img src="../assets/icon/Icon_dropdown.svg" alt="dropdown" />
               </span>
             </h3>
             <div class="tag-group texture-group">
@@ -110,7 +110,7 @@
             <h3 onclick="toggleDropdown(this)">
               Style
               <span class="dropdown-arrow">
-                <img src="../assets/icon/Icon_dropdown.svg" alt="dropdown">
+                <img src="../assets/icon/Icon_dropdown.svg" alt="dropdown" />
               </span>
             </h3>
             <div class="tag-group style-group">
@@ -128,7 +128,9 @@
       </div>
 
       <div class="action-buttons">
-        <button class="chat-button primary">CHAT WITH OWNER</button>
+        <button id="chatWithOwnerBtn" class="chat-button primary">
+          CHAT WITH OWNER
+        </button>
         <button class="cart-button">
           <img src="../assets/icon/Icon_cart.svg" alt="Cart" />
         </button>

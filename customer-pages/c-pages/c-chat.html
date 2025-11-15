@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="theme-color" content="#06324f" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/assets/logos/rentique-sub.png" />
+
+    <!-- /Component -->
+    <link rel="stylesheet" href="../components/view/css/var.css" />
+    <link rel="stylesheet" href="../components/view/css/header-footer.css" />
+    <script src="../components/controller/components.js" defer></script>
+    <script src="../components/controller/component-loader.js" defer></script>
+    <!-- Component/ -->
+
+    <!-- Page Style -->
+    <link rel="stylesheet" href="../c-styles/c-chat.css" />
+  </head>
+
+  <body>
+    <div class="chat-container">
+      <!-- Sidebar (Chat List) -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="header-top">
+            <a href="./c-itemdetail.html" class="back-icon-link">
+              <svg
+                class="back-icon"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </a>
+            <div class="logo-section">
+              <h1 class="brand-name">RENTIQUE</h1>
+            </div>
+          </div>
+          <h2 class="all-chat-title">MY CHATS</h2>
+        </div>
+
+        <div class="chat-list" id="chatList"></div>
+      </aside>
+
+      <!-- Main Chat Area -->
+      <main class="main-chat">
+        <div id="header-placeholder" data-user-type="customer"></div>
+
+        <div class="chat-header">
+          <svg
+            id="backToChatListBtn"
+            class="back-icon-chat"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+          <div class="chat-header-info">
+            <img id="chatProductImg" class="chat-product-img" alt="Product" />
+            <div class="chat-product-meta">
+              <h2 class="chat-title" id="chatTitle">Select a chat</h2>
+              <p id="chatProductName" class="chat-product-name"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="messages-area" id="messagesArea">
+          <div class="messages-container" id="messagesContainer"></div>
+        </div>
+
+        <div class="message-input-area">
+          <div class="input-container">
+            <input
+              type="text"
+              class="message-input"
+              placeholder="Type your message..."
+              id="messageInput"
+            />
+            <button class="send-button" id="sendButton">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="../c-js/c-pages/c-chat.js" defer></script>
+  </body>
+</html>

@@ -4,75 +4,210 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Style Shuffle</title>
+  <title>Liked Items - Rentique</title>
 
-  <!-- /Component -->
-  <link rel="stylesheet" href="../components/view/css/var.css" />
-  <link rel="stylesheet" href="../components/view/css/header-footer.css" />
-  <script src="../components/controller/components.js" defer></script>
-  <script src="../components/controller/component-loader.js" defer></script>
-
-  <!-- Component/ -->
-
-  <link rel="stylesheet" href="../../c-styles/global-styles.css" />
   <link rel="stylesheet" href="../../components/view/css/var.css" />
+  <link rel="stylesheet" href="../../components/view/css/header-footer.css" />
+  <link rel="stylesheet" href="../../c-styles/global-styles.css" />
+  <link rel="stylesheet" href="../../c-styles/customer-filter-sort.css" />
 
-  <script src="../../c-js/services/ProductData.js" defer></script>
-  <script src="../../c-js/c-pages/liked.js" defer></script>
+  <script src="../../components/controller/component-loader.js" defer></script>
+  <script src="../../components/controller/components.js" defer></script>
 
-  <!-- Page Specific Style -->
+  <script type="module" src="../../c-js/c-pages/liked.js" defer></script>
+  <script src="../../c-js/c-pages/discover-popup.js" defer></script>
+
+
+
   <style>
     .liked-section {
-      padding: 2rem 4rem;
-      color: var(--deep-teal-blue);
-    }
-
-    .liked-section h2 {
-      font-size: 1rem;
-      letter-spacing: 1px;
-      color: var(--deep-teal-blue);
-      margin-bottom: 1rem;
-    }
-
-    .liked-container {
-      justify-content: center;
       max-width: 1200px;
+      padding: 3rem;
       margin: 0 auto;
     }
 
-    .list-items>p {
-      text-align: center;
+    .liked-section h2 {
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+    }
+
+    /* Only affect Liked page */
+    main.liked-section .filter-section:nth-of-type(4) h3::after,
+    main.liked-section .filter-section:nth-of-type(5) h3::after {
+      background-image: url("../../assets/icon/Icon_dropdown.svg") !important;
+      transform: rotate(0deg);
+      transition: transform 0.3s ease;
+    }
+
+    main.liked-section .filter-section:nth-of-type(4).active h3::after,
+    main.liked-section .filter-section:nth-of-type(5).active h3::after {
+      transform: rotate(180deg);
+    }
+
+    /* clickable cursor again */
+    main.liked-section .filter-section:nth-of-type(4) h3,
+    main.liked-section .filter-section:nth-of-type(5) h3 {
+      cursor: pointer !important;
     }
   </style>
 </head>
 
 <body>
-  <!-- Header -->
   <div id="header-placeholder" data-user-type="customer"></div>
 
-  <!-- Main Content -->
-  <main class="liked-container">
-    <section class="liked-section">
-      <h2>ITEM YOU LIKED</h2>
-      <!-- Filter/Sort Section -->
-      <section class="filter-sort">
-        <button id="filterBtn">Filter</button>
-        <div class="dropdown">
-          <button class="dropdown-btn sort-btn">Sort</button>
-          <div class="dropdown-menu">
-            <label><input type="radio" name="sort" value="recommended" checked /><span>Recently Added</span></label>
-            <label><input type="radio" name="sort" value="price-high" /><span>$High to Low</span></label>
-            <label><input type="radio" name="sort" value="price-low" /><span>$Low to High</span></label>
+  <main class="liked-section">
+    <h2>YOUR LIKED STYLES</h2>
+
+    <!-- Filter / Sort Section -->
+    <section class="filter-sort">
+      <button id="filterBtn">Filter</button>
+      <div class="dropdown">
+        <button class="dropdown-btn sort-btn">Sort</button>
+        <div class="dropdown-menu">
+          <label><input type="radio" name="sort" value="recent" checked /><span>Recently Liked</span></label>
+          <label><input type="radio" name="sort" value="oldest" /><span>Oldest Liked</span></label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter Popup -->
+    <div class="popup-container" id="filterPopup">
+      <div class="popup-content">
+        <span class="close-popup" id="closePopup">&times;</span>
+
+        <!-- Example Filter (shorter version than Discover) -->
+        <div class="filter-section">
+          <h3>Style</h3>
+          <div class="filter-options">
+            <button class="filter-btn">Casual</button>
+            <button class="filter-btn">Formal</button>
+            <button class="filter-btn">Street Style</button>
+            <button class="filter-btn">Vintage</button>
+            <button class="filter-btn">Minimalist</button>
+            <button class="filter-btn">Sporty</button>
           </div>
         </div>
-      </section>
-      <div class="list-items">
-        <!-- render here -->
+
+        <div class="filter-section">
+          <h3>Size</h3>
+          <div class="filter-options">
+            <button class="filter-btn">S</button>
+            <button class="filter-btn">M</button>
+            <button class="filter-btn">L</button>
+            <button class="filter-btn">XL</button>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <h3>Season</h3>
+          <div class="filter-options">
+            <button class="filter-btn">Spring</button>
+            <button class="filter-btn">Summer</button>
+            <button class="filter-btn">Autumn</button>
+            <button class="filter-btn">Winter</button>
+          </div>
+        </div>
+
+        <!-- Material -->
+        <div class="filter-section">
+          <h3>Material</h3>
+          <div class="filter-options">
+            <button class="filter-btn">Cotton</button>
+            <button class="filter-btn">Denim</button>
+            <button class="filter-btn">Linen</button>
+            <button class="filter-btn">Silk & Satin</button>
+            <button class="filter-btn">Wool</button>
+            <button class="filter-btn">Cashmere</button>
+            <button class="filter-btn">Leather</button>
+            <button class="filter-btn">Polyester</button>
+            <button class="filter-btn">Nylon</button>
+            <button class="filter-btn">Rayon</button>
+            <button class="filter-btn">Velvet</button>
+            <button class="filter-btn">Corduroy</button>
+          </div>
+        </div>
+
+        <!-- Colour -->
+        <div class="filter-section">
+          <h3>Colour</h3>
+          <div class="filter-options colour-options">
+            <button class="filter-btn colour black">Black</button>
+            <button class="filter-btn colour white">White</button>
+            <button class="filter-btn colour grey">Grey</button>
+            <button class="filter-btn colour beige">Beige</button>
+            <button class="filter-btn colour brown">Brown</button>
+            <button class="filter-btn colour navy">Navy</button>
+            <button class="filter-btn colour red">Red</button>
+            <button class="filter-btn colour pink">Pink</button>
+            <button class="filter-btn colour orange">Orange</button>
+            <button class="filter-btn colour yellow">Yellow</button>
+            <button class="filter-btn colour green">Green</button>
+            <button class="filter-btn colour blue">Blue</button>
+            <button class="filter-btn colour purple">Purple</button>
+          </div>
+        </div>
+
+        <div class="apply">
+          <button class="apply-btn">APPLY</button>
+        </div>
       </div>
-      <p>No items found</p>
-    </section>
-    </section>
+    </div>
+
+    <!-- Cards -->
+    <div class="list-items"><!-- render here --></div>
+
+    <!-- Popup for Swipe Item (from Home) -->
+    <div class="popup-container" id="swipePopup">
+      <div class="popup-content swipe">
+        <span class="close-popup" id="closePopup">&times;</span>
+
+        <!-- === BODY=== -->
+        <div class="swipe-popup-body">
+          <!-- Image -->
+          <div class="swipe-popup-left">
+            <img src="" alt="Recommended Item" id="popupImage" />
+          </div>
+
+          <!-- Right -->
+          <div class="swipe-popup-right">
+            <div class="swipe-title-wrapper">
+              <h3>RECOMMEND FOR YOU!</h3>
+            </div>
+
+            <div class="swipe-popup-right-mobile">
+              <h2 class="swipe-popup-title"></h2>
+
+              <div class="swipe-info-wrapper">
+                <p class="swipe-label">
+                  Brand: <span id="swipePopupBrand"></span>
+                </p>
+              </div>
+
+              <div class="swipe-description-wrapper">
+                <p class="swipe-label">
+                  Description:
+                  <span id="swipePopupDesc"></span>
+                </p>
+              </div>
+
+              <!-- tags -->
+              <div class="swipe-tags-wrapper">
+                <div class="swipe-popup-details"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="swipe-popup-buttons">
+          <button class="swipe-btn-pass">PASS</button>
+          <button class="swipe-btn-like">LIKE</button>
+        </div> -->
+      </div>
+    </div>
   </main>
+
+  <div id="footer-placeholder" data-user-type="customer"></div>
 </body>
 
 </html>
