@@ -27,7 +27,7 @@ function loadCurrentUserLocation() {
     return new Promise((resolve) => {
         onAuthStateChanged(auth, async (user) => {
             if (!user) {
-                console.warn("⚠️ No authenticated user found");
+                console.warn("No authenticated user found");
                 resolve(null);
                 return;
             }
@@ -36,26 +36,24 @@ function loadCurrentUserLocation() {
                 const userDoc = await getDoc(doc(db, "customers", user.uid));
                 if (userDoc.exists()) {
                     currentUserLocation = userDoc.data().location?.geopoint || null;
-                    console.log("📍 Current user location:", currentUserLocation);
+                    console.log("Current user location:", currentUserLocation);
                 } else {
-                    console.warn("⚠️ No customer document found for:", user.uid);
+                    console.warn("No customer document found for:", user.uid);
                 }
             } catch (err) {
-                console.error("❌ Failed to load user location:", err);
+                console.error("Failed to load user location:", err);
             }
-
             resolve(currentUserLocation);
         });
     });
 }
-
 
 // ============================
 // Calculate distance between two points 
 // ============================
 function calculateDistanceKm(point1, point2) {
     if (!point1 || !point2) return Infinity;
-    const R = 6371; 
+    const R = 6371;
     const dLat = (point2.latitude - point1.latitude) * (Math.PI / 180);
     const dLon = (point2.longitude - point1.longitude) * (Math.PI / 180);
     const lat1 = point1.latitude * (Math.PI / 180);
@@ -81,7 +79,6 @@ function loadProductsRealtime() {
                 document.querySelector(".list-items").innerHTML = "<p>No products found.</p>";
                 return;
             }
-
             const rawProducts = snapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data(),
@@ -91,7 +88,6 @@ function loadProductsRealtime() {
             const enriched = await Promise.all(
                 rawProducts.map(async (p) => {
                     if (!p.businessID) {
-                        // p.businessId = "0nIlC6MGqPpaEveULfKM"; // Check taking Business ID or not
                     }
                     if (p.businessID) {
                         try {
@@ -103,7 +99,7 @@ function loadProductsRealtime() {
 
                                 // Debug Log
                                 console.log(
-                                    "📦",
+                                    "P",
                                     p.itemName,
                                     "→ BusinessID:",
                                     p.businessID,
@@ -111,13 +107,13 @@ function loadProductsRealtime() {
                                     bizData.location?.geopoint
                                 );
                             } else {
-                                console.warn("❌ Business not found for:", p.businessID);
+                                console.warn("Business not found for:", p.businessID);
                             }
                         } catch (err) {
-                            console.warn("⚠️ Failed to load business info for:", p.businessID, err);
+                            console.warn("Failed to load business info for:", p.businessID, err);
                         }
                     } else {
-                        console.warn("🚫 No businessId in product:", p.itemName);
+                        console.warn("No businessId in product:", p.itemName);
                     }
                     return p;
                 })
@@ -138,22 +134,19 @@ function loadProductsRealtime() {
                 material: p.material || [],
                 style: p.styles || [],
                 price: parseFloat(p.price) || 0,
-                businessLocation: p.businessLocation || null, 
+                businessLocation: p.businessLocation || null,
             }));
 
             itemProducts = [...swipeProducts];
-            console.log("✅ Discover Products loaded (with business location):", itemProducts.length);
-
+            console.log("Discover Products loaded (with business location):", itemProducts.length);
             function setupDropdownToggle() {
                 const dropdownBtn = document.querySelector(".dropdown-btn");
                 const dropdownMenu = document.querySelector(".dropdown-menu");
-
                 if (dropdownBtn && dropdownMenu) {
                     dropdownBtn.addEventListener("click", (e) => {
                         e.stopPropagation();
                         dropdownMenu.classList.toggle("show");
                     });
-
                     // Close menu when clicking outside
                     document.addEventListener("click", (e) => {
                         if (!dropdownMenu.contains(e.target) && !dropdownBtn.contains(e.target)) {
@@ -162,7 +155,6 @@ function loadProductsRealtime() {
                     });
                 }
             }
-
             renderSwipeItems();
             renderDiscoverList(itemProducts);
             setupSorting();
@@ -170,7 +162,7 @@ function loadProductsRealtime() {
             setupDropdownToggle();
         },
         (error) => {
-            console.error("❌ Error loading products:", error);
+            console.error("Error loading products:", error);
         }
     );
 }
@@ -198,20 +190,19 @@ function renderSwipeItems() {
 function renderDiscoverList(products) {
     const listContainer = document.querySelector(".list-items");
     if (!listContainer) return;
-
     if (!products || products.length === 0) {
         listContainer.innerHTML = "<p>No products match your filters.</p>";
         return;
     }
-
     listContainer.innerHTML = products
         .map(
             (p, index) => `
       <a href="./c-itemdetail.html" class="card" data-index="${index}">
           <div class="img"><img src="${p.image}" alt="${p.title}" /></div>
           <p class="name">${p.title}</p>
-          <p class="desc">${p.description}</p>
           <p class="price">$${p.price.toFixed(2)}</p>
+          <p class="desc">${p.description}</p>
+           <p class="desc">${p.businessName}</p>
       </a>`
         )
         .join("");
@@ -307,24 +298,21 @@ function setupFilter() {
 }
 
 function applyFilters() {
-    console.log("🧭 currentUserLocation:", currentUserLocation);
-    console.log("📶 Distance slider value:", document.getElementById("distanceRange").value);
-
+    console.log("currentUserLocation:", currentUserLocation);
+    console.log("Distance slider value:", document.getElementById("distanceRange").value);
     const activeButtons = document.querySelectorAll(".filter-btn.active");
     const distanceValue = parseInt(document.getElementById("distanceRange").value, 10);
     const priceValue = parseInt(document.getElementById("priceRange").value, 10);
-    console.log("🚗 Distance filter:", distanceValue, "km");
-    console.log("💰 Price filter:", priceValue, "max");
+    console.log("Distance filter:", distanceValue, "km");
+    console.log("Price filter:", priceValue, "max");
 
     if (activeButtons.length === 0 && distanceValue === 0 && priceValue === 0) {
         renderDiscoverList(itemProducts);
         return;
     }
-
     const selectedFilters = Array.from(activeButtons).map((btn) =>
         btn.textContent.trim().toLowerCase()
     );
-
     // Apply filter
     let filtered = itemProducts.filter((p) => {
         const matchesCategory =
@@ -336,10 +324,8 @@ function applyFilters() {
                 p.size?.some((sz) => sz.toLowerCase() === f) ||
                 p.season?.some((se) => se.toLowerCase() === f)
             );
-
         // Price Range filter
         const matchesPrice = p.price <= priceValue || priceValue === 0;
-
         return matchesCategory && matchesPrice;
     });
 
@@ -364,13 +350,10 @@ function applyFilters() {
             );
 
             // Debug
-            console.log(`📏 ${p.title} → ${dist.toFixed(2)} km`);
-
-            return dist <= distanceValue; 
+            console.log(`${p.title} → ${dist.toFixed(2)} km`);
+            return dist <= distanceValue;
         });
     }
-
-
     renderDiscoverList(filtered);
 }
 
