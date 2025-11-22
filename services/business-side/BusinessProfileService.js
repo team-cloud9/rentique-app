@@ -91,12 +91,18 @@ async function updateBusinessProfile(updateData, imageFile = null, currentPasswo
   const batch = writeBatch(firestore);
   const businessUpdates = {};
   if (updateData.businessName) businessUpdates.businessName = updateData.businessName;
-  if (updateData.address) businessUpdates["location.address"] = updateData.address;
+  
+  if (updateData.location) {
+    businessUpdates.location = updateData.location; 
+  }
   if (imageFile) {
     const newImageUrl = await StorageService.uploadFile(imageFile, `brand_logos/${businessId}`);
     if (newImageUrl) businessUpdates.brandImageUrl = newImageUrl;
   }
-  batch.update(businessRef, businessUpdates);
+
+  if (Object.keys(businessUpdates).length > 0) {
+    batch.update(businessRef, businessUpdates);
+  }
   
   const profileRef = doc(firestore, "profiles", profileId);
   if (updateData.email) {

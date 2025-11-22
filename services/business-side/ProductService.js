@@ -48,7 +48,6 @@ async function createNewProduct(formData, imageFiles, measurementFile) {
 }
 
 async function getProductById(productId) {
-  // ... (This function is correct and remains unchanged)
   console.log(`[ProductService] Fetching product with ID: ${productId}`);
   const docRef = doc(firestore, "products", productId);
   const docSnap = await getDoc(docRef);
@@ -59,20 +58,32 @@ async function getProductById(productId) {
   }
 }
 
-async function updateProduct(productId, updatedData, newImageFiles = [], imagesToDeleteUrls = [], existingImageUrls = []) {
+
+async function updateProduct(productId, updatedData, newImageFiles = [], existingImageUrls = [], imagesToDeleteUrls = []) {
   console.log(`[ProductService] Starting complex update for product: ${productId}`);
   const docRef = doc(firestore, "products", productId);
+
+  
   const uploadPromises = StorageService.uploadMultipleFiles(newImageFiles, `product_images/${productId}`);
   const deletePromises = imagesToDeleteUrls.map(url => StorageService.deleteFileByUrl(url));
+  
   const [newImageUrls] = await Promise.all([uploadPromises, Promise.all(deletePromises)]);
+
+  
   const finalImageUrls = [...existingImageUrls, ...newImageUrls];
+
+  
   const dataToUpdate = {
     ...updatedData,
     images: finalImageUrls,
     lastUpdatedAt: Timestamp.fromDate(new Date())
   };
+
+ 
   await updateDoc(docRef, dataToUpdate);
+  console.log(`[ProductService] Product ${productId} updated successfully.`);
 }
+
 
 async function deleteProductById(productId) {
     console.log(`[ProductService] Starting full deletion for product ID: ${productId}`);
@@ -85,6 +96,38 @@ async function deleteProductById(productId) {
         StorageService.deleteFolder(chartsFolderPath)
     ]);
     console.log(`[ProductService] Full deletion complete for product ${productId}.`);
+}
+
+
+export async function getProductsForBusiness(businessId) {
+    if (!businessId) {
+        console.error("[ProductService] Business ID is required to fetch products.");
+        throw new Error("Business ID cannot be empty.");
+    }
+
+    console.log(`[ProductService] Fetching products for business ID: ${businessId}`);
+    
+    const productsCollection = collection(firestore, "products");
+    const q = query(
+        productsCollection, 
+        where("businessID", "==", businessId),
+        orderBy("createdAt", "desc") // Sort by most recently created
+    );
+
+    const querySnapshot = await getDocs(q);
+    
+    if (querySnapshot.empty) {
+        console.log("[ProductService] No products found for this business.");
+        return [];
+    }
+
+    const products = querySnapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+    }));
+
+    console.log(`[ProductService] Found ${products.length} products.`);
+    return products;
 }
 
 export const ProductService = {
