@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Style Shuffle</title>
+    <title>Style Shuffle | Delete Account</title>
 
-    <!-- /Component -->
+    <!-- Component -->
     <link rel="stylesheet" href="../components/view/css/var.css" />
     <link rel="stylesheet" href="../components/view/css/header-footer.css" />
     <script src="../components/controller/components.js" defer></script>
@@ -93,6 +93,74 @@
       .delete-cancel:hover {
         background-color: var(--gray-300);
       }
+
+      /* Message Popup */
+      .message-popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.45);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1500;
+      }
+
+      .message-popup-overlay.active {
+        display: flex;
+      }
+
+      .message-popup-box {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+        max-width: 400px;
+        width: 90%;
+        color: var(--deep-teal-blue);
+      }
+
+      .message-popup-box h3 {
+        margin-bottom: 1.2rem;
+        color: var(--deep-teal-blue);
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+
+      .message-popup-box input {
+        width: 80%;
+        padding: 0.5rem;
+        margin: 0.5rem 0 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .message-popup-box button {
+        background: var(--deep-teal-blue);
+        color: white;
+        border: none;
+        padding: 0.6rem 1.5rem;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      .message-popup-box button.cancel {
+        background: #ccc;
+        color: #333;
+      }
+
+      @media (max-width: 1024px) {
+        .back-arrow,
+        .back-btn {
+          position: absolute;
+          top: 6rem;
+          left: 1rem;
+          z-index: 10;
+        }
+      }
     </style>
   </head>
 
@@ -122,6 +190,16 @@
           </div>
         </div>
       </div>
+
+      <!-- Message Popup -->
+      <div id="successPopup" class="message-popup-overlay">
+        <div class="message-popup-box">
+          <h3 id="popupMessage">Message text</h3>
+          <button id="popupCloseBtn">OK</button>
+        </div>
+      </div>
     </main>
+
+    <script type="module" src="../../c-js/c-pages/delete.js"></script>
   </body>
 </html>

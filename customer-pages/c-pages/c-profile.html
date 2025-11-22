@@ -16,8 +16,32 @@
 
     <link rel="stylesheet" href="../c-styles/c-style.css" />
     <link rel="stylesheet" href="../c-styles/global-styles.css" />
-    <link rel="stylesheet" href="../c-styles/customer-profile.css" />
+    <link rel="stylesheet" href="../../c-styles/customer-profile.css" />
     <link rel="stylesheet" href="../components/view/css/var.css" />
+
+    <style>
+      /* for liked style link */
+      a.profile-btn {
+        display: block;
+        width: 280px;
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+        border: 1px solid #b7b7b7;
+        background-color: transparent;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        color: var(--teal-blue-400);
+        text-align: left;
+        text-decoration: none;
+        /* remove underline */
+      }
+
+      a.profile-btn:hover {
+        background-color: var(--gray-100);
+        border-color: var(--deep-teal-blue-700);
+      }
+    </style>
   </head>
 
   <body>
@@ -33,7 +57,7 @@
       <button class="profile-btn" data-section="security">
         Password and security
       </button>
-      <button class="profile-btn" data-section="liked">Liked items</button>
+      <a href="./sections/liked.html" class="profile-btn">Liked Styles</a>
       <button class="profile-btn delete" data-section="delete">
         Delete account
       </button>

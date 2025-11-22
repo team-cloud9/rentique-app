@@ -1,216 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Style Shuffle | Edit Profile</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Style Shuffle</title>
+    <link rel="stylesheet" href="../../components/view/css/header-footer.css" />
+    <link rel="stylesheet" href="../../components/view/css/var.css" />
 
-  <!-- /Component -->
-  <link rel="stylesheet" href="../components/view/css/var.css" />
-  <link rel="stylesheet" href="../components/view/css/header-footer.css" />
-  <script src="../components/controller/components.js" defer></script>
-  <script src="../components/controller/component-loader.js" defer></script>
+    <!-- JS Logic -->
+    <script type="module" src="../../c-js/c-pages/edit-profile.js"></script>
 
-  <!-- Component/ -->
+    <style>
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        padding: 3rem;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
 
-  <link rel="stylesheet" href="../../c-styles/global-styles.css" />
-  <link rel="stylesheet" href="../../components/view/css/var.css" />
+      /* ========== Overall Section ========== */
+      .edit-profile-section {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem 4rem;
+        color: var(--deep-teal-blue);
+      }
 
-  <!-- Page Specific Style -->
+      .edit-profile-section h2 {
+        font-size: 1.1rem;
+        color: var(--deep-teal-blue);
+        margin-bottom: 1rem;
+      }
 
-  <style>
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      padding: 3rem;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+      /* ========== Layout ========== */
+      .edit-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 2rem;
+      }
 
-    /* ========== Overall Section ========== */
-    .edit-profile-section {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      padding: 2rem 4rem;
-      color: var(--deep-teal-blue);
-    }
+      /* ========== Form (Left Side) ========== */
+      .edit-form {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        flex: 1;
+      }
 
-    .edit-profile-section h2 {
-      font-size: 1.1rem;
-      color: var(--deep-teal-blue);
-      margin-bottom: 1rem;
-    }
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+      }
 
-    /* ========== Layout ========== */
-    .edit-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 2rem;
-    }
+      .edit-form label {
+        font-size: 0.85rem;
+        color: var(--teal-blue-400);
+        margin-bottom: 0.3rem;
+      }
 
-    /* ========== Form (Left Side) ========== */
-    .edit-form {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      flex: 1;
-    }
+      .edit-form input {
+        border: none;
+        border-bottom: 1px solid var(--gray-300);
+        padding: 0.4rem 0;
+        font-size: 1rem;
+        color: var(--deep-teal-blue);
+        background: transparent;
+      }
 
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      width: 500px;
-    }
+      .edit-form input:focus {
+        outline: none;
+        border-color: var(--deep-teal-blue);
+      }
 
-    .edit-form label {
-      font-size: 0.85rem;
-      color: var(--teal-blue-400);
-      margin-bottom: 0.3rem;
-    }
+      /* ========== Update Button ========== */
+      .update-btn-container {
+        display: flex;
+        justify-content: center;
+      }
 
-    .edit-form input {
-      border: none;
-      border-bottom: 1px solid var(--gray-300);
-      padding: 0.4rem 0;
-      font-size: 1rem;
-      color: var(--deep-teal-blue);
-      background: transparent;
-    }
+      .update-btn {
+        background-color: var(--gray-300);
+        color: var(--nyanza-200);
+        border: none;
+        border-radius: 3px;
+        padding: 1rem 10rem;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
 
-    .edit-form input:focus {
-      outline: none;
-      border-color: var(--deep-teal-blue);
-    }
+      .update-btn:hover {
+        background-color: var(--nyanza-200);
+        color: var(--gray-400);
+      }
 
-    /* ========== Update Button ========== */
-    .update-btn-container {
-      display: flex;
-      justify-content: center;
-    }
+      /* ========== Profile Image ========== */
+      .profile-image {
+        position: relative;
+        width: 300px;
+        height: 400px;
+        flex-shrink: 0;
+        border: 1px solid var(--gray-300);
+      }
 
-    .update-btn {
-      background-color: var(--gray-300);
-      color: var(--nyanza-200);
-      border: none;
-      border-radius: 3px;
-      padding: 1rem 10rem;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
+      .profile-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+      }
 
-    .update-btn:hover {
-      background-color: var(--nyanza-200);
-      color: var(--gray-400);
-    }
+      .remove-btn {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        background: var(--nyanza-200);
+        border: 1px solid var(--gray-300);
+        color: var(--deep-teal-blue);
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        line-height: 18px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+      }
 
-    /* ========== Profile Image ========== */
-    .profile-image {
-      position: relative;
-      width: 300px;
-      height: 400px;
-      flex-shrink: 0;
-      border: 1px solid var(--gray-300);
-    }
+      .remove-btn:hover {
+        background-color: var(--deep-teal-blue);
+        color: var(--nyanza-200);
+      }
 
-    .profile-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 8px;
-    }
+      /* ========== Update Popup ========== */
+      .popup-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+      }
 
-    .remove-btn {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      background: var(--nyanza-200);
-      border: 1px solid var(--gray-300);
-      color: var(--deep-teal-blue);
-      border-radius: 50%;
-      width: 24px;
-      height: 24px;
-      line-height: 18px;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-    }
+      .popup-overlay.active {
+        display: flex;
+      }
 
-    .remove-btn:hover {
-      background-color: var(--deep-teal-blue);
-      color: var(--nyanza-200);
-    }
+      .popup-box {
+        background: white;
+        padding: 2rem 3rem;
+        border-radius: 10px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        text-align: center;
+        animation: fadeIn 0.25s ease;
+      }
 
-    /* ========== Responsive ========== */
-  </style>
+      .popup-box h3 {
+        color: var(--deep-teal-blue);
+        margin-bottom: 1.2rem;
+        font-size: 1.1rem;
+      }
 
-</head>
+      .popup-box button {
+        background-color: var(--deep-teal-blue);
+        color: white;
+        border: none;
+        padding: 0.6rem 1.5rem;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.25s ease;
+      }
 
-<body>
-  <!-- Header -->
-  <div id="header-placeholder" data-user-type="customer"></div>
+      .popup-box button:hover {
+        background-color: var(--teal-blue-500);
+      }
 
-  <!-- Main Content -->
-  <main class="container">
-    <section class="edit-profile-section">
-      <h2>EDIT PROFILE</h2>
-
-      <div class="edit-content">
-        <form class="edit-form">
-          <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" id="username" placeholder="Chloe" required />
-          </div>
-
-          <div class="form-group">
-            <label for="address">Address</label>
-            <input type="text" id="address" placeholder="Bella's heart" required />
-          </div>
-        </form>
-
-        <div class="profile-image">
-          <img src="../assets/chloe.jpeg" id="profile-photo" alt="Profile Photo" />
-          <button class="remove-btn">×</button>
-        </div>
-      </div>
-
-      <div class="update-btn-container">
-        <button type="button" class="update-btn">UPDATE</button>
-      </div>
-    </section>
-
-    <script type="module">
-      import { db } from "../../controller/firebase-config.js";
-      import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js";
-
-      async function loadUserProfile() {
-        try {
-          // EXAMPLE
-          const userId = "chloe123";
-          const userRef = doc(db, "users", userId);
-          const userSnap = await getDoc(userRef);
-
-          if (userSnap.exists()) {
-            const userData = userSnap.data();
-            document.getElementById("username").value = userData.username || "";
-            document.getElementById("address").value = userData.address || "";
-            document.getElementById("profile-photo").src =
-              userData.photoURL ||
-              "https://placehold.co/200x200?text=No+Photo";
-          } else {
-            console.log("❌ No user data found.");
-          }
-        } catch (err) {
-          console.error("Error loading profile:", err);
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
       }
 
-      loadUserProfile();
-    </script>
-</body>
+      /* ========== Responsive ========== */
+      @media (max-width: 1024px) {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+        }
 
+        main {
+          margin-top: 0;
+          padding-top: 0;
+        }
+
+        main.profile-container {
+          margin: 0;
+        }
+
+        .back-arrow,
+        .back-btn {
+          position: absolute;
+          top: 6rem;
+          left: 1rem;
+          z-index: 10;
+        }
+
+        .edit-profile-section {
+          gap: 1.5rem;
+          text-align: center;
+        }
+
+        .edit-profile-section h2 {
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+        }
+
+        .edit-content {
+          flex-direction: column;
+          align-items: center;
+          gap: 2.5rem;
+        }
+
+        .profile-image {
+          width: 350px;
+          height: 400px;
+          border: none;
+        }
+
+        .profile-image img {
+          border-radius: 8px;
+          object-fit: cover;
+        }
+
+        .edit-form {
+          width: 100%;
+          align-items: center;
+        }
+
+        .form-group {
+          width: 90%;
+          max-width: 350px;
+          text-align: left;
+        }
+
+        .edit-form label {
+          font-size: 0.9rem;
+        }
+
+        .edit-form input {
+          font-size: 1rem;
+          text-align: left;
+        }
+
+        .update-btn-container {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          margin-top: 1.5rem;
+        }
+
+        .update-btn {
+          width: 90%;
+          max-width: 380px;
+          padding: 0.8rem 0;
+          font-size: 1.1rem;
+          background-color: var(--deep-teal-blue);
+          color: white;
+          border-radius: 6px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <div id="header-placeholder" data-user-type="customer"></div>
+
+    <!-- Main Content -->
+    <main class="container">
+      <section class="edit-profile-section">
+        <h2>EDIT PROFILE</h2>
+
+        <div class="edit-content">
+          <!-- LEFT: form -->
+          <form id="editProfileForm" class="edit-form">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input
+                type="text"
+                id="username"
+                placeholder="Your name"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="address">Address</label>
+              <input
+                type="text"
+                id="address"
+                placeholder="Your address"
+                required
+              />
+            </div>
+          </form>
+
+          <!-- RIGHT: image -->
+          <div class="profile-image">
+            <img id="profilePhotoPreview" alt="Profile Photo" />
+            <input type="file" id="profilePhotoInput" accept="image/*" hidden />
+            <button id="removePhotoBtn" class="remove-btn">×</button>
+          </div>
+        </div>
+
+        <div class="update-btn-container">
+          <button id="updateBtn" type="button" class="update-btn">
+            UPDATE
+          </button>
+        </div>
+      </section>
+      <!-- UPDATE POPUP -->
+      <div class="popup-overlay" id="successPopup">
+        <div class="popup-box">
+          <h3 id="popupMessage">Profile updated successfully!</h3>
+          <button id="popupCloseBtn">OK</button>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>

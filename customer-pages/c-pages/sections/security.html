@@ -1,135 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Style Shuffle | Security</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Style Shuffle</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../c-styles/c-style.css" />
+    <link rel="stylesheet" href="../../c-styles/global-styles.css" />
+    <link rel="stylesheet" href="../../components/view/css/var.css" />
+    <link rel="stylesheet" href="../../components/view/css/header-footer.css" />
 
-  <!-- /Component -->
-  <link rel="stylesheet" href="../components/view/css/var.css" />
-  <link rel="stylesheet" href="../components/view/css/header-footer.css" />
-  <script src="../components/controller/components.js" defer></script>
-  <script src="../components/controller/component-loader.js" defer></script>
+    <!-- Components -->
+    <script src="../../components/controller/components.js" defer></script>
+    <script
+      src="../../components/controller/component-loader.js"
+      defer
+    ></script>
 
-  <!-- Component/ -->
+    <!-- Page Script -->
+    <script type="module" src="../../c-js/c-pages/security.js"></script>
 
-  <link rel="stylesheet" href="../../c-styles/global-styles.css" />
-  <link rel="stylesheet" href="../../components/view/css/var.css" />
+    <style>
+      .security-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        color: var(--deep-teal-blue);
+        text-align: center;
+      }
 
-  <!-- Page Specific Style -->
-  <style>
-    .security-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-      color: var(--deep-teal-blue);
-      text-align: center;
-    }
+      .security-section h2 {
+        font-size: 1rem;
+        letter-spacing: 1px;
+        color: var(--gray-400);
+        margin-bottom: 2rem;
+      }
 
-    .security-section h2 {
-      font-size: 1rem;
-      letter-spacing: 1px;
-      color: var(--gray-400);
-      margin-bottom: 2rem;
-    }
+      .security-form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 400px;
+        text-align: left;
+      }
 
-    .security-form {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      max-width: 400px;
-      text-align: left;
-    }
+      .security-form label {
+        font-size: 0.9rem;
+        color: var(--deep-teal-blue);
+        margin: 1rem 0 0.3rem;
+      }
 
-    .security-form label {
-      font-size: 0.9rem;
-      color: var(--deep-teal-blue);
-      margin: 1rem 0 0.3rem;
-    }
+      .security-form input {
+        border: none;
+        border-bottom: 1px solid var(--nyanza);
+        padding: 0.5rem 0;
+        font-size: 1rem;
+        color: var(--deep-teal-blue);
+        background: transparent;
+      }
 
-    .security-form input {
-      border: none;
-      border-bottom: 1px solid var(--nyanza);
-      padding: 0.5rem 0;
-      font-size: 1rem;
-      color: var(--deep-teal-blue);
-      background: transparent;
-    }
+      .security-form input:focus::placeholder {
+        opacity: 0;
+      }
 
-    .security-form input:focus {
-      outline: none;
-      border-bottom: 1px solid var(--deep-teal-blue);
-    }
+      .security-form input:focus {
+        outline: none;
+        border-bottom: 1px solid var(--deep-teal-blue);
+      }
 
-    .security-form input::placeholder {
-      color: var(--gray-300);
-    }
+      .update-btn {
+        background-color: var(--gray-300);
+        color: var(--nyanza-200);
+        border: none;
+        border-radius: 1px;
+        padding: 1rem 10rem;
+        margin-top: 1rem;
+        font-size: 1rem;
+        cursor: pointer;
+      }
 
-    /* ========== Update Button ========== */
-    .update-btn-container {
-      display: flex;
-      justify-content: center;
-    }
+      .update-btn:hover {
+        background-color: var(--deep-teal-blue);
+        color: var(--nyanza-200);
+      }
 
-    .update-btn {
-      background-color: var(--gray-300);
-      color: var(--nyanza-200);
-      border: none;
-      border-radius: 1px;
-      padding: 1rem 10rem;
-      margin-top: 1rem;
-      font-size: 1rem;
-      cursor: pointer;
-    }
+      .signout-btn {
+        background-color: white;
+        color: var(--deep-teal-blue);
+        border: 1px solid var(--deep-teal-blue);
+        border-radius: 1px;
+        padding: 1rem 10rem;
+        margin-top: 10rem;
+        font-size: 1rem;
+        cursor: pointer;
+      }
 
-    .update-btn:hover {
-      background-color: var(--deep-teal-blue);
-      color: var(--nyanza-200);
-    }
+      .signout-btn:hover {
+        background-color: var(--deep-teal-blue);
+        color: white;
+      }
 
-    .signout-btn {
-      background-color: white;
-      color: var(--deep-teal-blue);
-      border: 1px solid var(--deep-teal-blue);
-      border-radius: 1px;
-      padding: 1rem 10rem;
-      margin-top: 10rem;
-      font-size: 1rem;
-      cursor: pointer;
-    }
+      /* ✅ Message Popup (Success / Error) */
+      .message-popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.45);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1500;
+      }
 
-    .signout-btn:hover {
-      background-color: var(--deep-teal-blue);
-      color: white;
-    }
-  </style>
-</head>
+      .message-popup-overlay.active {
+        display: flex;
+      }
 
-<body>
-  <!-- Header -->
-  <div id="header-placeholder" data-user-type="customer"></div>
+      .message-popup-box {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+        max-width: 400px;
+        width: 90%;
+      }
 
-  <!-- Main Content -->
-  <main>
-    <div class="security-section">
-      <h2>PASSWORD AND SECURITY</h2>
+      .message-popup-box h3 {
+        margin-bottom: 1.2rem;
+        color: var(--deep-teal-blue);
+      }
 
-      <form class="security-form">
-        <label for="current-password">Current password</label>
-        <input type="password" id="current-password" placeholder="********" required />
+      .message-popup-box button {
+        background: var(--deep-teal-blue);
+        color: white;
+        border: none;
+        padding: 0.6rem 1.5rem;
+        border-radius: 8px;
+        cursor: pointer;
+      }
 
-        <label for="new-password">New password</label>
-        <input type="password" id="new-password" placeholder="Enter new password" required />
+      @media (max-width: 1024px) {
+        .back-arrow,
+        .back-btn {
+          position: absolute;
+          top: 6rem;
+          left: 1rem;
+          z-index: 10;
+        }
+      }
+    </style>
+  </head>
 
-        <button type="submit" class="update-btn">UPDATE</button>
-      </form>
+  <body>
+    <!-- Header -->
+    <div id="header-placeholder" data-user-type="customer"></div>
 
-      <button class="signout-btn">SIGN OUT</button>
-    </div>
-  </main>
-</body>
+    <!-- Main Content -->
+    <main>
+      <div class="security-section">
+        <h2>PASSWORD AND SECURITY</h2>
 
+        <form id="securityForm" class="security-form">
+          <label for="current-password">Current password</label>
+          <input
+            type="password"
+            id="current-password"
+            placeholder="********"
+            required
+          />
+
+          <label for="new-password">New password</label>
+          <input
+            type="password"
+            id="new-password"
+            placeholder="Enter new password"
+            required
+          />
+
+          <button type="submit" class="update-btn">UPDATE</button>
+        </form>
+
+        <button class="signout-btn">SIGN OUT</button>
+      </div>
+
+      <!-- Popup for Messages -->
+      <div id="successPopup" class="message-popup-overlay">
+        <div class="message-popup-box">
+          <h3 id="popupMessage">Message text</h3>
+          <button id="popupCloseBtn">OK</button>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>

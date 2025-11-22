@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rentique - Customer Sign Up</title>
+
+  <!-- PWA Meta -->
+  <meta name="theme-color" content="#06324f" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="apple-touch-icon" href="/assets/logos/rentique-sub.png" />
+
+  <!-- ✅ CSS (customer side) -->
+  <link rel="stylesheet" href="../c-styles/auth.css" />
+
+  <!-- <link rel="stylesheet" href="../../c-styles/customer-auth.css" /> -->
+  <link rel="stylesheet" href="../../components/view/css/var.css" />
+
+  <!-- ✅ JS (customer side) -->
+  <script src="../../c-js/c-pages/auth-signup-customer.js" type="module" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <!-- LEFT SIDE (Sign-up form) -->
+    <div class="left">
+      <div class="logo-section">
+        <a href="auth-signup-choice.html" class="back-arrow">←</a>
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-4eh45c3WUpYmwPpP2HPt2jStjtt4Gt.png"
+          alt="Rentique logo" class="logo" />
+        <h1>RENTIQUE</h1>
+      </div>
+
+      <form class="login-form" id="signupForm">
+        <h2>CREATE YOUR ACCOUNT</h2>
+
+        <div class="form-group">
+          <input type="email" id="email" placeholder="Email" required />
+          <span class="error-message" id="emailError"></span>
+        </div>
+
+        <div class="form-group">
+          <input type="password" id="password" placeholder="Password" required />
+          <span class="error-message" id="passwordError"></span>
+        </div>
+
+        <span class="error-message" id="generalError"></span>
+
+        <div class="checkbox-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="policyAccept" required />
+            <span class="checkbox-custom"></span>
+            <span class="checkbox-text">
+              I accept the
+              <a href="#" class="policy-link">Policy Statement</a>
+            </span>
+          </label>
+        </div>
+
+        <button type="submit" class="login-btn">CREATE ACCOUNT</button>
+
+        <p class="signup-text">
+          Already have an account?
+          <a href="auth-login-customer.html">Log In</a>
+        </p>
+      </form>
+    </div>
+
+    <!-- RIGHT SIDE (Hero Image) -->
+    <div class="right">
+      <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/4%207-rJBy0McPzMNB6dEuOxmkpBxrCWJrOB.png"
+        alt="Fashion Model" class="hero-img" />
+    </div>
+  </div>
+
+  <!-- ✅ USER PROFILE MODAL -->
+  <div id="userProfileModal" class="onboarding-modal" style="display: none">
+    <div class="onboarding-header">
+      <a href="auth-signup-choice.html" class="back-arrow">←</a>
+      <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-4eh45c3WUpYmwPpP2HPt2jStjtt4Gt.png"
+        alt="Rentique logo" class="logo" />
+      <h1>RENTIQUE</h1>
+    </div>
+
+    <div class="onboarding-content">
+      <h2>USER PROFILE</h2>
+      <div class="profile-photo-upload">
+        <input type="file" id="profilePhoto" accept="image/*" style="display: none" />
+        <label for="profilePhoto" class="photo-upload-label">
+          <div class="photo-placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </div>
+          <img id="profilePreview" style="display: none" />
+        </label>
+      </div>
+
+      <div class="form-group">
+        <input type="text" id="username" placeholder="Username" required />
+      </div>
+
+      <div class="form-group">
+        <input type="text" id="address" placeholder="Address" required />
+      </div>
+
+      <button id="continueToQuestionnaire" class="login-btn" disabled>
+        Continue
+      </button>
+      <p class="settings-note">
+        You can change this anytime from your profile settings.
+      </p>
+    </div>
+  </div>
+
+  <!-- ✅ QUESTIONNAIRE MODAL -->
+  <div id="questionnaireModal" class="onboarding-modal" style="display: none">
+    <div class="onboarding-header">
+      <a href="#" class="back-arrow questionnaire-back-to-profile">←</a>
+      <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-4eh45c3WUpYmwPpP2HPt2jStjtt4Gt.png"
+        alt="Rentique logo" class="logo" />
+      <h1>RENTIQUE</h1>
+    </div>
+
+    <div class="onboarding-content">
+      <div class="progress-indicator">
+        <div class="progress-step active" data-step="1"></div>
+        <div class="progress-step" data-step="2"></div>
+        <div class="progress-step" data-step="3"></div>
+        <div class="progress-step" data-step="4"></div>
+      </div>
+
+      <h2>QUESTIONNAIRE</h2>
+
+      <!-- Step 1: Measurements -->
+      <div class="questionnaire-step" data-step="1">
+        <h3>Personal Measurements</h3>
+        <div class="measurement-group">
+          <div class="measurement-input">
+            <input type="number" id="height" placeholder="Height" />
+            <span class="unit">cm</span>
+          </div>
+          <div class="measurement-input">
+            <input type="number" id="weight" placeholder="Weight" />
+            <span class="unit">kg</span>
+          </div>
+        </div>
+
+        <h3>Gender</h3>
+        <div class="gender-options">
+          <label class="gender-option"><input type="radio" name="gender" value="Female" /><span>Female</span></label>
+          <label class="gender-option"><input type="radio" name="gender" value="Male" /><span>Male</span></label>
+          <label class="gender-option"><input type="radio" name="gender" value="Other" /><span>Other</span></label>
+        </div>
+
+        <button type="button" class="login-btn questionnaire-continue">
+          Continue
+        </button>
+      </div>
+
+      <!-- Step 2: Colors -->
+      <div class="questionnaire-step" data-step="2" style="display: none">
+        <h3>Preferred Colours</h3>
+        <div class="color-options">
+          <input type="checkbox" id="color-black" name="favoriteColor" value="black" class="color-input-hidden" />
+          <label for="color-black" class="color-label black">
+            <span class="color-dot" style="background-color: #000"></span>Black
+          </label>
+
+          <input type="checkbox" id="color-white" name="favoriteColor" value="white" class="color-input-hidden" />
+          <label for="color-white" class="color-label white">
+            <span class="color-dot" style="background-color: #fff; border: 1px solid #ccc"></span>White
+          </label>
+
+          <input type="checkbox" id="color-blue" name="favoriteColor" value="blue" class="color-input-hidden" />
+          <label for="color-blue" class="color-label blue">
+            <span class="color-dot" style="background-color: #0000ff"></span>Blue
+          </label>
+        </div>
+
+        <button type="button" class="login-btn questionnaire-continue">
+          Continue
+        </button>
+        <button type="button" class="secondary-btn questionnaire-back">
+          Previous
+        </button>
+      </div>
+
+      <!-- Step 3: Favorite Styles -->
+      <div class="questionnaire-step" data-step="3" style="display: none">
+        <h3>Your Favorite Style</h3>
+        <div class="style-options">
+          <input type="checkbox" id="style-casual" name="favoriteStyle" value="Casual" class="color-input-hidden" />
+          <label for="style-casual" class="style-option"><span>Casual</span></label>
+
+          <input type="checkbox" id="style-formal" name="favoriteStyle" value="Formal" class="color-input-hidden" />
+          <label for="style-formal" class="style-option"><span>Formal</span></label>
+
+          <input type="checkbox" id="style-vintage" name="favoriteStyle" value="Vintage" class="color-input-hidden" />
+          <label for="style-vintage" class="style-option"><span>Vintage</span></label>
+        </div>
+
+        <button type="button" class="login-btn questionnaire-continue">
+          Continue
+        </button>
+        <button type="button" class="secondary-btn questionnaire-back">
+          Previous
+        </button>
+      </div>
+
+      <!-- Step 4: Try New Styles -->
+      <div class="questionnaire-step" data-step="4" style="display: none">
+        <h3>What styles would you like to try?</h3>
+        <div class="style-options">
+          <input type="checkbox" id="try-casual" name="styleToTry" value="Casual" class="color-input-hidden" />
+          <label for="try-casual" class="style-option"><span>Casual</span></label>
+
+          <input type="checkbox" id="try-party" name="styleToTry" value="Party" class="color-input-hidden" />
+          <label for="try-party" class="style-option"><span>Party</span></label>
+
+          <input type="checkbox" id="try-minimalist" name="styleToTry" value="Minimalist" class="color-input-hidden" />
+          <label for="try-minimalist" class="style-option"><span>Minimalist</span></label>
+        </div>
+
+        <button type="button" class="login-btn questionnaire-done">
+          DONE
+        </button>
+        <button type="button" class="secondary-btn questionnaire-back">
+          Previous
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
