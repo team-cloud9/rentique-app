@@ -44,7 +44,7 @@ async function initializeApp(user) {
 function populateForm(elements, data) {
   console.log(data);
   elements.brandNameInput.value = data.businessName || "";
-  // Modified to correctly read the address from the location map
+  
   elements.addressInput.value = data.address || "";
   elements.emailInput.value = data.email || "";
 

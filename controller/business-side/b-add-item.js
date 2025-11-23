@@ -111,7 +111,7 @@ function setupAllEventListeners() {
     const measurementUploadButton = document.getElementById("measurementUploadButton");
     const measurementUploadInput = document.getElementById("measurementUploadInput");
 
-    // --- Camera Event Listeners Start ---
+    
     const cameraButton = document.getElementById("cameraButton");
     const captureButton = document.getElementById("captureButton");
     const cancelCameraButton = document.getElementById("cancelCameraButton");
@@ -119,7 +119,7 @@ function setupAllEventListeners() {
     cameraButton.addEventListener("click", startCamera);
     captureButton.addEventListener("click", captureImage);
     cancelCameraButton.addEventListener("click", stopCamera);
-    // --- Camera Event Listeners End ---
+    
 
     imageUploadButton.addEventListener("click", () => imageUploadInput.click());
     imageUploadInput.addEventListener("change", (event) => handleImageFiles(event.target.files));

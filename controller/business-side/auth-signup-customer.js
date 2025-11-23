@@ -285,7 +285,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!currentStepElement) return;
 
         const continueBtn = currentStepElement.querySelector('.questionnaire-continue');
-        if (!continueBtn) return; // This handles the last step which has a "DONE" button
+        if (!continueBtn) return; 
 
         let isStepComplete = false;
 

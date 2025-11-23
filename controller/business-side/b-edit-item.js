@@ -239,7 +239,7 @@ function updateAddButtonVisibility() {
     }
 }
 
-// --- CORRECTED FORM SUBMIT HANDLER ---
+
 async function handleFormSubmit(event) {
     event.preventDefault();
     const submitButton = event.target.querySelector(".b-add-action-buttons__btn--primary");
@@ -276,7 +276,7 @@ async function handleFormSubmit(event) {
         submitButton.textContent = "UPDATE";
     }
 }
-// --- END OF CORRECTION ---
+
 
 function getFormData(form) {
     return {

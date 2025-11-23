@@ -44,7 +44,7 @@ body {
   object-position: center;
 }
 
-/* LOGO SECTION */
+
 .logo-section {
   position: absolute;
   top: 40px;
@@ -127,7 +127,7 @@ body {
   transform: none;
 }
 
-/* OPTIONS LAYOUT */
+
 .options {
   display: flex;
   flex-direction: column;
@@ -136,7 +136,7 @@ body {
   max-width: 400px;
 }
 
-/* FORMS */
+
 .login-form {
   width: 100%;
   max-width: 400px;
@@ -220,7 +220,7 @@ select {
   padding-right: 25px;
 }
 
-/* LINKS */
+
 .forgot {
   font-size: 13px;
   color: #999;
@@ -605,7 +605,7 @@ select {
   font-size: 14px;
 }
 
-/* SUCCESS PAGE */
+
 .success-container {
   align-items: center;
   justify-content: center;
@@ -648,7 +648,7 @@ select {
   margin: 0 auto;
 }
 
-/* ONBOARDING MODAL */
+
 .onboarding-modal {
   position: fixed;
   top: 0;
@@ -783,7 +783,7 @@ select {
 }
 
 .remove-image-btn:hover {
-  /* background-color: rgba(11, 46, 70, 1); */
+  
   background-color: red;
   transform: scale(1.1);
 }

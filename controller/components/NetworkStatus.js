@@ -41,7 +41,7 @@ function handleOnline() {
 }
 
 export function initializeNetworkStatusListener() {
-    // Add the event listeners to the window object.
+    
     window.addEventListener('offline', handleOffline);
     window.addEventListener('online', handleOnline);
 
@@ -49,5 +49,5 @@ export function initializeNetworkStatusListener() {
         handleOffline();
     }
     
-    console.log("✅ Network status listener initialized.");
+    console.log(" Network status listener initialized.");
 }

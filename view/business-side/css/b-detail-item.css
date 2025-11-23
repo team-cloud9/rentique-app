@@ -1,4 +1,4 @@
-/* @Made By: */
+/* @Made By: Gurpreet */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 :root {
@@ -45,7 +45,7 @@ a {
   color: inherit;
 }
 
-/* Layout structure for desktop grid */
+
 @media (min-width: 1024px) {
   body {
     display: grid;
@@ -88,7 +88,7 @@ a {
   }
 }
 
-/* Gallery Styles */
+
 .summ-gallery {
   position: relative;
   overflow: hidden;
@@ -157,7 +157,7 @@ a {
   background-color: var(--nyanza);
 }
 
-/* Details Section */
+
 .summ-details {
   position: relative;
   display: flex;
@@ -201,7 +201,7 @@ a {
   color: var(--deep-teal-blue);
 }
 
-/* Attribute Groups */
+
 .summ-attr-group {
   margin-bottom: var(--spacing-lg);
 }
@@ -236,7 +236,7 @@ a {
   padding-left: 0.5rem;
 }
 
-/* Color Dots */
+
 .summ-color-dot {
   width: 16px;
   height: 16px;
@@ -298,7 +298,7 @@ a {
   background-color: #800080;
 }
 
-/* Size Chart */
+
 .summ-details__chart-img {
   width: 100%;
   max-width: 100%;
@@ -309,7 +309,7 @@ a {
   display: block;
 }
 
-/* Action Buttons */
+
 .summ-action-buttons {
   display: flex;
   gap: var(--spacing-md);
@@ -359,7 +359,7 @@ a {
   font-size: 1.2rem;
 }
 
-/* Modal Styles */
+
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -460,7 +460,7 @@ a {
   background-color: var(--white-smoke);
 }
 
-/* Mobile and tablet responsive styles */
+
 @media (max-width: 1023px) {
   body {
     display: flex;
@@ -510,7 +510,7 @@ a {
     height: 8px;
   }
 
-  /* Fixed action buttons on mobile */
+ 
   .summ-action-buttons {
     position: fixed;
     bottom: 0;

@@ -74,14 +74,14 @@ async function fetchAndRenderChats(user) {
 
 function renderChats(chats) {
     const chatListContainer = document.getElementById("chatList");
-    // MODIFICATION START
+ 
     const prevBtn = document.querySelector('.carousel-btn.prev-btn');
     const nextBtn = document.querySelector('.carousel-btn.next-btn');
-    // MODIFICATION END
+ 
 
     if (!chats || chats.length === 0) {
         chatListContainer.innerHTML = "<p>No active chats.</p>";
-        // Hide buttons if there are no chats
+       
         if(prevBtn && nextBtn) {
             prevBtn.style.display = 'none';
             nextBtn.style.display = 'none';
@@ -89,8 +89,7 @@ function renderChats(chats) {
         return;
     }
 
-    // MODIFICATION START
-    // Conditionally show buttons based on the number of chats
+
     if(prevBtn && nextBtn) {
         if (chats.length >= 4) {
             prevBtn.style.display = 'flex';
@@ -100,7 +99,7 @@ function renderChats(chats) {
             nextBtn.style.display = 'none';
         }
     }
-    // MODIFICATION END
+  
 
     chatListContainer.innerHTML = chats.map(chat => {
         const profile = chat.otherUserProfile;
@@ -146,7 +145,7 @@ function initializeFabPositioning() {
   const adjustFabPosition = () => {
     const footerRect = footer.getBoundingClientRect()
     const fabHeight = fab.offsetHeight
-    const fabBottomMargin = 96 // 6rem in pixels
+    const fabBottomMargin = 96 
     const windowHeight = window.innerHeight
     const footerTop = footerRect.top
     const fabBottom = windowHeight - fabBottomMargin

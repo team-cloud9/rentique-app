@@ -225,7 +225,7 @@ function populateHeader(userType, displayName) {
     }
     
     console.log(userConfig.iconLinks.home)
-    // Handle the main desktop logo link with data-nav
+  
     header.querySelectorAll('[data-nav="home"]').forEach(linkElement => {
         if (userConfig.iconLinks.home) {
             linkElement.href = userConfig.iconLinks.home;
