@@ -1,0 +1,115 @@
+/* @Made By: Bella */
+
+/* Modal wrapper (click area) */
+.sort-modal {
+  display: none;
+  position: absolute;
+  z-index: 2000;
+  background: transparent;
+}
+
+/* Dropdown box */
+.sort-modal-content {
+  position: absolute;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.16);
+  width: 220px;
+  animation: fadeSlide 0.25s ease-out;
+  z-index: 2001;
+}
+
+/* Fade + slide */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Sort option list */
+.sort-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Option item */
+.sort-option {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  padding-left: 30px;
+  user-select: none;
+}
+
+/* Hide original radio */
+.sort-option input[type="radio"] {
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
+}
+
+/* Custom radio circle */
+.radio-custom {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--nyanza-400);
+  border-radius: 50%;
+  background: #fff;
+  transition: all 0.2s;
+}
+
+/* Hover effect */
+.sort-option:hover .radio-custom {
+  border-color: var(--deep-teal-blue);
+}
+
+/* Checked */
+.sort-option input[type="radio"]:checked ~ .radio-custom {
+  background: var(--deep-teal-blue);
+  border-color: var(--deep-teal-blue);
+}
+
+.sort-option input[type="radio"]:checked ~ .radio-custom::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 7px;
+  height: 7px;
+  background: white;
+  border-radius: 50%;
+}
+
+/* Label */
+.sort-label {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.sort-option input[type="radio"]:checked ~ .sort-label {
+  font-weight: 600;
+  color: var(--deep-teal-blue);
+}
+
+/* Mobile: center dropdown under button */
+@media (max-width: 768px) {
+  .sort-modal-content {
+    /* width: 80%; */
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+}
