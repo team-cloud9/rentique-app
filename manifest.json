@@ -1,0 +1,21 @@
+{
+  "name": "Rentique",
+  "short_name": "Rentique",
+  "description": "A fashion rental marketplace.",
+  "start_url": "/auth-home.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#06324f",
+  "icons": [
+    {
+      "src": "/assets/logos/rentique-sub.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/logos/rentique-main.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

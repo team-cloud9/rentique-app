@@ -1,0 +1,108 @@
+<!-- Added main-home page: Rika -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rentique - Main Home</title>
+
+    <meta name="theme-color" content="#06324f" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/assets/logos/rentique-sub.png" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../components/css/var.css" />
+    <link rel="stylesheet" href="../../components/css/header-footer.css" />
+    <link rel="stylesheet" href="/view/components/css/filter-modal.css" />
+    <link rel="stylesheet" href="/view/components/css/sort-modal.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/c-home.css" />
+    <link rel="stylesheet" href="/view/components/css/modal.css" />
+
+</head>
+
+<body>
+    <div id="header-placeholder" data-user-type="customer"></div>
+
+    <main class="container">
+        <!-- SWIPE SECTION -->
+        <section class="swipe-style">
+            <h2>SWIPE YOUR STYLE</h2>
+            <p>Discover your style in every swipe</p>
+
+            <div class="swipe-container">
+                <button class="swipe-arrow left">
+                    <img src="../../../../../assets/icons/Icon_dropdown.svg" alt="previous" />
+                </button>
+
+                <div class="swipe-items"></div>
+
+                <button class="swipe-arrow right">
+                    <img src="../../../../../assets/icons/Icon_dropdown.svg" alt="next" />
+                </button>
+            </div>
+        </section>
+
+        <!-- POPUP -->
+        <div class="popup-container" id="swipePopup">
+            <div class="popup-content swipe">
+                <span class="close-popup" id="closePopup">&times;</span>
+
+                <div class="swipe-popup-body">
+                    <div class="swipe-popup-left">
+                        <img src="" alt="Recommended Item" id="popupImage" />
+                    </div>
+
+                    <div class="swipe-popup-right">
+                        <div class="swipe-title-wrapper">
+                            <h3>RECOMMEND FOR YOU!</h3>
+                            <h2 class="swipe-popup-title"></h2>
+                        </div>
+
+                        <div class="swipe-popup-right-mobile">
+                            <div class="swipe-info-wrapper">
+                                <p class="swipe-label">
+                                    <strong>Brand:</strong> <span id="swipePopupBrand"></span>
+                                </p>
+                            </div>
+
+                            <div class="swipe-description-wrapper">
+                                <p class="swipe-label">
+                                    <strong>Description:</strong> <span id="swipePopupDesc"></span>
+                                </p>
+                            </div>
+
+                            <div class="swipe-tags-wrapper">
+                                <div class="swipe-popup-details">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swipe-popup-buttons">
+                    <button class="swipe-btn-pass">PASS</button>
+                    <button class="swipe-btn-like">LIKE</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ITEM LIST (ONLY FIRST 4 ITEMS) -->
+        <section class="item-list">
+            <div class="item-list-header">
+                <h2>ITEM LISTS</h2>
+                <a class="discover-more" href="./c-home.html">Discover more</a>
+            </div>
+
+            <div class="list-items"></div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder" data-user-type="customer"></div>
+
+    <!-- JS -->
+    <script type="module" src="../../../controller/customer-side/c-main-home.js"></script>
+    <script type="module" src="../../../controller/components/components.js" defer></script>
+</body>
+
+</html>
