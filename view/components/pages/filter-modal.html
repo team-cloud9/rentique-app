@@ -1,0 +1,181 @@
+<!-- @Made By: -->
+<div id="filterModal" class="filter-modal">
+  <div class="filter-modal-content">
+    <div class="filter-header">
+      <h2>Filter</h2>
+      <button type="button" class="reset-btn" id="resetFiltersBtn">Reset</button>
+      <button class="close-btn" onclick="closeFilterModal()">&times;</button>
+    </div>
+    
+    <div class="filter-body">
+      <div class="filter-section">
+        <h3 class="filter-section-title" data-section="category">
+          Category <span class="arrow">▼</span>
+        </h3>
+        <div class="filter-options collapsed">
+          <button class="filter-chip">T-shirts</button>
+          <button class="filter-chip">Blouses & Shirts</button>
+          <button class="filter-chip">Sweaters</button>
+          <button class="filter-chip">Hoodies</button>
+          <button class="filter-chip">Pants & Trousers</button>
+          <button class="filter-chip">Jeans</button>
+          <button class="filter-chip">Shorts</button>
+          <button class="filter-chip">Skirts</button>
+          <button class="filter-chip">Dresses</button>
+          <button class="filter-chip">Jumpsuits</button>
+          <button class="filter-chip">Rompers</button>
+          <button class="filter-chip">Outerwear</button>
+          <button class="filter-chip">Blazers</button>
+          <button class="filter-chip">Suits</button>
+        </div>
+      </div>
+      
+      <div class="filter-section">
+        <h3 class="filter-section-title" data-section="size">
+          Size <span class="arrow">▼</span>
+        </h3>
+        <div class="filter-options collapsed">
+          <button class="filter-chip">XXS</button>
+          <button class="filter-chip">XS</button>
+          <button class="filter-chip">S</button>
+          <button class="filter-chip">M</button>
+          <button class="filter-chip">L</button>
+          <button class="filter-chip">XL</button>
+          <button class="filter-chip">XXL</button>
+        </div>
+      </div>
+      
+      <div class="filter-section">
+          <h3 class="filter-section-title expanded" data-section="price">Price range <span class="arrow">▼</span></h3>
+          <div class="filter-content">
+              <div id="price-slider" class="range-slider"></div>
+              <div class="range-values">
+                  <span id="price-lower-value"></span>
+                  <span id="price-upper-value"></span>
+              </div>
+          </div>
+      </div>
+      
+      <div class="filter-section">
+        <h3 class="filter-section-title" data-section="distance">
+          Distance <span class="arrow">▼</span>
+        </h3>
+        <div class="filter-content collapsed">
+          <div class="distance-labels">
+            <span>0 km</span>
+            <span>120 km</span>
+          </div>
+          <input type="range" class="distance-slider" min="0" max="120" value="0" id="distanceSlider">
+          <div class="distance-value">
+            <span id="distanceValue">0 km</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="filter-section">
+        <h3 class="filter-section-title" data-section="style">
+          Style <span class="arrow">▼</span>
+        </h3>
+        <div class="filter-options collapsed">
+          <button class="filter-chip">Casual</button>
+          <button class="filter-chip">Formal</button>
+          <button class="filter-chip">Business</button>
+          <button class="filter-chip">Party</button>
+          <button class="filter-chip">Dressy</button>
+          <button class="filter-chip">Vintage</button>
+          <button class="filter-chip">Street Style</button>
+          <button class="filter-chip">Minimalist</button>
+          <button class="filter-chip">Sporty</button>
+          <button class="filter-chip">Elegant</button>
+          <button class="filter-chip">Preppy</button>
+          <button class="filter-chip">Y2K</button>
+        </div>
+      </div>
+      <div class="filter-section">
+        <h3 class="filter-section-title" data-section="material">
+          Material <span class="arrow">▼</span>
+        </h3>
+        <div class="filter-options collapsed">
+          <button class="filter-chip">Cotton</button>
+          <button class="filter-chip">Denim</button>
+          <button class="filter-chip">Linen</button>
+          <button class="filter-chip">Silk & Satin</button>
+          <button class="filter-chip">Wool</button>
+          <button class="filter-chip">Cashmere</button>
+          <button class="filter-chip">Leather</button>
+          <button class="filter-chip">Polyester</button>
+          <button class="filter-chip">Nylon</button>
+          <button class="filter-chip">Rayon</button>
+          <button class="filter-chip">Velvet</button>
+          <button class="filter-chip">Corduroy</button>
+        </div>
+      </div>
+      
+      <div class="filter-section">
+        <h3 class="filter-section-title" data-section="texture">
+          Texture <span class="arrow">▼</span>
+        </h3>
+        <div class="filter-options collapsed">
+          <button class="filter-chip">Smooth</button>
+          <button class="filter-chip">Soft</button>
+          <button class="filter-chip">Textured</button>
+          <button class="filter-chip">Rough</button>
+          <button class="filter-chip">Sheer</button>
+          <button class="filter-chip">Matte</button>
+          <button class="filter-chip">Shiny</button>
+          <button class="filter-chip">Knitted</button>
+          <button class="filter-chip">Stretchy</button>
+          <button class="filter-chip">Suede-like</button>
+        </div>
+      </div>
+      
+      <div class="filter-section">
+        <h3 class="filter-section-title" data-section="season">
+          Season <span class="arrow">▼</span>
+        </h3>
+        <div class="filter-options collapsed">
+          <button class="filter-chip">Spring</button>
+          <button class="filter-chip">Summer</button>
+          <button class="filter-chip">Autumn</button>
+          <button class="filter-chip">Winter</button>
+        </div>
+      </div>
+      
+      <div class="filter-section">
+        <h3 class="filter-section-title" data-section="color">
+          Colour <span class="arrow">▼</span>
+        </h3>
+        <div class="filter-options color-options collapsed">
+          <button class="color-chip" data-color="black"><span class="color-dot color-dot--black"></span><span>Black</span></button>
+          <button class="color-chip" data-color="white"><span class="color-dot color-dot--white"></span><span>White</span></button>
+          <button class="color-chip" data-color="grey"><span class="color-dot color-dot--grey"></span><span>Grey</span></button>
+          <button class="color-chip" data-color="beige"><span class="color-dot color-dot--beige"></span><span>Beige & Cream</span></button>
+          <button class="color-chip" data-color="brown"><span class="color-dot color-dot--brown"></span><span>Brown</span></button>
+          <button class="color-chip" data-color="navy"><span class="color-dot color-dot--navy"></span><span>Navy</span></button>
+          <button class="color-chip" data-color="red"><span class="color-dot color-dot--red"></span><span>Red</span></button>
+          <button class="color-chip" data-color="pink"><span class="color-dot color-dot--pink"></span><span>Pink</span></button>
+          <button class="color-chip" data-color="orange"><span class="color-dot color-dot--orange"></span><span>Orange</span></button>
+          <button class="color-chip" data-color="yellow"><span class="color-dot color-dot--yellow"></span><span>Yellow</span></button>
+          <button class="color-chip" data-color="green"><span class="color-dot color-dot--green"></span><span>Green</span></button>
+          <button class="color-chip" data-color="blue"><span class="color-dot color-dot--blue"></span><span>Blue</span></button>
+          <button class="color-chip" data-color="purple"><span class="color-dot color-dot--purple"></span><span>Purple</span></button>
+        </div>
+      </div>
+      
+      <div class="filter-section">
+        <h3 class="filter-section-title" data-section="gender">
+          Gender <span class="arrow">▼</span>
+        </h3>
+        <div class="filter-options collapsed">
+          <button class="filter-chip">Woman</button>
+          <button class="filter-chip">Man</button>
+          <button class="filter-chip">Unisex</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="filter-footer">
+      <button class="apply-btn" onclick="applyFilters()">APPLY</button>
+    </div>
+  </div>
+</div>
