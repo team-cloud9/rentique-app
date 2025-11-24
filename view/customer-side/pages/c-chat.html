@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale-1.0" />
+    <title>Rentique - Chat</title>
+
+    <meta name="theme-color" content="#06324f" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/assets/logos/rentique-sub.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/view/components/css/var.css" />
+    <link rel="stylesheet" href="/view/components/css/header-footer.css" />
+    <link rel="stylesheet" href="../css/c-chat.css" />
+    <link rel="stylesheet" href="/view/components/css/modal.css" />
+    <script src="../../../controller/components/modal.js" defer></script>
+  </head>
+  <body class="chat-page">
+    <div id="header-placeholder" data-user-type="business"></div>
+    <!-- CONTENEDOR FLEX PRINCIPAL -->
+    <div class="chat-container">
+      <!-- LEFT SIDE – tus mismas clases, mismos IDs -->
+      <div class="lef-side">
+        <div class="chat-top-row">
+          <a href="./c-home.html" class="back-icon-link">
+            <svg
+              class="back-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </a>
+          <h2 class="all-chat-title">ALL CHATS</h2>
+        </div>
+
+        <div class="chat-list" id="chatList"></div>
+      </div>
+
+      <!-- RIGHT SIDE – NO CAMBIO NADA -->
+      <main class="main-chat">
+        <div class="chat-header">
+          <svg
+            id="backToChatListBtn"
+            class="back-icon-chat"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+          <h2 class="chat-title" id="chatTitle">Select a chat</h2>
+        </div>
+
+        <div class="messages-area" id="messagesArea">
+          <div class="messages-container" id="messagesContainer"></div>
+        </div>
+
+        <div class="message-input-area">
+          <div class="input-container">
+            <input
+              type="text"
+              class="message-input"
+              placeholder="Type your message"
+              id="messageInput"
+            />
+            <button class="send-button" id="sendButton">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script
+      src="../../../controller/components/components.js"
+      type="module"
+      defer
+    ></script>
+    <script
+      src="../../../controller/customer-side/c-chat.js"
+      type="module"
+      defer
+    ></script>
+  </body>
+</html>
